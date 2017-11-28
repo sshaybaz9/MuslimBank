@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		045EBB291FC5855800A4986A /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045EBB281FC5855800A4986A /* Extension.swift */; };
+		045EBB2D1FC594B600A4986A /* slider1111.png in Resources */ = {isa = PBXBuildFile; fileRef = 045EBB2C1FC594B600A4986A /* slider1111.png */; };
+		046634701FC69EF900D4C636 /* Menu1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0466346F1FC69EF900D4C636 /* Menu1ViewController.swift */; };
+		046634721FC6C3B900D4C636 /* VerificationcodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046634711FC6C3B900D4C636 /* VerificationcodeViewController.swift */; };
+		046634741FC6C87800D4C636 /* MobileOTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046634731FC6C87800D4C636 /* MobileOTPViewController.swift */; };
+		046634761FC6F4F100D4C636 /* AccSetupLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046634751FC6F4F000D4C636 /* AccSetupLoginViewController.swift */; };
 		04ADEC891FC3FE480007C73F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ADEC881FC3FE480007C73F /* AppDelegate.swift */; };
 		04ADEC8B1FC3FE480007C73F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ADEC8A1FC3FE480007C73F /* ViewController.swift */; };
 		04ADEC8E1FC3FE480007C73F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04ADEC8C1FC3FE480007C73F /* Main.storyboard */; };
@@ -15,6 +21,17 @@
 		04ADEC961FC3FE480007C73F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04ADEC941FC3FE480007C73F /* LaunchScreen.storyboard */; };
 		04ADECA11FC3FE490007C73F /* MBankTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ADECA01FC3FE490007C73F /* MBankTests.swift */; };
 		04ADECAC1FC3FE490007C73F /* MBankUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ADECAB1FC3FE490007C73F /* MBankUITests.swift */; };
+		04ADECBA1FC403D50007C73F /* Mbank Logo 1024 W x 724 H (1).png in Resources */ = {isa = PBXBuildFile; fileRef = 04ADECB91FC403D50007C73F /* Mbank Logo 1024 W x 724 H (1).png */; };
+		04ADECBC1FC40C140007C73F /* 2000px-Lock_font_awesome.svg.png in Resources */ = {isa = PBXBuildFile; fileRef = 04ADECBB1FC40C140007C73F /* 2000px-Lock_font_awesome.svg.png */; };
+		04ADECBE1FC41CC40007C73F /* mbank_orange_new.png in Resources */ = {isa = PBXBuildFile; fileRef = 04ADECBD1FC41CC40007C73F /* mbank_orange_new.png */; };
+		04ADECC01FC41F740007C73F /* LoginMobileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ADECBF1FC41F740007C73F /* LoginMobileViewController.swift */; };
+		04ADECC21FC42CBB0007C73F /* Phone.png in Resources */ = {isa = PBXBuildFile; fileRef = 04ADECC11FC42CBB0007C73F /* Phone.png */; };
+		04ADECC41FC44BC70007C73F /* FixedDepositViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ADECC31FC44BC70007C73F /* FixedDepositViewController.swift */; };
+		04CDA4C81FC541270093A799 /* TransactionPerformViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CDA4C71FC541270093A799 /* TransactionPerformViewController.swift */; };
+		04CDA4CA1FC54F0B0093A799 /* ServicesFacilitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CDA4C91FC54F0B0093A799 /* ServicesFacilitiesViewController.swift */; };
+		04CDA4CC1FC55D550093A799 /* FTAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CDA4CB1FC55D550093A799 /* FTAViewController.swift */; };
+		04CDA4CE1FC55D6F0093A799 /* FTMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CDA4CD1FC55D6F0093A799 /* FTMViewController.swift */; };
+		04CDA4D01FC565030093A799 /* TransactionStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CDA4CF1FC565030093A799 /* TransactionStatusViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +52,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		045EBB281FC5855800A4986A /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		045EBB2C1FC594B600A4986A /* slider1111.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = slider1111.png; sourceTree = "<group>"; };
+		0466346F1FC69EF900D4C636 /* Menu1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Menu1ViewController.swift; path = ../Menu1ViewController.swift; sourceTree = "<group>"; };
+		046634711FC6C3B900D4C636 /* VerificationcodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VerificationcodeViewController.swift; path = ../VerificationcodeViewController.swift; sourceTree = "<group>"; };
+		046634731FC6C87800D4C636 /* MobileOTPViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MobileOTPViewController.swift; sourceTree = "<group>"; };
+		046634751FC6F4F000D4C636 /* AccSetupLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccSetupLoginViewController.swift; sourceTree = "<group>"; };
 		04ADEC851FC3FE480007C73F /* MBank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MBank.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04ADEC881FC3FE480007C73F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04ADEC8A1FC3FE480007C73F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +72,17 @@
 		04ADECA71FC3FE490007C73F /* MBankUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MBankUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		04ADECAB1FC3FE490007C73F /* MBankUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBankUITests.swift; sourceTree = "<group>"; };
 		04ADECAD1FC3FE490007C73F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04ADECB91FC403D50007C73F /* Mbank Logo 1024 W x 724 H (1).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Mbank Logo 1024 W x 724 H (1).png"; sourceTree = "<group>"; };
+		04ADECBB1FC40C140007C73F /* 2000px-Lock_font_awesome.svg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "2000px-Lock_font_awesome.svg.png"; sourceTree = "<group>"; };
+		04ADECBD1FC41CC40007C73F /* mbank_orange_new.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mbank_orange_new.png; sourceTree = "<group>"; };
+		04ADECBF1FC41F740007C73F /* LoginMobileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginMobileViewController.swift; sourceTree = "<group>"; };
+		04ADECC11FC42CBB0007C73F /* Phone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Phone.png; sourceTree = "<group>"; };
+		04ADECC31FC44BC70007C73F /* FixedDepositViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FixedDepositViewController.swift; sourceTree = "<group>"; };
+		04CDA4C71FC541270093A799 /* TransactionPerformViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionPerformViewController.swift; sourceTree = "<group>"; };
+		04CDA4C91FC54F0B0093A799 /* ServicesFacilitiesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServicesFacilitiesViewController.swift; sourceTree = "<group>"; };
+		04CDA4CB1FC55D550093A799 /* FTAViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTAViewController.swift; sourceTree = "<group>"; };
+		04CDA4CD1FC55D6F0093A799 /* FTMViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTMViewController.swift; sourceTree = "<group>"; };
+		04CDA4CF1FC565030093A799 /* TransactionStatusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionStatusViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,7 +136,24 @@
 				04ADEC881FC3FE480007C73F /* AppDelegate.swift */,
 				04ADEC8A1FC3FE480007C73F /* ViewController.swift */,
 				04ADEC8C1FC3FE480007C73F /* Main.storyboard */,
+				046634751FC6F4F000D4C636 /* AccSetupLoginViewController.swift */,
+				046634731FC6C87800D4C636 /* MobileOTPViewController.swift */,
+				04CDA4CB1FC55D550093A799 /* FTAViewController.swift */,
+				046634711FC6C3B900D4C636 /* VerificationcodeViewController.swift */,
+				0466346F1FC69EF900D4C636 /* Menu1ViewController.swift */,
+				04CDA4CD1FC55D6F0093A799 /* FTMViewController.swift */,
+				04CDA4CF1FC565030093A799 /* TransactionStatusViewController.swift */,
+				04CDA4C91FC54F0B0093A799 /* ServicesFacilitiesViewController.swift */,
+				04CDA4C71FC541270093A799 /* TransactionPerformViewController.swift */,
+				04ADECBF1FC41F740007C73F /* LoginMobileViewController.swift */,
+				04ADECC31FC44BC70007C73F /* FixedDepositViewController.swift */,
+				045EBB281FC5855800A4986A /* Extension.swift */,
 				04ADEC921FC3FE480007C73F /* Assets.xcassets */,
+				045EBB2C1FC594B600A4986A /* slider1111.png */,
+				04ADECC11FC42CBB0007C73F /* Phone.png */,
+				04ADECBD1FC41CC40007C73F /* mbank_orange_new.png */,
+				04ADECBB1FC40C140007C73F /* 2000px-Lock_font_awesome.svg.png */,
+				04ADECB91FC403D50007C73F /* Mbank Logo 1024 W x 724 H (1).png */,
 				04ADEC941FC3FE480007C73F /* LaunchScreen.storyboard */,
 				04ADEC971FC3FE480007C73F /* Info.plist */,
 				04ADEC8F1FC3FE480007C73F /* MBank.xcdatamodeld */,
@@ -235,9 +286,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				045EBB2D1FC594B600A4986A /* slider1111.png in Resources */,
+				04ADECBE1FC41CC40007C73F /* mbank_orange_new.png in Resources */,
 				04ADEC961FC3FE480007C73F /* LaunchScreen.storyboard in Resources */,
+				04ADECBC1FC40C140007C73F /* 2000px-Lock_font_awesome.svg.png in Resources */,
+				04ADECBA1FC403D50007C73F /* Mbank Logo 1024 W x 724 H (1).png in Resources */,
 				04ADEC931FC3FE480007C73F /* Assets.xcassets in Resources */,
 				04ADEC8E1FC3FE480007C73F /* Main.storyboard in Resources */,
+				04ADECC21FC42CBB0007C73F /* Phone.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,9 +318,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				046634761FC6F4F100D4C636 /* AccSetupLoginViewController.swift in Sources */,
 				04ADEC8B1FC3FE480007C73F /* ViewController.swift in Sources */,
+				04CDA4D01FC565030093A799 /* TransactionStatusViewController.swift in Sources */,
+				046634741FC6C87800D4C636 /* MobileOTPViewController.swift in Sources */,
 				04ADEC911FC3FE480007C73F /* MBank.xcdatamodeld in Sources */,
+				04ADECC01FC41F740007C73F /* LoginMobileViewController.swift in Sources */,
+				045EBB291FC5855800A4986A /* Extension.swift in Sources */,
+				046634701FC69EF900D4C636 /* Menu1ViewController.swift in Sources */,
+				04CDA4C81FC541270093A799 /* TransactionPerformViewController.swift in Sources */,
+				04CDA4CC1FC55D550093A799 /* FTAViewController.swift in Sources */,
 				04ADEC891FC3FE480007C73F /* AppDelegate.swift in Sources */,
+				04CDA4CA1FC54F0B0093A799 /* ServicesFacilitiesViewController.swift in Sources */,
+				04ADECC41FC44BC70007C73F /* FixedDepositViewController.swift in Sources */,
+				046634721FC6C3B900D4C636 /* VerificationcodeViewController.swift in Sources */,
+				04CDA4CE1FC55D6F0093A799 /* FTMViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -509,6 +577,7 @@
 				04ADECB21FC3FE490007C73F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		04ADECB31FC3FE490007C73F /* Build configuration list for PBXNativeTarget "MBankTests" */ = {
 			isa = XCConfigurationList;
@@ -517,6 +586,7 @@
 				04ADECB51FC3FE490007C73F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		04ADECB61FC3FE490007C73F /* Build configuration list for PBXNativeTarget "MBankUITests" */ = {
 			isa = XCConfigurationList;
@@ -525,6 +595,7 @@
 				04ADECB81FC3FE490007C73F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
