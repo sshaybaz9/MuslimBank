@@ -9,10 +9,14 @@
 import UIKit
 
 class AccSetupLoginViewController: UIViewController {
+    
+    
+        
+    @IBOutlet weak var ConfirmLoginPin: UITextField!
 
-    @IBOutlet weak var Accntxt: UITextField!
-    @IBOutlet weak var Pintxt: UITextField!
-    @IBOutlet weak var ConPintxt: UITextField!
+    @IBOutlet weak var loginPin: UITextField!
+    @IBOutlet weak var AccountNumber: UITextField!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,13 +27,18 @@ class AccSetupLoginViewController: UIViewController {
         
         // Border line TextBox Code
         let lineColor = UIColor(red:0.12, green:0.23, blue:0.35, alpha:1.0)
-        self.Accntxt.setBottomLine(borderColor: lineColor)
-        self.Pintxt.setBottomLine(borderColor: lineColor)
-        self.ConPintxt.setBottomLine(borderColor: lineColor)
+        self.AccountNumber.setBottomLine(borderColor: lineColor)
+        self.loginPin.setBottomLine(borderColor: lineColor)
+        self.ConfirmLoginPin.setBottomLine(borderColor: lineColor)
         
     }
     
+    @IBAction func Save(_ sender: AnyObject) {
+    }
 
+    
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

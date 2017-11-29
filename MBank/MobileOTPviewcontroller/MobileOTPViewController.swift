@@ -1,5 +1,5 @@
 //
-//  VerificationcodeViewController.swift
+//  MobileOTPViewController.swift
 //  MBank
 //
 //  Created by Mac on 23/11/17.
@@ -8,47 +8,42 @@
 
 import UIKit
 
-protocol PassVerfication {
-    func PasstheVerifiationData(mobileNumberM:String ,deviceIdM:String)
-}
-class VerificationcodeViewController: UIViewController,UITextFieldDelegate {
 
-    var delegate:PassVerfication? = nil
-    @IBOutlet weak var Mobtxt: UITextField!
-    var mobileno : String!
-    let deviceID = UIDevice.current.identifierForVendor?.uuidString
+
+class MobileOTPViewController: UIViewController,PassVerfication {
+
+    var mobileNumber : String!
+    var deviceId : String!
     
+    @IBOutlet weak var Numtxt: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
-        
-        
-        
     }
-    
-    
-    @IBAction func getVerCode(_ sender: AnyObject) {
-    var request = URLRequest(url: URL(string: "http://115.117.44.229:8443/Mbank_api/verifyupdatemobileactivation.php")!)
-    request.httpMethod = "POST"
-    let postString = "mobile_number=\(Mobtxt.text!)&android_id=\(deviceID!)"
-     request.httpBody = postString.data(using: .utf8)
-     let task = URLSession.shared.dataTask(with: request) { data, response, error in
-      guard let data = data, error == nil else {                                                 // check for fundamental networking error
+    @IBAction func ProceedBtn(_ sender: AnyObject) {
+        var request = URLRequest(url: URL(string: "http://115.117.44.229:8443/Mbank_api/verifyactivationcode.php")!)
+        request.httpMethod = "POST"
+        var normalSecuritycode = Numtxt.text!  + mobileNumber
+        let postString = "activation_code=\(Numtxt.text!)&mobile_number=\(mobileNumber!)&seck=\(normalSecuritycode)&deviceId=\(deviceId!)"
+        print(postString)
+        request.httpBody = postString.data(using: .utf8)
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data, error == nil else {                                                 // check for fundamental networking error
                 print("error=\(String(describing: error))")
                 return
-       }
-          var json: NSDictionary?
-          do {
-            json = try JSONSerialization.jsonObject(with: data) as? NSDictionary
-            self.parsingTheJsonData(JSondata: json!)//Function call to parse the Json response..
-             } catch {
-             print(error)
-           }
-    }
+            }
+            var json: NSDictionary?
+            do {
+                json = try JSONSerialization.jsonObject(with: data) as? NSDictionary
+                self.parsingTheJsonData(JSondata: json!)//Function call to parse the Json response..
+            } catch {
+                print(error)
+            }
+        }
+        
         task.resume()
- }
-    //Function call to parse and check the Verifcation response
+        
+    }
     func parsingTheJsonData(JSondata:NSDictionary){
         var successMessage : String = String()
         var verificationStatus:Int = Int()
@@ -59,24 +54,19 @@ class VerificationcodeViewController: UIViewController,UITextFieldDelegate {
             verificationStatus =  JSondata.value(forKey: "success") as! Int
             verficationAlert.addAction(UIAlertAction(title: "No", style: UIAlertActionStyle.cancel, handler: nil))
             verficationAlert.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle.default, handler: { (action) in
-                let MTP = self.storyboard?.instantiateViewController(withIdentifier: "OTP") as! MobileOTPViewController
-               
-                
-          // Passing Data to Other ViewController
-                self.delegate = MTP
-                self.delegate?.PasstheVerifiationData(mobileNumberM: self.Mobtxt.text!, deviceIdM: self.deviceID!)
-                self.navigationController?.pushViewController(MTP, animated: true)
-                
-                
-                self.present(MTP, animated: true, completion: nil)
+                let Access = self.storyboard?.instantiateViewController(withIdentifier: "setUp") as! AccSetupLoginViewController
                 
                 
                 
-            
+                self.present(Access, animated: true, completion: nil)
+                
+                
+                
+                
             }))
         }else if((JSondata.value(forKey: "success") as! Int) == 0){
             verificationStatus =  JSondata.value(forKey: "success") as! Int
-             successMessage = "Invalid mobile number"
+            successMessage = "Invalid mobile number"
             verficationAlert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: nil))
         }
         verficationAlert.title = successMessage
@@ -90,13 +80,11 @@ class VerificationcodeViewController: UIViewController,UITextFieldDelegate {
         
     }
     
-    
-    
     override func viewDidLayoutSubviews() {
         
         // Border line TextBox Code
         let lineColor = UIColor(red:0.12, green:0.23, blue:0.35, alpha:1.0)
-        self.Mobtxt.setBottomLine(borderColor: lineColor)
+        self.Numtxt.setBottomLine(borderColor: lineColor)
         
     }
 
@@ -104,7 +92,11 @@ class VerificationcodeViewController: UIViewController,UITextFieldDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+    //Delegate function to get the verfication
+    func PasstheVerifiationData(mobileNumberM: String, deviceIdM deviceIdm: String) {
+        mobileNumber = mobileNumberM
+        deviceId = deviceIdm
+    }
 
     /*
     // MARK: - Navigation

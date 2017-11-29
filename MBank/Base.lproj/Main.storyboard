@@ -343,7 +343,7 @@
         <!--MobileOTP View Controller-->
         <scene sceneID="12c-I5-lLn">
             <objects>
-                <viewController id="kRs-wL-OIt" customClass="MobileOTPViewController" customModule="MBank" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OTP" useStoryboardIdentifierAsRestorationIdentifier="YES" id="kRs-wL-OIt" customClass="MobileOTPViewController" customModule="MBank" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1wx-g7-11q"/>
                         <viewControllerLayoutGuide type="bottom" id="Xda-Wi-e7q"/>
@@ -437,7 +437,7 @@
         <!--Acc Setup Login View Controller-->
         <scene sceneID="gTv-jR-Qyd">
             <objects>
-                <viewController id="oDy-cq-YEh" customClass="AccSetupLoginViewController" customModule="MBank" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="setUp" id="oDy-cq-YEh" customClass="AccSetupLoginViewController" customModule="MBank" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="DM4-lP-oII"/>
                         <viewControllerLayoutGuide type="bottom" id="Q6C-xf-eyj"/>
@@ -494,6 +494,9 @@
                                 <state key="normal" title="Save">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="Save:" destination="oDy-cq-YEh" eventType="touchUpInside" id="pFP-qo-40k"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -525,9 +528,9 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="Accntxt" destination="Kpy-ek-CPE" id="Qsf-OF-XwV"/>
-                        <outlet property="ConPintxt" destination="Na2-mK-CtU" id="y7a-iy-J7r"/>
-                        <outlet property="Pintxt" destination="aVw-t3-cLy" id="kKv-OL-gxU"/>
+                        <outlet property="AccountNumber" destination="Kpy-ek-CPE" id="enl-x7-T0Z"/>
+                        <outlet property="ConfirmLoginPin" destination="Na2-mK-CtU" id="5mW-11-IwR"/>
+                        <outlet property="loginPin" destination="aVw-t3-cLy" id="GrQ-We-Tzi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="alw-A5-Z3Z" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -13,7 +13,6 @@ import UIKit
 extension UITextField {
     
     func setBottomLine(borderColor: UIColor) {
-        
         self.borderStyle = UITextBorderStyle.none
         self.backgroundColor = UIColor.clear
         
@@ -29,7 +28,6 @@ extension UITextField {
 
 
 enum  SerializationError: Error {
-
     case invalid(String, Any)
 }
 

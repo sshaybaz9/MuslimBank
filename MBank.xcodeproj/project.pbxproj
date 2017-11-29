@@ -32,6 +32,7 @@
 		04CDA4CC1FC55D550093A799 /* FTAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CDA4CB1FC55D550093A799 /* FTAViewController.swift */; };
 		04CDA4CE1FC55D6F0093A799 /* FTMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CDA4CD1FC55D6F0093A799 /* FTMViewController.swift */; };
 		04CDA4D01FC565030093A799 /* TransactionStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CDA4CF1FC565030093A799 /* TransactionStatusViewController.swift */; };
+		A77FFD4B1FCE9C430087DFA9 /* File.strings in Resources */ = {isa = PBXBuildFile; fileRef = A77FFD4A1FCE9C430087DFA9 /* File.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,7 +58,7 @@
 		0466346F1FC69EF900D4C636 /* Menu1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Menu1ViewController.swift; path = ../Menu1ViewController.swift; sourceTree = "<group>"; };
 		046634711FC6C3B900D4C636 /* VerificationcodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VerificationcodeViewController.swift; path = ../VerificationcodeViewController.swift; sourceTree = "<group>"; };
 		046634731FC6C87800D4C636 /* MobileOTPViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MobileOTPViewController.swift; sourceTree = "<group>"; };
-		046634751FC6F4F000D4C636 /* AccSetupLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccSetupLoginViewController.swift; sourceTree = "<group>"; };
+		046634751FC6F4F000D4C636 /* AccSetupLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccSetupLoginViewController.swift; path = ../AccSetupLoginViewController.swift; sourceTree = "<group>"; };
 		04ADEC851FC3FE480007C73F /* MBank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MBank.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04ADEC881FC3FE480007C73F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04ADEC8A1FC3FE480007C73F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -83,6 +84,7 @@
 		04CDA4CB1FC55D550093A799 /* FTAViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTAViewController.swift; sourceTree = "<group>"; };
 		04CDA4CD1FC55D6F0093A799 /* FTMViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTMViewController.swift; sourceTree = "<group>"; };
 		04CDA4CF1FC565030093A799 /* TransactionStatusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionStatusViewController.swift; sourceTree = "<group>"; };
+		A77FFD4A1FCE9C430087DFA9 /* File.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = File.strings; path = MobileOTPviewcontroller/CommonStringFile/File.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04625ECB1FCEBAAF004E7F13 /* Registered Number Verification */ = {
+			isa = PBXGroup;
+			children = (
+				046634711FC6C3B900D4C636 /* VerificationcodeViewController.swift */,
+			);
+			name = "Registered Number Verification";
+			sourceTree = "<group>";
+		};
+		04625ECC1FCEC2A2004E7F13 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				045EBB281FC5855800A4986A /* Extension.swift */,
+			);
+			name = Extension;
+			sourceTree = "<group>";
+		};
 		04ADEC7C1FC3FE470007C73F = {
 			isa = PBXGroup;
 			children = (
@@ -133,13 +151,14 @@
 		04ADEC871FC3FE480007C73F /* MBank */ = {
 			isa = PBXGroup;
 			children = (
+				04625ECC1FCEC2A2004E7F13 /* Extension */,
+				04625ECB1FCEBAAF004E7F13 /* Registered Number Verification */,
+				A77FFD491FCE9BCE0087DFA9 /* AcessSetupLoginView */,
+				A77FFD481FCE9B470087DFA9 /* MobileOTPviewcontroller */,
 				04ADEC881FC3FE480007C73F /* AppDelegate.swift */,
 				04ADEC8A1FC3FE480007C73F /* ViewController.swift */,
 				04ADEC8C1FC3FE480007C73F /* Main.storyboard */,
-				046634751FC6F4F000D4C636 /* AccSetupLoginViewController.swift */,
-				046634731FC6C87800D4C636 /* MobileOTPViewController.swift */,
 				04CDA4CB1FC55D550093A799 /* FTAViewController.swift */,
-				046634711FC6C3B900D4C636 /* VerificationcodeViewController.swift */,
 				0466346F1FC69EF900D4C636 /* Menu1ViewController.swift */,
 				04CDA4CD1FC55D6F0093A799 /* FTMViewController.swift */,
 				04CDA4CF1FC565030093A799 /* TransactionStatusViewController.swift */,
@@ -147,7 +166,6 @@
 				04CDA4C71FC541270093A799 /* TransactionPerformViewController.swift */,
 				04ADECBF1FC41F740007C73F /* LoginMobileViewController.swift */,
 				04ADECC31FC44BC70007C73F /* FixedDepositViewController.swift */,
-				045EBB281FC5855800A4986A /* Extension.swift */,
 				04ADEC921FC3FE480007C73F /* Assets.xcassets */,
 				045EBB2C1FC594B600A4986A /* slider1111.png */,
 				04ADECC11FC42CBB0007C73F /* Phone.png */,
@@ -157,6 +175,7 @@
 				04ADEC941FC3FE480007C73F /* LaunchScreen.storyboard */,
 				04ADEC971FC3FE480007C73F /* Info.plist */,
 				04ADEC8F1FC3FE480007C73F /* MBank.xcdatamodeld */,
+				A77FFD4A1FCE9C430087DFA9 /* File.strings */,
 			);
 			path = MBank;
 			sourceTree = "<group>";
@@ -177,6 +196,22 @@
 				04ADECAD1FC3FE490007C73F /* Info.plist */,
 			);
 			path = MBankUITests;
+			sourceTree = "<group>";
+		};
+		A77FFD481FCE9B470087DFA9 /* MobileOTPviewcontroller */ = {
+			isa = PBXGroup;
+			children = (
+				046634731FC6C87800D4C636 /* MobileOTPViewController.swift */,
+			);
+			path = MobileOTPviewcontroller;
+			sourceTree = "<group>";
+		};
+		A77FFD491FCE9BCE0087DFA9 /* AcessSetupLoginView */ = {
+			isa = PBXGroup;
+			children = (
+				046634751FC6F4F000D4C636 /* AccSetupLoginViewController.swift */,
+			);
+			path = AcessSetupLoginView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -294,6 +329,7 @@
 				04ADEC931FC3FE480007C73F /* Assets.xcassets in Resources */,
 				04ADEC8E1FC3FE480007C73F /* Main.storyboard in Resources */,
 				04ADECC21FC42CBB0007C73F /* Phone.png in Resources */,
+				A77FFD4B1FCE9C430087DFA9 /* File.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
