@@ -8,18 +8,41 @@
 
 import UIKit
 
+// Protocol for Passing Mobile Number to AccessSetUpViewController
+protocol PassMobileNumber {
+    func PassNumber(mobileNumber2:String,deviceID2: String)
+}
 
 
-class MobileOTPViewController: UIViewController,PassVerfication {
 
+class MobileOTPViewController: UIViewController,PassVerfication,UITextFieldDelegate {
+
+   // Delegate Declartion For Passing Mobile Number to AccessSetUpViewController
+    var delegate : PassMobileNumber? = nil
+    
     var mobileNumber : String!
     var deviceId : String!
     
     @IBOutlet weak var Numtxt: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        self.Numtxt.delegate = self
+        
     }
+    
+    //then you should implement the func named textFieldShouldReturn
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    // -- then, further if you want to close the keyboard when pressed somewhere else on the screen you can implement the following method too:
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+
     @IBAction func ProceedBtn(_ sender: AnyObject) {
         var request = URLRequest(url: URL(string: "http://115.117.44.229:8443/Mbank_api/verifyactivationcode.php")!)
         request.httpMethod = "POST"
@@ -50,19 +73,22 @@ class MobileOTPViewController: UIViewController,PassVerfication {
         
         let verficationAlert = UIAlertController()
         if((JSondata.value(forKey: "success") as! Int) == 1){//
-            successMessage = "OTP generated Succesfully"
+            successMessage = "Success"
             verificationStatus =  JSondata.value(forKey: "success") as! Int
             verficationAlert.addAction(UIAlertAction(title: "No", style: UIAlertActionStyle.cancel, handler: nil))
             verficationAlert.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle.default, handler: { (action) in
                 let Access = self.storyboard?.instantiateViewController(withIdentifier: "setUp") as! AccSetupLoginViewController
+//   Passing Mobile to Passing Mobile Number to AccessSetUpViewController
+                self.delegate = Access
+                self.delegate?.PassNumber(mobileNumber2: self.mobileNumber!,deviceID2: self.deviceId!)
+                let kUserDefault = UserDefaults.standard
                 
+                kUserDefault.setValue(self.mobileNumber, forKey: "RegisteredMobileNumber")
+                kUserDefault.setValue(self.deviceId, forKey: "RegisteredDeviceID")
+                self.navigationController?.pushViewController(Access, animated: true)
                 
                 
                 self.present(Access, animated: true, completion: nil)
-                
-                
-                
-                
             }))
         }else if((JSondata.value(forKey: "success") as! Int) == 0){
             verificationStatus =  JSondata.value(forKey: "success") as! Int

@@ -7,22 +7,46 @@
 //
 
 import UIKit
+import Foundation
+import RNCryptor
 
-class AccSetupLoginViewController: UIViewController {
+
+
+class AccSetupLoginViewController: UIViewController,PassMobileNumber,UITextFieldDelegate {
     
+    var isIphone = 1
+
     
-        
     @IBOutlet weak var ConfirmLoginPin: UITextField!
 
     @IBOutlet weak var loginPin: UITextField!
     @IBOutlet weak var AccountNumber: UITextField!
 
+     var key = "1234567890123456"
+    
+    
+    var mobileNumber : String!
+    var deviceID : String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.ConfirmLoginPin.delegate = self
+        self.loginPin.delegate = self
+        self.AccountNumber.delegate = self
+    }
+    //then you should implement the func named textFieldShouldReturn
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
     
+    // -- then, further if you want to close the keyboard when pressed somewhere else on the screen you can implement the following method too:
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+
     override func viewDidLayoutSubviews() {
         
         // Border line TextBox Code
@@ -34,16 +58,97 @@ class AccSetupLoginViewController: UIViewController {
     }
     
     @IBAction func Save(_ sender: AnyObject) {
-    }
+        
+        var responseString : String!
 
+        let ciphertext = RNCryptor.encrypt(data: (loginPin.text?.data(using: String.Encoding.utf8)!)!, withPassword: key)
+        
+//     print(ciphertext)
+        
+        var Encrypted = ciphertext.base64EncodedString()
+        
+        
+//        print(Encrypted)
+
+        var seckey = mobileNumber + Encrypted
+     
+ //   print(seckey)
+        var request = URLRequest(url: URL(string: "http://115.117.44.229:8443/Mbank_api/setuppinverification.php")!)
+        
+        request.httpMethod = "POST"
+    let postString = "mobileno=\(mobileNumber!)&account_no=\(AccountNumber.text!)&loginpin=\(Encrypted)&seckey=\(seckey)&isIphone=\(isIphone)"
+        
+      print(postString)
+        
+        request.httpBody = postString.data(using: .utf8)
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data, error == nil else {                                                 // check for fundamental networking error
+                print("error=\(String(describing: error))")
+                return
+            }
+            
+            responseString = String(data: data, encoding: .utf8)
+            print("responseString = \(responseString)")
+            
+
+            
+            var json: NSDictionary?
+            do {
+                json = try JSONSerialization.jsonObject(with: data) as? NSDictionary
+                self.parsingTheJsonData(JSondata: json!)
+            } catch {
+                print(error)
+            }
+        }
+        task.resume()
+    }
     
-    
+    func parsingTheJsonData(JSondata:NSDictionary){
+        var successMessage : String = String()
+        var verificationStatus:Int = Int()
+        
+        let verficationAlert = UIAlertController()
+        if((JSondata.value(forKey: "success") as! Int) == 1){//
+            successMessage = "Login Pin Created Succesfully"
+            verificationStatus =  JSondata.value(forKey: "success") as! Int
+            verficationAlert.addAction(UIAlertAction(title: "No", style: UIAlertActionStyle.cancel, handler: nil))
+            verficationAlert.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle.default, handler: { (action) in
+                let Log = self.storyboard?.instantiateViewController(withIdentifier: "Login") as! LoginMobileViewController
+                //   Passing Mobile to Passing Mobile Number to AccessSetUpViewController
+               
+                
+                self.navigationController?.pushViewController(Log, animated: true)
+                
+                
+                self.present(Log, animated: true, completion: nil)
+            }))
+        }else if((JSondata.value(forKey: "success") as! Int) == 0){
+            verificationStatus =  JSondata.value(forKey: "success") as! Int
+            successMessage = "Invalid Account number"
+            verficationAlert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: nil))
+        }
+        verficationAlert.title = successMessage
+     //   verficationAlert.message = JSondata.value(forKey: "message") as! String
+        OperationQueue.main.addOperation {
+            self.present(verficationAlert, animated:true, completion:nil)
+        }
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    
+    
+    //Delegate function to get the verfication
+    func PassNumber(mobileNumber2: String,deviceID2: String) {
+        
+        
+        mobileNumber =  mobileNumber2
+        deviceID = deviceID2
+        
+    }
 
     /*
     // MARK: - Navigation

@@ -7,12 +7,44 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		043BE7562008D4F8006DD16C /* ContactusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043BE7552008D4F8006DD16C /* ContactusViewController.swift */; };
+		045C517B1FEA7612009E1A51 /* GenerateMMIDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045C517A1FEA7612009E1A51 /* GenerateMMIDViewController.swift */; };
+		045C517E1FEA8857009E1A51 /* DisableMMIDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045C517D1FEA8857009E1A51 /* DisableMMIDViewController.swift */; };
+		045EA2BD1FD6A507004A69D1 /* MenuCollectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045EA2BC1FD6A507004A69D1 /* MenuCollectionCollectionViewCell.swift */; };
 		045EBB291FC5855800A4986A /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045EBB281FC5855800A4986A /* Extension.swift */; };
-		045EBB2D1FC594B600A4986A /* slider1111.png in Resources */ = {isa = PBXBuildFile; fileRef = 045EBB2C1FC594B600A4986A /* slider1111.png */; };
+		046228311FDE81430048962E /* TransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046228301FDE81430048962E /* TransactionViewController.swift */; };
+		046228341FDE8E030048962E /* TransactionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046228331FDE8E030048962E /* TransactionCollectionViewCell.swift */; };
+		046228361FDE9C5D0048962E /* payusingmmid.png in Resources */ = {isa = PBXBuildFile; fileRef = 046228351FDE9C5D0048962E /* payusingmmid.png */; };
+		046228381FDE9FAE0048962E /* balanceinquiry.png in Resources */ = {isa = PBXBuildFile; fileRef = 046228371FDE9FAE0048962E /* balanceinquiry.png */; };
+		046501A21FDEA83700D20DE9 /* generatemmid.png in Resources */ = {isa = PBXBuildFile; fileRef = 046501A11FDEA83700D20DE9 /* generatemmid.png */; };
+		046501A41FDEA87C00D20DE9 /* mmid_retrieve.png in Resources */ = {isa = PBXBuildFile; fileRef = 046501A31FDEA87C00D20DE9 /* mmid_retrieve.png */; };
+		046501A61FDEA8DF00D20DE9 /* disablemmid.png in Resources */ = {isa = PBXBuildFile; fileRef = 046501A51FDEA8DF00D20DE9 /* disablemmid.png */; };
+		046501A81FDEAA0400D20DE9 /* transinquiry.png in Resources */ = {isa = PBXBuildFile; fileRef = 046501A71FDEAA0400D20DE9 /* transinquiry.png */; };
+		046501AA1FDEAA5300D20DE9 /* mini_state.png in Resources */ = {isa = PBXBuildFile; fileRef = 046501A91FDEAA5300D20DE9 /* mini_state.png */; };
 		046634701FC69EF900D4C636 /* Menu1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0466346F1FC69EF900D4C636 /* Menu1ViewController.swift */; };
 		046634721FC6C3B900D4C636 /* VerificationcodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046634711FC6C3B900D4C636 /* VerificationcodeViewController.swift */; };
 		046634741FC6C87800D4C636 /* MobileOTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046634731FC6C87800D4C636 /* MobileOTPViewController.swift */; };
 		046634761FC6F4F100D4C636 /* AccSetupLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046634751FC6F4F000D4C636 /* AccSetupLoginViewController.swift */; };
+		046BA9FE200766D300CBA656 /* ReferFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046BA9FD200766D300CBA656 /* ReferFriendsViewController.swift */; };
+		046BE55420088D86004A8BC4 /* AccountsTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046BE55320088D85004A8BC4 /* AccountsTabBarController.swift */; };
+		046C6182AC33C9EDC65E56BB /* Pods_MBank.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E0E9840256097C487C76CD1 /* Pods_MBank.framework */; };
+		04718B3E1FD7AEBC00D85C92 /* bill_paym.png in Resources */ = {isa = PBXBuildFile; fileRef = 04718B3D1FD7AEBC00D85C92 /* bill_paym.png */; };
+		04718B401FD7AECA00D85C92 /* accounts.png in Resources */ = {isa = PBXBuildFile; fileRef = 04718B3F1FD7AECA00D85C92 /* accounts.png */; };
+		04718B421FD7AED600D85C92 /* cards.png in Resources */ = {isa = PBXBuildFile; fileRef = 04718B411FD7AED600D85C92 /* cards.png */; };
+		04718B441FD7AEE000D85C92 /* locate_atm.png in Resources */ = {isa = PBXBuildFile; fileRef = 04718B431FD7AEE000D85C92 /* locate_atm.png */; };
+		04718B461FD7AEE800D85C92 /* mbank_orange_medium.png in Resources */ = {isa = PBXBuildFile; fileRef = 04718B451FD7AEE800D85C92 /* mbank_orange_medium.png */; };
+		04718B481FD7AEEF00D85C92 /* shoppingcart.png in Resources */ = {isa = PBXBuildFile; fileRef = 04718B471FD7AEEF00D85C92 /* shoppingcart.png */; };
+		04718B4A1FD7AEF400D85C92 /* tax_payment.png in Resources */ = {isa = PBXBuildFile; fileRef = 04718B491FD7AEF400D85C92 /* tax_payment.png */; };
+		04718B4C1FD7AEFE00D85C92 /* transfer.png in Resources */ = {isa = PBXBuildFile; fileRef = 04718B4B1FD7AEFE00D85C92 /* transfer.png */; };
+		04718B4E1FD7AF2400D85C92 /* upi.png in Resources */ = {isa = PBXBuildFile; fileRef = 04718B4D1FD7AF2400D85C92 /* upi.png */; };
+		04718B501FD7AF3800D85C92 /* My_profile-orange.png in Resources */ = {isa = PBXBuildFile; fileRef = 04718B4F1FD7AF3800D85C92 /* My_profile-orange.png */; };
+		04718B521FD7AF4B00D85C92 /* Hamburger_icon.svg.png in Resources */ = {isa = PBXBuildFile; fileRef = 04718B511FD7AF4B00D85C92 /* Hamburger_icon.svg.png */; };
+		04718B541FD7AF8200D85C92 /* services.png in Resources */ = {isa = PBXBuildFile; fileRef = 04718B531FD7AF8200D85C92 /* services.png */; };
+		04718B561FD7B02500D85C92 /* accounts_mbank.png in Resources */ = {isa = PBXBuildFile; fileRef = 04718B551FD7B02500D85C92 /* accounts_mbank.png */; };
+		04718B581FD7B18D00D85C92 /* mbank_logo_big.png in Resources */ = {isa = PBXBuildFile; fileRef = 04718B571FD7B18D00D85C92 /* mbank_logo_big.png */; };
+		04718B5A1FD7B1FA00D85C92 /* mbank_logo_medium.png in Resources */ = {isa = PBXBuildFile; fileRef = 04718B591FD7B1FA00D85C92 /* mbank_logo_medium.png */; };
+		0471AF9B2005EFDA00052B8F /* TransactionHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0471AF9A2005EFDA00052B8F /* TransactionHistoryTableViewCell.swift */; };
+		047725501FED129C00E5CEDF /* BenNameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0477254F1FED129C00E5CEDF /* BenNameTableViewCell.swift */; };
 		04ADEC891FC3FE480007C73F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ADEC881FC3FE480007C73F /* AppDelegate.swift */; };
 		04ADEC8B1FC3FE480007C73F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ADEC8A1FC3FE480007C73F /* ViewController.swift */; };
 		04ADEC8E1FC3FE480007C73F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04ADEC8C1FC3FE480007C73F /* Main.storyboard */; };
@@ -23,15 +55,36 @@
 		04ADECAC1FC3FE490007C73F /* MBankUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ADECAB1FC3FE490007C73F /* MBankUITests.swift */; };
 		04ADECBA1FC403D50007C73F /* Mbank Logo 1024 W x 724 H (1).png in Resources */ = {isa = PBXBuildFile; fileRef = 04ADECB91FC403D50007C73F /* Mbank Logo 1024 W x 724 H (1).png */; };
 		04ADECBC1FC40C140007C73F /* 2000px-Lock_font_awesome.svg.png in Resources */ = {isa = PBXBuildFile; fileRef = 04ADECBB1FC40C140007C73F /* 2000px-Lock_font_awesome.svg.png */; };
-		04ADECBE1FC41CC40007C73F /* mbank_orange_new.png in Resources */ = {isa = PBXBuildFile; fileRef = 04ADECBD1FC41CC40007C73F /* mbank_orange_new.png */; };
 		04ADECC01FC41F740007C73F /* LoginMobileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ADECBF1FC41F740007C73F /* LoginMobileViewController.swift */; };
 		04ADECC21FC42CBB0007C73F /* Phone.png in Resources */ = {isa = PBXBuildFile; fileRef = 04ADECC11FC42CBB0007C73F /* Phone.png */; };
 		04ADECC41FC44BC70007C73F /* FixedDepositViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ADECC31FC44BC70007C73F /* FixedDepositViewController.swift */; };
+		04B221F41FE1011F009FFDBA /* LoginPinResetAndSaveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B221F31FE1011F009FFDBA /* LoginPinResetAndSaveViewController.swift */; };
+		04B944482004CEE10011F1FC /* my_account.png in Resources */ = {isa = PBXBuildFile; fileRef = 04B944472004CEE10011F1FC /* my_account.png */; };
+		04B9444A2004CF250011F1FC /* rate_us.png in Resources */ = {isa = PBXBuildFile; fileRef = 04B944492004CF250011F1FC /* rate_us.png */; };
+		04B9444C2004CF7A0011F1FC /* contact_us.png in Resources */ = {isa = PBXBuildFile; fileRef = 04B9444B2004CF7A0011F1FC /* contact_us.png */; };
+		04B9444E2004CF940011F1FC /* language_support.png in Resources */ = {isa = PBXBuildFile; fileRef = 04B9444D2004CF940011F1FC /* language_support.png */; };
+		04B944502004CFC00011F1FC /* log_out.png in Resources */ = {isa = PBXBuildFile; fileRef = 04B9444F2004CFC00011F1FC /* log_out.png */; };
+		04BCC8811FF4F134009DDFC2 /* PayUsingAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BCC8801FF4F134009DDFC2 /* PayUsingAccountViewController.swift */; };
+		04C2E66F1FEBB3D90060D4B9 /* BeneficiaryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C2E66E1FEBB3D90060D4B9 /* BeneficiaryListViewController.swift */; };
+		04C2E6711FEBC5690060D4B9 /* BalanceEnqryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C2E6701FEBC5690060D4B9 /* BalanceEnqryViewController.swift */; };
+		04C2E6731FEBD30B0060D4B9 /* MiniStatementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C2E6721FEBD30B0060D4B9 /* MiniStatementViewController.swift */; };
+		04C5D2EA1FDFB91B0025357C /* addbeneficary.png in Resources */ = {isa = PBXBuildFile; fileRef = 04C5D2E91FDFB91B0025357C /* addbeneficary.png */; };
+		04C5D2EC1FDFEA950025357C /* AddNewBeneficiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C5D2EB1FDFEA950025357C /* AddNewBeneficiaryViewController.swift */; };
 		04CDA4C81FC541270093A799 /* TransactionPerformViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CDA4C71FC541270093A799 /* TransactionPerformViewController.swift */; };
 		04CDA4CA1FC54F0B0093A799 /* ServicesFacilitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CDA4C91FC54F0B0093A799 /* ServicesFacilitiesViewController.swift */; };
 		04CDA4CC1FC55D550093A799 /* FTAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CDA4CB1FC55D550093A799 /* FTAViewController.swift */; };
 		04CDA4CE1FC55D6F0093A799 /* FTMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CDA4CD1FC55D6F0093A799 /* FTMViewController.swift */; };
 		04CDA4D01FC565030093A799 /* TransactionStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CDA4CF1FC565030093A799 /* TransactionStatusViewController.swift */; };
+		04D8DA4E200491CB0071995F /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = 04D8DA4D200491CA0071995F /* home.png */; };
+		04FD7EA02003863F00EE0D2D /* TransactionHistory2TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FD7E9F2003863F00EE0D2D /* TransactionHistory2TableViewController.swift */; };
+		04FD7EA220039D7A00EE0D2D /* ServicesMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FD7EA120039D7A00EE0D2D /* ServicesMenuViewController.swift */; };
+		04FD7EA420039DA200EE0D2D /* ServicesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FD7EA320039DA200EE0D2D /* ServicesCollectionViewCell.swift */; };
+		04FD7EA62003A11400EE0D2D /* transactionhistory.png in Resources */ = {isa = PBXBuildFile; fileRef = 04FD7EA52003A11400EE0D2D /* transactionhistory.png */; };
+		04FD7EA82003A12900EE0D2D /* referfriends.png in Resources */ = {isa = PBXBuildFile; fileRef = 04FD7EA72003A12900EE0D2D /* referfriends.png */; };
+		04FD7EAA2003A14600EE0D2D /* locatebranches.png in Resources */ = {isa = PBXBuildFile; fileRef = 04FD7EA92003A14600EE0D2D /* locatebranches.png */; };
+		04FD7EAC2003A15500EE0D2D /* changeloginpin.png in Resources */ = {isa = PBXBuildFile; fileRef = 04FD7EAB2003A15500EE0D2D /* changeloginpin.png */; };
+		0C6B0B777E6917053E61134C /* Pods_MBankUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD2FE2AF3ACE3B4B6D319DA6 /* Pods_MBankUITests.framework */; };
+		3989C29982411DF241E5B3DA /* Pods_MBankTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8516A3BC5BC407510BC71C9 /* Pods_MBankTests.framework */; };
 		A77FFD4B1FCE9C430087DFA9 /* File.strings in Resources */ = {isa = PBXBuildFile; fileRef = A77FFD4A1FCE9C430087DFA9 /* File.strings */; };
 /* End PBXBuildFile section */
 
@@ -53,12 +106,43 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		043BE7552008D4F8006DD16C /* ContactusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactusViewController.swift; sourceTree = "<group>"; };
+		045C517A1FEA7612009E1A51 /* GenerateMMIDViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GenerateMMIDViewController.swift; path = MobileOTPviewcontroller/GenerateMMIDViewController.swift; sourceTree = "<group>"; };
+		045C517D1FEA8857009E1A51 /* DisableMMIDViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisableMMIDViewController.swift; sourceTree = "<group>"; };
+		045EA2BC1FD6A507004A69D1 /* MenuCollectionCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCollectionCollectionViewCell.swift; sourceTree = "<group>"; };
 		045EBB281FC5855800A4986A /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
-		045EBB2C1FC594B600A4986A /* slider1111.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = slider1111.png; sourceTree = "<group>"; };
+		046228301FDE81430048962E /* TransactionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionViewController.swift; sourceTree = "<group>"; };
+		046228331FDE8E030048962E /* TransactionCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionCollectionViewCell.swift; sourceTree = "<group>"; };
+		046228351FDE9C5D0048962E /* payusingmmid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = payusingmmid.png; sourceTree = "<group>"; };
+		046228371FDE9FAE0048962E /* balanceinquiry.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = balanceinquiry.png; sourceTree = "<group>"; };
+		046501A11FDEA83700D20DE9 /* generatemmid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = generatemmid.png; sourceTree = "<group>"; };
+		046501A31FDEA87C00D20DE9 /* mmid_retrieve.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mmid_retrieve.png; sourceTree = "<group>"; };
+		046501A51FDEA8DF00D20DE9 /* disablemmid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = disablemmid.png; sourceTree = "<group>"; };
+		046501A71FDEAA0400D20DE9 /* transinquiry.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = transinquiry.png; sourceTree = "<group>"; };
+		046501A91FDEAA5300D20DE9 /* mini_state.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mini_state.png; sourceTree = "<group>"; };
 		0466346F1FC69EF900D4C636 /* Menu1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Menu1ViewController.swift; path = ../Menu1ViewController.swift; sourceTree = "<group>"; };
 		046634711FC6C3B900D4C636 /* VerificationcodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VerificationcodeViewController.swift; path = ../VerificationcodeViewController.swift; sourceTree = "<group>"; };
 		046634731FC6C87800D4C636 /* MobileOTPViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MobileOTPViewController.swift; sourceTree = "<group>"; };
 		046634751FC6F4F000D4C636 /* AccSetupLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccSetupLoginViewController.swift; path = ../AccSetupLoginViewController.swift; sourceTree = "<group>"; };
+		046BA9FD200766D300CBA656 /* ReferFriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReferFriendsViewController.swift; sourceTree = "<group>"; };
+		046BE55320088D85004A8BC4 /* AccountsTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountsTabBarController.swift; sourceTree = "<group>"; };
+		04718B3D1FD7AEBC00D85C92 /* bill_paym.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bill_paym.png; sourceTree = "<group>"; };
+		04718B3F1FD7AECA00D85C92 /* accounts.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = accounts.png; sourceTree = "<group>"; };
+		04718B411FD7AED600D85C92 /* cards.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cards.png; sourceTree = "<group>"; };
+		04718B431FD7AEE000D85C92 /* locate_atm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = locate_atm.png; sourceTree = "<group>"; };
+		04718B451FD7AEE800D85C92 /* mbank_orange_medium.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mbank_orange_medium.png; sourceTree = "<group>"; };
+		04718B471FD7AEEF00D85C92 /* shoppingcart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shoppingcart.png; sourceTree = "<group>"; };
+		04718B491FD7AEF400D85C92 /* tax_payment.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tax_payment.png; sourceTree = "<group>"; };
+		04718B4B1FD7AEFE00D85C92 /* transfer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = transfer.png; sourceTree = "<group>"; };
+		04718B4D1FD7AF2400D85C92 /* upi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = upi.png; sourceTree = "<group>"; };
+		04718B4F1FD7AF3800D85C92 /* My_profile-orange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "My_profile-orange.png"; sourceTree = "<group>"; };
+		04718B511FD7AF4B00D85C92 /* Hamburger_icon.svg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Hamburger_icon.svg.png; sourceTree = "<group>"; };
+		04718B531FD7AF8200D85C92 /* services.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = services.png; sourceTree = "<group>"; };
+		04718B551FD7B02500D85C92 /* accounts_mbank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = accounts_mbank.png; sourceTree = "<group>"; };
+		04718B571FD7B18D00D85C92 /* mbank_logo_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mbank_logo_big.png; sourceTree = "<group>"; };
+		04718B591FD7B1FA00D85C92 /* mbank_logo_medium.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mbank_logo_medium.png; sourceTree = "<group>"; };
+		0471AF9A2005EFDA00052B8F /* TransactionHistoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionHistoryTableViewCell.swift; sourceTree = "<group>"; };
+		0477254F1FED129C00E5CEDF /* BenNameTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BenNameTableViewCell.swift; path = ../BenNameTableViewCell.swift; sourceTree = "<group>"; };
 		04ADEC851FC3FE480007C73F /* MBank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MBank.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04ADEC881FC3FE480007C73F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04ADEC8A1FC3FE480007C73F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -75,16 +159,44 @@
 		04ADECAD1FC3FE490007C73F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04ADECB91FC403D50007C73F /* Mbank Logo 1024 W x 724 H (1).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Mbank Logo 1024 W x 724 H (1).png"; sourceTree = "<group>"; };
 		04ADECBB1FC40C140007C73F /* 2000px-Lock_font_awesome.svg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "2000px-Lock_font_awesome.svg.png"; sourceTree = "<group>"; };
-		04ADECBD1FC41CC40007C73F /* mbank_orange_new.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mbank_orange_new.png; sourceTree = "<group>"; };
 		04ADECBF1FC41F740007C73F /* LoginMobileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginMobileViewController.swift; sourceTree = "<group>"; };
 		04ADECC11FC42CBB0007C73F /* Phone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Phone.png; sourceTree = "<group>"; };
 		04ADECC31FC44BC70007C73F /* FixedDepositViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FixedDepositViewController.swift; sourceTree = "<group>"; };
+		04B221F31FE1011F009FFDBA /* LoginPinResetAndSaveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPinResetAndSaveViewController.swift; sourceTree = "<group>"; };
+		04B944472004CEE10011F1FC /* my_account.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = my_account.png; sourceTree = "<group>"; };
+		04B944492004CF250011F1FC /* rate_us.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rate_us.png; sourceTree = "<group>"; };
+		04B9444B2004CF7A0011F1FC /* contact_us.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = contact_us.png; sourceTree = "<group>"; };
+		04B9444D2004CF940011F1FC /* language_support.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = language_support.png; sourceTree = "<group>"; };
+		04B9444F2004CFC00011F1FC /* log_out.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = log_out.png; sourceTree = "<group>"; };
+		04BCC8801FF4F134009DDFC2 /* PayUsingAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayUsingAccountViewController.swift; sourceTree = "<group>"; };
+		04C2E66E1FEBB3D90060D4B9 /* BeneficiaryListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeneficiaryListViewController.swift; sourceTree = "<group>"; };
+		04C2E6701FEBC5690060D4B9 /* BalanceEnqryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BalanceEnqryViewController.swift; sourceTree = "<group>"; };
+		04C2E6721FEBD30B0060D4B9 /* MiniStatementViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiniStatementViewController.swift; sourceTree = "<group>"; };
+		04C5D2E91FDFB91B0025357C /* addbeneficary.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addbeneficary.png; sourceTree = "<group>"; };
+		04C5D2EB1FDFEA950025357C /* AddNewBeneficiaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddNewBeneficiaryViewController.swift; path = AcessSetupLoginView/AddNewBeneficiaryViewController.swift; sourceTree = "<group>"; };
 		04CDA4C71FC541270093A799 /* TransactionPerformViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionPerformViewController.swift; sourceTree = "<group>"; };
 		04CDA4C91FC54F0B0093A799 /* ServicesFacilitiesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServicesFacilitiesViewController.swift; sourceTree = "<group>"; };
 		04CDA4CB1FC55D550093A799 /* FTAViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTAViewController.swift; sourceTree = "<group>"; };
 		04CDA4CD1FC55D6F0093A799 /* FTMViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTMViewController.swift; sourceTree = "<group>"; };
 		04CDA4CF1FC565030093A799 /* TransactionStatusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionStatusViewController.swift; sourceTree = "<group>"; };
+		04D8DA4D200491CA0071995F /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
+		04FD7E9F2003863F00EE0D2D /* TransactionHistory2TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionHistory2TableViewController.swift; sourceTree = "<group>"; };
+		04FD7EA120039D7A00EE0D2D /* ServicesMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServicesMenuViewController.swift; sourceTree = "<group>"; };
+		04FD7EA320039DA200EE0D2D /* ServicesCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServicesCollectionViewCell.swift; sourceTree = "<group>"; };
+		04FD7EA52003A11400EE0D2D /* transactionhistory.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = transactionhistory.png; sourceTree = "<group>"; };
+		04FD7EA72003A12900EE0D2D /* referfriends.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = referfriends.png; sourceTree = "<group>"; };
+		04FD7EA92003A14600EE0D2D /* locatebranches.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = locatebranches.png; sourceTree = "<group>"; };
+		04FD7EAB2003A15500EE0D2D /* changeloginpin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = changeloginpin.png; sourceTree = "<group>"; };
+		19006C170A3A19CB0F0C955B /* Pods-MBankUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MBankUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MBankUITests/Pods-MBankUITests.release.xcconfig"; sourceTree = "<group>"; };
+		219AA1F9480972389B5AB05F /* Pods-MBankUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MBankUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MBankUITests/Pods-MBankUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		30D2EE4BB01294F0D65004FB /* Pods-MBank.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MBank.release.xcconfig"; path = "Pods/Target Support Files/Pods-MBank/Pods-MBank.release.xcconfig"; sourceTree = "<group>"; };
+		3E0E9840256097C487C76CD1 /* Pods_MBank.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MBank.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D4F0A2158F9D3A10812455B /* Pods-MBankTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MBankTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MBankTests/Pods-MBankTests.release.xcconfig"; sourceTree = "<group>"; };
+		58C1B5473BBF86BA0174A898 /* Pods-MBankTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MBankTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MBankTests/Pods-MBankTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A77FFD4A1FCE9C430087DFA9 /* File.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = File.strings; path = MobileOTPviewcontroller/CommonStringFile/File.strings; sourceTree = "<group>"; };
+		A8516A3BC5BC407510BC71C9 /* Pods_MBankTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MBankTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC2A5082AEEE8ACFC04787CD /* Pods-MBank.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MBank.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MBank/Pods-MBank.debug.xcconfig"; sourceTree = "<group>"; };
+		FD2FE2AF3ACE3B4B6D319DA6 /* Pods_MBankUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MBankUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +204,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				046C6182AC33C9EDC65E56BB /* Pods_MBank.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +212,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3989C29982411DF241E5B3DA /* Pods_MBankTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,12 +220,57 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C6B0B777E6917053E61134C /* Pods_MBankUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		045C517C1FEA761B009E1A51 /* MMID */ = {
+			isa = PBXGroup;
+			children = (
+				045C517A1FEA7612009E1A51 /* GenerateMMIDViewController.swift */,
+				045C517D1FEA8857009E1A51 /* DisableMMIDViewController.swift */,
+			);
+			name = MMID;
+			sourceTree = "<group>";
+		};
+		0462282E1FDE6F140048962E /* LoginViewController */ = {
+			isa = PBXGroup;
+			children = (
+				04ADECBF1FC41F740007C73F /* LoginMobileViewController.swift */,
+				04B221F31FE1011F009FFDBA /* LoginPinResetAndSaveViewController.swift */,
+			);
+			name = LoginViewController;
+			sourceTree = "<group>";
+		};
+		0462282F1FDE6F450048962E /* DashboardMenu */ = {
+			isa = PBXGroup;
+			children = (
+				04FD7EA120039D7A00EE0D2D /* ServicesMenuViewController.swift */,
+				04FD7EA320039DA200EE0D2D /* ServicesCollectionViewCell.swift */,
+				045EA2BC1FD6A507004A69D1 /* MenuCollectionCollectionViewCell.swift */,
+				0466346F1FC69EF900D4C636 /* Menu1ViewController.swift */,
+			);
+			name = DashboardMenu;
+			sourceTree = "<group>";
+		};
+		046228321FDE814B0048962E /* TransactionViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0471AF9A2005EFDA00052B8F /* TransactionHistoryTableViewCell.swift */,
+				04FD7E9F2003863F00EE0D2D /* TransactionHistory2TableViewController.swift */,
+				046228301FDE81430048962E /* TransactionViewController.swift */,
+				04C2E6701FEBC5690060D4B9 /* BalanceEnqryViewController.swift */,
+				04C2E6721FEBD30B0060D4B9 /* MiniStatementViewController.swift */,
+				046228331FDE8E030048962E /* TransactionCollectionViewCell.swift */,
+				04BCC8801FF4F134009DDFC2 /* PayUsingAccountViewController.swift */,
+				04CDA4CF1FC565030093A799 /* TransactionStatusViewController.swift */,
+			);
+			name = TransactionViewController;
+			sourceTree = "<group>";
+		};
 		04625ECB1FCEBAAF004E7F13 /* Registered Number Verification */ = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +287,16 @@
 			name = Extension;
 			sourceTree = "<group>";
 		};
+		04718B3A1FD7AE7D00D85C92 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				04718B591FD7B1FA00D85C92 /* mbank_logo_medium.png */,
+				04718B571FD7B18D00D85C92 /* mbank_logo_big.png */,
+				04718B3F1FD7AECA00D85C92 /* accounts.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 		04ADEC7C1FC3FE470007C73F = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +304,8 @@
 				04ADEC9F1FC3FE490007C73F /* MBankTests */,
 				04ADECAA1FC3FE490007C73F /* MBankUITests */,
 				04ADEC861FC3FE480007C73F /* Products */,
+				4AB3BDE46EAAC6764C6C64F5 /* Pods */,
+				5CCE7F79DB2C415EA0326F41 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -151,6 +322,12 @@
 		04ADEC871FC3FE480007C73F /* MBank */ = {
 			isa = PBXGroup;
 			children = (
+				04C2E66D1FEBB3A40060D4B9 /* Beneficiay */,
+				045C517C1FEA761B009E1A51 /* MMID */,
+				046228321FDE814B0048962E /* TransactionViewController */,
+				0462282F1FDE6F450048962E /* DashboardMenu */,
+				0462282E1FDE6F140048962E /* LoginViewController */,
+				04718B3A1FD7AE7D00D85C92 /* Images */,
 				04625ECC1FCEC2A2004E7F13 /* Extension */,
 				04625ECB1FCEBAAF004E7F13 /* Registered Number Verification */,
 				A77FFD491FCE9BCE0087DFA9 /* AcessSetupLoginView */,
@@ -158,20 +335,16 @@
 				04ADEC881FC3FE480007C73F /* AppDelegate.swift */,
 				04ADEC8A1FC3FE480007C73F /* ViewController.swift */,
 				04ADEC8C1FC3FE480007C73F /* Main.storyboard */,
+				043BE7552008D4F8006DD16C /* ContactusViewController.swift */,
+				046BE55320088D85004A8BC4 /* AccountsTabBarController.swift */,
+				046BA9FD200766D300CBA656 /* ReferFriendsViewController.swift */,
 				04CDA4CB1FC55D550093A799 /* FTAViewController.swift */,
-				0466346F1FC69EF900D4C636 /* Menu1ViewController.swift */,
 				04CDA4CD1FC55D6F0093A799 /* FTMViewController.swift */,
-				04CDA4CF1FC565030093A799 /* TransactionStatusViewController.swift */,
 				04CDA4C91FC54F0B0093A799 /* ServicesFacilitiesViewController.swift */,
 				04CDA4C71FC541270093A799 /* TransactionPerformViewController.swift */,
-				04ADECBF1FC41F740007C73F /* LoginMobileViewController.swift */,
 				04ADECC31FC44BC70007C73F /* FixedDepositViewController.swift */,
 				04ADEC921FC3FE480007C73F /* Assets.xcassets */,
-				045EBB2C1FC594B600A4986A /* slider1111.png */,
-				04ADECC11FC42CBB0007C73F /* Phone.png */,
-				04ADECBD1FC41CC40007C73F /* mbank_orange_new.png */,
-				04ADECBB1FC40C140007C73F /* 2000px-Lock_font_awesome.svg.png */,
-				04ADECB91FC403D50007C73F /* Mbank Logo 1024 W x 724 H (1).png */,
+				04C2E66C1FEB778A0060D4B9 /* Images */,
 				04ADEC941FC3FE480007C73F /* LaunchScreen.storyboard */,
 				04ADEC971FC3FE480007C73F /* Info.plist */,
 				04ADEC8F1FC3FE480007C73F /* MBank.xcdatamodeld */,
@@ -198,6 +371,79 @@
 			path = MBankUITests;
 			sourceTree = "<group>";
 		};
+		04C2E66C1FEB778A0060D4B9 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				04B9444B2004CF7A0011F1FC /* contact_us.png */,
+				04B9444F2004CFC00011F1FC /* log_out.png */,
+				04B9444D2004CF940011F1FC /* language_support.png */,
+				04B944492004CF250011F1FC /* rate_us.png */,
+				04B944472004CEE10011F1FC /* my_account.png */,
+				04FD7EAB2003A15500EE0D2D /* changeloginpin.png */,
+				04718B4D1FD7AF2400D85C92 /* upi.png */,
+				04FD7EA92003A14600EE0D2D /* locatebranches.png */,
+				04ADECB91FC403D50007C73F /* Mbank Logo 1024 W x 724 H (1).png */,
+				04FD7EA72003A12900EE0D2D /* referfriends.png */,
+				04FD7EA52003A11400EE0D2D /* transactionhistory.png */,
+				046501A31FDEA87C00D20DE9 /* mmid_retrieve.png */,
+				04D8DA4D200491CA0071995F /* home.png */,
+				046501A11FDEA83700D20DE9 /* generatemmid.png */,
+				04718B551FD7B02500D85C92 /* accounts_mbank.png */,
+				046228371FDE9FAE0048962E /* balanceinquiry.png */,
+				04718B491FD7AEF400D85C92 /* tax_payment.png */,
+				04718B511FD7AF4B00D85C92 /* Hamburger_icon.svg.png */,
+				04718B471FD7AEEF00D85C92 /* shoppingcart.png */,
+				04718B4B1FD7AEFE00D85C92 /* transfer.png */,
+				04718B3D1FD7AEBC00D85C92 /* bill_paym.png */,
+				04718B4F1FD7AF3800D85C92 /* My_profile-orange.png */,
+				04718B431FD7AEE000D85C92 /* locate_atm.png */,
+				04ADECC11FC42CBB0007C73F /* Phone.png */,
+				04718B531FD7AF8200D85C92 /* services.png */,
+				04718B451FD7AEE800D85C92 /* mbank_orange_medium.png */,
+				04718B411FD7AED600D85C92 /* cards.png */,
+				04ADECBB1FC40C140007C73F /* 2000px-Lock_font_awesome.svg.png */,
+				046228351FDE9C5D0048962E /* payusingmmid.png */,
+				04C5D2E91FDFB91B0025357C /* addbeneficary.png */,
+				046501A91FDEAA5300D20DE9 /* mini_state.png */,
+				046501A71FDEAA0400D20DE9 /* transinquiry.png */,
+				046501A51FDEA8DF00D20DE9 /* disablemmid.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		04C2E66D1FEBB3A40060D4B9 /* Beneficiay */ = {
+			isa = PBXGroup;
+			children = (
+				04C5D2EB1FDFEA950025357C /* AddNewBeneficiaryViewController.swift */,
+				04C2E66E1FEBB3D90060D4B9 /* BeneficiaryListViewController.swift */,
+				0477254F1FED129C00E5CEDF /* BenNameTableViewCell.swift */,
+			);
+			name = Beneficiay;
+			sourceTree = "<group>";
+		};
+		4AB3BDE46EAAC6764C6C64F5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FC2A5082AEEE8ACFC04787CD /* Pods-MBank.debug.xcconfig */,
+				30D2EE4BB01294F0D65004FB /* Pods-MBank.release.xcconfig */,
+				58C1B5473BBF86BA0174A898 /* Pods-MBankTests.debug.xcconfig */,
+				4D4F0A2158F9D3A10812455B /* Pods-MBankTests.release.xcconfig */,
+				219AA1F9480972389B5AB05F /* Pods-MBankUITests.debug.xcconfig */,
+				19006C170A3A19CB0F0C955B /* Pods-MBankUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		5CCE7F79DB2C415EA0326F41 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3E0E9840256097C487C76CD1 /* Pods_MBank.framework */,
+				A8516A3BC5BC407510BC71C9 /* Pods_MBankTests.framework */,
+				FD2FE2AF3ACE3B4B6D319DA6 /* Pods_MBankUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A77FFD481FCE9B470087DFA9 /* MobileOTPviewcontroller */ = {
 			isa = PBXGroup;
 			children = (
@@ -221,9 +467,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 04ADECB01FC3FE490007C73F /* Build configuration list for PBXNativeTarget "MBank" */;
 			buildPhases = (
+				6FCB32CF5F29CD57EAA66F40 /* [CP] Check Pods Manifest.lock */,
 				04ADEC811FC3FE470007C73F /* Sources */,
 				04ADEC821FC3FE470007C73F /* Frameworks */,
 				04ADEC831FC3FE470007C73F /* Resources */,
+				9DAD9A580AB8FB39E1718581 /* [CP] Embed Pods Frameworks */,
+				3B5D7142F25DB62442497B4E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -238,9 +487,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 04ADECB31FC3FE490007C73F /* Build configuration list for PBXNativeTarget "MBankTests" */;
 			buildPhases = (
+				88F2D0136321F4D2C0FC28BC /* [CP] Check Pods Manifest.lock */,
 				04ADEC981FC3FE490007C73F /* Sources */,
 				04ADEC991FC3FE490007C73F /* Frameworks */,
 				04ADEC9A1FC3FE490007C73F /* Resources */,
+				40A412F0D79B610289644F1E /* [CP] Embed Pods Frameworks */,
+				9E05FA26A5DD01416189A412 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -256,9 +508,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 04ADECB61FC3FE490007C73F /* Build configuration list for PBXNativeTarget "MBankUITests" */;
 			buildPhases = (
+				39BDE794D5DB4B402A9F3255 /* [CP] Check Pods Manifest.lock */,
 				04ADECA31FC3FE490007C73F /* Sources */,
 				04ADECA41FC3FE490007C73F /* Frameworks */,
 				04ADECA51FC3FE490007C73F /* Resources */,
+				61E6643BB3939D46E080C04A /* [CP] Embed Pods Frameworks */,
+				42DFE0A971506E1F97D711EF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -282,6 +537,7 @@
 				TargetAttributes = {
 					04ADEC841FC3FE470007C73F = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = UYW5FQN626;
 						ProvisioningStyle = Automatic;
 					};
 					04ADEC9B1FC3FE490007C73F = {
@@ -321,14 +577,45 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				045EBB2D1FC594B600A4986A /* slider1111.png in Resources */,
-				04ADECBE1FC41CC40007C73F /* mbank_orange_new.png in Resources */,
+				04B9444E2004CF940011F1FC /* language_support.png in Resources */,
+				04718B5A1FD7B1FA00D85C92 /* mbank_logo_medium.png in Resources */,
 				04ADEC961FC3FE480007C73F /* LaunchScreen.storyboard in Resources */,
+				04FD7EA82003A12900EE0D2D /* referfriends.png in Resources */,
 				04ADECBC1FC40C140007C73F /* 2000px-Lock_font_awesome.svg.png in Resources */,
+				04718B481FD7AEEF00D85C92 /* shoppingcart.png in Resources */,
+				04FD7EAC2003A15500EE0D2D /* changeloginpin.png in Resources */,
+				04FD7EAA2003A14600EE0D2D /* locatebranches.png in Resources */,
+				046228381FDE9FAE0048962E /* balanceinquiry.png in Resources */,
 				04ADECBA1FC403D50007C73F /* Mbank Logo 1024 W x 724 H (1).png in Resources */,
+				046501A21FDEA83700D20DE9 /* generatemmid.png in Resources */,
+				04718B421FD7AED600D85C92 /* cards.png in Resources */,
 				04ADEC931FC3FE480007C73F /* Assets.xcassets in Resources */,
+				04718B4A1FD7AEF400D85C92 /* tax_payment.png in Resources */,
+				04718B401FD7AECA00D85C92 /* accounts.png in Resources */,
+				04718B461FD7AEE800D85C92 /* mbank_orange_medium.png in Resources */,
+				04B944482004CEE10011F1FC /* my_account.png in Resources */,
+				046501A81FDEAA0400D20DE9 /* transinquiry.png in Resources */,
+				04D8DA4E200491CB0071995F /* home.png in Resources */,
+				046228361FDE9C5D0048962E /* payusingmmid.png in Resources */,
+				04718B561FD7B02500D85C92 /* accounts_mbank.png in Resources */,
+				046501A41FDEA87C00D20DE9 /* mmid_retrieve.png in Resources */,
+				04718B581FD7B18D00D85C92 /* mbank_logo_big.png in Resources */,
+				04B944502004CFC00011F1FC /* log_out.png in Resources */,
+				04718B4E1FD7AF2400D85C92 /* upi.png in Resources */,
 				04ADEC8E1FC3FE480007C73F /* Main.storyboard in Resources */,
+				046501A61FDEA8DF00D20DE9 /* disablemmid.png in Resources */,
+				04718B541FD7AF8200D85C92 /* services.png in Resources */,
+				04718B3E1FD7AEBC00D85C92 /* bill_paym.png in Resources */,
+				046501AA1FDEAA5300D20DE9 /* mini_state.png in Resources */,
+				04B9444C2004CF7A0011F1FC /* contact_us.png in Resources */,
+				04B9444A2004CF250011F1FC /* rate_us.png in Resources */,
+				04C5D2EA1FDFB91B0025357C /* addbeneficary.png in Resources */,
+				04718B4C1FD7AEFE00D85C92 /* transfer.png in Resources */,
 				04ADECC21FC42CBB0007C73F /* Phone.png in Resources */,
+				04FD7EA62003A11400EE0D2D /* transactionhistory.png in Resources */,
+				04718B501FD7AF3800D85C92 /* My_profile-orange.png in Resources */,
+				04718B521FD7AF4B00D85C92 /* Hamburger_icon.svg.png in Resources */,
+				04718B441FD7AEE000D85C92 /* locate_atm.png in Resources */,
 				A77FFD4B1FCE9C430087DFA9 /* File.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -349,6 +636,156 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		39BDE794D5DB4B402A9F3255 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MBankUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3B5D7142F25DB62442497B4E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MBank/Pods-MBank-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		40A412F0D79B610289644F1E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MBankTests/Pods-MBankTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		42DFE0A971506E1F97D711EF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MBankUITests/Pods-MBankUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		61E6643BB3939D46E080C04A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MBankUITests/Pods-MBankUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6FCB32CF5F29CD57EAA66F40 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MBank-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		88F2D0136321F4D2C0FC28BC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MBankTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9DAD9A580AB8FB39E1718581 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MBank/Pods-MBank-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RNCryptor/RNCryptor.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RNCryptor.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MBank/Pods-MBank-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9E05FA26A5DD01416189A412 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MBankTests/Pods-MBankTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		04ADEC811FC3FE470007C73F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -357,18 +794,37 @@
 				046634761FC6F4F100D4C636 /* AccSetupLoginViewController.swift in Sources */,
 				04ADEC8B1FC3FE480007C73F /* ViewController.swift in Sources */,
 				04CDA4D01FC565030093A799 /* TransactionStatusViewController.swift in Sources */,
+				04B221F41FE1011F009FFDBA /* LoginPinResetAndSaveViewController.swift in Sources */,
 				046634741FC6C87800D4C636 /* MobileOTPViewController.swift in Sources */,
+				04C2E6731FEBD30B0060D4B9 /* MiniStatementViewController.swift in Sources */,
 				04ADEC911FC3FE480007C73F /* MBank.xcdatamodeld in Sources */,
 				04ADECC01FC41F740007C73F /* LoginMobileViewController.swift in Sources */,
 				045EBB291FC5855800A4986A /* Extension.swift in Sources */,
+				046228341FDE8E030048962E /* TransactionCollectionViewCell.swift in Sources */,
 				046634701FC69EF900D4C636 /* Menu1ViewController.swift in Sources */,
+				0471AF9B2005EFDA00052B8F /* TransactionHistoryTableViewCell.swift in Sources */,
 				04CDA4C81FC541270093A799 /* TransactionPerformViewController.swift in Sources */,
+				045EA2BD1FD6A507004A69D1 /* MenuCollectionCollectionViewCell.swift in Sources */,
 				04CDA4CC1FC55D550093A799 /* FTAViewController.swift in Sources */,
 				04ADEC891FC3FE480007C73F /* AppDelegate.swift in Sources */,
+				04C2E6711FEBC5690060D4B9 /* BalanceEnqryViewController.swift in Sources */,
 				04CDA4CA1FC54F0B0093A799 /* ServicesFacilitiesViewController.swift in Sources */,
+				046BA9FE200766D300CBA656 /* ReferFriendsViewController.swift in Sources */,
+				046BE55420088D86004A8BC4 /* AccountsTabBarController.swift in Sources */,
+				04BCC8811FF4F134009DDFC2 /* PayUsingAccountViewController.swift in Sources */,
+				04FD7EA420039DA200EE0D2D /* ServicesCollectionViewCell.swift in Sources */,
 				04ADECC41FC44BC70007C73F /* FixedDepositViewController.swift in Sources */,
+				04C2E66F1FEBB3D90060D4B9 /* BeneficiaryListViewController.swift in Sources */,
+				046228311FDE81430048962E /* TransactionViewController.swift in Sources */,
+				047725501FED129C00E5CEDF /* BenNameTableViewCell.swift in Sources */,
 				046634721FC6C3B900D4C636 /* VerificationcodeViewController.swift in Sources */,
 				04CDA4CE1FC55D6F0093A799 /* FTMViewController.swift in Sources */,
+				04FD7EA02003863F00EE0D2D /* TransactionHistory2TableViewController.swift in Sources */,
+				04FD7EA220039D7A00EE0D2D /* ServicesMenuViewController.swift in Sources */,
+				04C5D2EC1FDFEA950025357C /* AddNewBeneficiaryViewController.swift in Sources */,
+				045C517E1FEA8857009E1A51 /* DisableMMIDViewController.swift in Sources */,
+				045C517B1FEA7612009E1A51 /* GenerateMMIDViewController.swift in Sources */,
+				043BE7562008D4F8006DD16C /* ContactusViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -518,30 +974,41 @@
 		};
 		04ADECB11FC3FE490007C73F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC2A5082AEEE8ACFC04787CD /* Pods-MBank.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = UYW5FQN626;
 				INFOPLIST_FILE = MBank/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = shay.MBank;
+				PRODUCT_BUNDLE_IDENTIFIER = com.app.mbank;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		04ADECB21FC3FE490007C73F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 30D2EE4BB01294F0D65004FB /* Pods-MBank.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = UYW5FQN626;
 				INFOPLIST_FILE = MBank/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = shay.MBank;
+				PRODUCT_BUNDLE_IDENTIFIER = com.app.mbank;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
 		04ADECB41FC3FE490007C73F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 58C1B5473BBF86BA0174A898 /* Pods-MBankTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -556,6 +1023,7 @@
 		};
 		04ADECB51FC3FE490007C73F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4D4F0A2158F9D3A10812455B /* Pods-MBankTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -570,6 +1038,7 @@
 		};
 		04ADECB71FC3FE490007C73F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 219AA1F9480972389B5AB05F /* Pods-MBankUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = MBankUITests/Info.plist;
@@ -583,6 +1052,7 @@
 		};
 		04ADECB81FC3FE490007C73F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 19006C170A3A19CB0F0C955B /* Pods-MBankUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = MBankUITests/Info.plist;
