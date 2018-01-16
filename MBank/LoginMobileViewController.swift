@@ -243,7 +243,7 @@ class LoginMobileViewController: UIViewController,UITextFieldDelegate {
 
                     tObjLogin.Description = i?.value(forKey: "Description") as! String
                     tObjLogin.maturityDate = i?.value(forKey: "MaturityDate") as! String
-                    tObjLogin.Name = i?.value(forKey: "Name") as! String
+                    tObjLogin.Name = i?.value(forKey: "Name") as? String
                     tObjLogin.ifscCode = i?.value(forKey: "ifsccode") as! String
                     print("\(tObjLogin.ifscCode!)")
 

@@ -80,9 +80,7 @@ class PayUsingAccountViewController: UIViewController,UIPickerViewDataSource,UIP
         
         
     }
-    override func viewWillAppear(_ animated: Bool) {
-        <#code#>
-    }
+    
     
     //then you should implement the func named textFieldShouldReturn
     
