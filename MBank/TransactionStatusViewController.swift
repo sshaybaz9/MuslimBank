@@ -10,11 +10,38 @@ import UIKit
 
 class TransactionStatusViewController: UIViewController {
 
+    @IBOutlet weak var activity: UIActivityIndicatorView!
+    @IBOutlet weak var datetime: UILabel!
+    @IBOutlet weak var beneficiaryName: UILabel!
+    @IBOutlet weak var message: UILabel!
+    @IBOutlet weak var TransactionStatus: UILabel!
+    @IBOutlet weak var Transactiontype: UILabel!
     @IBOutlet weak var Transactiontxt: UITextField!
+    
+    @IBOutlet weak var datetime1: UILabel!
+    @IBOutlet weak var benName1: UILabel!
+    
+    
+    @IBOutlet weak var message1: UILabel!
+    @IBOutlet weak var transtatus1: UILabel!
+    @IBOutlet weak var trantype1: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        self.activity.isHidden = true
+        self.datetime.isHidden = true
+        self.beneficiaryName.isHidden = true
+        self.message.isHidden = true
+        self.TransactionStatus.isHidden = true
+        self.Transactiontype.isHidden = true
+        
+        
+        self.datetime1.isHidden = true
+        self.benName1.isHidden = true
+        self.message1.isHidden = true
+        self.transtatus1.isHidden = true
+        self.trantype1.isHidden = true
+        
     }
     
     
@@ -26,6 +53,13 @@ class TransactionStatusViewController: UIViewController {
         
     }
 
+    @IBAction func BackPressed(_ sender: AnyObject) {
+        
+        
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "Transaction") as! TransactionViewController
+        
+        self.present(vc, animated: true, completion: nil)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -33,6 +67,10 @@ class TransactionStatusViewController: UIViewController {
     
 
     @IBAction func transactionStatus(_ sender: AnyObject) {
+        
+        self.activity.isHidden = false
+        activity.startAnimating()
+
         
         let accountNumber = UserDefaults.standard.string(forKey: "AccountNO")
         let clientID = UserDefaults.standard.string(forKey: "ClientID")
@@ -80,6 +118,45 @@ class TransactionStatusViewController: UIViewController {
                 json = try JSONSerialization.jsonObject(with: data) as? NSDictionary
                 
                 print(json)
+                
+                let enqry = json?.value(forKey: "enquiry") as! NSDictionary
+                
+                let tranDate = enqry.value(forKey: "TrandateTime") as! String
+                self.datetime1.text = tranDate
+                
+                
+                
+                let tranType = enqry.value(forKey: "TranType") as! String
+                self.trantype1.text = tranType
+                
+                let tranStatus = enqry.value(forKey: "Status") as! String
+                self.transtatus1.text = tranStatus
+                
+                
+                let mess = enqry.value(forKey: "ImpsMessage") as! String
+                self.message1.text = mess
+                
+                
+                let benName = enqry.value(forKey: "BeneName") as! String
+                self.benName1.text = benName
+                
+                
+                
+                self.datetime1.isHidden = false
+                self.benName1.isHidden = false
+                self.message1.isHidden = false
+                self.transtatus1.isHidden = false
+                self.trantype1.isHidden = false
+                
+
+                
+               self.activity.isHidden = true
+                
+                self.datetime.isHidden = false
+                self.beneficiaryName.isHidden = false
+                self.message.isHidden = false
+                self.TransactionStatus.isHidden = false
+                self.Transactiontype.isHidden = false
                 
                 self.parsingTheJsonData(JSondata: json!)
             }   catch {

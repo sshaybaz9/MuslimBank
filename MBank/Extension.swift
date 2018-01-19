@@ -32,4 +32,10 @@ enum  SerializationError: Error {
 }
 
 
+extension String {
+    func removingWhitespaces() -> String {
+        return components(separatedBy: .whitespaces).joined()
+    }
+}
+
 

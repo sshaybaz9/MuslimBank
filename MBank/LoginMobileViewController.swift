@@ -13,6 +13,9 @@ import RNCryptor
 
 class LoginMobileViewController: UIViewController,UITextFieldDelegate {
     
+    var temping : UIImage!
+    
+    var url1 = "http://115.117.44.229:8443/Mbank_api/"
     
 
     var json: NSDictionary?
@@ -122,6 +125,8 @@ class LoginMobileViewController: UIViewController,UITextFieldDelegate {
         
          let url = URL(string: "http://115.117.44.229:8443/Mbank_api/dashboardlogin.php")!
         
+        
+        
         var request = URLRequest(url: url)
         
         request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
@@ -170,14 +175,19 @@ class LoginMobileViewController: UIViewController,UITextFieldDelegate {
               let Email = self.json?.value(forKey: "email") as! String!
 //            var Rating = json?.value(forKey: "rating") as! NSString!
                 
-//                let imgurl = self.json?.value(forKey: "profile_image")as! String
+//                let imgurl = self.json?.value(forKey: "profile_image")as! String!
 //                
-//                let imgData = try! Data.init(contentsOf: URL(string: imgurl)!)
-//                    let tempimg = UIImage.init(data: imgData)
-                
+//            var img2 = self.url1 + "uploads/"
+//             img2  +=   (self.customerName?.removingWhitespaces())! + "/profile_images/" + imgurl! + ".jpg"
+//    
+//                
+//                let imgData = try! Data.init(contentsOf: URL(string: img2)!)
+//                
+//                    self.temping = UIImage.init(data: imgData)!
+//                
                 print(self.json)
                 
-                
+ //801811672096
                 // Accessing Transaction Details
                 
  //Customer Transactional Account Detail In Which We will Store All The Information About Customer Credit And Debit Accounts
@@ -254,6 +264,8 @@ class LoginMobileViewController: UIViewController,UITextFieldDelegate {
                     self.tArray.append(tObjLogin)
                     
                     
+                    
+                    
                 }
                 
 
@@ -271,7 +283,7 @@ class LoginMobileViewController: UIViewController,UITextFieldDelegate {
                     //   Passing Mobile to Passing Mobile Number to AccessSetUpViewController
                    
                    Menu.temp1 = self.tArray
-                    
+                Menu.img = self.temping
 
                     
             self.navigationController?.pushViewController(Menu, animated: true)

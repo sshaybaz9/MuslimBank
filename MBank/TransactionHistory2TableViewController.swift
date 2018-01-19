@@ -13,6 +13,7 @@ class TransactionHistory2TableViewController: UIViewController,UITableViewDelega
     @IBOutlet weak var tableview: UITableView!
     var tranHistory = [TransactionHistory1]()
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

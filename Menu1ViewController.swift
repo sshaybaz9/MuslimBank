@@ -10,7 +10,8 @@ import UIKit
 
 class Menu1ViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     
-    
+    var img : UIImage!
+
     var temp1 = [Login]()
     
     @IBOutlet weak var LeadingConstraint: NSLayoutConstraint!
@@ -19,12 +20,19 @@ class Menu1ViewController: UIViewController,UICollectionViewDelegate,UICollectio
        var menuShowing = false
    
     
-    var imageArray = [UIImage(named: "accounts_mbank.png"),UIImage(named: "transfer.png"),UIImage(named: "locate_atm.png"),UIImage(named: "bill_paym.png"),UIImage(named: "upi.png"),UIImage(named: "services.png"),UIImage(named: "shoppingcart.png"),UIImage(named: "tax_payment.png"),UIImage(named: "cards.png")]
+//    var imageArray = [UIImage(named: "accounts_mbank.png"),UIImage(named: "transfer.png"),UIImage(named: "locate_atm.png"),UIImage(named: "bill_paym.png"),UIImage(named: "upi.png"),UIImage(named: "services.png"),UIImage(named: "shoppingcart.png"),UIImage(named: "tax_payment.png"),UIImage(named: "cards.png")]
+//    
+//    var nameArray = ["Accounts","Transfer","Locate ATMs","Bill payment and Reminder","UPI","Services","Offer","Tax payment","Cards"]
+//    
     
-    var nameArray = ["Accounts","Transfer","Locate ATMs","Bill payment and Reminder","UPI","Services","Offer","Tax payment","Cards"]
+    var imageArray = [UIImage(named: "accounts_mbank.png"),UIImage(named: "transfer.png"),UIImage(named: "tax_payment.png"),UIImage(named: "bill_paym.png"),UIImage(named: "upi.png"),UIImage(named: "locate_atm.png"),UIImage(named: "shoppingcart.png"),UIImage(named: "services.png"),UIImage(named: "cards.png")]
     
+    var nameArray = ["Accounts","Transfer","Loans","Bill payment and Reminder","UPI","Locate ATMs","Offer","Services","Cards"]
+    
+
     let kUserDefault = UserDefaults.standard
 
+    @IBOutlet weak var profileButton: UIButton!
     @IBAction func ContactUsPressed(_ sender: AnyObject) {
         
         
@@ -37,10 +45,11 @@ class Menu1ViewController: UIViewController,UICollectionViewDelegate,UICollectio
         super.viewDidLoad()
             
         lblCustomerName.text = UserDefaults.standard.string(forKey: "CustomerName")
+        profileButton.setImage(img, for: UIControlState.normal)
         
         
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return nameArray.count
     }
@@ -94,7 +103,7 @@ class Menu1ViewController: UIViewController,UICollectionViewDelegate,UICollectio
             }
 
         }
-        if (indexPath.row == 5)
+        if (indexPath.row == 7)
         {
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "services") as!  ServicesMenuViewController
             self.present(vc, animated: true, completion: nil)

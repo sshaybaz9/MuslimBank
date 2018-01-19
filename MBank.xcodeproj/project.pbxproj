@@ -25,6 +25,7 @@
 		046634721FC6C3B900D4C636 /* VerificationcodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046634711FC6C3B900D4C636 /* VerificationcodeViewController.swift */; };
 		046634741FC6C87800D4C636 /* MobileOTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046634731FC6C87800D4C636 /* MobileOTPViewController.swift */; };
 		046634761FC6F4F100D4C636 /* AccSetupLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046634751FC6F4F000D4C636 /* AccSetupLoginViewController.swift */; };
+		0466A73620109AA100D90F27 /* ProfileUpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0466A73520109AA100D90F27 /* ProfileUpdateViewController.swift */; };
 		046BA9FE200766D300CBA656 /* ReferFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046BA9FD200766D300CBA656 /* ReferFriendsViewController.swift */; };
 		046BE55420088D86004A8BC4 /* AccountsTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046BE55320088D85004A8BC4 /* AccountsTabBarController.swift */; };
 		046C4021200DC79B009471EE /* AccountSummaryandIMPSMiniStatementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046C4020200DC79B009471EE /* AccountSummaryandIMPSMiniStatementViewController.swift */; };
@@ -128,6 +129,7 @@
 		046634711FC6C3B900D4C636 /* VerificationcodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VerificationcodeViewController.swift; path = ../VerificationcodeViewController.swift; sourceTree = "<group>"; };
 		046634731FC6C87800D4C636 /* MobileOTPViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MobileOTPViewController.swift; sourceTree = "<group>"; };
 		046634751FC6F4F000D4C636 /* AccSetupLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccSetupLoginViewController.swift; path = ../AccSetupLoginViewController.swift; sourceTree = "<group>"; };
+		0466A73520109AA100D90F27 /* ProfileUpdateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileUpdateViewController.swift; sourceTree = "<group>"; };
 		046BA9FD200766D300CBA656 /* ReferFriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReferFriendsViewController.swift; sourceTree = "<group>"; };
 		046BE55320088D85004A8BC4 /* AccountsTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountsTabBarController.swift; sourceTree = "<group>"; };
 		046C4020200DC79B009471EE /* AccountSummaryandIMPSMiniStatementViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountSummaryandIMPSMiniStatementViewController.swift; sourceTree = "<group>"; };
@@ -356,6 +358,7 @@
 				04ADEC881FC3FE480007C73F /* AppDelegate.swift */,
 				04ADEC8A1FC3FE480007C73F /* ViewController.swift */,
 				04ADEC8C1FC3FE480007C73F /* Main.storyboard */,
+				0466A73520109AA100D90F27 /* ProfileUpdateViewController.swift */,
 				043BE7552008D4F8006DD16C /* ContactusViewController.swift */,
 				046BA9FD200766D300CBA656 /* ReferFriendsViewController.swift */,
 				04CDA4CB1FC55D550093A799 /* FTAViewController.swift */,
@@ -817,6 +820,7 @@
 				04B221F41FE1011F009FFDBA /* LoginPinResetAndSaveViewController.swift in Sources */,
 				046634741FC6C87800D4C636 /* MobileOTPViewController.swift in Sources */,
 				046C4026200E1A6A009471EE /* AccountDetailTableViewCell.swift in Sources */,
+				0466A73620109AA100D90F27 /* ProfileUpdateViewController.swift in Sources */,
 				046C4028200E1F93009471EE /* SummaryofAccountViewController.swift in Sources */,
 				04C2E6731FEBD30B0060D4B9 /* MiniStatementViewController.swift in Sources */,
 				04ADEC911FC3FE480007C73F /* MBank.xcdatamodeld in Sources */,

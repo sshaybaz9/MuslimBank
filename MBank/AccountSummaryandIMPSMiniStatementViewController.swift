@@ -27,10 +27,18 @@ class AccountSummaryandIMPSMiniStatementViewController: UIViewController,UITable
      tableview.isHidden = true
         
         Accountdetail()
-        
+        self.tableview.reloadData()
         
     }
 
+    @IBAction func BackPressed(_ sender: AnyObject) {
+        
+        
+        let vc =  self.storyboard?.instantiateViewController(withIdentifier: "Menu") as! Menu1ViewController
+        
+        self.present(vc, animated: true, completion: nil)
+        
+    }
     @IBAction func ShowIMPSMini(_ sender: AnyObject) {
         
 
@@ -191,13 +199,16 @@ class AccountSummaryandIMPSMiniStatementViewController: UIViewController,UITable
                 {
                     let i = item as? NSDictionary
                     
+                    
+                    
                     let accountobj = AccountDetail()
                    accountobj.accountId = i?.value(forKey: "AccId") as? String
                   accountobj.accountnumber = i?.value(forKey: "AccNo") as? String
                     accountobj.balance = i?.value(forKey: "Balance") as? String
                     accountobj.description = i?.value(forKey: "Description") as? String
                     accountobj.ifsc = i?.value(forKey: "ifsccode") as? String
-                    
+                    accountobj.accountType = i?.value(forKey: "AccountType") as? String
+                    accountobj.branch = i?.value(forKey: "BranchName") as? String
                     self.accountDetail.append(accountobj)
                     
                     self.tableview1.reloadData()
@@ -264,12 +275,31 @@ class AccountSummaryandIMPSMiniStatementViewController: UIViewController,UITable
             
             cell.accountNo.text = accountDetail[indexPath.row].accountnumber
             cell.summaryBtn.tag = indexPath.row
-            
+            cell.summaryBtn.addTarget(self, action: #selector(isEdit(sender:)), for: .touchUpInside)
+
             return cell
         }
         
         
         return cell!
+        
+    }
+    
+    func isEdit(sender: UIButton)
+    {
+        
+        let button = sender
+        let cell = button.superview?.superview as? AccountDetailTableViewCell
+        let indexPath = tableview1.indexPath(for: cell!)
+
+        let vc = storyboard?.instantiateViewController(withIdentifier: "SumAccount") as! SummaryofAccountViewController
+        
+        
+        
+        vc.sumDetail = accountDetail[(indexPath?.row)!]
+
+        self.present(vc, animated: true, completion: nil)
+
         
     }
     
@@ -297,5 +327,6 @@ class AccountDetail
     var description : String!
     var accountId : String!
     var ifsc : String!
+    var accountType : String!
     
 }

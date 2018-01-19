@@ -18,6 +18,13 @@ class ServicesMenuViewController: UIViewController,UICollectionViewDelegate,UICo
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func BackPressed(_ sender: AnyObject) {
+        
+        
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "Transaction") as! TransactionViewController
+        
+        self.present(vc, animated: true, completion: nil)
+    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return nameArray.count
