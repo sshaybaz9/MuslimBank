@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		040FD3972022F9C800A23087 /* OpenFixedDepositViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040FD3962022F9C800A23087 /* OpenFixedDepositViewController.swift */; };
 		043BE7562008D4F8006DD16C /* ContactusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043BE7552008D4F8006DD16C /* ContactusViewController.swift */; };
 		045C517B1FEA7612009E1A51 /* GenerateMMIDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045C517A1FEA7612009E1A51 /* GenerateMMIDViewController.swift */; };
 		045C517E1FEA8857009E1A51 /* DisableMMIDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045C517D1FEA8857009E1A51 /* DisableMMIDViewController.swift */; };
 		045EA2BD1FD6A507004A69D1 /* MenuCollectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045EA2BC1FD6A507004A69D1 /* MenuCollectionCollectionViewCell.swift */; };
 		045EBB291FC5855800A4986A /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045EBB281FC5855800A4986A /* Extension.swift */; };
+		0461D770202430E00088155B /* OpenRecurringDepositViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0461D76F202430E00088155B /* OpenRecurringDepositViewController.swift */; };
 		046228311FDE81430048962E /* TransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046228301FDE81430048962E /* TransactionViewController.swift */; };
 		046228341FDE8E030048962E /* TransactionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046228331FDE8E030048962E /* TransactionCollectionViewCell.swift */; };
 		046228361FDE9C5D0048962E /* payusingmmid.png in Resources */ = {isa = PBXBuildFile; fileRef = 046228351FDE9C5D0048962E /* payusingmmid.png */; };
@@ -111,11 +113,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		040FD3962022F9C800A23087 /* OpenFixedDepositViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenFixedDepositViewController.swift; sourceTree = "<group>"; };
 		043BE7552008D4F8006DD16C /* ContactusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactusViewController.swift; sourceTree = "<group>"; };
 		045C517A1FEA7612009E1A51 /* GenerateMMIDViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GenerateMMIDViewController.swift; path = MobileOTPviewcontroller/GenerateMMIDViewController.swift; sourceTree = "<group>"; };
 		045C517D1FEA8857009E1A51 /* DisableMMIDViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisableMMIDViewController.swift; sourceTree = "<group>"; };
 		045EA2BC1FD6A507004A69D1 /* MenuCollectionCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCollectionCollectionViewCell.swift; sourceTree = "<group>"; };
 		045EBB281FC5855800A4986A /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		0461D76F202430E00088155B /* OpenRecurringDepositViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenRecurringDepositViewController.swift; sourceTree = "<group>"; };
 		046228301FDE81430048962E /* TransactionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionViewController.swift; sourceTree = "<group>"; };
 		046228331FDE8E030048962E /* TransactionCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionCollectionViewCell.swift; sourceTree = "<group>"; };
 		046228351FDE9C5D0048962E /* payusingmmid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = payusingmmid.png; sourceTree = "<group>"; };
@@ -246,6 +250,15 @@
 			name = MMID;
 			sourceTree = "<group>";
 		};
+		0461D771202433500088155B /* FixedRecurringDeposit */ = {
+			isa = PBXGroup;
+			children = (
+				040FD3962022F9C800A23087 /* OpenFixedDepositViewController.swift */,
+				0461D76F202430E00088155B /* OpenRecurringDepositViewController.swift */,
+			);
+			name = FixedRecurringDeposit;
+			sourceTree = "<group>";
+		};
 		0462282E1FDE6F140048962E /* LoginViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -344,6 +357,7 @@
 		04ADEC871FC3FE480007C73F /* MBank */ = {
 			isa = PBXGroup;
 			children = (
+				0461D771202433500088155B /* FixedRecurringDeposit */,
 				046C4022200DC7AC009471EE /* AccountTabBar */,
 				04C2E66D1FEBB3A40060D4B9 /* Beneficiay */,
 				045C517C1FEA761B009E1A51 /* MMID */,
@@ -822,6 +836,7 @@
 				046C4026200E1A6A009471EE /* AccountDetailTableViewCell.swift in Sources */,
 				0466A73620109AA100D90F27 /* ProfileUpdateViewController.swift in Sources */,
 				046C4028200E1F93009471EE /* SummaryofAccountViewController.swift in Sources */,
+				040FD3972022F9C800A23087 /* OpenFixedDepositViewController.swift in Sources */,
 				04C2E6731FEBD30B0060D4B9 /* MiniStatementViewController.swift in Sources */,
 				04ADEC911FC3FE480007C73F /* MBank.xcdatamodeld in Sources */,
 				04ADECC01FC41F740007C73F /* LoginMobileViewController.swift in Sources */,
@@ -851,6 +866,7 @@
 				04FD7EA220039D7A00EE0D2D /* ServicesMenuViewController.swift in Sources */,
 				04C5D2EC1FDFEA950025357C /* AddNewBeneficiaryViewController.swift in Sources */,
 				045C517E1FEA8857009E1A51 /* DisableMMIDViewController.swift in Sources */,
+				0461D770202430E00088155B /* OpenRecurringDepositViewController.swift in Sources */,
 				045C517B1FEA7612009E1A51 /* GenerateMMIDViewController.swift in Sources */,
 				043BE7562008D4F8006DD16C /* ContactusViewController.swift in Sources */,
 			);

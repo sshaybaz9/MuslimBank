@@ -175,16 +175,17 @@ class LoginMobileViewController: UIViewController,UITextFieldDelegate {
               let Email = self.json?.value(forKey: "email") as! String!
 //            var Rating = json?.value(forKey: "rating") as! NSString!
                 
-//                let imgurl = self.json?.value(forKey: "profile_image")as! String!
-//                
-//            var img2 = self.url1 + "uploads/"
-//             img2  +=   (self.customerName?.removingWhitespaces())! + "/profile_images/" + imgurl! + ".jpg"
-//    
-//                
-//                let imgData = try! Data.init(contentsOf: URL(string: img2)!)
-//                
-//                    self.temping = UIImage.init(data: imgData)!
-//                
+                let imgurl = self.json?.value(forKey: "profile_image")as! String!
+               if (imgurl != nil)
+               {
+            var img2 = self.url1 + "uploads/"
+             img2  +=   (self.customerName?.removingWhitespaces())! + "/profile_images/" + imgurl! + ".jpg"
+    
+                
+                let imgData = try! Data.init(contentsOf: URL(string: img2)!)
+                
+                    self.temping = UIImage.init(data: imgData)!
+                }
                 print(self.json)
                 
  //801811672096
@@ -226,6 +227,7 @@ class LoginMobileViewController: UIViewController,UITextFieldDelegate {
                 
                 OperationQueue.main.addOperation{
                 self.present(Verification, animated: true, completion: nil)
+        //            self.dismiss(animated: true, completion: nil)
                 }
             }
             else {
@@ -283,13 +285,17 @@ class LoginMobileViewController: UIViewController,UITextFieldDelegate {
                     //   Passing Mobile to Passing Mobile Number to AccessSetUpViewController
                    
                    Menu.temp1 = self.tArray
-                Menu.img = self.temping
+             
+                    
+                    
+                     Menu.img = self.temping
 
                     
             self.navigationController?.pushViewController(Menu, animated: true)
                     
                     
                     self.present(Menu, animated: true, completion: nil)
+                    
                 }))
             }
         }

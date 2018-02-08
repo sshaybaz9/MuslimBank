@@ -29,7 +29,8 @@ class TransactionViewController: UIViewController,UICollectionViewDataSource,UIC
         
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "Menu") as! Menu1ViewController
         
-        self.present(vc, animated: true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
+        
     }
     override func viewDidLoad() {
         super.viewDidLoad()

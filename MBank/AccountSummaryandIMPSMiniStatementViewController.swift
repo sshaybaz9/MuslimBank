@@ -25,9 +25,7 @@ class AccountSummaryandIMPSMiniStatementViewController: UIViewController,UITable
         super.viewDidLoad()
 
      tableview.isHidden = true
-        
         Accountdetail()
-        self.tableview.reloadData()
         
     }
 
@@ -36,8 +34,7 @@ class AccountSummaryandIMPSMiniStatementViewController: UIViewController,UITable
         
         let vc =  self.storyboard?.instantiateViewController(withIdentifier: "Menu") as! Menu1ViewController
         
-        self.present(vc, animated: true, completion: nil)
-        
+        self.dismiss(animated: true, completion: nil)
     }
     @IBAction func ShowIMPSMini(_ sender: AnyObject) {
         

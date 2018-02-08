@@ -135,4 +135,12 @@ class Menu1ViewController: UIViewController,UICollectionViewDelegate,UICollectio
         menuShowing = !menuShowing
     }
     
+    @IBAction func profileImage(_ sender: AnyObject) {
+        
+        
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "Profile") as! ProfileUpdateViewController
+        
+        self.present(vc, animated: true, completion: nil)
+        
+    }
 }

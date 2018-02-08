@@ -18,6 +18,10 @@ class ProfileUpdateViewController: UIViewController,UIImagePickerControllerDeleg
     @IBOutlet weak var addressTxt: UITextField!
     var picker = UIImagePickerController()
     @IBOutlet weak var profileimg: UIImageView!
+    
+    var img : UIImage!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -47,6 +51,9 @@ class ProfileUpdateViewController: UIViewController,UIImagePickerControllerDeleg
         
         profileimg.image = info["UIImagePickerControllerOriginalImage"] as! UIImage
         
+        
+
+        
         self.dismiss(animated: true, completion: nil)
         
         
@@ -61,25 +68,79 @@ class ProfileUpdateViewController: UIViewController,UIImagePickerControllerDeleg
         let fileName = UserDefaults.standard.string(forKey: "FileName")
         var responseString : String!
         
-        
-        
+        print(customerName!)
+        print(clientID!)
+        print(fileName)
         let url = URL(string: "http://115.117.44.229:8443/Mbank_api/saveprofile.php")!
         
         var request = URLRequest(url: url)
         
-        request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+        let boundary = generateBoundaryString()
+
+        
+        
+       request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
         
         request.httpMethod = "POST"
         
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+     
         
         
         
-        let postString = "image=\(profileimg)&name=\(customerName!)&email=\(emailTxt.text!)&address=\(addressTxt.text!)&city=\(cityTxt.text!)&state=\(stateTxt.text!)&client_id=\(clientID!)&filename=\(fileName!)"
+        
+        let postString = "name=\(customerName!)&email=\(emailTxt.text!)&address=\(addressTxt.text!)&city=\(cityTxt.text!)&state=\(stateTxt.text!)&client_id=\(clientID!)&filename=\(fileName)"
         
         print(postString)
         
         request.httpBody = postString.data(using: .utf8)
+
+        
+        
+        if (profileimg.image == nil)
+        {
+            return
+        }
+        
+        let image_data = UIImagePNGRepresentation(profileimg.image!)
+        
+        
+        if(image_data == nil)
+        {
+            return
+        }
+        
+        let body = NSMutableData()
+        
+        let fname = "test.png"
+        let mimetype = "image/png"
+        
+        
+        
+        
+        body.append("--\(boundary)\r\n".data(using: String.Encoding.utf8)!)
+        body.append("Content-Disposition:form-data; name=\"test\"\r\n\r\n".data(using: String.Encoding.utf8)!)
+        body.append("hi\r\n".data(using: String.Encoding.utf8)!)
+        
+        
+        
+        body.append("--\(boundary)\r\n".data(using: String.Encoding.utf8)!)
+        body.append("Content-Disposition:form-data; name=\"file\"; filename=\"\(fname)\"\r\n".data(using: String.Encoding.utf8)!)
+        body.append("Content-Type: \(mimetype)\r\n\r\n".data(using: String.Encoding.utf8)!)
+        body.append(image_data!)
+        body.append("\r\n".data(using: String.Encoding.utf8)!)
+        
+        
+        body.append("--\(boundary)--\r\n".data(using: String.Encoding.utf8)!)
+        
+        body.append("Content-Type: \(postString)\r\n\r\n".data(using: String.Encoding.utf8)!)
+
+
+        
+        
+        request.httpBody = body as Data
+
+        
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data, error == nil else {                                                 // check for fundamental networking error
                 print("error=\(error)")
@@ -114,4 +175,16 @@ class ProfileUpdateViewController: UIViewController,UIImagePickerControllerDeleg
     
     func parsingTheJsonData(JSondata:NSDictionary){
     }
+    
+    func generateBoundaryString() -> String
+    {
+        return "Boundary-\(UUID().uuidString)"
+    }
+    
+    
+    
 }
+
+
+
+

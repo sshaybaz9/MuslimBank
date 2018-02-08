@@ -18,8 +18,7 @@ class MiniStatementViewController: UIViewController,UITableViewDelegate,UITableV
         
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "Transaction") as! TransactionViewController
         
-        self.present(vc, animated: true, completion: nil)
-        
+            self.dismiss(animated: true, completion: nil)
         
     }
     override func viewDidLoad() {

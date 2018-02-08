@@ -22,8 +22,7 @@ class ServicesMenuViewController: UIViewController,UICollectionViewDelegate,UICo
         
         
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "Transaction") as! TransactionViewController
-        
-        self.present(vc, animated: true, completion: nil)
+          self.dismiss(animated: true, completion: nil)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

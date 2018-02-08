@@ -51,8 +51,7 @@ class SummaryofAccountViewController: UIViewController {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "AccountSummary") as! AccountSummaryandIMPSMiniStatementViewController
 
         
-        self.present(vc, animated: true, completion: nil)
-        
+      self.dismiss(animated: true, completion: nil)
     }
     @IBAction func ShowMiniStatement(_ sender: AnyObject) {
         

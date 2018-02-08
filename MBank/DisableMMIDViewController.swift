@@ -28,7 +28,7 @@ class DisableMMIDViewController: UIViewController {
         
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "Transaction") as! TransactionViewController
         
-        self.present(vc, animated: true, completion: nil)
+           self.dismiss(animated: true, completion: nil)
     }
 
     @IBAction func DisableMMID(_ sender: AnyObject) {

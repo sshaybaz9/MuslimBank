@@ -24,8 +24,7 @@ class TransactionHistory2TableViewController: UIViewController,UITableViewDelega
     @IBAction func BackPressed(_ sender: AnyObject) {
         
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "services") as! ServicesMenuViewController
-        self.present(vc, animated: true, completion: nil)
-        
+        self.dismiss(animated: true, completion: nil)
         
     }
     override func didReceiveMemoryWarning() {
