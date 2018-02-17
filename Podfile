@@ -5,6 +5,11 @@ target 'MBank' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
  pod 'RNCryptor', '~> 5.0' 
+
+  pod ‘GoogleMaps’
+  pod ‘GooglePlaces’
+
+ 
   # Pods for MBank
 
   target 'MBankTests' do

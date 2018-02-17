@@ -188,6 +188,9 @@ class AccountSummaryandIMPSMiniStatementViewController: UIViewController,UITable
             do {
                 json = try JSONSerialization.jsonObject(with: data) as? NSDictionary
                 
+                
+                
+                
         var accounts = json?.value(forKey: "accounts") as! NSDictionary
         
                 var clientAccnt = accounts.value(forKey: "clientAccounts") as! NSArray

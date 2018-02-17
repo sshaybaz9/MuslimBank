@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		040FD3972022F9C800A23087 /* OpenFixedDepositViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040FD3962022F9C800A23087 /* OpenFixedDepositViewController.swift */; };
+		04173F952031A729009CA627 /* 25985 (2) (1).png in Resources */ = {isa = PBXBuildFile; fileRef = 04173F942031A729009CA627 /* 25985 (2) (1).png */; };
 		043BE7562008D4F8006DD16C /* ContactusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043BE7552008D4F8006DD16C /* ContactusViewController.swift */; };
 		045C517B1FEA7612009E1A51 /* GenerateMMIDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045C517A1FEA7612009E1A51 /* GenerateMMIDViewController.swift */; };
 		045C517E1FEA8857009E1A51 /* DisableMMIDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045C517D1FEA8857009E1A51 /* DisableMMIDViewController.swift */; };
@@ -64,7 +65,6 @@
 		04ADECBC1FC40C140007C73F /* 2000px-Lock_font_awesome.svg.png in Resources */ = {isa = PBXBuildFile; fileRef = 04ADECBB1FC40C140007C73F /* 2000px-Lock_font_awesome.svg.png */; };
 		04ADECC01FC41F740007C73F /* LoginMobileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ADECBF1FC41F740007C73F /* LoginMobileViewController.swift */; };
 		04ADECC21FC42CBB0007C73F /* Phone.png in Resources */ = {isa = PBXBuildFile; fileRef = 04ADECC11FC42CBB0007C73F /* Phone.png */; };
-		04ADECC41FC44BC70007C73F /* FixedDepositViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ADECC31FC44BC70007C73F /* FixedDepositViewController.swift */; };
 		04B221F41FE1011F009FFDBA /* LoginPinResetAndSaveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B221F31FE1011F009FFDBA /* LoginPinResetAndSaveViewController.swift */; };
 		04B944482004CEE10011F1FC /* my_account.png in Resources */ = {isa = PBXBuildFile; fileRef = 04B944472004CEE10011F1FC /* my_account.png */; };
 		04B9444A2004CF250011F1FC /* rate_us.png in Resources */ = {isa = PBXBuildFile; fileRef = 04B944492004CF250011F1FC /* rate_us.png */; };
@@ -77,12 +77,10 @@
 		04C2E6731FEBD30B0060D4B9 /* MiniStatementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C2E6721FEBD30B0060D4B9 /* MiniStatementViewController.swift */; };
 		04C5D2EA1FDFB91B0025357C /* addbeneficary.png in Resources */ = {isa = PBXBuildFile; fileRef = 04C5D2E91FDFB91B0025357C /* addbeneficary.png */; };
 		04C5D2EC1FDFEA950025357C /* AddNewBeneficiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C5D2EB1FDFEA950025357C /* AddNewBeneficiaryViewController.swift */; };
-		04CDA4C81FC541270093A799 /* TransactionPerformViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CDA4C71FC541270093A799 /* TransactionPerformViewController.swift */; };
-		04CDA4CA1FC54F0B0093A799 /* ServicesFacilitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CDA4C91FC54F0B0093A799 /* ServicesFacilitiesViewController.swift */; };
-		04CDA4CC1FC55D550093A799 /* FTAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CDA4CB1FC55D550093A799 /* FTAViewController.swift */; };
-		04CDA4CE1FC55D6F0093A799 /* FTMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CDA4CD1FC55D6F0093A799 /* FTMViewController.swift */; };
+		04CD05A3202D7D32007B16A8 /* CustomMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CD05A2202D7D32007B16A8 /* CustomMarkerView.swift */; };
 		04CDA4D01FC565030093A799 /* TransactionStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CDA4CF1FC565030093A799 /* TransactionStatusViewController.swift */; };
 		04D8DA4E200491CB0071995F /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = 04D8DA4D200491CA0071995F /* home.png */; };
+		04E8194D202C5C7A0022075D /* LocateOnMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E8194C202C5C7A0022075D /* LocateOnMapViewController.swift */; };
 		04FD7EA02003863F00EE0D2D /* TransactionHistory2TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FD7E9F2003863F00EE0D2D /* TransactionHistory2TableViewController.swift */; };
 		04FD7EA220039D7A00EE0D2D /* ServicesMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FD7EA120039D7A00EE0D2D /* ServicesMenuViewController.swift */; };
 		04FD7EA420039DA200EE0D2D /* ServicesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FD7EA320039DA200EE0D2D /* ServicesCollectionViewCell.swift */; };
@@ -114,6 +112,7 @@
 
 /* Begin PBXFileReference section */
 		040FD3962022F9C800A23087 /* OpenFixedDepositViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenFixedDepositViewController.swift; sourceTree = "<group>"; };
+		04173F942031A729009CA627 /* 25985 (2) (1).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "25985 (2) (1).png"; sourceTree = "<group>"; };
 		043BE7552008D4F8006DD16C /* ContactusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactusViewController.swift; sourceTree = "<group>"; };
 		045C517A1FEA7612009E1A51 /* GenerateMMIDViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GenerateMMIDViewController.swift; path = MobileOTPviewcontroller/GenerateMMIDViewController.swift; sourceTree = "<group>"; };
 		045C517D1FEA8857009E1A51 /* DisableMMIDViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisableMMIDViewController.swift; sourceTree = "<group>"; };
@@ -175,7 +174,6 @@
 		04ADECBB1FC40C140007C73F /* 2000px-Lock_font_awesome.svg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "2000px-Lock_font_awesome.svg.png"; sourceTree = "<group>"; };
 		04ADECBF1FC41F740007C73F /* LoginMobileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginMobileViewController.swift; sourceTree = "<group>"; };
 		04ADECC11FC42CBB0007C73F /* Phone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Phone.png; sourceTree = "<group>"; };
-		04ADECC31FC44BC70007C73F /* FixedDepositViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FixedDepositViewController.swift; sourceTree = "<group>"; };
 		04B221F31FE1011F009FFDBA /* LoginPinResetAndSaveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPinResetAndSaveViewController.swift; sourceTree = "<group>"; };
 		04B944472004CEE10011F1FC /* my_account.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = my_account.png; sourceTree = "<group>"; };
 		04B944492004CF250011F1FC /* rate_us.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rate_us.png; sourceTree = "<group>"; };
@@ -188,12 +186,10 @@
 		04C2E6721FEBD30B0060D4B9 /* MiniStatementViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiniStatementViewController.swift; sourceTree = "<group>"; };
 		04C5D2E91FDFB91B0025357C /* addbeneficary.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addbeneficary.png; sourceTree = "<group>"; };
 		04C5D2EB1FDFEA950025357C /* AddNewBeneficiaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddNewBeneficiaryViewController.swift; path = AcessSetupLoginView/AddNewBeneficiaryViewController.swift; sourceTree = "<group>"; };
-		04CDA4C71FC541270093A799 /* TransactionPerformViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionPerformViewController.swift; sourceTree = "<group>"; };
-		04CDA4C91FC54F0B0093A799 /* ServicesFacilitiesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServicesFacilitiesViewController.swift; sourceTree = "<group>"; };
-		04CDA4CB1FC55D550093A799 /* FTAViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTAViewController.swift; sourceTree = "<group>"; };
-		04CDA4CD1FC55D6F0093A799 /* FTMViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTMViewController.swift; sourceTree = "<group>"; };
+		04CD05A2202D7D32007B16A8 /* CustomMarkerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomMarkerView.swift; sourceTree = "<group>"; };
 		04CDA4CF1FC565030093A799 /* TransactionStatusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionStatusViewController.swift; sourceTree = "<group>"; };
 		04D8DA4D200491CA0071995F /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
+		04E8194C202C5C7A0022075D /* LocateOnMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocateOnMapViewController.swift; sourceTree = "<group>"; };
 		04FD7E9F2003863F00EE0D2D /* TransactionHistory2TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionHistory2TableViewController.swift; sourceTree = "<group>"; };
 		04FD7EA120039D7A00EE0D2D /* ServicesMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServicesMenuViewController.swift; sourceTree = "<group>"; };
 		04FD7EA320039DA200EE0D2D /* ServicesCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServicesCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -335,6 +331,7 @@
 		04ADEC7C1FC3FE470007C73F = {
 			isa = PBXGroup;
 			children = (
+				04CD05A2202D7D32007B16A8 /* CustomMarkerView.swift */,
 				04ADEC871FC3FE480007C73F /* MBank */,
 				04ADEC9F1FC3FE490007C73F /* MBankTests */,
 				04ADECAA1FC3FE490007C73F /* MBankUITests */,
@@ -372,14 +369,10 @@
 				04ADEC881FC3FE480007C73F /* AppDelegate.swift */,
 				04ADEC8A1FC3FE480007C73F /* ViewController.swift */,
 				04ADEC8C1FC3FE480007C73F /* Main.storyboard */,
+				04E8194C202C5C7A0022075D /* LocateOnMapViewController.swift */,
 				0466A73520109AA100D90F27 /* ProfileUpdateViewController.swift */,
 				043BE7552008D4F8006DD16C /* ContactusViewController.swift */,
 				046BA9FD200766D300CBA656 /* ReferFriendsViewController.swift */,
-				04CDA4CB1FC55D550093A799 /* FTAViewController.swift */,
-				04CDA4CD1FC55D6F0093A799 /* FTMViewController.swift */,
-				04CDA4C91FC54F0B0093A799 /* ServicesFacilitiesViewController.swift */,
-				04CDA4C71FC541270093A799 /* TransactionPerformViewController.swift */,
-				04ADECC31FC44BC70007C73F /* FixedDepositViewController.swift */,
 				04ADEC921FC3FE480007C73F /* Assets.xcassets */,
 				04C2E66C1FEB778A0060D4B9 /* Images */,
 				04ADEC941FC3FE480007C73F /* LaunchScreen.storyboard */,
@@ -411,6 +404,7 @@
 		04C2E66C1FEB778A0060D4B9 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				04173F942031A729009CA627 /* 25985 (2) (1).png */,
 				04B9444B2004CF7A0011F1FC /* contact_us.png */,
 				04B9444F2004CFC00011F1FC /* log_out.png */,
 				04B9444D2004CF940011F1FC /* language_support.png */,
@@ -641,6 +635,7 @@
 				04718B4E1FD7AF2400D85C92 /* upi.png in Resources */,
 				04ADEC8E1FC3FE480007C73F /* Main.storyboard in Resources */,
 				046501A61FDEA8DF00D20DE9 /* disablemmid.png in Resources */,
+				04173F952031A729009CA627 /* 25985 (2) (1).png in Resources */,
 				04718B541FD7AF8200D85C92 /* services.png in Resources */,
 				04718B3E1FD7AEBC00D85C92 /* bill_paym.png in Resources */,
 				046501AA1FDEAA5300D20DE9 /* mini_state.png in Resources */,
@@ -698,9 +693,13 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MBank/Pods-MBank-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -844,24 +843,20 @@
 				046228341FDE8E030048962E /* TransactionCollectionViewCell.swift in Sources */,
 				046634701FC69EF900D4C636 /* Menu1ViewController.swift in Sources */,
 				0471AF9B2005EFDA00052B8F /* TransactionHistoryTableViewCell.swift in Sources */,
-				04CDA4C81FC541270093A799 /* TransactionPerformViewController.swift in Sources */,
 				045EA2BD1FD6A507004A69D1 /* MenuCollectionCollectionViewCell.swift in Sources */,
-				04CDA4CC1FC55D550093A799 /* FTAViewController.swift in Sources */,
 				04ADEC891FC3FE480007C73F /* AppDelegate.swift in Sources */,
 				04C2E6711FEBC5690060D4B9 /* BalanceEnqryViewController.swift in Sources */,
-				04CDA4CA1FC54F0B0093A799 /* ServicesFacilitiesViewController.swift in Sources */,
 				046BA9FE200766D300CBA656 /* ReferFriendsViewController.swift in Sources */,
 				046BE55420088D86004A8BC4 /* AccountsTabBarController.swift in Sources */,
 				04BCC8811FF4F134009DDFC2 /* PayUsingAccountViewController.swift in Sources */,
 				046C4024200DD372009471EE /* AccountSummayIMPSMiniTableViewCell.swift in Sources */,
 				04FD7EA420039DA200EE0D2D /* ServicesCollectionViewCell.swift in Sources */,
-				04ADECC41FC44BC70007C73F /* FixedDepositViewController.swift in Sources */,
 				04C2E66F1FEBB3D90060D4B9 /* BeneficiaryListViewController.swift in Sources */,
 				046228311FDE81430048962E /* TransactionViewController.swift in Sources */,
 				047725501FED129C00E5CEDF /* BenNameTableViewCell.swift in Sources */,
 				046C4021200DC79B009471EE /* AccountSummaryandIMPSMiniStatementViewController.swift in Sources */,
 				046634721FC6C3B900D4C636 /* VerificationcodeViewController.swift in Sources */,
-				04CDA4CE1FC55D6F0093A799 /* FTMViewController.swift in Sources */,
+				04E8194D202C5C7A0022075D /* LocateOnMapViewController.swift in Sources */,
 				04FD7EA02003863F00EE0D2D /* TransactionHistory2TableViewController.swift in Sources */,
 				04FD7EA220039D7A00EE0D2D /* ServicesMenuViewController.swift in Sources */,
 				04C5D2EC1FDFEA950025357C /* AddNewBeneficiaryViewController.swift in Sources */,
@@ -869,6 +864,7 @@
 				0461D770202430E00088155B /* OpenRecurringDepositViewController.swift in Sources */,
 				045C517B1FEA7612009E1A51 /* GenerateMMIDViewController.swift in Sources */,
 				043BE7562008D4F8006DD16C /* ContactusViewController.swift in Sources */,
+				04CD05A3202D7D32007B16A8 /* CustomMarkerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1023,6 +1019,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = UYW5FQN626;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/GoogleMaps/Base/Frameworks",
+					"$(PROJECT_DIR)/Pods/GoogleMaps/Maps/Frameworks",
+				);
 				INFOPLIST_FILE = MBank/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.app.mbank;
@@ -1040,6 +1041,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = UYW5FQN626;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/GoogleMaps/Base/Frameworks",
+					"$(PROJECT_DIR)/Pods/GoogleMaps/Maps/Frameworks",
+				);
 				INFOPLIST_FILE = MBank/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.app.mbank;

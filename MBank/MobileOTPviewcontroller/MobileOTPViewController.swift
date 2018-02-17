@@ -74,9 +74,7 @@ class MobileOTPViewController: UIViewController,PassVerfication,UITextFieldDeleg
         let verficationAlert = UIAlertController()
         if((JSondata.value(forKey: "success") as! Int) == 1){//
             successMessage = "Success"
-            verificationStatus =  JSondata.value(forKey: "success") as! Int
-            verficationAlert.addAction(UIAlertAction(title: "No", style: UIAlertActionStyle.cancel, handler: nil))
-            verficationAlert.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle.default, handler: { (action) in
+
                 let Access = self.storyboard?.instantiateViewController(withIdentifier: "setUp") as! AccSetupLoginViewController
 //   Passing Mobile to Passing Mobile Number to AccessSetUpViewController
                 self.delegate = Access
@@ -87,9 +85,12 @@ class MobileOTPViewController: UIViewController,PassVerfication,UITextFieldDeleg
                 kUserDefault.setValue(self.deviceId, forKey: "RegisteredDeviceID")
                 self.navigationController?.pushViewController(Access, animated: true)
                 
+            
+            OperationQueue.main.addOperation {
                 
                 self.present(Access, animated: true, completion: nil)
-            }))
+
+            }
         }else if((JSondata.value(forKey: "success") as! Int) == 0){
             verificationStatus =  JSondata.value(forKey: "success") as! Int
             successMessage = "Invalid mobile number"
@@ -113,6 +114,54 @@ class MobileOTPViewController: UIViewController,PassVerfication,UITextFieldDeleg
         self.Numtxt.setBottomLine(borderColor: lineColor)
         
     }
+    
+    
+    @IBAction func ResendVerificationCode(_ sender: AnyObject) {
+        
+        let deviceID = UIDevice.current.identifierForVendor?.uuidString
+
+        
+        let mobileNo = UserDefaults.standard.string(forKey: "ResendMobile")
+
+        
+        
+        
+        var request = URLRequest(url: URL(string: "http://115.117.44.229:8443/Mbank_api/verifyupdatemobileactivation.php")!)
+        request.httpMethod = "POST"
+        
+        print(deviceID)
+        
+        let postString = "mobile_number=\(mobileNo!)&android_id=\(deviceID!)"
+        
+        
+        request.httpBody = postString.data(using: .utf8)
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data, error == nil else {                                                 // check for fundamental networking error
+                print("error=\(String(describing: error))")
+                return
+            }
+            var json: NSDictionary?
+            do {
+                json = try JSONSerialization.jsonObject(with: data) as? NSDictionary
+                self.parsingTheJsonData1(JSondata1: json!)
+            
+            
+            } catch {
+                print(error)
+            }
+        }
+        task.resume()
+        
+        
+    }
+    
+    
+    func parsingTheJsonData1(JSondata1:NSDictionary){
+        
+    }
+
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

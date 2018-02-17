@@ -102,7 +102,6 @@ class OpenRecurringDepositViewController: UIViewController,UITableViewDelegate,U
                     
                     
                     recur.depositSchemeID  = obj.value(forKey: "DepositSchemeId") as! String!
-                    self.schemeID = String(recur.depositSchemeID!)
                     
                     
                     
@@ -154,8 +153,10 @@ class OpenRecurringDepositViewController: UIViewController,UITableViewDelegate,U
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath)
         
+        var temp = recurringArray[indexPath.row] as! RecurringDeposit
+
         selectScheme.setTitle(cell?.textLabel?.text, for: .normal)
-        
+        self.schemeID = temp.depositSchemeID
         self.tableview.isHidden = true
     }
     

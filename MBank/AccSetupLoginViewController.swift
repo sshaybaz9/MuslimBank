@@ -109,19 +109,21 @@ class AccSetupLoginViewController: UIViewController,PassMobileNumber,UITextField
         
         let verficationAlert = UIAlertController()
         if((JSondata.value(forKey: "success") as! Int) == 1){//
-            successMessage = "Login Pin Created Succesfully"
-            verificationStatus =  JSondata.value(forKey: "success") as! Int
-            verficationAlert.addAction(UIAlertAction(title: "No", style: UIAlertActionStyle.cancel, handler: nil))
-            verficationAlert.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle.default, handler: { (action) in
-                let Log = self.storyboard?.instantiateViewController(withIdentifier: "Login") as! LoginMobileViewController
+            
+            
+        let Log = self.storyboard?.instantiateViewController(withIdentifier: "Login") as! LoginMobileViewController
                 //   Passing Mobile to Passing Mobile Number to AccessSetUpViewController
                
                 
                 self.navigationController?.pushViewController(Log, animated: true)
                 
+            OperationQueue.main.addOperation {
                 
                 self.present(Log, animated: true, completion: nil)
-            }))
+
+            }
+            
+            
         }else if((JSondata.value(forKey: "success") as! Int) == 0){
             verificationStatus =  JSondata.value(forKey: "success") as! Int
             successMessage = "Invalid Account number"

@@ -7,16 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2D0246806ECF9E40C5B638540D273CFF /* RNCryptor-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D524EBA605E57F622A34B0D6B4878060 /* RNCryptor-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2D0246806ECF9E40C5B638540D273CFF /* RNCryptor-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4BCF81AA96D2E8C9EF054B8A2B3105D4 /* RNCryptor-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		44AE635288583CAFFB0402F4728F0B3C /* Pods-MBankUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 36B86D6D9CDDB46BE419D20BAD2863B1 /* Pods-MBankUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		49DA4D70AA233E2743434324B222FC20 /* RNCryptor-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F1AC5EFA11A5F90C762E50F3D32C5FC /* RNCryptor-dummy.m */; };
+		49DA4D70AA233E2743434324B222FC20 /* RNCryptor-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E8CAA88BC30DEC0CA6D0A2025F79191 /* RNCryptor-dummy.m */; };
 		5BF629BBD8FAB6EC254BECB2CAEEA0D2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		61B1938B446E016EA4E813E3AE15011F /* Pods-MBankTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CEC5EC515E75497CF0FC88A09B5BC4F9 /* Pods-MBankTests-dummy.m */; };
 		6655D7FF731E784D262BE50879A1B3D9 /* Pods-MBank-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D14479519CD37F17BC44DF7764B716E /* Pods-MBank-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7EE2236DCCE942F9A30559EA61B37A2F /* RNCryptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B43FD3BD3EC3F06B385485880B39A6D /* RNCryptor.swift */; };
+		7EE2236DCCE942F9A30559EA61B37A2F /* RNCryptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40BABE2BF4EB2E7FEE42980A99232DC /* RNCryptor.swift */; };
 		8E50334A43E45E20F691352D056337E1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		9979ECFCDBB5B2F861B41F980F927F1B /* Pods-MBank-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B3FB106B6523FFAC61D91F8FE1A879B /* Pods-MBank-dummy.m */; };
-		C2A27C8219C30EDC789D23F128C440FF /* RNCryptor.h in Headers */ = {isa = PBXBuildFile; fileRef = E25FB9ECFADB88C882D9CF7136146BC8 /* RNCryptor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C2A27C8219C30EDC789D23F128C440FF /* RNCryptor.h in Headers */ = {isa = PBXBuildFile; fileRef = C143C8EF4AEAC828CE7F63FE8C197F58 /* RNCryptor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CA42EC1DED34CA83A4CA821ECB85F369 /* Pods-MBankUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C479B444BBC7FCC9D52C6CFE88FB5DBD /* Pods-MBankUITests-dummy.m */; };
 		CF35E8BFA04AD8A1125095DC59127A1A /* Pods-MBankTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE3BB2089D79AE3079EE44DB7D54E46 /* Pods-MBankTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EB18F746BE19BB4FC481AAAF26356872 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
@@ -37,9 +37,8 @@
 		0201A779BA0BB18D54D237558B4C6BE1 /* Pods-MBankUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MBankUITests-acknowledgements.plist"; sourceTree = "<group>"; };
 		084DF3E38A480E5E57997F74B5FB929E /* Pods-MBankTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MBankTests.release.xcconfig"; sourceTree = "<group>"; };
 		0B6E88A2E3695F6E2C5959FFA07A8E57 /* Pods-MBank-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MBank-frameworks.sh"; sourceTree = "<group>"; };
-		0F1AC5EFA11A5F90C762E50F3D32C5FC /* RNCryptor-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RNCryptor-dummy.m"; sourceTree = "<group>"; };
 		1D14479519CD37F17BC44DF7764B716E /* Pods-MBank-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MBank-umbrella.h"; sourceTree = "<group>"; };
-		1DF8846B3C7C00DEDF3F615351B95F41 /* RNCryptor-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RNCryptor-prefix.pch"; sourceTree = "<group>"; };
+		1FF843331F2E1811681096D155F64641 /* RNCryptor-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RNCryptor-prefix.pch"; sourceTree = "<group>"; };
 		29EC569F0F5D397D2F67BA9012912F89 /* Pods-MBankTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MBankTests-acknowledgements.plist"; sourceTree = "<group>"; };
 		2B47757EADFEEE4E1C98C458E4502970 /* Pods_MBankTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MBankTests.framework; path = "Pods-MBankTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FF839CB22AA59DFBB3376AD9A17CC8C /* Pods-MBank.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-MBank.modulemap"; sourceTree = "<group>"; };
@@ -49,33 +48,40 @@
 		36B86D6D9CDDB46BE419D20BAD2863B1 /* Pods-MBankUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MBankUITests-umbrella.h"; sourceTree = "<group>"; };
 		3D1B29213F1639D28C808BCC7C3B9E1D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3DEBF9EC6738EBF1CF3CA24BF97F020B /* Pods-MBankUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-MBankUITests.modulemap"; sourceTree = "<group>"; };
+		3E8CAA88BC30DEC0CA6D0A2025F79191 /* RNCryptor-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RNCryptor-dummy.m"; sourceTree = "<group>"; };
 		4043097F662A2E229CB9C861DC5965C2 /* Pods-MBankTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MBankTests.debug.xcconfig"; sourceTree = "<group>"; };
 		430CA44C352700778AE4B0433BC95925 /* Pods-MBankTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MBankTests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		431C53D582D4190C62BF4242D7FE7A54 /* Pods-MBankUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MBankUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		4B0F70BC920D37B0772061A275AC75B6 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = Maps/Frameworks/GoogleMaps.framework; sourceTree = "<group>"; };
+		4BCF81AA96D2E8C9EF054B8A2B3105D4 /* RNCryptor-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RNCryptor-umbrella.h"; sourceTree = "<group>"; };
 		4C4C8CE34C27DFFAF762184CD3F0F1CC /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52F2695F3D2C2841C7587D3AD43FA22E /* Pods-MBankTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MBankTests-resources.sh"; sourceTree = "<group>"; };
 		57B796FE50BCDF8D6EAA192EBCE33EE7 /* Pods-MBankTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MBankTests-frameworks.sh"; sourceTree = "<group>"; };
 		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		6B43FD3BD3EC3F06B385485880B39A6D /* RNCryptor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RNCryptor.swift; path = Sources/RNCryptor/RNCryptor.swift; sourceTree = "<group>"; };
-		777CF4D1BF0FC35D40DD7C45C0370C09 /* RNCryptor.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RNCryptor.xcconfig; sourceTree = "<group>"; };
+		6A9276DD02AECDF4CD453E050E9898AE /* GooglePlaces.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GooglePlaces.framework; path = Frameworks/GooglePlaces.framework; sourceTree = "<group>"; };
+		789BBDAA8BC8B97730D670C40B629C03 /* GoogleMaps.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
 		7B3FB106B6523FFAC61D91F8FE1A879B /* Pods-MBank-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MBank-dummy.m"; sourceTree = "<group>"; };
-		8326A8B115AE6D451DB81D5107AF9569 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7D1CF686BFF68A728C4E0942F386A266 /* GoogleMapsBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMapsBase.framework; path = Base/Frameworks/GoogleMapsBase.framework; sourceTree = "<group>"; };
+		8C88C886A1E1FF082CD359F4C61EAD4C /* RNCryptor.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RNCryptor.xcconfig; sourceTree = "<group>"; };
 		8FD199BEC46ECBA851D392A6B20567A2 /* Pods-MBankTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-MBankTests.modulemap"; sourceTree = "<group>"; };
+		91B1794C2B8890818546C6D57A434F7C /* GooglePlaces.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = GooglePlaces.bundle; path = Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle; sourceTree = "<group>"; };
+		937BBA7C2BC67CF520E82C24B9265126 /* RNCryptor.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = RNCryptor.modulemap; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		96FAA1325CFEEBFCAF50EB2D15E3A8D0 /* Pods-MBankUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MBankUITests-resources.sh"; sourceTree = "<group>"; };
-		9715F8363F1B8DD9C4AC2740CA46AE54 /* RNCryptor.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = RNCryptor.modulemap; sourceTree = "<group>"; };
+		AB0A3B48EB106E3C918222DAB1F6101A /* GoogleMapsCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMapsCore.framework; path = Maps/Frameworks/GoogleMapsCore.framework; sourceTree = "<group>"; };
 		AB2964F73D8DD5DDF4B2EADE7C155180 /* Pods-MBank-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MBank-acknowledgements.plist"; sourceTree = "<group>"; };
+		B40BABE2BF4EB2E7FEE42980A99232DC /* RNCryptor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RNCryptor.swift; path = Sources/RNCryptor/RNCryptor.swift; sourceTree = "<group>"; };
 		B7539B5D8EE6CFA961A225CB44D72F72 /* Pods-MBankUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MBankUITests-frameworks.sh"; sourceTree = "<group>"; };
 		BF088264BADC042BDB6312E9C9AEECB9 /* Pods-MBank-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MBank-acknowledgements.markdown"; sourceTree = "<group>"; };
+		C143C8EF4AEAC828CE7F63FE8C197F58 /* RNCryptor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RNCryptor.h; path = Sources/Cryptor/include/RNCryptor.h; sourceTree = "<group>"; };
+		C261AB928E931EAAC815E72D05F4EC44 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C479B444BBC7FCC9D52C6CFE88FB5DBD /* Pods-MBankUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MBankUITests-dummy.m"; sourceTree = "<group>"; };
 		C4AD9E4403083F1F68A736231294B0E5 /* Pods-MBank-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MBank-resources.sh"; sourceTree = "<group>"; };
 		CB9FE1BBA1AD1C0999228B88D86EFA02 /* Pods-MBank.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MBank.release.xcconfig"; sourceTree = "<group>"; };
 		CDE3BB2089D79AE3079EE44DB7D54E46 /* Pods-MBankTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MBankTests-umbrella.h"; sourceTree = "<group>"; };
 		CEC5EC515E75497CF0FC88A09B5BC4F9 /* Pods-MBankTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MBankTests-dummy.m"; sourceTree = "<group>"; };
-		D524EBA605E57F622A34B0D6B4878060 /* RNCryptor-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RNCryptor-umbrella.h"; sourceTree = "<group>"; };
 		DB2A14C40D527BDCABD09BCB092A6543 /* Pods-MBankUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MBankUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		DF558A86511B67D4DC6E413FD7E07A2A /* Pods_MBank.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MBank.framework; path = "Pods-MBank.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E25FB9ECFADB88C882D9CF7136146BC8 /* RNCryptor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RNCryptor.h; path = Sources/Cryptor/include/RNCryptor.h; sourceTree = "<group>"; };
 		F23CCF55C819602DEC95F81FACA77523 /* Pods-MBank.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MBank.debug.xcconfig"; sourceTree = "<group>"; };
 		F829A14163E013395B05041182C8A179 /* RNCryptor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = RNCryptor.framework; path = RNCryptor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -116,6 +122,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		02F6B27DF581CB77EFA1D1962E94F648 /* GoogleMaps */ = {
+			isa = PBXGroup;
+			children = (
+				C19795A5C5C9C0B9B9C03488BB74BE1A /* Base */,
+				35C9ACAF5DB7A8B4033CF11E934CE512 /* Maps */,
+			);
+			name = GoogleMaps;
+			path = GoogleMaps;
+			sourceTree = "<group>";
+		};
 		0831584FD81D6BA776A32E7C097EC81A /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -125,6 +141,14 @@
 				F829A14163E013395B05041182C8A179 /* RNCryptor.framework */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		0C0E57FA5BE922007557C8498F7EC7C5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7D1CF686BFF68A728C4E0942F386A266 /* GoogleMapsBase.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		217589E93E4F5241A660D122DE481A55 /* Targets Support Files */ = {
@@ -137,18 +161,33 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		4BAB06237A68618B84B6EC36CB30615E /* Support Files */ = {
+		329800256C13E652F4BEB6FA6D494159 /* GooglePlaces */ = {
 			isa = PBXGroup;
 			children = (
-				8326A8B115AE6D451DB81D5107AF9569 /* Info.plist */,
-				9715F8363F1B8DD9C4AC2740CA46AE54 /* RNCryptor.modulemap */,
-				777CF4D1BF0FC35D40DD7C45C0370C09 /* RNCryptor.xcconfig */,
-				0F1AC5EFA11A5F90C762E50F3D32C5FC /* RNCryptor-dummy.m */,
-				1DF8846B3C7C00DEDF3F615351B95F41 /* RNCryptor-prefix.pch */,
-				D524EBA605E57F622A34B0D6B4878060 /* RNCryptor-umbrella.h */,
+				E2CE6BA0FC324F85AFC5DBC21FD87F21 /* Frameworks */,
+				99BF58FAD550619FC6E3084E2D30AB5C /* Resources */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/RNCryptor";
+			name = GooglePlaces;
+			path = GooglePlaces;
+			sourceTree = "<group>";
+		};
+		35C9ACAF5DB7A8B4033CF11E934CE512 /* Maps */ = {
+			isa = PBXGroup;
+			children = (
+				CE705EDF2E1CDE979C5BF08212F0CF7D /* Frameworks */,
+				E8002B5C95292EB0DC72B1E354775B99 /* Resources */,
+			);
+			name = Maps;
+			sourceTree = "<group>";
+		};
+		4A1F82CC8FFC8DE77A8CABD4A6D58D41 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				02F6B27DF581CB77EFA1D1962E94F648 /* GoogleMaps */,
+				329800256C13E652F4BEB6FA6D494159 /* GooglePlaces */,
+				6B01EB7AC626D167AD1B9FA3F51DAA1A /* RNCryptor */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		4F490E30C07F9D30E7FB5D8166A81E50 /* Pods-MBankTests */ = {
@@ -169,12 +208,26 @@
 			path = "Target Support Files/Pods-MBankTests";
 			sourceTree = "<group>";
 		};
-		52B38B4E2CC86E2D5CB15CC436D992C9 /* RNCryptor */ = {
+		60039C9B8316AC2963EE1100F41F7783 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				E25FB9ECFADB88C882D9CF7136146BC8 /* RNCryptor.h */,
-				6B43FD3BD3EC3F06B385485880B39A6D /* RNCryptor.swift */,
-				4BAB06237A68618B84B6EC36CB30615E /* Support Files */,
+				C261AB928E931EAAC815E72D05F4EC44 /* Info.plist */,
+				937BBA7C2BC67CF520E82C24B9265126 /* RNCryptor.modulemap */,
+				8C88C886A1E1FF082CD359F4C61EAD4C /* RNCryptor.xcconfig */,
+				3E8CAA88BC30DEC0CA6D0A2025F79191 /* RNCryptor-dummy.m */,
+				1FF843331F2E1811681096D155F64641 /* RNCryptor-prefix.pch */,
+				4BCF81AA96D2E8C9EF054B8A2B3105D4 /* RNCryptor-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/RNCryptor";
+			sourceTree = "<group>";
+		};
+		6B01EB7AC626D167AD1B9FA3F51DAA1A /* RNCryptor */ = {
+			isa = PBXGroup;
+			children = (
+				C143C8EF4AEAC828CE7F63FE8C197F58 /* RNCryptor.h */,
+				B40BABE2BF4EB2E7FEE42980A99232DC /* RNCryptor.swift */,
+				60039C9B8316AC2963EE1100F41F7783 /* Support Files */,
 			);
 			name = RNCryptor;
 			path = RNCryptor;
@@ -185,10 +238,18 @@
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				C8D414FFF8F7AAF580546C94B73D219A /* Pods */,
+				4A1F82CC8FFC8DE77A8CABD4A6D58D41 /* Pods */,
 				0831584FD81D6BA776A32E7C097EC81A /* Products */,
 				217589E93E4F5241A660D122DE481A55 /* Targets Support Files */,
 			);
+			sourceTree = "<group>";
+		};
+		99BF58FAD550619FC6E3084E2D30AB5C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				91B1794C2B8890818546C6D57A434F7C /* GooglePlaces.bundle */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		A830FBDDC60B656395D417D240F40561 /* Pods-MBankUITests */ = {
@@ -217,12 +278,21 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		C8D414FFF8F7AAF580546C94B73D219A /* Pods */ = {
+		C19795A5C5C9C0B9B9C03488BB74BE1A /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				52B38B4E2CC86E2D5CB15CC436D992C9 /* RNCryptor */,
+				0C0E57FA5BE922007557C8498F7EC7C5 /* Frameworks */,
 			);
-			name = Pods;
+			name = Base;
+			sourceTree = "<group>";
+		};
+		CE705EDF2E1CDE979C5BF08212F0CF7D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4B0F70BC920D37B0772061A275AC75B6 /* GoogleMaps.framework */,
+				AB0A3B48EB106E3C918222DAB1F6101A /* GoogleMapsCore.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		D35AF013A5F0BAD4F32504907A52519E /* iOS */ = {
@@ -231,6 +301,22 @@
 				6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */,
 			);
 			name = iOS;
+			sourceTree = "<group>";
+		};
+		E2CE6BA0FC324F85AFC5DBC21FD87F21 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6A9276DD02AECDF4CD453E050E9898AE /* GooglePlaces.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E8002B5C95292EB0DC72B1E354775B99 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				789BBDAA8BC8B97730D670C40B629C03 /* GoogleMaps.bundle */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		F6CEEBF8CFA2649758C1612D40671491 /* Pods-MBank */ = {
@@ -582,7 +668,7 @@
 		};
 		55D4184B4962E56141E72CA937C68E0E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 777CF4D1BF0FC35D40DD7C45C0370C09 /* RNCryptor.xcconfig */;
+			baseConfigurationReference = 8C88C886A1E1FF082CD359F4C61EAD4C /* RNCryptor.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -702,7 +788,7 @@
 		};
 		BA9AE63E1E9D83EE97AD0299F38AEBBC /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 777CF4D1BF0FC35D40DD7C45C0370C09 /* RNCryptor.xcconfig */;
+			baseConfigurationReference = 8C88C886A1E1FF082CD359F4C61EAD4C /* RNCryptor.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";

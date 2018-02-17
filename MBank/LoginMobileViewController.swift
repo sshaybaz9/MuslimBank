@@ -161,7 +161,7 @@ class LoginMobileViewController: UIViewController,UITextFieldDelegate {
                 
                 
                 print(self.json)
-            
+    //9975482136
  // Login Customer Personal Detail
                self.accountNo = self.json?.value(forKey: "accno") as! String!
                self.kUserDefault.setValue(self.accountNo, forKey: "AccountNO")
@@ -175,9 +175,12 @@ class LoginMobileViewController: UIViewController,UITextFieldDelegate {
               let Email = self.json?.value(forKey: "email") as! String!
 //            var Rating = json?.value(forKey: "rating") as! NSString!
                 
-                let imgurl = self.json?.value(forKey: "profile_image")as! String!
-               if (imgurl != nil)
-               {
+                let imgurl = self.json?.value(forKey: "profile_image")as? String
+                if (imgurl != nil)
+                {
+                self.kUserDefault.setValue(imgurl, forKey: "FileName")
+
+               
             var img2 = self.url1 + "uploads/"
              img2  +=   (self.customerName?.removingWhitespaces())! + "/profile_images/" + imgurl! + ".jpg"
     
@@ -232,9 +235,13 @@ class LoginMobileViewController: UIViewController,UITextFieldDelegate {
             }
             else {
                 
+                print(json)
+                
                 
                 var jsonAccount = self.json?.value(forKey: "accounts") as? NSDictionary
                 
+                
+                if(jsonAccount != nil){
                 let jsonClientAccount = jsonAccount?.value(forKey: "clientAccounts") as!NSArray
                 
                 
@@ -261,11 +268,10 @@ class LoginMobileViewController: UIViewController,UITextFieldDelegate {
 
                     
                     
-//               print("\(tObjLogin.accID!),\(tObjLogin.accNo),\(tObjLogin.accType),\(tObjLogin.Balance!),\(tObjLogin.branchName),\(tObjLogin.Deself.tArray, forKey: "Testing"scription),\(tObjLogin.ifscCode),\(tObjLogin.maturityDate),\(tObjLogin.Name)")
                     
                     self.tArray.append(tObjLogin)
                     
-                    
+                    }
                     
                     
                 }

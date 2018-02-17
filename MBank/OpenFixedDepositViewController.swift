@@ -113,9 +113,8 @@ class OpenFixedDepositViewController: UIViewController,UITextFieldDelegate,UITab
 
                     
                 fix.depositScheme  = obj.value(forKey: "DepositSchemeId") as! String!
-                    self.schemeID = String(fix.depositScheme!)
   
-                    
+//print(self.schemeID)
                     
                     
                 fix.schemeName = obj.value(forKey: "SchemeName") as! String!
@@ -162,6 +161,7 @@ class OpenFixedDepositViewController: UIViewController,UITextFieldDelegate,UITab
         
         var temp = fixedArray[indexPath.row] as! FixedDeposit
         cell.textLabel?.text = temp.schemeName
+
         cell.textLabel?.font = UIFont(name:"Avenir", size:10)
 
         
@@ -171,8 +171,10 @@ class OpenFixedDepositViewController: UIViewController,UITextFieldDelegate,UITab
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath)
         
+        var temp = fixedArray[indexPath.row] as! FixedDeposit
+
         selectScheme.setTitle(cell?.textLabel?.text, for: .normal)
-        
+        self.schemeID = temp.depositScheme
         self.tableview.isHidden = true
     }
     
@@ -187,7 +189,7 @@ class OpenFixedDepositViewController: UIViewController,UITextFieldDelegate,UITab
         
         
         
-        let url = URL(string: "http://115.117.44.229:8443/Mbank_api/generatemmid.php")!
+        let url = URL(string: "http://115.117.44.229:8443/Mbank_api/fdaccountopening.php")!
         
         var request = URLRequest(url: url)
         

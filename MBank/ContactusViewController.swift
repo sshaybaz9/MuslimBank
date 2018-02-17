@@ -15,6 +15,12 @@ class ContactusViewController: UIViewController {
 
     }
 
+    @IBAction func Back(_ sender: AnyObject) {
+        
+        
+        self.dismiss(animated: true, completion: nil)
+        
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }

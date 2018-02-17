@@ -13,6 +13,9 @@ protocol PassVerfication {
 }
 class VerificationcodeViewController: UIViewController,UITextFieldDelegate {
 
+    
+    let kUserDefault = UserDefaults.standard
+
     var delegate:PassVerfication? = nil
     @IBOutlet weak var Mobtxt: UITextField!
     var mobileno : String!
@@ -29,6 +32,11 @@ class VerificationcodeViewController: UIViewController,UITextFieldDelegate {
     
     
     @IBAction func getVerCode(_ sender: AnyObject) {
+        
+        
+        self.kUserDefault.setValue(Mobtxt.text, forKey: "ResendMobile")
+   
+        
     var request = URLRequest(url: URL(string: "http://115.117.44.229:8443/Mbank_api/verifyupdatemobileactivation.php")!)
     request.httpMethod = "POST"
         
@@ -58,10 +66,7 @@ class VerificationcodeViewController: UIViewController,UITextFieldDelegate {
         
         let verficationAlert = UIAlertController()
         if((JSondata.value(forKey: "success") as! Int) == 1){//
-            successMessage = "OTP generated Succesfully"
-            verificationStatus =  JSondata.value(forKey: "success") as! Int
-            verficationAlert.addAction(UIAlertAction(title: "No", style: UIAlertActionStyle.cancel, handler: nil))
-            verficationAlert.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle.default, handler: { (action) in
+
                 let MTP = self.storyboard?.instantiateViewController(withIdentifier: "OTP") as! MobileOTPViewController
         //800515320360
                 
@@ -70,13 +75,16 @@ class VerificationcodeViewController: UIViewController,UITextFieldDelegate {
                 self.delegate?.PasstheVerifiationData(mobileNumberM: self.Mobtxt.text!, deviceIdM: self.deviceID!)
                 self.navigationController?.pushViewController(MTP, animated: true)
                 
+            
+            OperationQueue.main.addOperation {
                 
                 self.present(MTP, animated: true, completion: nil)
-                
+
+            }
+            
                 
                 
             
-            }))
         }else if((JSondata.value(forKey: "success") as! Int) == 0){
             verificationStatus =  JSondata.value(forKey: "success") as! Int
              successMessage = "Invalid mobile number"

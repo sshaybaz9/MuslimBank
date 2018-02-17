@@ -8,10 +8,14 @@
 
 import UIKit
 
-class Menu1ViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
+class Menu1ViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,UIImagePickerControllerDelegate{
+    
+    @IBOutlet weak var welcomeLbl: UILabel!
+    @IBOutlet weak var view1Img: UIImageView!
     
     var img : UIImage!
 
+    @IBOutlet weak var profielLatestimg: UIImageView!
     var temp1 = [Login]()
     
     @IBOutlet weak var LeadingConstraint: NSLayoutConstraint!
@@ -19,11 +23,7 @@ class Menu1ViewController: UIViewController,UICollectionViewDelegate,UICollectio
     @IBOutlet weak var lblCustomerName: UILabel!
        var menuShowing = false
    
-    
-//    var imageArray = [UIImage(named: "accounts_mbank.png"),UIImage(named: "transfer.png"),UIImage(named: "locate_atm.png"),UIImage(named: "bill_paym.png"),UIImage(named: "upi.png"),UIImage(named: "services.png"),UIImage(named: "shoppingcart.png"),UIImage(named: "tax_payment.png"),UIImage(named: "cards.png")]
-//    
-//    var nameArray = ["Accounts","Transfer","Locate ATMs","Bill payment and Reminder","UPI","Services","Offer","Tax payment","Cards"]
-//    
+
     
     var imageArray = [UIImage(named: "accounts_mbank.png"),UIImage(named: "transfer.png"),UIImage(named: "tax_payment.png"),UIImage(named: "bill_paym.png"),UIImage(named: "upi.png"),UIImage(named: "locate_atm.png"),UIImage(named: "shoppingcart.png"),UIImage(named: "services.png"),UIImage(named: "cards.png")]
     
@@ -41,14 +41,69 @@ class Menu1ViewController: UIViewController,UICollectionViewDelegate,UICollectio
         self.present(vc, animated: true, completion: nil)
     }
     
-       override func viewDidLoad() {
+    @IBAction func HomePressed(_ sender: AnyObject) {
+        
+        
+        
+        if(menuShowing)
+        {
+            
+            
+            
+            view1Img.image = img
+            
+            LeadingConstraint.constant = -245
+            
+            
+        }
+        else{
+            
+            
+            
+            
+            view1Img.image = img
+            
+            LeadingConstraint.constant = 0
+        }
+        
+        menuShowing = !menuShowing
+    
+    
+
+    }
+    
+    
+         override func viewDidLoad() {
         super.viewDidLoad()
             
         lblCustomerName.text = UserDefaults.standard.string(forKey: "CustomerName")
-        profileButton.setImage(img, for: UIControlState.normal)
-        
+           
+           // self.view.layoutIfNeeded()
+
+//     self.profielLatestimg.layer.cornerRadius = self.profielLatestimg.frame.size.width / 2
+//     self.profielLatestimg.clipsToBounds = true
+//       
+            profielLatestimg.image = img
+            
+            
+            
+            
+            let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
+            self.profielLatestimg.isUserInteractionEnabled = true
+            self.profielLatestimg.addGestureRecognizer(tapGestureRecognizer)
+            
         
     }
+
+    func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
+    {
+        
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "Profile") as! ProfileUpdateViewController
+        
+        self.present(vc, animated: true, completion: nil)
+
+    }
+    
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return nameArray.count
@@ -103,11 +158,28 @@ class Menu1ViewController: UIViewController,UICollectionViewDelegate,UICollectio
             }
 
         }
+        if(indexPath.row == 5)
+        {
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "Map") as! LocateOnMapViewController
+            
+            var flagSent = "atm"
+            
+            vc.flag = flagSent
+            self.navigationController?.pushViewController(vc, animated: true)
+            
+            OperationQueue.main.addOperation {
+                self.present(vc, animated: true, completion: nil)
+            }
+            
+        }
+        
         if (indexPath.row == 7)
         {
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "services") as!  ServicesMenuViewController
             self.present(vc, animated: true, completion: nil)
         }
+        
+    
     }
     
     override func didReceiveMemoryWarning() {
@@ -124,23 +196,72 @@ class Menu1ViewController: UIViewController,UICollectionViewDelegate,UICollectio
         
         if(menuShowing)
         {
+            
+            self.welcomeLbl.isHidden = false
+            
+            view1Img.image = img
+
+            self.view1Img.layer.cornerRadius = self.view1Img.frame.size.width / 2
+            self.view1Img.clipsToBounds = true
+
+            
             LeadingConstraint.constant = -245
+            
             
         }
         else{
             
+            self.welcomeLbl.isHidden = true
+            
+            view1Img.image = img
+
             LeadingConstraint.constant = 0
         }
         
         menuShowing = !menuShowing
     }
     
-    @IBAction func profileImage(_ sender: AnyObject) {
+    
+    @IBAction func MyAccount(_ sender: AnyObject) {
         
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "TabBar") as! AccountsTabBarController
+        self.present(vc, animated: true, completion: nil)
+
+        
+        
+    }
+    
+    
+    
+    @IBAction func Profile(_ sender: AnyObject) {
         
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "Profile") as! ProfileUpdateViewController
         
         self.present(vc, animated: true, completion: nil)
         
     }
+    
+    @IBAction func ChangeLoginPin(_ sender: AnyObject) {
+        
+        
+    }
+    
+    
+    @IBAction func ContactUs(_ sender: AnyObject) {
+        
+        
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "contactus") as! ContactusViewController
+        
+        self.present(vc, animated: true, completion: nil)
+        
+        
+    }
+    
+    @IBAction func Logout(_ sender: AnyObject) {
+        
+        
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+   
 }

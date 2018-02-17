@@ -66,7 +66,21 @@ class ServicesMenuViewController: UIViewController,UICollectionViewDelegate,UICo
             self.present(vc, animated: true, completion: nil)
             
         }
-        
+        if(indexPath.row == 2)
+        {
+            
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "Map") as! LocateOnMapViewController
+            
+            var flagSent = "bank"
+            
+            vc.flag = flagSent
+            self.navigationController?.pushViewController(vc, animated: true)
+            
+            OperationQueue.main.addOperation {
+                self.present(vc, animated: true, completion: nil)
+            }
+            
+        }
         
         if (indexPath.row == 3)
         {
