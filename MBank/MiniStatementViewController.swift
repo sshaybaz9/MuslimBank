@@ -9,6 +9,12 @@
 import UIKit
 
 class MiniStatementViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+    
+    
+    var json : NSDictionary?
+    
+    
+    var indicator = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
 
     @IBOutlet weak var tableview: UITableView!
     
@@ -23,15 +29,43 @@ class MiniStatementViewController: UIViewController,UITableViewDelegate,UITableV
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        if Connectivity.isConnectedToInternet{
         
         MiniStatementPressed()
+       
+        }
+        else
+        {
+            
+            
+            let alert = UIAlertController(title:"No Internet Connection" , message:"Make sure your device is connected to the internet." , preferredStyle: .alert)
+            
+            var action = UIAlertAction(title: "OK", style: .default, handler: nil)
+            
+            alert.addAction(action)
+            
+            self.present(alert, animated: true, completion: nil)
+            
+        }
 
+        
+
+        indicator.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
+        indicator.center = view.center
+        view.addSubview(indicator)
+        indicator.bringSubview(toFront: view)
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        
 
         
         // Do any additional setup after loading the view.
     }
 
+    override  func viewDidAppear(_ animated: Bool) {
+        self.tableview.reloadData()
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -40,6 +74,7 @@ class MiniStatementViewController: UIViewController,UITableViewDelegate,UITableV
 
   func MiniStatementPressed()
   {
+    if Connectivity.isConnectedToInternet {
     
     let accountNumber = UserDefaults.standard.string(forKey: "AccountNO")
     let customerName = UserDefaults.standard.string(forKey: "CustomerName")
@@ -48,9 +83,7 @@ class MiniStatementViewController: UIViewController,UITableViewDelegate,UITableV
     
     var responseString : String!
     
-    
-    
-    let url = URL(string: "http://115.117.44.229:8443/Mbank_api/cbsministatement.php")!
+    let url = URL(string: Constant.POST.SHOWMINISTATEMENT.ministatement)!
     
     var request = URLRequest(url: url)
     
@@ -65,6 +98,8 @@ class MiniStatementViewController: UIViewController,UITableViewDelegate,UITableV
     
     let postString = "remitter_mobile=\(mobileNumber!)&remitter_account=\(accountNumber!)&remitter_name=\(customerName!)&remitter_clientid=\(clientID!)&seck=\(seck)"
     
+     self.indicator.startAnimating()
+
     print(postString)
     
     request.httpBody = postString.data(using: .utf8)
@@ -79,25 +114,35 @@ class MiniStatementViewController: UIViewController,UITableViewDelegate,UITableV
             print("response = \(response)")
         }
         
+        self.indicator.stopAnimating()
+
         responseString = String(data: data, encoding: .utf8)
         print("responseString = \(responseString)")
         
         
-        var json: NSDictionary?
+        
+        
         do {
-            json = try JSONSerialization.jsonObject(with: data) as? NSDictionary
+            self.json = try JSONSerialization.jsonObject(with: data) as? NSDictionary
             
             
-            self.arr = (json?.value(forKey: "statements") as! NSArray) as! [String]
             
 
             
             
             print(self.arr)
             
-            self.parsingTheJsonData(JSondata: json!)
-            self.tableview.reloadData()
+            self.parsingTheJsonData(JSondata: self.json!)
 
+            
+            DispatchQueue.main.async(execute: {
+                
+                self.tableview.reloadData()
+                
+                return
+                
+            })
+            
         }   catch {
             print(error)
         }
@@ -105,12 +150,49 @@ class MiniStatementViewController: UIViewController,UITableViewDelegate,UITableV
    //35975151
     }
     task.resume()
+        
+    }
+    else
+    {
+        
+        
+        let alert = UIAlertController(title:"No Internet Connection" , message:"Make sure your device is connected to the internet." , preferredStyle: .alert)
+        
+        var action = UIAlertAction(title: "OK", style: .default, handler: nil)
+        
+        alert.addAction(action)
+        
+        self.present(alert, animated: true, completion: nil)
+        
+    }
 
     }
     
     
     func parsingTheJsonData(JSondata:NSDictionary){
-        self.tableview.reloadData()
+        if((JSondata.value(forKey: "success") as! Int) == 1){
+            
+            self.arr = (self.json?.value(forKey: "statements") as! NSArray) as! [String]
+            
+            
+        }else if ((JSondata.value(forKey: "success") as! Int) == 0){
+            
+            self.indicator.stopAnimating()
+            var msg = self.json?.value(forKey: "message") as! String!
+            
+            let alert = UIAlertController(title: "", message: "\(msg!)", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "close", style: .default, handler: nil))
+            
+            OperationQueue.main.addOperation {
+                
+                self.present(alert, animated:true, completion:nil)
+                
+            }
+            
+            
+            
+        }
 
     }
 
@@ -127,7 +209,7 @@ class MiniStatementViewController: UIViewController,UITableViewDelegate,UITableV
         let cell =  tableview.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
 
         cell.textLabel?.text = arr[indexPath.row]
-        cell.textLabel?.font = UIFont(name:"Avenir", size:10)
+        cell.textLabel?.font = UIFont(name:"Avenir", size:14)
 
        return cell
         

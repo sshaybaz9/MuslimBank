@@ -8,11 +8,35 @@
 
 import UIKit
 
-class AccountsTabBarController: UITabBarController {
+extension UITabBar {
+    
+    
+    
+    override open func sizeThatFits(_ size: CGSize) -> CGSize {
+        var sizeThatFits = super.sizeThatFits(size)
+        sizeThatFits.height = 40
+        
+        return sizeThatFits
+    }
+}
 
+class AccountsTabBarController: UITabBarController {
+    
+   
+   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+       
+        
+        
+       
+        
+
+        
+        
         // Do any additional setup after loading the view.
     }
 

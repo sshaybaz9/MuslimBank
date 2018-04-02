@@ -1,0 +1,333 @@
+        /*
+          Localizable.strings
+          MBank
+
+          Created by Mac on 21/03/18.
+          Copyright © 2018 Mac. All rights reserved.
+        */
+"Forgot Login Pin?" = "لاگ ان پن بھول گئے?";
+
+"Login" = "میں لاگ ان کریں";
+
+"Bank will send verififcation code via SMS on this mobile number." = "اس موبائل نمبر پر بینک ایس ایم ایس کے ذریعہ بینک کو تصدیق کرے گا";
+
+
+
+"New  to app? Generate secure pin for Authentication" = "اپلی کیشن نیا؟ توثیق کے لئے محفوظ پن بنائیں";
+
+
+
+"               Welcome to Muslim Bank Mobile App" = "مسلم بینک موبائل اپلی کیشن میں خوش                           آمدید";
+
+
+
+"Make sure your interest connection is stable." = "یقینی بنائیں کہ آپ کے سودے کنکشن مستحکم ہے";
+
+
+
+"Do not share verification code received via SMS with unknown person." = "نامعلوم شخص کے ساتھ ایس ایم ایس کے ذریعہ موصول ہونے والی توثیق کوڈ کا اشتراک نہ کریں.";
+
+
+
+"Registered mobile number with bank" = "بینک کے ساتھ رجسٹرڈ موبائل نمبر.";
+
+"Get verification code" = "توثیقی کوڈ حاصل کریں";
+
+
+
+"Already having pin? Login" = "پہلے سے ہی پن ہے؟ میں لاگ ان کریں";
+
+
+
+"Verification code" = "تصدیقی کوڈ";
+
+
+
+"Proceed" = "آگے بڑھو";
+
+"Note : Do not share verification code with unknown person" = "نوٹ: نامعلوم شخص کے ساتھ توثیقی کوڈ کا اشتراک نہ کریں";
+
+
+
+
+
+"Resend verification code" = "توثیق کوڈ دوبارہ کریں";
+
+
+
+"Account number" = "اکاؤنٹ نمبر";
+
+"Setup login PIN" = "سیٹ اپ لاگ ان پن";
+
+
+
+"Enter login PIN"  = "لاگ ان پن درج کریں";
+
+
+
+"Confirm login PIN" = "لاگ ان PIN کی توثیق کریں";
+
+
+
+"Save" = "محفوظ کریں";
+
+
+
+"WELCOME" = "خوش آمدید";
+
+
+
+"Home"  = "گھر";
+
+"Profile" = "پروفائل";
+
+
+
+"My Account" = "میرا اکاونٹ";
+
+
+
+"Change login pin" = "لاگ ان پن تبدیل کریں";
+
+
+
+"Rate us" = "ہمیں شرح";
+
+
+
+"Contact us"  = "ہم سے رابطہ کریں";
+
+
+
+"Language change" = "زبان تبدیل";
+
+
+
+"Logout" = "لاگ آوٹ";
+
+"Accounts" = "اکاؤنٹس";
+
+
+
+"Transactions" = "ٹرانسمیشن";
+
+
+
+"Loans" = "قرض";
+
+"Bill payment and Reminder" = "بل ادائیگی اور یاد دہانی";
+
+"UPI" = "متحد ادائیگی کے انٹرفیس";
+
+"Locate ATMs"  = "اے ٹی ایمز کا پتہ لگائیں";
+
+"Offer" = "پیش کرتے ہیں";
+
+"Services" = "خدمات";
+
+"Cards" = "کارڈ";
+
+
+
+"Rate us" = "ہمیں شرح";
+
+
+
+"Please give rating based on your experience with this app.Your rating will be useful in order to study and improve user experience." = "براہ کرم اس ایپ کے ساتھ اپنے تجربے پر مبنی درجہ بندی دیں. آپ کا درجہ صارف کے تجربے کا مطالعہ اور بہتر بنانے کے لئے مفید ثابت ہوگا";
+
+"Submit" = "جمع";
+
+
+
+"You can reset your pin from here" = "آپ یہاں سے اپنے پن کو ری سیٹ کرسکتے ہیں";
+
+"Please setup login pin" = "براہ مہربانی لاگ ان پن سیٹ کریں";
+
+
+
+"Save" = "محفوظ کریں";
+
+"LOGIN"  = "میں لاگ ان کریں";
+
+"Mini Statement" = "مینی بیان";
+
+"Location" = "مقام";
+
+"Contact information" = "رابطے کی معلومات";
+
+"Head Office Address" = "ہیڈ آفس ایڈریس";
+
+"647, Bhawani Peth, 4th Floor, Golden Jubilee Technical Institute Building, Pune -411042." = "647، بھوانی پیت، 4th منزل، گولڈن جیوب تکنیکی انسٹی ٹیوٹ عمارت، پون -411042. ";
+
+"Email address" = "ای میل اڈریس";
+
+
+
+"bankmuslim@gmail.com" = "bankmuslim@gmail.com";
+
+"Contact number" = "رابطہ نمبر";
+
+
+
+"91-20-26435007" = "91-20-26435007";
+
+"Profile information" = "ذاتی معلومات";
+
+"Personal information" = "ذاتی معلومات";
+
+"Name" = "نام";
+
+"Mobile" = "موبائل";
+
+"Email" = "ای میل";
+
+"Address" = "ایڈریس";
+
+"State" = "حالت";
+
+"City" = "شہر";
+
+"Create MMID" = "ایم ایم ڈی بنائیں";
+
+
+
+"Generate MMID" = "ایم ایم ڈی پیدا کریں";
+
+"Disable MMID" = "ایم ایم ڈی کو غیر فعال کریں";
+
+"Available Balance :" = "دستیاب بیلنس :";
+
+"Balance" = "بقیہ";
+
+"Details" = "تفصیلات";
+
+"Recent transaction" = "حالیہ ٹرانزیکشن";
+
+"Transaction History" = "ٹرانزیکشن کی تاریخ";
+
+"Transaction refrence number:" = "ٹرانزیکشن کی بحالی کا نمبر:";
+
+
+
+"Status:" = "حالت:";
+
+
+
+"Transaction type:" = "ٹرانزیکشن کی قسم:";
+
+
+
+"Refer Friends" = "دوستوں کا حوالہ دیں";
+
+
+
+"Contact number" = "رابطہ نمبر";
+
+"Enter email" = "ای میل درج کریں";
+
+"Branch" = "برانچ";
+
+"Account Type" = "اکاؤنٹ کی اقسام";
+
+"Description:" = "تفصیل:";
+
+"Account ID:" = "اکاؤنٹ کی شناخت:";
+
+"IFS Code:" = "آئی ایف سی ایس کوڈ:";
+
+"Currency:" = "کرنسی:";
+
+"Fund Transfer" = "فنڈ ٹرانسفر";
+
+"Summary" = "خلاصہ";
+
+"Show IMPS Mini Statment" = "IMPS مینی مجسمہ دکھائیں";
+
+"Date and Time" = "تاریخ اور وقت";
+
+"Amount" = "رقم";
+
+"Transaction" = "ٹرانزیکشن";
+
+"View Deposit" = "ذخیرہ دیکھیں";
+
+"Select Deposit type" = "جمع کی قسم کا انتخاب کریں";
+
+
+
+"OPEN FD" = "کھولیں ایف ڈیکھولیں ایف ڈی";
+
+"OPEN RD" = "کھولیں آرڈ";
+
+
+
+"DEPOSITS" = "ڈپازٹس";
+
+"View Deposits" = "ذخیرہ دیکھیں";
+
+
+
+"Enter details for Fixed deposit" = "فکسڈ جمع کرنے کے لئے تفصیلات درج کریں";
+
+"Enter details for Recurring deposit" = "دوبارہ آمدنی کے جمع کرنے کے لئے تفصیلات درج کریں";
+
+"Select scheme" = "سکیم منتخب کریں";
+
+"Select Scheme" = "منصوبہ منتخب کریں";
+
+"Add Beneficiary" = "گراؤنڈ شامل کریں";
+
+"Note: Beneficiary will be activated immediately" = "نوٹ: گراؤنڈ فوری طور پر چالو کر دیا جائے گا";
+
+"Beneficiary Category" = "فوائد زمرہ";
+
+"Select Beneficiary" = "فائدہ مند منتخب کریں";
+
+"Beneficiary Name" = "فوائد کا نام";
+
+"IFS Code of Beneficiary's bank" = "فائدے کے بینک کے آئی ایف ایس کوڈ";
+
+"Beneficiary account number" = "لابارتی اکاؤنٹ نمبر";
+
+"Transfer limit" = "منتقلی کی حد";
+
+"Register" = "رجسٹر کریں";
+
+"Cancel" = "منسوخ کریں";
+
+
+
+"Pay using Account" = "اکاؤنٹ کا استعمال کرتے ہوئے ادائیگی کریں";
+"P2A using IFS Code" = "I2S کوڈ کا استعمال کرتے ہوئے P2A";
+"Balance inquiry" = "بیلنس انکوائری";
+"Generate MMID" = "ایم ایم ڈی پیدا کریں";
+"Retrieve MMID" = "MMID دوبارہ حاصل کریں";
+"Cancel MMID" = "ایم ایم ڈی کو منسوخ کریں";
+"Transaction inquiry" = "ٹرانزیکشن انکوائری";
+"Mini statement" = "مینی بیان";
+"Add beneficiary" = "فائدہ اٹھانے";
+
+
+
+"Person to Account - IMPS"  = "اکاؤنٹ کا اکاؤنٹ - IMPS";
+"Debit From Account" = "اکاؤنٹ سے ڈیبٹ";
+"Select Account" = "اکاؤنٹ منتخب کریں";
+"Debit Account Number" = "ڈیبٹ اکاؤنٹ نمبر";
+"Amount to be transferred" = "منتقل ہونے کی رقم";
+"IFS Code" = "IFSC کوڈ";
+"Purpose" = "مقصد";
+
+"Please note, as per RBI instruction credit will be effected based solely on the beneficiary  account number information." = "برائے مہربانی نوٹ کریں، آرجیبی ہدایات کریڈٹ کے مطابق کریڈٹ اکاؤنٹنگ اکاؤنٹس کی معلومات پر صرف بنیاد پر اثر انداز ہو جائے گا.";
+
+
+"Required field is Empty" = "ضروری فیلڈ خالی ہے";
+"Please enter the Mobile Number" = "برائے مہربانی موبائل نمبر درج کریں";
+
+"Please enter the Password" = "پاس ورڈ درج کریں";
+
+" Select Transaction Item" = "ٹرانزیکشن آئٹم منتخب کریں";
+
+"Show Account Balance" = "اکاؤنٹ بیلنس دکھائیں";
+"Balance Enquiry" = "بیلنس انکوائری";
+"Profile Update" = "پروفائل اپ ڈیٹ";
+

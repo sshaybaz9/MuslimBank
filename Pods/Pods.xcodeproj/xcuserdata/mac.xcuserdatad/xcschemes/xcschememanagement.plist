@@ -4,6 +4,31 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Alamofire.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>IQKeyboardManagerSwift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>ImageSlideshow-ImageSlideshow.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>ImageSlideshow.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Kingfisher.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-MBank.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -27,12 +52,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>065306EEED893E98336BACFC000835BF</key>
+		<key>073FAA36E55E02E5E877D15EB97AC2AC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3FAA37201F9E11F17A5C65AA37C5ED67</key>
+		<key>88E9EC28B8B46C3631E6B242B50F4442</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>94CDCE75F6653305B3F663802AEAFFA5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -43,6 +73,26 @@
 			<true/>
 		</dict>
 		<key>A212B7C38CE571F786FF5DCE3DAAB1A8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C00B7D1548C00020152F5855934101CA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C0D8D185036014A5380851EA9E3BF4BF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C235F77E101E742652CCF98FFDFA5182</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E83D72EE0336E9831509503ECD4154EA</key>
 		<dict>
 			<key>primary</key>
 			<true/>

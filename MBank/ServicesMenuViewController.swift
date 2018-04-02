@@ -7,17 +7,56 @@
 //
 
 import UIKit
+import ImageSlideshow
 
 class ServicesMenuViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
     
     var imageArray = [UIImage(named: "transactionhistory.png"),UIImage(named: "changeloginpin.png"),UIImage(named:"locatebranches.png"),UIImage(named:"referfriends.png")]
     var nameArray = ["Transaction History","Change login pin","Locate our branches","Refer Friends"]
+    
+    
+    
+    
+    @IBOutlet weak var SlideImages: ImageSlideshow!
+    
+    
+    let kingfisherSource = [KingfisherSource(urlString: Constant.Domain+"appimages/other/"+"1.png")!,KingfisherSource(urlString: Constant.Domain+"appimages/other/"+"2.png")!,KingfisherSource(urlString: Constant.Domain+"appimages/other/"+"3.png")!,KingfisherSource(urlString: Constant.Domain+"appimages/other/"+"4.png")!,]
+    
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //  call to Image Slider View
+        SlideImages.backgroundColor = UIColor.white
+        SlideImages.slideshowInterval = 5.0
+        SlideImages.pageControlPosition = PageControlPosition.underScrollView
+        SlideImages.pageControl.currentPageIndicatorTintColor = UIColor.lightGray
+        SlideImages.pageControl.pageIndicatorTintColor = UIColor.black
+        SlideImages.contentScaleMode = UIViewContentMode.scaleAspectFill
+        
+        // optional way to show activity indicator during image load (skipping the line will show no activity indicator)
+        
+        SlideImages.currentPageChanged = { page in
+            print("current page:", page)
+        }
+        
+        // can be used with other sample sources as `afNetworkingSource`, `alamofireSource` or `sdWebImageSource` or `kingfisherSource`
+        SlideImages.setImageInputs(kingfisherSource)
+        
+        let recognizer = UITapGestureRecognizer(target: self, action: #selector(didTap))
+        SlideImages.addGestureRecognizer(recognizer)
+        
 
         // Do any additional setup after loading the view.
     }
     
+    @objc func didTap() {
+        let fullScreenController = SlideImages.presentFullScreenController(from: self)
+        // set the activity indicator for full screen controller (skipping the line will show no activity indicator)
+        //                        fullScreenController.imageSlideShow.activityIndicator = DefaultActivityIndicator(style: .white, color: nil)
+    }
+
     @IBAction func BackPressed(_ sender: AnyObject) {
         
         
@@ -62,6 +101,15 @@ class ServicesMenuViewController: UIViewController,UICollectionViewDelegate,UICo
         if(indexPath.row == 0)
         {
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "TransactionHistory") as! TransactionHistory2TableViewController
+            
+            self.present(vc, animated: true, completion: nil)
+            
+        }
+        
+        
+        if (indexPath.row == 1)
+        {
+            let vc = storyboard?.instantiateViewController(withIdentifier: "changePin") as! ChangeLoginPinViewController
             
             self.present(vc, animated: true, completion: nil)
             

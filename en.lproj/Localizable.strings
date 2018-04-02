@@ -1,0 +1,179 @@
+/* 
+  Localizable.strings
+  MBank
+
+  Created by Mac on 21/03/18.
+  Copyright © 2018 Mac. All rights reserved.
+*/
+"Forgot Login Pin?" = "Forgot Login Pin?";
+"Login" = "Login";
+
+"Bank will send verififcation code via SMS on this mobile number." = "Bank will send verififcation code via SMS on this mobile number.";
+
+"New  to app? Generate secure pin for Authentication" = "New  to app? Generate secure pin for Authentication";
+
+"               Welcome to Muslim Bank Mobile App" = "               Welcome to Muslim Bank Mobile App";
+
+
+"Make sure your internet connection is stable." = "Make sure your internet connection is stable.";
+"Do not share verification code received via SMS with unknown person." = "Do not share verification code received via SMS with unknown person.";
+"Registered mobile number with bank" = "Registered mobile number with bank";
+
+"Get verification code" = "Get verification code";
+"Already having pin? Login" = "Already having pin? Login";
+"Verification code" = "Verification code";
+"Proceed" = "Proceed";
+"Note : Do not share verification code with unknown person" = "Note : Do not share verification code with unknown person";
+
+"Resend verification code" = "Resend verification code";
+
+"Account number" = "Account number";
+"Setup login PIN" = "Setup login PIN";
+
+"Enter login PIN" = "Enter login PIN";
+
+"Confirm login PIN"  = "Confirm login PIN";
+"Save" = "Save";
+
+"WELCOME" = "WELCOME";
+
+"Home" = "Home";
+"My Account" = "My Account";
+
+"Profile"  = "Profile";
+
+"Change login pin" = "Change login pin";
+
+"Rate us" = "Rate us";
+"Contact us"  = "Contact us";
+
+"Language change" = "Language change";
+"Logout" = "Logout";
+
+"Accounts" = "Accounts";
+"Transactions" = "Transactions";
+"Loans" = "Loans";
+
+
+"Bill payment and Reminder" = "Bill payment and Reminder";
+"UPI" = "UPI";
+
+"Locate ATMs"  = "Locate ATMs";
+"Offer" = "Offer";
+"Services" = "Services";
+"Cards" = "Cards";
+
+"Rate us" = "Rate us";
+
+"Please give rating based on your experience with this app.Your rating will be useful in order to study and improve user experience." = "Please give rating based on your experience with this app.Your rating will be useful in order to study and improve user experience.";
+"Submit" = "Submit";
+
+"You can reset your pin from here" = "You can reset your pin from here";
+"Please setup login pin" = "Please setup login pin";
+
+"Save" = "Save";
+"LOGIN"  = "LOGIN";
+"Mini Statement" = "Mini Statement";
+"Location" = "Location";
+"Contact information" = "Contact information";
+"Head Office Address" = "Head Office Address";
+"647, Bhawani Peth, 4th Floor, Golden Jubilee Technical Institute Building, Pune -411042." = "647, Bhawani Peth, 4th Floor, Golden Jubilee Technical Institute Building, Pune -411042.";
+"Email address" = "Email address";
+
+"bankmuslim@gmail.com" = "bankmuslim@gmail.com";
+"Contact number" = "Contact number";
+
+"91-20-26435007" = "91-20-26435007";
+"Profile information" = "Profile information";
+"Personal information" = "Personal information";
+"Name" = "Name";
+"Mobile" = "Mobile";
+"Email" = "Email";
+"Address" = "Address";
+"State" = "State";
+"City" = "City";
+"Create MMID" = "Create MMID";
+
+"Generate MMID" = "Generate MMID";
+"Disable MMID" = "Disable MMID";
+"Available Balance :" = "Available Balance :";
+"Balance" = "Balance";
+"Details" = "Details";
+"Recent transaction" = "Recent transaction";
+"Transaction History" = "Transaction History";
+"Transaction refrence number:" = "Transaction refrence number:";
+
+"Status:" = "Status:";
+
+"Transaction type:" = "Transaction type:";
+
+"Refer Friends" = "Refer Friends";
+
+"Contact number" = "Contact number";
+"Enter email" = "Enter email";
+"Branch" = "Branch";
+"Account Type" = "Account Type";
+"Description:" = "Description:";
+"Account ID:" = "Account ID:";
+"IFS Code:" = "IFS Code:";
+"Currency:" = "Currency:";
+"Fund Transfer" = "Fund Transfer";
+"Summary" = "Summary";
+"Show IMPS Mini Statment" = "Show IMPS Mini Statment";
+"Date and Time" = "Date and Time";
+"Amount" = "Amount";
+"Transaction" = "Transaction";
+"View Deposit" = "View Deposit";
+"Select Deposit type" = "Select Deposit type";
+
+"OPEN FD" = "OPEN FD";
+"OPEN RD" = "OPEN RD";
+
+"DEPOSITS" = "DEPOSITS";
+"View Deposits" = "View Deposits";
+
+"Enter details for Fixed deposit" = "Enter details for Fixed deposit";
+"Enter details for Recurring deposit" = "Enter details for Recurring deposit";
+"Select scheme" = "Select scheme";
+"Select Scheme" = "Select Scheme";
+"Add Beneficiary" = "Add Beneficiary";
+"Note: Beneficiary will be activated immediately" = "Note: Beneficiary will be activated immediately";
+"Beneficiary Category" = "Beneficiary Category";
+"Select Beneficiary" = "Select Beneficiary";
+"Beneficiary Name" = "Beneficiary Name";
+"IFS Code of Beneficiary's bank" = "IFS Code of Beneficiary's bank";
+"Beneficiary account number" = "Beneficiary account number";
+"Transfer limit" = "Transfer limit";
+"Register" = "Register";
+"Cancel" = "Cancel";
+
+"Pay using Account" = "Pay using Account";
+"P2A using IFS Code" = "P2A using IFS Code";
+"Balance inquiry" = "Balance inquiry";
+"Generate MMID" = "Generate MMID";
+"Retrieve MMID" = "Retrieve MMID";
+"Cancel MMID" = "Cancel MMID";
+"Transaction inquiry" = "Transaction inquiry";
+"Mini statement" = "Mini statement";
+"Add beneficiary" = "Add beneficiary";
+
+"Person to Account - IMPS"  = "Person to Account - IMPS";
+"Debit From Account" = "Debit From Account";
+"Select Account" = "Select Account";
+"Debit Account Number" = "Debit Account Number";
+"Amount to be transferred" = "Amount to be transferred";
+"IFS Code" = "IFS Code";
+"Purpose" = "Purpose";
+
+"Please note, as per RBI instruction credit will be effected based solely on the beneficiary  account number information." = "Please note, as per RBI instruction credit will be effected based solely on the beneficiary  account number information.";
+
+
+
+"Required field is Empty" = "Required field is Empty";
+"Please enter the Mobile Number" = "Please enter the Mobile Number";
+"Please enter the Password" = "Please enter the Password";
+
+" Select Transaction Item" = " Select Transaction Item";
+"Show Account Balance" = "Show Account Balance";
+"Balance Enquiry" = "Balance Enquiry";
+"Profile Update" = "Profile Update";

@@ -48,7 +48,7 @@
             
             super.viewDidLoad()
 
-            
+            if Connectivity.isConnectedToInternet{
             
             print(flag)
             locationManager = CLLocationManager()
@@ -76,7 +76,21 @@
             indicator.bringSubview(toFront: view)
             UIApplication.shared.isNetworkActivityIndicatorVisible = true
             
+            }
             
+            else
+            {
+                
+                let alert = UIAlertController(title:"No Internet Connection" , message:"Make sure your device is connected to the internet." , preferredStyle: .alert)
+                
+                var action = UIAlertAction(title: "OK", style: .default, handler: nil)
+                
+                alert.addAction(action)
+                
+                self.present(alert, animated: true, completion: nil)
+
+                
+            }
             
         }
         
@@ -85,8 +99,8 @@
 
             DispatchQueue.main.async {
                 
-                var position = CLLocationCoordinate2D(latitude: lat, longitude: long)
-                var marker = GMSMarker(position: position)
+                let position = CLLocationCoordinate2D(latitude: lat, longitude: long)
+                let marker = GMSMarker(position: position)
                 marker.title = locName
                 marker.snippet = locName
                 marker.map = self.mapView
@@ -159,11 +173,17 @@
             
             
             
+            if Connectivity.isConnectedToInternet
+            {
+            
+            
             var responseString : String!
             
             
             
-            let url = URL(string: "http://115.117.44.229:8443/Mbank_api/getplaces.php")!
+            let url = URL(string: Constant.POST.GETNEARBYATMS.atms)!
+            
+   
             
             var request = URLRequest(url: url)
             
@@ -173,13 +193,12 @@
             
             request.addValue("application/json", forHTTPHeaderField: "Content-Type")
             
-            var seck = mLat + mLong
+            let seck = mLat + mLong
             
             var postString = "lat=\(mLat)&lng=\(mLong)&seck=\(seck)"
             
-            var flag = "atm"
             
-            if(flag == "atm"){
+            if(self.flag == "atm"){
                 postString += "type=\("atm")&name=\("")"
             } else {
                 postString += "type=\("bank")&name=\("Muslim")"
@@ -212,23 +231,23 @@
                     json = try JSONSerialization.jsonObject(with: data) as? NSDictionary
                     
                     
-                    var res = json?.value(forKey: "results") as? NSArray
+                    let res = json?.value(forKey: "results") as? NSArray
                     
                     for item in res!
                     {
                      let obj = item as! NSDictionary
                         
-                        var locObj = LocationPojo()
+                        let locObj = LocationPojo()
 
                         locObj.atmName = obj.value(forKey: "name") as! String!
                         
                         
-                    var geom = obj.value(forKey: "geometry") as? NSDictionary
+                    let geom = obj.value(forKey: "geometry") as? NSDictionary
                         
                         
                         
                         
-                    var loc = geom?.value(forKey: "location") as? NSDictionary
+                    let loc = geom?.value(forKey: "location") as? NSDictionary
                         
                         
                         var intlat : Double!
@@ -285,7 +304,22 @@
             }
             task.resume()
             
+            }
+            
+            else
+            
+            {
+                let alert = UIAlertController(title:"No Internet Connection" , message:"Make sure your device is connected to the internet." , preferredStyle: .alert)
+                
+                var action = UIAlertAction(title: "OK", style: .default, handler: nil)
+                
+                alert.addAction(action)
+                
+                self.present(alert, animated: true, completion: nil)
 
+                
+                
+            }
             
         }
         

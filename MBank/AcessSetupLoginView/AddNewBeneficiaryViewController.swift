@@ -8,8 +8,18 @@
 
 import UIKit
 import CoreData
-class AddNewBeneficiaryViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,UITextFieldDelegate {
+class AddNewBeneficiaryViewController: UIViewController,UITextFieldDelegate,UITableViewDelegate,UITableViewDataSource {
     
+    @IBOutlet weak var tableview: UITableView!
+    
+    var BeneCatTable : String!
+    
+    
+    var activeTextField : UITextField!
+    
+    let button = UIButton(type: UIButtonType.custom)
+    
+
     
     var BArray = BeneficiaryName()
 
@@ -31,13 +41,23 @@ class AddNewBeneficiaryViewController: UIViewController,UIPickerViewDelegate,UIP
     @IBOutlet weak var IfsCodetxt: UITextField!
     
     @IBOutlet weak var BeneficiarAccountNo: UITextField!
-    var lineView1 = UIView(frame: CGRect(x: 160, y: 0, width: 1.0, height: 57))
+    var lineView1 = UIView(frame: CGRect(x: 180, y: 0, width: 1.0, height: 57))
 
-    @IBOutlet weak var picker: UIPickerView!
+    @IBOutlet weak var selectBeneficiary: UIButton!
     
-    @IBOutlet weak var SelectBank: UITextField!
     var list = ["Muslim Bank","Other Bank"]
     
+    @IBAction func SelectBeneficary(_ sender: AnyObject) {
+        
+        
+        
+        
+        self.tableview.reloadData()
+        
+        self.tableview.isHidden = !self.tableview.isHidden
+        
+
+    }
     @IBAction func BackPressed(_ sender: AnyObject) {
         
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "Transaction") as! TransactionViewController
@@ -46,12 +66,27 @@ class AddNewBeneficiaryViewController: UIViewController,UIPickerViewDelegate,UIP
     }
         override func viewDidLoad() {
         super.viewDidLoad()
-
-         self.BeneficiaryNametxt.delegate = self
+            
+            self.BeneficiaryNametxt.delegate = self
             self.IfsCodetxt.delegate = self
             self.BeneficiarAccountNo.delegate = self
             self.TransferLimittxt.delegate = self
             
+
+            
+            
+            // View Frame will Move Up when Keyboard hide the frame
+            
+            let center : NotificationCenter = NotificationCenter.default;
+            center.addObserver(self, selector: #selector(keyboardDidShow(notification:)), name: NSNotification.Name.UIKeyboardDidShow, object: nil)
+            center.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: NSNotification.Name.UIKeyboardDidHide, object: nil)
+            
+            
+            
+
+            
+            
+
             
             
             self.BenID = String(describing: BArray.benID)
@@ -61,10 +96,26 @@ class AddNewBeneficiaryViewController: UIViewController,UIPickerViewDelegate,UIP
             self.TransferLimittxt.text = BArray.benTransfer
             self.IfsCodetxt.text = BArray.benIFSC
             self.BeneficiarAccountNo.text = BArray.benAccount
-            self.SelectBank.text = BArray.benCat
+            
+            var tempBenCat = BArray.benCat
+            
+            
+            
+            if(tempBenCat != nil){
+  //          self.selectBeneficiary.text = BArray.benCat
+            
+       self.selectBeneficiary.setTitle(tempBenCat, for: .normal)
+            }
+            else{
+            
+            
+            self.selectBeneficiary.setTitle("Select", for: .normal)
+                
+            }
+            
             self.BeneficiaryNametxt.text = BArray.bNAme
             
-            self.SelectBank.tintColor = .clear
+  //          self.SelectBank.tintColor = .clear
             
             lineView1.layer.borderWidth = 1.0
             lineView1.layer.borderColor = UIColor.white.cgColor
@@ -73,14 +124,151 @@ class AddNewBeneficiaryViewController: UIViewController,UIPickerViewDelegate,UIP
             
             
             
+            
+            
+            
     }
 
-    //then you should implement the func named textFieldShouldReturn
     
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+    }
+    
+    func keyboardWillShow(notification : Notification) -> Void{
+        DispatchQueue.main.async { () -> Void in
+            self.button.isHidden = false
+            let keyBoardWindow = UIApplication.shared.windows.last
+            self.button.frame = CGRect(x: 0, y: (keyBoardWindow?.frame.size.height)!-53, width: 106, height: 53)
+            keyBoardWindow?.addSubview(self.button)
+            keyBoardWindow?.bringSubview(toFront: self.button)
+            
+            
+            UIView.animate(withDuration: 0.25, delay: 0.0, options: UIViewAnimationOptions.curveEaseIn, animations: {
+                self.view.frame = self.view.frame.offsetBy(dx: 0, dy: 0)
+                }, completion: nil)
+        }
+        
+    }
+    
+    
+    
+    func keyboardDidShow(notification: Notification)
+        
+    {
+        
+        
+        let info: NSDictionary = notification.userInfo! as NSDictionary
+        let keyboardSize = (info[UIKeyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
+        
+        
+        let keyboardY = self.view.frame.size.height - keyboardSize.height
+        
+        
+        let editingTextFieldY : CGFloat! = self.activeTextField?.frame.origin.y
+        
+        
+        if self.view.frame.origin.y >= 0 {
+            
+            // Checking if the textfield is really hiddn behind the keyboard
+            
+            if(editingTextFieldY != nil)
+            {
+                
+                if editingTextFieldY > keyboardY - 60
+                {
+                    
+                    
+                    
+                    UIView.animate(withDuration: 0.25, delay: 0.0, options: UIViewAnimationOptions.curveEaseIn, animations: {
+                        self.view.frame = CGRect(x: 0, y: self.view.frame.origin.y - (editingTextFieldY! - (keyboardY - 60)), width: self.view.bounds.width, height: self.view.bounds.height)
+                        }, completion: nil)
+                }
+            }
+            
+        }
+        
+        
+    }
+    
+    func keyboardWillHide(notification: Notification)
+        
+    {
+        
+        UIView.animate(withDuration: 0.25, delay: 0.0, options: UIViewAnimationOptions.curveEaseIn, animations: {
+            self.view.frame = CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height)
+            }, completion: nil)
+        
+        
+    }
+    
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        activeTextField = textField
+    }
+    
+    
+    //then you should implement the func named textFieldShouldReturn
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
+    
+    
+
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return list.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        
+        
+        var temp = list[indexPath.row]
+        
+        cell.textLabel?.text = list[indexPath.row]
+        
+        
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath)
+        
+        var temp = list[indexPath.row]
+        
+        
+        if (temp == "Muslim Bank")
+        {
+        
+        
+        selectBeneficiary.setTitle(cell?.textLabel?.text, for: .normal)
+
+        self.BeneCatTable = "Muslim Bank"
+        
+            
+            self.tableview.isHidden = true
+        }
+        
+        else if (temp == "Other Bank"){
+            
+            selectBeneficiary.setTitle(cell?.textLabel?.text, for: .normal)
+
+            
+            self.BeneCatTable = "Other Bank"
+            self.tableview.isHidden = true
+            
+        }
+
+    }
+    
+    
+    //then you should implement the func named textFieldShouldReturn
+    
     
     // -- then, further if you want to close the keyboard when pressed somewhere else on the screen you can implement the following method too:
     
@@ -93,44 +281,21 @@ class AddNewBeneficiaryViewController: UIViewController,UIPickerViewDelegate,UIP
         // Dispose of any resources that can be recreated.
     }
     
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return list.count
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        
-        self.view.endEditing(true)
-        return list[row]
-    }
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        
-        self.SelectBank.text = self.list[row]
-        self.picker.isHidden = true
-    
-    }
     
     
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        if textField == self.SelectBank
-        {
-            self.picker.isHidden = false
-        }
-    }
     
 
     @IBAction func Register(_ sender: AnyObject) {
         
         
+        
+if Connectivity.isConnectedToInternet        {
+        
         let mobileNumber = UserDefaults.standard.string(forKey: "MobileText")
 
         var responseString : String!
         
-        
-let url = URL(string: "http://115.117.44.229:8443/Mbank_api/verifywithmobile.php")!
+        let url = URL(string: Constant.POST.VERIFYMOBILENO.verifymobileno)!
         
         var request = URLRequest(url: url)
         
@@ -176,6 +341,21 @@ let url = URL(string: "http://115.117.44.229:8443/Mbank_api/verifywithmobile.php
             
         }
         task.resume()
+        }
+        
+        else
+        {
+            
+            
+            let alert = UIAlertController(title:"No Internet Connection" , message:"Make sure your device is connected to the internet." , preferredStyle: .alert)
+            
+            var action = UIAlertAction(title: "OK", style: .default, handler: nil)
+            
+            alert.addAction(action)
+            
+            self.present(alert, animated: true, completion: nil)
+            
+        }
         
     }
     
@@ -217,13 +397,13 @@ let url = URL(string: "http://115.117.44.229:8443/Mbank_api/verifywithmobile.php
     func Handler(alert: UIAlertAction)
     {
         
-        
+if Connectivity.isConnectedToInternet
+        {
         let mobileNumber = UserDefaults.standard.string(forKey: "MobileText")
         
         var responseString : String!
         
-        
-        let url = URL(string: "http://115.117.44.229:8443/Mbank_api/verifygenericotp.php")!
+        let url = URL(string: Constant.POST.VERIFYGENERICOTP.verifygenericotp)!
         
         var request = URLRequest(url: url)
         
@@ -269,6 +449,20 @@ let url = URL(string: "http://115.117.44.229:8443/Mbank_api/verifywithmobile.php
             
         }
         task.resume()
+        }
+        else
+        {
+            
+            
+            let alert = UIAlertController(title:"No Internet Connection" , message:"Make sure your device is connected to the internet." , preferredStyle: .alert)
+            
+            var action = UIAlertAction(title: "OK", style: .default, handler: nil)
+            
+            alert.addAction(action)
+            
+            self.present(alert, animated: true, completion: nil)
+            
+        }
         
     }
     
@@ -276,6 +470,10 @@ let url = URL(string: "http://115.117.44.229:8443/Mbank_api/verifywithmobile.php
     func parsingTheJsonData1(JSondata1:NSDictionary){
         
         if((JSondata1.value(forKey: "success") as! Int) == 1){
+            
+            
+            
+if Connectivity.isConnectedToInternet            {
             
             let clientID = UserDefaults.standard.string(forKey: "ClientID")
 
@@ -290,7 +488,11 @@ let url = URL(string: "http://115.117.44.229:8443/Mbank_api/verifywithmobile.php
             var responseString : String!
             var postString : String!
             
-        let url = URL(string: "http://115.117.44.229:8443/Mbank_api/addbeneficiary.php")!
+            
+            
+            let url = URL(string: Constant.POST.ADDPAYEE.addPayee)!
+            
+       
             
             var request = URLRequest(url: url)
             
@@ -300,10 +502,10 @@ let url = URL(string: "http://115.117.44.229:8443/Mbank_api/verifywithmobile.php
             
             request.addValue("application/json", forHTTPHeaderField: "Content-Type")
             
-            var seck = SelectBank.text! + BeneficiaryNametxt.text!
+            var seck = self.BeneCatTable! + BeneficiaryNametxt.text!
             if(BenID == "nil"){
            
-                postString = "seck=\(seck)&client_id=\(clientID!)&client_account=\(accountNumber!)&payee_category=\(SelectBank.text!)&payee_name=\(BeneficiaryNametxt.text!)&ifsc_code=\(IfsCodetxt.text!)&payee_account=\(BeneficiarAccountNo.text!)&trf_limit=\(TransferLimittxt.text!)"
+                postString = "seck=\(seck)&client_id=\(clientID!)&client_account=\(accountNumber!)&payee_category=\(self.BeneCatTable!)&payee_name=\(BeneficiaryNametxt.text!)&ifsc_code=\(IfsCodetxt.text!)&payee_account=\(BeneficiarAccountNo.text!)&trf_limit=\(TransferLimittxt.text!)"
                 print(postString)
                 
 
@@ -312,7 +514,7 @@ let url = URL(string: "http://115.117.44.229:8443/Mbank_api/verifywithmobile.php
                 
                 self.BenID = String(describing: BArray.benID!)
 
-                postString = "seck=\(seck)&client_id=\(clientID!)&client_account=\(accountNumber!)&payee_category=\(SelectBank.text!)&payee_name=\(BeneficiaryNametxt.text!)&ifsc_code=\(IfsCodetxt.text!)&payee_account=\(BeneficiarAccountNo.text!)&trf_limit=\(TransferLimittxt.text!)&payee_id=\(BenID!)"
+                postString = "seck=\(seck)&client_id=\(clientID!)&client_account=\(accountNumber!)&payee_category=\(self.BeneCatTable!)&payee_name=\(BeneficiaryNametxt.text!)&ifsc_code=\(IfsCodetxt.text!)&payee_account=\(BeneficiarAccountNo.text!)&trf_limit=\(TransferLimittxt.text!)&payee_id=\(BenID!)"
                 print(postString)
 
             }
@@ -350,6 +552,24 @@ let url = URL(string: "http://115.117.44.229:8443/Mbank_api/verifywithmobile.php
                 
             }
             task.resume()
+                
+                
+            }
+            
+            
+            else
+            {
+                
+                
+                let alert = UIAlertController(title:"No Internet Connection" , message:"Make sure your device is connected to the internet." , preferredStyle: .alert)
+                
+                var action = UIAlertAction(title: "OK", style: .default, handler: nil)
+                
+                alert.addAction(action)
+                
+                self.present(alert, animated: true, completion: nil)
+                
+            }
             }
         
         else if((JSondata1.value(forKey: "success") as! Int) == 0){
@@ -401,15 +621,9 @@ let url = URL(string: "http://115.117.44.229:8443/Mbank_api/verifywithmobile.php
     
     func Handler1(alert: UIAlertAction)
     {
-        let Transaction = self.storyboard?.instantiateViewController(withIdentifier: "Transaction") as! TransactionViewController
         
-    
         
-        self.navigationController?.pushViewController(Transaction, animated: true)
-        
-        OperationQueue.main.addOperation{
-            self.present(Transaction, animated: true, completion: nil)
-        }
+        self.dismiss(animated: true, completion: nil)
     }
     
     

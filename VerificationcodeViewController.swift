@@ -14,6 +14,9 @@ protocol PassVerfication {
 class VerificationcodeViewController: UIViewController,UITextFieldDelegate {
 
     
+    var indicator = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
+
+    
     let kUserDefault = UserDefaults.standard
 
     var delegate:PassVerfication? = nil
@@ -25,19 +28,60 @@ class VerificationcodeViewController: UIViewController,UITextFieldDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        
+        indicator.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
+        indicator.center = view.center
+        view.addSubview(indicator)
+        indicator.bringSubview(toFront: view)
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
         
         
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
     
+    
+    
+    // -- then, further if you want to close the keyboard when pressed somewhere else on the screen you can implement the following method too:
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true);
+    }
+    
+    //9975252427
     @IBAction func getVerCode(_ sender: AnyObject) {
+        
+        self.indicator.startAnimating()
+    
+        
+       if ((Mobtxt.text?.isEmpty)!)
+       {
+        
+        let alert = UIAlertController(title: "Required Field is Empty", message: "Please Enter the Mobile Number", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
+        
+        
+        self.present(alert, animated: true, completion: nil)
+        
+        
+        }
+        
+        
         
         
         self.kUserDefault.setValue(Mobtxt.text, forKey: "ResendMobile")
    
+        if  Connectivity.isConnectedToInternet{
+
         
-    var request = URLRequest(url: URL(string: "http://115.117.44.229:8443/Mbank_api/verifyupdatemobileactivation.php")!)
+   var request = URLRequest(url: URL(string: Constant.POST.VERIFYMOBILEUPDATEACTIVATIONCODE.VMUA)!)
+        
+  
+     
+        
     request.httpMethod = "POST"
         
         print(deviceID)
@@ -53,11 +97,30 @@ class VerificationcodeViewController: UIViewController,UITextFieldDelegate {
           do {
             json = try JSONSerialization.jsonObject(with: data) as? NSDictionary
             self.parsingTheJsonData(JSondata: json!)//Function call to parse the Json response..
+            
+            
+            self.indicator.stopAnimating()
              } catch {
              print(error)
            }
     }
         task.resume()
+        }
+        else{
+            
+            self.indicator.stopAnimating()
+            let alert = UIAlertController(title:"No Internet Connection" , message:"Make sure your device is connected to the internet." , preferredStyle: .alert)
+            
+            var action = UIAlertAction(title: "OK", style: .default, handler: nil)
+            
+            alert.addAction(action)
+            
+            self.present(alert, animated: true, completion: nil)
+
+        }
+        
+        
+        
  }
     //Function call to parse and check the Verifcation response
     func parsingTheJsonData(JSondata:NSDictionary){
@@ -86,6 +149,9 @@ class VerificationcodeViewController: UIViewController,UITextFieldDelegate {
                 
             
         }else if((JSondata.value(forKey: "success") as! Int) == 0){
+            
+            
+            self.indicator.stopAnimating()
             verificationStatus =  JSondata.value(forKey: "success") as! Int
              successMessage = "Invalid mobile number"
             verficationAlert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: nil))

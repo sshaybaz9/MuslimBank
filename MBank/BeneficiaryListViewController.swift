@@ -44,10 +44,19 @@ var userdefault = UserDefaults.standard
         
     }
     
+    
+    override  func viewDidAppear(_ animated: Bool) {
+        self.tableview.reloadData()
+    }
+    
     func ViewBeneficiaryList()
     {
         
-
+if Connectivity.isConnectedToInternet
+{
+    
+        
+        
         let accountNumber = UserDefaults.standard.string(forKey: "AccountNO")
         let clientID = UserDefaults.standard.string(forKey: "ClientID")
         
@@ -56,7 +65,11 @@ var userdefault = UserDefaults.standard
         
         
         
-let url = URL(string: "http://115.117.44.229:8443/Mbank_api/fetchallpayees.php")!
+  
+        
+        let url = URL(string: Constant.POST.FETCHALLPAYEE.fetchpayee)!
+        
+  
         
         var request = URLRequest(url: url)
         
@@ -175,6 +188,21 @@ let url = URL(string: "http://115.117.44.229:8443/Mbank_api/fetchallpayees.php")
             }
         }
         task.resume()
+        }
+        
+else
+{
+    
+    
+    let alert = UIAlertController(title:"No Internet Connection" , message:"Make sure your device is connected to the internet." , preferredStyle: .alert)
+    
+    var action = UIAlertAction(title: "OK", style: .default, handler: nil)
+    
+    alert.addAction(action)
+    
+    self.present(alert, animated: true, completion: nil)
+    
+        }
     }
     
     func parsingTheJsonData(JSondata:NSDictionary)
@@ -201,18 +229,27 @@ let url = URL(string: "http://115.117.44.229:8443/Mbank_api/fetchallpayees.php")
         cell.BenNamelbl.text = temp.bNAme
         
         cell.Delete.addTarget(self, action: #selector(isDelete(sender:)), for: .touchUpInside)
+        
+        
         cell.Edit.addTarget(self, action: #selector(isEdit(sender:)), for: .touchUpInside)
         return cell
     }
     
     func isDelete(sender : UIButton)
+        
+        
+        
     {
+        
+if Connectivity.isConnectedToInternet
+        
+        {
      let alert = UIAlertController(title: "Do you want to delete", message: "", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (Delete) in
             
             var responseString : String!
         
-            let url = URL(string: "http://115.117.44.229:8443/Mbank_api/deletepayee.php")!
+            let url = URL(string: Constant.POST.DELETEPAYEE.deletePayee)!
             
             var request = URLRequest(url: url)
             
@@ -248,6 +285,10 @@ let url = URL(string: "http://115.117.44.229:8443/Mbank_api/fetchallpayees.php")
                 var json: NSDictionary?
                 do {
                     json = try JSONSerialization.jsonObject(with: data) as? NSDictionary
+                    
+                    
+                        self.ViewBeneficiaryList()
+                    
                     self.parsingTheJsonData1(JSondata1: json!)
                 }
                 catch
@@ -259,6 +300,7 @@ let url = URL(string: "http://115.117.44.229:8443/Mbank_api/fetchallpayees.php")
             }
             task.resume()
             
+            
     }))
 
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
@@ -266,6 +308,24 @@ let url = URL(string: "http://115.117.44.229:8443/Mbank_api/fetchallpayees.php")
             self.present(alert, animated: true, completion: nil)
         
         }
+            
+        }
+        
+        else
+        {
+            
+            
+            let alert = UIAlertController(title:"No Internet Connection" , message:"Make sure your device is connected to the internet." , preferredStyle: .alert)
+            
+            var action = UIAlertAction(title: "OK", style: .default, handler: nil)
+            
+            alert.addAction(action)
+            
+            self.present(alert, animated: true, completion: nil)
+            
+        }
+        
+        
     }
     
     
@@ -275,7 +335,6 @@ let url = URL(string: "http://115.117.44.229:8443/Mbank_api/fetchallpayees.php")
         if((JSondata1.value(forKey: "success") as! Int) == 1)
         {
             ViewBeneficiaryList()
-            self.tableview.reloadData()
         }
         
     }

@@ -10,6 +10,9 @@ import UIKit
 
 class Menu1ViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,UIImagePickerControllerDelegate{
     
+   var  imageFromData : UIImage!
+    
+    
     @IBOutlet weak var welcomeLbl: UILabel!
     @IBOutlet weak var view1Img: UIImageView!
     
@@ -27,7 +30,15 @@ class Menu1ViewController: UIViewController,UICollectionViewDelegate,UICollectio
     
     var imageArray = [UIImage(named: "accounts_mbank.png"),UIImage(named: "transfer.png"),UIImage(named: "tax_payment.png"),UIImage(named: "bill_paym.png"),UIImage(named: "upi.png"),UIImage(named: "locate_atm.png"),UIImage(named: "shoppingcart.png"),UIImage(named: "services.png"),UIImage(named: "cards.png")]
     
-    var nameArray = ["Accounts","Transfer","Loans","Bill payment and Reminder","UPI","Locate ATMs","Offer","Services","Cards"]
+    var nameArray = [NSLocalizedString("Accounts", comment:""),
+                     NSLocalizedString("Transactions", comment:""),
+                     NSLocalizedString("Loans", comment:""),
+                     NSLocalizedString("Bill payment and Reminder", comment:""),
+                     NSLocalizedString("UPI", comment:""),
+                     NSLocalizedString("Locate ATMs", comment:""),
+                     NSLocalizedString("Offer", comment:""),
+                     NSLocalizedString("Services", comment:""),
+                     NSLocalizedString("Cards", comment:"")]
     
 
     let kUserDefault = UserDefaults.standard
@@ -77,15 +88,35 @@ class Menu1ViewController: UIViewController,UICollectionViewDelegate,UICollectio
         super.viewDidLoad()
             
         lblCustomerName.text = UserDefaults.standard.string(forKey: "CustomerName")
-           
-           // self.view.layoutIfNeeded()
-
+            
+            
+//            self.view.layoutIfNeeded()
+//
 //     self.profielLatestimg.layer.cornerRadius = self.profielLatestimg.frame.size.width / 2
 //     self.profielLatestimg.clipsToBounds = true
 //       
+            
+            
+//            let imageData = UserDefaults.standard.value(forKey: "key") as? Data
+//            
+//            if (imageData != nil)
+//            
+//            {
+//             self.imageFromData = UIImage.init(data: imageData!)!
+//
+////            imageFromData = img
+//            
+//            profielLatestimg.image = imageFromData
+//                
+//            }
+//            else
+//            {
+//            }
+            
+            
+            
             profielLatestimg.image = img
-            
-            
+
             
             
             let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
@@ -94,6 +125,46 @@ class Menu1ViewController: UIViewController,UICollectionViewDelegate,UICollectio
             
         
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        
+        let imageData = UserDefaults.standard.value(forKey: "key") as? Data
+        
+        if (imageData != nil){
+        
+         self.imageFromData = UIImage(data: imageData!)
+            
+            self.profielLatestimg.image = imageFromData
+        }
+        
+        else{
+            
+            profielLatestimg.image = img
+
+            
+            
+        }
+      
+        
+        
+        
+        
+    }
+    
+   
+    override  func  viewDidLayoutSubviews() {
+        
+                    self.view.layoutIfNeeded()
+
+        self.profielLatestimg.layer.cornerRadius = self.profielLatestimg.frame.size.width / 2
+        
+        
+        self.profielLatestimg.clipsToBounds = true
+    }
+    
+    
+   
 
     func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
     {
@@ -142,6 +213,10 @@ class Menu1ViewController: UIViewController,UICollectionViewDelegate,UICollectio
         if(indexPath.row == 0)
         {
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "TabBar") as! AccountsTabBarController
+            
+            
+            
+            
             self.present(vc, animated: true, completion: nil)
         }
         if (indexPath.row == 1){
@@ -192,11 +267,34 @@ class Menu1ViewController: UIViewController,UICollectionViewDelegate,UICollectio
    
     @IBAction func MenuShow(_ sender: AnyObject) {
         
-        
+        let imageData = UserDefaults.standard.value(forKey: "key") as? Data
+
         
         if(menuShowing)
         {
             
+            
+            
+            if (imageData != nil)
+            {
+                self.welcomeLbl.isHidden = false
+
+                self.imageFromData = UIImage(data: imageData!)
+                
+                self.view1Img.image = imageFromData
+
+                
+                self.view1Img.layer.cornerRadius = self.view1Img.frame.size.width / 2
+                self.view1Img.clipsToBounds = true
+                
+
+                LeadingConstraint.constant = -245
+
+                
+            }
+            
+            else
+            {
             self.welcomeLbl.isHidden = false
             
             view1Img.image = img
@@ -206,27 +304,58 @@ class Menu1ViewController: UIViewController,UICollectionViewDelegate,UICollectio
 
             
             LeadingConstraint.constant = -245
-            
-            
+           }
+        
         }
-        else{
+        else {
+            
+            if (imageData != nil)
+            {
+            
+                self.welcomeLbl.isHidden = true
+                
+                self.view1Img.image = imageFromData
+                
+                LeadingConstraint.constant = 0
+            }
+            
+            else{
             
             self.welcomeLbl.isHidden = true
             
             view1Img.image = img
 
             LeadingConstraint.constant = 0
+            }
         }
         
         menuShowing = !menuShowing
     }
     
+    @IBAction func Rating(_ sender: AnyObject) {
+        
+        
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "rate") as! RatingAppViewController
+        
+        
+        self.present(vc, animated: true, completion: nil)
+        
+        
+        
+    }
     
     @IBAction func MyAccount(_ sender: AnyObject) {
         
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "TabBar") as! AccountsTabBarController
+        
+        let vc1 = self.storyboard?.instantiateViewController(withIdentifier: "Sum1Account") as! Summary1AccountBalanceViewController
+        
+
+        
         self.present(vc, animated: true, completion: nil)
 
+        
+        
         
         
     }
@@ -243,6 +372,9 @@ class Menu1ViewController: UIViewController,UICollectionViewDelegate,UICollectio
     
     @IBAction func ChangeLoginPin(_ sender: AnyObject) {
         
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "changePin") as! ChangeLoginPinViewController
+        
+        self.present(vc, animated: true, completion: nil)
         
     }
     
@@ -257,10 +389,30 @@ class Menu1ViewController: UIViewController,UICollectionViewDelegate,UICollectio
         
     }
     
+    @IBAction func changeLanguage(_ sender: AnyObject) {
+        
+        
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "Language") as! LanguageSelectorViewController
+        
+        self.present(vc, animated: true, completion: nil)
+        
+        
+    }
     @IBAction func Logout(_ sender: AnyObject) {
+
         
         
-        self.dismiss(animated: true, completion: nil)
+//        let domain = Bundle.main.bundleIdentifier!
+//        UserDefaults.standard.removePersistentDomain(forName: domain)
+//        UserDefaults.standard.synchronize()
+//        
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "Login") as! LoginMobileViewController
+        
+        
+        self.present(vc, animated: true, completion: nil)
+        
+        
+        
     }
     
    

@@ -12,7 +12,8 @@ import RNCryptor
 
 class LoginPinResetAndSaveViewController: UIViewController,UITextFieldDelegate {
    
-    
+    var indicator = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
+
     var mobileno : String?
     
     @IBOutlet weak var LoginPintxt: UITextField!
@@ -29,6 +30,13 @@ class LoginPinResetAndSaveViewController: UIViewController,UITextFieldDelegate {
         self.ConfirmPintxt.delegate =  self
         
         mobileno = UserDefaults.standard.string(forKey: "MobileNumber")
+        
+        
+        indicator.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
+        indicator.center = view.center
+        view.addSubview(indicator)
+        indicator.bringSubview(toFront: view)
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
         
         
     }
@@ -51,6 +59,12 @@ class LoginPinResetAndSaveViewController: UIViewController,UITextFieldDelegate {
     
     @IBAction func SavePin(_ sender: AnyObject) {
         
+        
+        self.indicator.startAnimating()
+        
+        if Connectivity.isConnectedToInternet{
+        
+        
         if LoginPintxt.text != nil
         {
         
@@ -66,8 +80,11 @@ class LoginPinResetAndSaveViewController: UIViewController,UITextFieldDelegate {
         
            print(seckey)
         
-        let url = URL(string: "http://115.117.44.229:8443/Mbank_api/setuppin.php")!
-        
+       
+            
+            let url = URL(string: Constant.POST.SETUPLOGINPIN.SETUPPIN)!
+   
+            
         var request = URLRequest(url: url)
         
         request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
@@ -95,7 +112,7 @@ class LoginPinResetAndSaveViewController: UIViewController,UITextFieldDelegate {
             
             responseString = String(data: data, encoding: .utf8)
             print("responseString = \(responseString)")
-            
+            self.indicator.stopAnimating()
             
             var json: NSDictionary?
             do {
@@ -113,13 +130,32 @@ class LoginPinResetAndSaveViewController: UIViewController,UITextFieldDelegate {
         
         }
         else{
+            self.indicator.stopAnimating()
             
-            let alert = UIAlertController(title: "Alert", message: "Enter the field", preferredStyle: .alert)
+            
+                        let alert = UIAlertController(title: "Alert", message: "Enter the field", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
             self.present(alert, animated: true, completion: nil)
             
             
         }
+            
+        }
+        
+        
+        else {
+            self.indicator.stopAnimating()
+            let alert = UIAlertController(title:"No Internet Connection" , message:"Make sure your device is connected to the internet." , preferredStyle: .alert)
+            
+            var action = UIAlertAction(title: "OK", style: .default, handler: nil)
+            
+            alert.addAction(action)
+            
+            self.present(alert, animated: true, completion: nil)
+
+            
+        }
+        
         
     }
     
@@ -141,6 +177,9 @@ class LoginPinResetAndSaveViewController: UIViewController,UITextFieldDelegate {
         }
         else if((JSondata.value(forKey: "success") as! Int) == 0){
             
+            
+            
+            self.indicator.stopAnimating()
             let alert = UIAlertController()
             
             alert.message = JSondata.value(forKey: "message") as! String

@@ -1,0 +1,325 @@
+        /*
+          Localizable.strings
+          MBank
+
+          Created by Mac on 21/03/18.
+          Copyright © 2018 Mac. All rights reserved.
+        */
+"Forgot Login Pin?" = "लॉग इन पिन विसरलात?";
+
+"Login" = "लॉग इन";
+
+"Bank will send verififcation code via SMS on this mobile number." = "बँक या मोबाइल नंबरवर एसएमएसद्वारे सत्यापन कोड पाठवेल.";
+
+
+
+"New to app? Generate secure pin for Authentication" = "अॅपमध्ये नवीन आहात? प्रमाणीकरणासाठी सुरक्षित पिन व्युत्पन्न करा";
+
+
+
+"               Welcome to Muslim Bank Mobile App" = "               मुस्लिम बँकेचे मोबाइल अॅपमध्ये स्वागत आहे";
+
+
+
+"Make sure your internet connection is stable." = "आपले इंटरनेट कनेक्शन स्थिर असल्याची खात्री करा.";
+
+
+
+"Do not share verification code received via SMS with unknown person." = "अज्ञात व्यक्तीसह SMS द्वारे प्राप्त झालेला सत्यापन कोड सामायिक करू नका.";
+
+
+
+"Registered mobile number with bank" = "बँकेकडे नोंदणीकृत मोबाइल नंबर";
+
+"Get verification code" = "सत्यापन कोड मिळवा";
+
+
+
+"Already having pin? Login" = "पिन आहे? लॉग इन";
+
+
+
+"Verification code" = "सत्यापन कोड";
+
+
+
+"Proceed" = "पुढे चला";
+
+"Note : Do not share verification code with unknown person" = "टीप: अज्ञात व्यक्तीसह सत्यापन कोड सामायिक करू नका";
+
+
+
+
+
+"Resend verification code" = "सत्यापन कोड पुन्हा पाठवा";
+
+
+
+"Account number" = "खाते क्रमांक";
+
+"Setup login PIN" = "लॉगिन पिन सेट करा";
+
+
+
+"Enter login PIN"  = "लॉगिन पिन प्रविष्ट करा";
+
+
+
+"Confirm login PIN" = "लॉगिन PIN ची पुष्टी करा";
+
+
+
+"Save" = "जतन करा";
+
+
+
+"WELCOME" = "आपले स्वागत आहे";
+
+
+
+"Home"  = "होम";
+
+"Profile" = "प्रोफाइल";
+
+
+
+"My Account" = "माझे खाते";
+
+
+
+"Change login pin" = "लॉगिन पिन बदला";
+
+
+
+"Rate us" = "आम्हाला रेट करा";
+
+
+
+"Contact us"  = "आमच्याशी संपर्क साधा";
+
+
+
+"Language change" = "भाषा बदल";
+
+
+
+"Logout" = "बाहेर पडणे";
+
+"Accounts" = "खाती";
+
+
+
+"Transactions" = "व्यवहार";
+
+
+"Loans" = "कर्ज";
+
+"Bill payment and Reminder" = "बिल देयक आणि रिमाइंडर";
+
+"UPI" = "युनिफाइड पेमेंट इंटरफेस";
+
+"Locate ATMs"  = "एटीएम शोधा";
+
+"Offer" = "ऑफर";
+
+"Services" = "सेवा";
+
+"Cards" = "कार्ड";
+
+"Rate us" = "आम्हाला रेट करा";
+
+
+"Please give rating based on your experienc with this app.Your rating will be useful in order to study and improve user experience." = "कृपया या अॅपसह आपल्या अनुभवाच्या आधारावर रेटिंग द्या.आपले रेटिंग अभ्यास आणि वापरकर्ता अनुभव सुधारण्यासाठी उपयुक्त होईल.";
+
+"Submit" = "सबमिट करा";
+
+
+
+"You can reset your pin from here" = "आपण येथून आपला पिन रीसेट करू शकता";
+
+"Please setup login pin" = "कृपया लॉगिन पिन सेट करा";
+
+"Save" = "जतन करा";
+
+"LOGIN"  = "लॉग इन करा";
+
+"Mini Statement" = "मिनी स्टेटमेंट";
+
+"Location" = "स्थान";
+
+"Contact information" = "संपर्क माहिती";
+
+"Head Office Address" = "मुख्य कार्यालय पत्ता";
+
+"647, Bhawani Peth, 4th Floor, Golden Jubilee Technical Institute Building, Pune -411042." = "647, भवानी पेठ, चौथा मजला, सुवर्णमहोत्सवी तांत्रिक संस्था इमारत, पुणे -411042.";
+
+"Email address" = "ईमेल पत्ता";
+
+
+
+"bankmuslim@gmail.com" = "bankmuslim@gmail.com";
+
+"Contact number" = "संपर्क क्रमांक";
+
+
+
+"91-20-26435007" = "91-20-26435007";
+
+"Profile information" = "प्रोफाइल माहिती";
+
+"Personal information" = "वैयक्तिक माहिती";
+
+"Name" = "नाव";
+
+"Mobile" = "मोबाईल";
+
+"Email" = "ईमेल";
+
+"Address" = "पत्ता";
+
+"State" = "राज्य";
+
+"City" = "शहर";
+
+"Create MMID" = "MMID तयार करा";
+
+
+
+"Generate MMID" = "MMID व्युत्पन्न करा";
+
+"Disable MMID" = "MMID अक्षम करा";
+
+"Availbale Balance :" = "लाभांश शिल्लक:";
+
+"Balance" = "शिल्लक";
+
+"Details" = "तपशील";
+
+"Recent transaction" = "अलीकडील व्यवहार";
+
+"Transaction History" = "व्यवहार इतिहास";
+
+"Transaction refrence number:" = "लेनदेन संदर्भ क्रमांक:";
+
+
+
+"Status:" = "स्थिती:";
+
+
+
+"Transaction type:" = "व्यवहार प्रकार:";
+
+
+
+"Refer Friends" = "मित्रांना सांगा";
+
+
+
+"Contact number" = "संपर्क क्रमांक";
+
+"Enter email" = "ईमेल प्रविष्ट करा";
+
+"Branch" = "शाखा";
+
+"Account Type" = "खाते प्रकार";
+
+"Description:" = "वर्णन:";
+
+"Account ID:" = "खाते ID:";
+
+"IFS Code:" = "आयएफएससी कोड:";
+
+"Currency:" = "चलन:";
+
+"Fund Transfer" = "निधी हस्तांतरण";
+
+"Summary" = "सारांश";
+
+"Show IMPS Mini Statment" = "IMPS मिनी स्टेटमेंट दर्शवा";
+
+"Date and Time" = "तारीख आणि वेळ";
+
+"Amount" = "रक्कम";
+
+"Transaction" = "व्यवहार";
+
+"View Deposit" = "ठेवी पहा";
+
+"Select Deposit type" = "ठेव प्रकार निवडा";
+
+
+
+"OPEN FD" = "मुदत ठेव उघडा";
+
+"OPEN RD" = "आरडी उघडा";
+
+
+
+"DEPOSITS" = "ठेवी";
+
+"View Deposits" = "ठेवी पहा";
+
+
+
+"Enter details for Fixed deposit" = "फिक्स्ड डिपॉझिटसाठी तपशील भरा";
+
+"Enter details for Recurring deposit" = "आवर्ती ठेव साठी तपशील भरा";
+
+"Select scheme" = "योजना निवडा";
+
+"Select Scheme" = "योजना निवडा";
+
+"Add Beneficiary" = "लाभार्थी जोडा";
+
+"Note: Beneficiary will be activated immediately" = "नोंद: लाभार्थी लगेच सक्रिय केले जाईल";
+
+"Beneficiary Category" = "लाभार्थी वर्ग";
+
+"Select Beneficiary" = "लाभार्थी निवडा";
+
+"Beneficiary Name" = "लाभार्थीचे नाव";
+
+"IFS Code of Beneficiary's bank" = "लाभार्थी बँकेच्या आयएफएस कोड";
+
+"Beneficiary account number" = "लाभार्थी खाते क्रमांक";
+
+"Transfer limit" = "हस्तांतरण मर्यादा";
+
+"Register" = "नोंदणी करा";
+
+"Cancel" = "रद्द करा";
+
+
+"Pay using Account" = "खाते वापरून पैसे भरा";
+"P2A using IFS Code" = "आयएफएस कोड वापरून पी 2 ए";
+"Balance inquiry" = "शिल्लक चौकशी";
+"Generate MMID" = "MMID व्युत्पन्न करा";
+"Retrieve MMID" = "MMID पुनर्प्राप्त करा";
+"Cancel MMID" = "MMID रद्द करा";
+"Transaction inquiry" = "व्यवहार चौकशी";
+"Mini statement" = "मिनी स्टेटमेंट";
+"Add beneficiary" = "लाभार्थी जोडा";
+
+
+
+"Person to Account - IMPS"  = "खात्यातील व्यक्ती - IMPS";
+"Debit From Account" = "खात्यातून डेबिट";
+"Select Account" = "खाते निवडा";
+"Debit Account Number" = "डेबिट खाते क्रमांक";
+"Amount to be transferred" = "हस्तांतरित करण्याची रक्कम";
+"IFS Code" = "आयएफएससी कोड";
+"Purpose" = "उद्देश";
+
+"Please note, as per RBI instruction credit will be effected based solely on the beneficiary  account number information." = "कृपया नोंद घ्या की रिझर्व्ह बॅंकेच्या सूचना क्रेडिटनुसार केवळ लाभार्थी खाते क्रमांक माहितीवर आधारित प्रभाव घेतला जाईल.";
+
+
+
+"Required field is Empty" = "आवश्यक फील्ड रिक्त आहे";
+"Please enter the Mobile Number" = "कृपया मोबाइल नंबर प्रविष्ट करा";
+"Please enter the Password" = "कृपया संकेतशब्द प्रविष्ट करा";
+"Select Transaction Item"  = "व्यवहार बाब निवडा";
+
+"Show Account Balance" = "खाते शिल्लक दर्शवा";
+"Balance Enquiry" = "बॅलन्स चौकशी";
+"Profile Update" = "प्रोफाईल अद्यतन";
+

@@ -14,6 +14,9 @@ import RNCryptor
 
 class AccSetupLoginViewController: UIViewController,PassMobileNumber,UITextFieldDelegate {
     
+    
+    var indicator = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
+
     var isIphone = 1
 
     
@@ -33,6 +36,20 @@ class AccSetupLoginViewController: UIViewController,PassMobileNumber,UITextField
         self.ConfirmLoginPin.delegate = self
         self.loginPin.delegate = self
         self.AccountNumber.delegate = self
+        
+        
+        
+        
+        
+        indicator.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
+        indicator.center = view.center
+        view.addSubview(indicator)
+        indicator.bringSubview(toFront: view)
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        
+
+        
+        
     }
     //then you should implement the func named textFieldShouldReturn
     
@@ -59,21 +76,46 @@ class AccSetupLoginViewController: UIViewController,PassMobileNumber,UITextField
     
     @IBAction func Save(_ sender: AnyObject) {
         
+        
+        self.indicator.startAnimating()
+        
+        if Connectivity.isConnectedToInternet
+        
+        
+        {
+        
+        
+        if(loginPin.text != ConfirmLoginPin.text)
+        {
+            
+            let alert = UIAlertController(title: "Does Not Match", message: "Please Enter Same", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
+            
+            
+            self.present(alert, animated: true, completion: nil)
+            
+            
+        }
+        
         var responseString : String!
 
         let ciphertext = RNCryptor.encrypt(data: (loginPin.text?.data(using: String.Encoding.utf8)!)!, withPassword: key)
         
 //     print(ciphertext)
         
-        var Encrypted = ciphertext.base64EncodedString()
+        let  Encrypted = ciphertext.base64EncodedString()
         
         
 //        print(Encrypted)
 
-        var seckey = mobileNumber + Encrypted
+        let  seckey = mobileNumber + Encrypted
      
  //   print(seckey)
-        var request = URLRequest(url: URL(string: "http://115.117.44.229:8443/Mbank_api/setuppinverification.php")!)
+        
+        
+    var request = URLRequest(url: URL(string: Constant.POST.SETUPPINVERIFICATION.SETUPPINVERIFY)!)
+        
         
         request.httpMethod = "POST"
     let postString = "mobileno=\(mobileNumber!)&account_no=\(AccountNumber.text!)&loginpin=\(Encrypted)&seckey=\(seckey)&isIphone=\(isIphone)"
@@ -90,7 +132,7 @@ class AccSetupLoginViewController: UIViewController,PassMobileNumber,UITextField
             responseString = String(data: data, encoding: .utf8)
             print("responseString = \(responseString)")
             
-
+self.indicator.stopAnimating()
             
             var json: NSDictionary?
             do {
@@ -101,6 +143,21 @@ class AccSetupLoginViewController: UIViewController,PassMobileNumber,UITextField
             }
         }
         task.resume()
+            
+        }
+        
+        else{
+            
+            
+            let alert = UIAlertController(title:"No Internet Connection" , message:"Make sure your device is connected to the internet." , preferredStyle: .alert)
+            
+            var action = UIAlertAction(title: "OK", style: .default, handler: nil)
+            
+            alert.addAction(action)
+            
+            self.present(alert, animated: true, completion: nil)
+
+        }
     }
     
     func parsingTheJsonData(JSondata:NSDictionary){
@@ -125,6 +182,11 @@ class AccSetupLoginViewController: UIViewController,PassMobileNumber,UITextField
             
             
         }else if((JSondata.value(forKey: "success") as! Int) == 0){
+            
+            
+            self.indicator.stopAnimating()
+            
+            
             verificationStatus =  JSondata.value(forKey: "success") as! Int
             successMessage = "Invalid Account number"
             verficationAlert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: nil))

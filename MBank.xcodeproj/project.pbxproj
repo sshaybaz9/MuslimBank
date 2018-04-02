@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		040FD3972022F9C800A23087 /* OpenFixedDepositViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040FD3962022F9C800A23087 /* OpenFixedDepositViewController.swift */; };
 		04173F952031A729009CA627 /* 25985 (2) (1).png in Resources */ = {isa = PBXBuildFile; fileRef = 04173F942031A729009CA627 /* 25985 (2) (1).png */; };
+		042BA6E92040140900D474F9 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042BA6E82040140900D474F9 /* Constant.swift */; };
 		043BE7562008D4F8006DD16C /* ContactusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043BE7552008D4F8006DD16C /* ContactusViewController.swift */; };
 		045C517B1FEA7612009E1A51 /* GenerateMMIDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045C517A1FEA7612009E1A51 /* GenerateMMIDViewController.swift */; };
 		045C517E1FEA8857009E1A51 /* DisableMMIDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045C517D1FEA8857009E1A51 /* DisableMMIDViewController.swift */; };
@@ -29,6 +30,10 @@
 		046634741FC6C87800D4C636 /* MobileOTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046634731FC6C87800D4C636 /* MobileOTPViewController.swift */; };
 		046634761FC6F4F100D4C636 /* AccSetupLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046634751FC6F4F000D4C636 /* AccSetupLoginViewController.swift */; };
 		0466A73620109AA100D90F27 /* ProfileUpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0466A73520109AA100D90F27 /* ProfileUpdateViewController.swift */; };
+		04696B97206CF3A400EA715E /* arrow_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 04696B96206CF3A400EA715E /* arrow_1.png */; };
+		04696B99206CF3AF00EA715E /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 04696B98206CF3AF00EA715E /* arrow.png */; };
+		04696B9B206CF4F200EA715E /* Indian_Rupee_symbol.png in Resources */ = {isa = PBXBuildFile; fileRef = 04696B9A206CF4F200EA715E /* Indian_Rupee_symbol.png */; };
+		04696B9D206CF4FE00EA715E /* book.png in Resources */ = {isa = PBXBuildFile; fileRef = 04696B9C206CF4FE00EA715E /* book.png */; };
 		046BA9FE200766D300CBA656 /* ReferFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046BA9FD200766D300CBA656 /* ReferFriendsViewController.swift */; };
 		046BE55420088D86004A8BC4 /* AccountsTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046BE55320088D85004A8BC4 /* AccountsTabBarController.swift */; };
 		046C4021200DC79B009471EE /* AccountSummaryandIMPSMiniStatementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046C4020200DC79B009471EE /* AccountSummaryandIMPSMiniStatementViewController.swift */; };
@@ -36,6 +41,8 @@
 		046C4026200E1A6A009471EE /* AccountDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046C4025200E1A6A009471EE /* AccountDetailTableViewCell.swift */; };
 		046C4028200E1F93009471EE /* SummaryofAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046C4027200E1F93009471EE /* SummaryofAccountViewController.swift */; };
 		046C6182AC33C9EDC65E56BB /* Pods_MBank.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E0E9840256097C487C76CD1 /* Pods_MBank.framework */; };
+		046DA3F820625D0B00CBD3DE /* LanguageManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046DA3F720625D0B00CBD3DE /* LanguageManger.swift */; };
+		046DA3FE20625E2600CBD3DE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 046DA40020625E2600CBD3DE /* Localizable.strings */; };
 		04718B3E1FD7AEBC00D85C92 /* bill_paym.png in Resources */ = {isa = PBXBuildFile; fileRef = 04718B3D1FD7AEBC00D85C92 /* bill_paym.png */; };
 		04718B401FD7AECA00D85C92 /* accounts.png in Resources */ = {isa = PBXBuildFile; fileRef = 04718B3F1FD7AECA00D85C92 /* accounts.png */; };
 		04718B421FD7AED600D85C92 /* cards.png in Resources */ = {isa = PBXBuildFile; fileRef = 04718B411FD7AED600D85C92 /* cards.png */; };
@@ -53,6 +60,20 @@
 		04718B5A1FD7B1FA00D85C92 /* mbank_logo_medium.png in Resources */ = {isa = PBXBuildFile; fileRef = 04718B591FD7B1FA00D85C92 /* mbank_logo_medium.png */; };
 		0471AF9B2005EFDA00052B8F /* TransactionHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0471AF9A2005EFDA00052B8F /* TransactionHistoryTableViewCell.swift */; };
 		047725501FED129C00E5CEDF /* BenNameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0477254F1FED129C00E5CEDF /* BenNameTableViewCell.swift */; };
+		0478E3362058F0BD004B75C8 /* Summary1AccountBalanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0478E3352058F0BD004B75C8 /* Summary1AccountBalanceViewController.swift */; };
+		047F0242203ECD6E00D186DC /* ViewDepositTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047F0241203ECD6E00D186DC /* ViewDepositTableViewCell.swift */; };
+		048E23472043CA2300B0686C /* FDRDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048E23462043CA2300B0686C /* FDRDViewController.swift */; };
+		048E23492043ED0300B0686C /* business-loan-dice.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 048E23482043ED0200B0686C /* business-loan-dice.jpg */; };
+		049B05DA203D40090003DD09 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049B05D9203D40090003DD09 /* RatingControl.swift */; };
+		049B05E6203D712A0003DD09 /* RatingAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049B05E5203D712A0003DD09 /* RatingAppViewController.swift */; };
+		049B05E8203D72D80003DD09 /* 01.png in Resources */ = {isa = PBXBuildFile; fileRef = 049B05E7203D72D80003DD09 /* 01.png */; };
+		049B05EA203D72E30003DD09 /* 02.png in Resources */ = {isa = PBXBuildFile; fileRef = 049B05E9203D72E30003DD09 /* 02.png */; };
+		049B05EC203D73110003DD09 /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 049B05EB203D73110003DD09 /* 3.png */; };
+		04A375902050415A0034A869 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A3758F205041590034A869 /* Reachability.swift */; };
+		04AC6145204FB0E300B11626 /* ChangeLoginPinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AC6144204FB0E300B11626 /* ChangeLoginPinViewController.swift */; };
+		04AD2B6F20637CE200E78512 /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AD2B6E20637CE200E78512 /* RadioButton.swift */; };
+		04AD2B72206387AA00E78512 /* LanguageSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AD2B71206387AA00E78512 /* LanguageSelectorViewController.swift */; };
+		04AD7E43203EA19E0025E353 /* ViewDepositViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AD7E42203EA19E0025E353 /* ViewDepositViewController.swift */; };
 		04ADEC891FC3FE480007C73F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ADEC881FC3FE480007C73F /* AppDelegate.swift */; };
 		04ADEC8B1FC3FE480007C73F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ADEC8A1FC3FE480007C73F /* ViewController.swift */; };
 		04ADEC8E1FC3FE480007C73F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04ADEC8C1FC3FE480007C73F /* Main.storyboard */; };
@@ -79,7 +100,12 @@
 		04C5D2EC1FDFEA950025357C /* AddNewBeneficiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C5D2EB1FDFEA950025357C /* AddNewBeneficiaryViewController.swift */; };
 		04CD05A3202D7D32007B16A8 /* CustomMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CD05A2202D7D32007B16A8 /* CustomMarkerView.swift */; };
 		04CDA4D01FC565030093A799 /* TransactionStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CDA4CF1FC565030093A799 /* TransactionStatusViewController.swift */; };
+		04D33A62206B77B40052674D /* AppIcon.appiconset in Resources */ = {isa = PBXBuildFile; fileRef = 04D33A61206B77B40052674D /* AppIcon.appiconset */; };
 		04D8DA4E200491CB0071995F /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = 04D8DA4D200491CA0071995F /* home.png */; };
+		04E32A012057DD5600E0BF20 /* Connectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E32A002057DD5600E0BF20 /* Connectivity.swift */; };
+		04E45A9F2056562A0035BAFC /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E45A9E2056562A0035BAFC /* main.swift */; };
+		04E45AA12056566F0035BAFC /* InterractionUIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E45AA02056566F0035BAFC /* InterractionUIApplication.swift */; };
+		04E6B3FF20500FC3008C4EA6 /* back-icon (1).png in Resources */ = {isa = PBXBuildFile; fileRef = 04E6B3FE20500FC3008C4EA6 /* back-icon (1).png */; };
 		04E8194D202C5C7A0022075D /* LocateOnMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E8194C202C5C7A0022075D /* LocateOnMapViewController.swift */; };
 		04FD7EA02003863F00EE0D2D /* TransactionHistory2TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FD7E9F2003863F00EE0D2D /* TransactionHistory2TableViewController.swift */; };
 		04FD7EA220039D7A00EE0D2D /* ServicesMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FD7EA120039D7A00EE0D2D /* ServicesMenuViewController.swift */; };
@@ -113,6 +139,7 @@
 /* Begin PBXFileReference section */
 		040FD3962022F9C800A23087 /* OpenFixedDepositViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenFixedDepositViewController.swift; sourceTree = "<group>"; };
 		04173F942031A729009CA627 /* 25985 (2) (1).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "25985 (2) (1).png"; sourceTree = "<group>"; };
+		042BA6E82040140900D474F9 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		043BE7552008D4F8006DD16C /* ContactusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactusViewController.swift; sourceTree = "<group>"; };
 		045C517A1FEA7612009E1A51 /* GenerateMMIDViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GenerateMMIDViewController.swift; path = MobileOTPviewcontroller/GenerateMMIDViewController.swift; sourceTree = "<group>"; };
 		045C517D1FEA8857009E1A51 /* DisableMMIDViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisableMMIDViewController.swift; sourceTree = "<group>"; };
@@ -133,12 +160,22 @@
 		046634731FC6C87800D4C636 /* MobileOTPViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MobileOTPViewController.swift; sourceTree = "<group>"; };
 		046634751FC6F4F000D4C636 /* AccSetupLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccSetupLoginViewController.swift; path = ../AccSetupLoginViewController.swift; sourceTree = "<group>"; };
 		0466A73520109AA100D90F27 /* ProfileUpdateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileUpdateViewController.swift; sourceTree = "<group>"; };
+		04696B96206CF3A400EA715E /* arrow_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow_1.png; sourceTree = "<group>"; };
+		04696B98206CF3AF00EA715E /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow.png; sourceTree = "<group>"; };
+		04696B9A206CF4F200EA715E /* Indian_Rupee_symbol.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Indian_Rupee_symbol.png; sourceTree = "<group>"; };
+		04696B9C206CF4FE00EA715E /* book.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = book.png; sourceTree = "<group>"; };
 		046BA9FD200766D300CBA656 /* ReferFriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReferFriendsViewController.swift; sourceTree = "<group>"; };
 		046BE55320088D85004A8BC4 /* AccountsTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountsTabBarController.swift; sourceTree = "<group>"; };
 		046C4020200DC79B009471EE /* AccountSummaryandIMPSMiniStatementViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountSummaryandIMPSMiniStatementViewController.swift; sourceTree = "<group>"; };
 		046C4023200DD372009471EE /* AccountSummayIMPSMiniTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountSummayIMPSMiniTableViewCell.swift; sourceTree = "<group>"; };
 		046C4025200E1A6A009471EE /* AccountDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountDetailTableViewCell.swift; sourceTree = "<group>"; };
 		046C4027200E1F93009471EE /* SummaryofAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryofAccountViewController.swift; sourceTree = "<group>"; };
+		046DA3F720625D0B00CBD3DE /* LanguageManger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageManger.swift; sourceTree = "<group>"; };
+		046DA3FA20625DF000CBD3DE /* hi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hi; path = hi.lproj/Main.strings; sourceTree = "<group>"; };
+		046DA3FB20625DF000CBD3DE /* hi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hi; path = hi.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		046DA3FF20625E2600CBD3DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		046DA40120625E5800CBD3DE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		046DA40220625E5A00CBD3DE /* hi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hi; path = hi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		04718B3D1FD7AEBC00D85C92 /* bill_paym.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bill_paym.png; sourceTree = "<group>"; };
 		04718B3F1FD7AECA00D85C92 /* accounts.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = accounts.png; sourceTree = "<group>"; };
 		04718B411FD7AED600D85C92 /* cards.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cards.png; sourceTree = "<group>"; };
@@ -156,6 +193,26 @@
 		04718B591FD7B1FA00D85C92 /* mbank_logo_medium.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mbank_logo_medium.png; sourceTree = "<group>"; };
 		0471AF9A2005EFDA00052B8F /* TransactionHistoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionHistoryTableViewCell.swift; sourceTree = "<group>"; };
 		0477254F1FED129C00E5CEDF /* BenNameTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BenNameTableViewCell.swift; path = ../BenNameTableViewCell.swift; sourceTree = "<group>"; };
+		0478E3352058F0BD004B75C8 /* Summary1AccountBalanceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Summary1AccountBalanceViewController.swift; sourceTree = "<group>"; };
+		047F0241203ECD6E00D186DC /* ViewDepositTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewDepositTableViewCell.swift; sourceTree = "<group>"; };
+		048E23462043CA2300B0686C /* FDRDViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FDRDViewController.swift; sourceTree = "<group>"; };
+		048E23482043ED0200B0686C /* business-loan-dice.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "business-loan-dice.jpg"; sourceTree = "<group>"; };
+		049B05D9203D40090003DD09 /* RatingControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
+		049B05E5203D712A0003DD09 /* RatingAppViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingAppViewController.swift; sourceTree = "<group>"; };
+		049B05E7203D72D80003DD09 /* 01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 01.png; sourceTree = "<group>"; };
+		049B05E9203D72E30003DD09 /* 02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 02.png; sourceTree = "<group>"; };
+		049B05EB203D73110003DD09 /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
+		04A3758F205041590034A869 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		04AC6144204FB0E300B11626 /* ChangeLoginPinViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeLoginPinViewController.swift; sourceTree = "<group>"; };
+		04AD2B6E20637CE200E78512 /* RadioButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
+		04AD2B71206387AA00E78512 /* LanguageSelectorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageSelectorViewController.swift; sourceTree = "<group>"; };
+		04AD2B73206396A200E78512 /* ur */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ur; path = ur.lproj/Main.strings; sourceTree = "<group>"; };
+		04AD2B74206396A200E78512 /* ur */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ur; path = ur.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		04AD2B75206396A300E78512 /* ur */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ur; path = ur.lproj/Localizable.strings; sourceTree = "<group>"; };
+		04AD2B76206396E000E78512 /* mr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = mr; path = mr.lproj/Main.strings; sourceTree = "<group>"; };
+		04AD2B77206396E000E78512 /* mr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = mr; path = mr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		04AD2B78206396E000E78512 /* mr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = mr; path = mr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		04AD7E42203EA19E0025E353 /* ViewDepositViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewDepositViewController.swift; sourceTree = "<group>"; };
 		04ADEC851FC3FE480007C73F /* MBank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MBank.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04ADEC881FC3FE480007C73F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04ADEC8A1FC3FE480007C73F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -188,7 +245,12 @@
 		04C5D2EB1FDFEA950025357C /* AddNewBeneficiaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddNewBeneficiaryViewController.swift; path = AcessSetupLoginView/AddNewBeneficiaryViewController.swift; sourceTree = "<group>"; };
 		04CD05A2202D7D32007B16A8 /* CustomMarkerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomMarkerView.swift; sourceTree = "<group>"; };
 		04CDA4CF1FC565030093A799 /* TransactionStatusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionStatusViewController.swift; sourceTree = "<group>"; };
+		04D33A61206B77B40052674D /* AppIcon.appiconset */ = {isa = PBXFileReference; lastKnownFileType = folder; path = AppIcon.appiconset; sourceTree = "<group>"; };
 		04D8DA4D200491CA0071995F /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
+		04E32A002057DD5600E0BF20 /* Connectivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Connectivity.swift; sourceTree = "<group>"; };
+		04E45A9E2056562A0035BAFC /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		04E45AA02056566F0035BAFC /* InterractionUIApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterractionUIApplication.swift; sourceTree = "<group>"; };
+		04E6B3FE20500FC3008C4EA6 /* back-icon (1).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back-icon (1).png"; sourceTree = "<group>"; };
 		04E8194C202C5C7A0022075D /* LocateOnMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocateOnMapViewController.swift; sourceTree = "<group>"; };
 		04FD7E9F2003863F00EE0D2D /* TransactionHistory2TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionHistory2TableViewController.swift; sourceTree = "<group>"; };
 		04FD7EA120039D7A00EE0D2D /* ServicesMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServicesMenuViewController.swift; sourceTree = "<group>"; };
@@ -249,8 +311,11 @@
 		0461D771202433500088155B /* FixedRecurringDeposit */ = {
 			isa = PBXGroup;
 			children = (
+				04AD7E42203EA19E0025E353 /* ViewDepositViewController.swift */,
+				047F0241203ECD6E00D186DC /* ViewDepositTableViewCell.swift */,
 				040FD3962022F9C800A23087 /* OpenFixedDepositViewController.swift */,
 				0461D76F202430E00088155B /* OpenRecurringDepositViewController.swift */,
+				048E23462043CA2300B0686C /* FDRDViewController.swift */,
 			);
 			name = FixedRecurringDeposit;
 			sourceTree = "<group>";
@@ -259,7 +324,9 @@
 			isa = PBXGroup;
 			children = (
 				04ADECBF1FC41F740007C73F /* LoginMobileViewController.swift */,
+				04A3758F205041590034A869 /* Reachability.swift */,
 				04B221F31FE1011F009FFDBA /* LoginPinResetAndSaveViewController.swift */,
+				04AC6144204FB0E300B11626 /* ChangeLoginPinViewController.swift */,
 			);
 			name = LoginViewController;
 			sourceTree = "<group>";
@@ -313,9 +380,19 @@
 				046C4023200DD372009471EE /* AccountSummayIMPSMiniTableViewCell.swift */,
 				046C4025200E1A6A009471EE /* AccountDetailTableViewCell.swift */,
 				046C4027200E1F93009471EE /* SummaryofAccountViewController.swift */,
+				0478E3352058F0BD004B75C8 /* Summary1AccountBalanceViewController.swift */,
 				046BE55320088D85004A8BC4 /* AccountsTabBarController.swift */,
 			);
 			name = AccountTabBar;
+			sourceTree = "<group>";
+		};
+		046DA3F920625D7B00CBD3DE /* Localizable */ = {
+			isa = PBXGroup;
+			children = (
+				046DA3F720625D0B00CBD3DE /* LanguageManger.swift */,
+				04AD2B71206387AA00E78512 /* LanguageSelectorViewController.swift */,
+			);
+			name = Localizable;
 			sourceTree = "<group>";
 		};
 		04718B3A1FD7AE7D00D85C92 /* Images */ = {
@@ -326,6 +403,15 @@
 				04718B3F1FD7AECA00D85C92 /* accounts.png */,
 			);
 			name = Images;
+			sourceTree = "<group>";
+		};
+		048E23452043C65E00B0686C /* MBankAPI */ = {
+			isa = PBXGroup;
+			children = (
+				042BA6E82040140900D474F9 /* Constant.swift */,
+				04E32A002057DD5600E0BF20 /* Connectivity.swift */,
+			);
+			name = MBankAPI;
 			sourceTree = "<group>";
 		};
 		04ADEC7C1FC3FE470007C73F = {
@@ -354,6 +440,10 @@
 		04ADEC871FC3FE480007C73F /* MBank */ = {
 			isa = PBXGroup;
 			children = (
+				04D33A60206B772E0052674D /* App Icon */,
+				046DA3F920625D7B00CBD3DE /* Localizable */,
+				04E45A9D205655F50035BAFC /* UserInActivity */,
+				048E23452043C65E00B0686C /* MBankAPI */,
 				0461D771202433500088155B /* FixedRecurringDeposit */,
 				046C4022200DC7AC009471EE /* AccountTabBar */,
 				04C2E66D1FEBB3A40060D4B9 /* Beneficiay */,
@@ -369,10 +459,14 @@
 				04ADEC881FC3FE480007C73F /* AppDelegate.swift */,
 				04ADEC8A1FC3FE480007C73F /* ViewController.swift */,
 				04ADEC8C1FC3FE480007C73F /* Main.storyboard */,
+				046DA40020625E2600CBD3DE /* Localizable.strings */,
+				049B05D9203D40090003DD09 /* RatingControl.swift */,
 				04E8194C202C5C7A0022075D /* LocateOnMapViewController.swift */,
 				0466A73520109AA100D90F27 /* ProfileUpdateViewController.swift */,
 				043BE7552008D4F8006DD16C /* ContactusViewController.swift */,
+				049B05E5203D712A0003DD09 /* RatingAppViewController.swift */,
 				046BA9FD200766D300CBA656 /* ReferFriendsViewController.swift */,
+				04AD2B6E20637CE200E78512 /* RadioButton.swift */,
 				04ADEC921FC3FE480007C73F /* Assets.xcassets */,
 				04C2E66C1FEB778A0060D4B9 /* Images */,
 				04ADEC941FC3FE480007C73F /* LaunchScreen.storyboard */,
@@ -404,6 +498,15 @@
 		04C2E66C1FEB778A0060D4B9 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				04696B9A206CF4F200EA715E /* Indian_Rupee_symbol.png */,
+				04696B96206CF3A400EA715E /* arrow_1.png */,
+				04E6B3FE20500FC3008C4EA6 /* back-icon (1).png */,
+				04696B9C206CF4FE00EA715E /* book.png */,
+				049B05E7203D72D80003DD09 /* 01.png */,
+				048E23482043ED0200B0686C /* business-loan-dice.jpg */,
+				049B05EB203D73110003DD09 /* 3.png */,
+				04696B98206CF3AF00EA715E /* arrow.png */,
+				049B05E9203D72E30003DD09 /* 02.png */,
 				04173F942031A729009CA627 /* 25985 (2) (1).png */,
 				04B9444B2004CF7A0011F1FC /* contact_us.png */,
 				04B9444F2004CFC00011F1FC /* log_out.png */,
@@ -450,6 +553,23 @@
 				0477254F1FED129C00E5CEDF /* BenNameTableViewCell.swift */,
 			);
 			name = Beneficiay;
+			sourceTree = "<group>";
+		};
+		04D33A60206B772E0052674D /* App Icon */ = {
+			isa = PBXGroup;
+			children = (
+				04D33A61206B77B40052674D /* AppIcon.appiconset */,
+			);
+			name = "App Icon";
+			sourceTree = "<group>";
+		};
+		04E45A9D205655F50035BAFC /* UserInActivity */ = {
+			isa = PBXGroup;
+			children = (
+				04E45A9E2056562A0035BAFC /* main.swift */,
+				04E45AA02056566F0035BAFC /* InterractionUIApplication.swift */,
+			);
+			name = UserInActivity;
 			sourceTree = "<group>";
 		};
 		4AB3BDE46EAAC6764C6C64F5 /* Pods */ = {
@@ -590,6 +710,9 @@
 			knownRegions = (
 				en,
 				Base,
+				hi,
+				ur,
+				mr,
 			);
 			mainGroup = 04ADEC7C1FC3FE470007C73F;
 			productRefGroup = 04ADEC861FC3FE480007C73F /* Products */;
@@ -609,20 +732,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				04B9444E2004CF940011F1FC /* language_support.png in Resources */,
+				046DA3FE20625E2600CBD3DE /* Localizable.strings in Resources */,
 				04718B5A1FD7B1FA00D85C92 /* mbank_logo_medium.png in Resources */,
+				04696B99206CF3AF00EA715E /* arrow.png in Resources */,
 				04ADEC961FC3FE480007C73F /* LaunchScreen.storyboard in Resources */,
 				04FD7EA82003A12900EE0D2D /* referfriends.png in Resources */,
 				04ADECBC1FC40C140007C73F /* 2000px-Lock_font_awesome.svg.png in Resources */,
 				04718B481FD7AEEF00D85C92 /* shoppingcart.png in Resources */,
+				049B05E8203D72D80003DD09 /* 01.png in Resources */,
+				049B05EA203D72E30003DD09 /* 02.png in Resources */,
 				04FD7EAC2003A15500EE0D2D /* changeloginpin.png in Resources */,
 				04FD7EAA2003A14600EE0D2D /* locatebranches.png in Resources */,
 				046228381FDE9FAE0048962E /* balanceinquiry.png in Resources */,
+				04E6B3FF20500FC3008C4EA6 /* back-icon (1).png in Resources */,
+				04696B9D206CF4FE00EA715E /* book.png in Resources */,
+				049B05EC203D73110003DD09 /* 3.png in Resources */,
 				04ADECBA1FC403D50007C73F /* Mbank Logo 1024 W x 724 H (1).png in Resources */,
 				046501A21FDEA83700D20DE9 /* generatemmid.png in Resources */,
+				04D33A62206B77B40052674D /* AppIcon.appiconset in Resources */,
+				048E23492043ED0300B0686C /* business-loan-dice.jpg in Resources */,
 				04718B421FD7AED600D85C92 /* cards.png in Resources */,
 				04ADEC931FC3FE480007C73F /* Assets.xcassets in Resources */,
 				04718B4A1FD7AEF400D85C92 /* tax_payment.png in Resources */,
 				04718B401FD7AECA00D85C92 /* accounts.png in Resources */,
+				04696B97206CF3A400EA715E /* arrow_1.png in Resources */,
 				04718B461FD7AEE800D85C92 /* mbank_orange_medium.png in Resources */,
 				04B944482004CEE10011F1FC /* my_account.png in Resources */,
 				046501A81FDEAA0400D20DE9 /* transinquiry.png in Resources */,
@@ -633,6 +766,7 @@
 				04718B581FD7B18D00D85C92 /* mbank_logo_big.png in Resources */,
 				04B944502004CFC00011F1FC /* log_out.png in Resources */,
 				04718B4E1FD7AF2400D85C92 /* upi.png in Resources */,
+				04696B9B206CF4F200EA715E /* Indian_Rupee_symbol.png in Resources */,
 				04ADEC8E1FC3FE480007C73F /* Main.storyboard in Resources */,
 				046501A61FDEA8DF00D20DE9 /* disablemmid.png in Resources */,
 				04173F952031A729009CA627 /* 25985 (2) (1).png in Resources */,
@@ -794,10 +928,18 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-MBank/Pods-MBank-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/ImageSlideshow/ImageSlideshow.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/RNCryptor/RNCryptor.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageSlideshow.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RNCryptor.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -827,21 +969,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04AC6145204FB0E300B11626 /* ChangeLoginPinViewController.swift in Sources */,
 				046634761FC6F4F100D4C636 /* AccSetupLoginViewController.swift in Sources */,
 				04ADEC8B1FC3FE480007C73F /* ViewController.swift in Sources */,
 				04CDA4D01FC565030093A799 /* TransactionStatusViewController.swift in Sources */,
+				0478E3362058F0BD004B75C8 /* Summary1AccountBalanceViewController.swift in Sources */,
 				04B221F41FE1011F009FFDBA /* LoginPinResetAndSaveViewController.swift in Sources */,
 				046634741FC6C87800D4C636 /* MobileOTPViewController.swift in Sources */,
+				04AD2B6F20637CE200E78512 /* RadioButton.swift in Sources */,
+				049B05E6203D712A0003DD09 /* RatingAppViewController.swift in Sources */,
 				046C4026200E1A6A009471EE /* AccountDetailTableViewCell.swift in Sources */,
 				0466A73620109AA100D90F27 /* ProfileUpdateViewController.swift in Sources */,
 				046C4028200E1F93009471EE /* SummaryofAccountViewController.swift in Sources */,
 				040FD3972022F9C800A23087 /* OpenFixedDepositViewController.swift in Sources */,
 				04C2E6731FEBD30B0060D4B9 /* MiniStatementViewController.swift in Sources */,
+				049B05DA203D40090003DD09 /* RatingControl.swift in Sources */,
+				04E32A012057DD5600E0BF20 /* Connectivity.swift in Sources */,
 				04ADEC911FC3FE480007C73F /* MBank.xcdatamodeld in Sources */,
+				04E45A9F2056562A0035BAFC /* main.swift in Sources */,
 				04ADECC01FC41F740007C73F /* LoginMobileViewController.swift in Sources */,
 				045EBB291FC5855800A4986A /* Extension.swift in Sources */,
 				046228341FDE8E030048962E /* TransactionCollectionViewCell.swift in Sources */,
 				046634701FC69EF900D4C636 /* Menu1ViewController.swift in Sources */,
+				04AD7E43203EA19E0025E353 /* ViewDepositViewController.swift in Sources */,
 				0471AF9B2005EFDA00052B8F /* TransactionHistoryTableViewCell.swift in Sources */,
 				045EA2BD1FD6A507004A69D1 /* MenuCollectionCollectionViewCell.swift in Sources */,
 				04ADEC891FC3FE480007C73F /* AppDelegate.swift in Sources */,
@@ -850,6 +1000,9 @@
 				046BE55420088D86004A8BC4 /* AccountsTabBarController.swift in Sources */,
 				04BCC8811FF4F134009DDFC2 /* PayUsingAccountViewController.swift in Sources */,
 				046C4024200DD372009471EE /* AccountSummayIMPSMiniTableViewCell.swift in Sources */,
+				048E23472043CA2300B0686C /* FDRDViewController.swift in Sources */,
+				047F0242203ECD6E00D186DC /* ViewDepositTableViewCell.swift in Sources */,
+				04E45AA12056566F0035BAFC /* InterractionUIApplication.swift in Sources */,
 				04FD7EA420039DA200EE0D2D /* ServicesCollectionViewCell.swift in Sources */,
 				04C2E66F1FEBB3D90060D4B9 /* BeneficiaryListViewController.swift in Sources */,
 				046228311FDE81430048962E /* TransactionViewController.swift in Sources */,
@@ -857,12 +1010,16 @@
 				046C4021200DC79B009471EE /* AccountSummaryandIMPSMiniStatementViewController.swift in Sources */,
 				046634721FC6C3B900D4C636 /* VerificationcodeViewController.swift in Sources */,
 				04E8194D202C5C7A0022075D /* LocateOnMapViewController.swift in Sources */,
+				042BA6E92040140900D474F9 /* Constant.swift in Sources */,
 				04FD7EA02003863F00EE0D2D /* TransactionHistory2TableViewController.swift in Sources */,
+				04A375902050415A0034A869 /* Reachability.swift in Sources */,
 				04FD7EA220039D7A00EE0D2D /* ServicesMenuViewController.swift in Sources */,
+				04AD2B72206387AA00E78512 /* LanguageSelectorViewController.swift in Sources */,
 				04C5D2EC1FDFEA950025357C /* AddNewBeneficiaryViewController.swift in Sources */,
 				045C517E1FEA8857009E1A51 /* DisableMMIDViewController.swift in Sources */,
 				0461D770202430E00088155B /* OpenRecurringDepositViewController.swift in Sources */,
 				045C517B1FEA7612009E1A51 /* GenerateMMIDViewController.swift in Sources */,
+				046DA3F820625D0B00CBD3DE /* LanguageManger.swift in Sources */,
 				043BE7562008D4F8006DD16C /* ContactusViewController.swift in Sources */,
 				04CD05A3202D7D32007B16A8 /* CustomMarkerView.swift in Sources */,
 			);
@@ -900,10 +1057,26 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		046DA40020625E2600CBD3DE /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				046DA3FF20625E2600CBD3DE /* Base */,
+				046DA40120625E5800CBD3DE /* en */,
+				046DA40220625E5A00CBD3DE /* hi */,
+				04AD2B75206396A300E78512 /* ur */,
+				04AD2B78206396E000E78512 /* mr */,
+			);
+			name = Localizable.strings;
+			path = ..;
+			sourceTree = "<group>";
+		};
 		04ADEC8C1FC3FE480007C73F /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				04ADEC8D1FC3FE480007C73F /* Base */,
+				046DA3FA20625DF000CBD3DE /* hi */,
+				04AD2B73206396A200E78512 /* ur */,
+				04AD2B76206396E000E78512 /* mr */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -912,6 +1085,9 @@
 			isa = PBXVariantGroup;
 			children = (
 				04ADEC951FC3FE480007C73F /* Base */,
+				046DA3FB20625DF000CBD3DE /* hi */,
+				04AD2B74206396A200E78512 /* ur */,
+				04AD2B77206396E000E78512 /* mr */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -923,6 +1099,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -973,6 +1150,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";

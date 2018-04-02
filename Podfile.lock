@@ -1,4 +1,5 @@
 PODS:
+  - Alamofire (4.5.1)
   - GoogleMaps (2.5.0):
     - GoogleMaps/Maps (= 2.5.0)
   - GoogleMaps/Base (2.5.0)
@@ -6,18 +7,34 @@ PODS:
     - GoogleMaps/Base
   - GooglePlaces (2.5.0):
     - GoogleMaps/Base (= 2.5.0)
+  - ImageSlideshow (1.0.0):
+    - ImageSlideshow/Core (= 1.0.0)
+  - ImageSlideshow/Core (1.0.0)
+  - ImageSlideshow/Kingfisher (1.0.0):
+    - ImageSlideshow/Core
+    - Kingfisher (~> 3.0)
+  - IQKeyboardManagerSwift (5.0.6)
+  - Kingfisher (3.13.1)
   - RNCryptor (5.0.2)
 
 DEPENDENCIES:
+  - Alamofire (~> 4)
   - GoogleMaps
   - GooglePlaces
+  - ImageSlideshow (= 1.0)
+  - ImageSlideshow/Kingfisher
+  - IQKeyboardManagerSwift
   - RNCryptor (~> 5.0)
 
 SPEC CHECKSUMS:
+  Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
   GoogleMaps: c087b8e5dfe87ca6ebf59adb9b4894a4146bec4f
   GooglePlaces: dd70d9d71ea1c7944846afe67de3712c99b30a77
+  ImageSlideshow: 2787e10e202b79ecf5348a205c539fcc5bb8e62b
+  IQKeyboardManagerSwift: 02bfbb0dff71c66d0ab77d80d25dfce0c3717735
+  Kingfisher: ed9707a409cc47fddafbcd12a43a9757e3600af5
   RNCryptor: 59b9f92e9fa8a1af74c32dc6b1af5e30ff5e1b64
 
-PODFILE CHECKSUM: 2d1618d855339dee0913bda3e37f65c26d6aaf13
+PODFILE CHECKSUM: 704341d8504f1e0d6f11ae20251dee3c7552f70c
 
 COCOAPODS: 1.3.1

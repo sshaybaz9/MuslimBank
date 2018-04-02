@@ -10,8 +10,9 @@ import UIKit
 import CoreData
 import GoogleMaps
 import GooglePlaces
+import IQKeyboardManagerSwift
 
-@UIApplicationMain
+//@UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
@@ -23,6 +24,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GMSServices.provideAPIKey("AIzaSyBoRpSIMBaiLZD2MSKTc8TsCyv0kV4DBdY")
         GMSPlacesClient.provideAPIKey("AIzaSyBoRpSIMBaiLZD2MSKTc8TsCyv0kV4DBdY")
         
+        UITabBarItem.appearance().setTitleTextAttributes([NSFontAttributeName: UIFont(name:"Didot",size: 12)!], for: .normal)
+       
+        
+        LanguageManger.shared.defaultLanguage = .en
+        IQKeyboardManager.sharedManager().enable = true
+
+
         return true
     }
 

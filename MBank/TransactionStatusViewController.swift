@@ -10,6 +10,10 @@ import UIKit
 
 class TransactionStatusViewController: UIViewController {
 
+    var json : NSDictionary?
+    
+    
+    
     @IBOutlet weak var activity: UIActivityIndicatorView!
     @IBOutlet weak var datetime: UILabel!
     @IBOutlet weak var beneficiaryName: UILabel!
@@ -70,6 +74,9 @@ class TransactionStatusViewController: UIViewController {
 
     @IBAction func transactionStatus(_ sender: AnyObject) {
         
+        
+        if Connectivity.isConnectedToInternet{
+        
         self.activity.isHidden = false
         activity.startAnimating()
 
@@ -80,9 +87,7 @@ class TransactionStatusViewController: UIViewController {
         
         var responseString : String!
         
-        
-        
-        let url = URL(string: "http://115.117.44.229:8443/Mbank_api/transactioninquiry.php")!
+        let url = URL(string: Constant.POST.TRANSENQUIRY.TRANSENQ)!
         
         var request = URLRequest(url: url)
         
@@ -115,52 +120,13 @@ class TransactionStatusViewController: UIViewController {
             print("responseString = \(responseString)")
             
             
-            var json: NSDictionary?
             do {
-                json = try JSONSerialization.jsonObject(with: data) as? NSDictionary
+               self.json = try JSONSerialization.jsonObject(with: data) as? NSDictionary
                 
-                print(json)
+                print(self.json)
+               
                 
-                let enqry = json?.value(forKey: "enquiry") as! NSDictionary
-                
-                let tranDate = enqry.value(forKey: "TrandateTime") as! String
-                self.datetime1.text = tranDate
-                
-                
-                
-                let tranType = enqry.value(forKey: "TranType") as! String
-                self.trantype1.text = tranType
-                
-                let tranStatus = enqry.value(forKey: "Status") as! String
-                self.transtatus1.text = tranStatus
-                
-                
-                let mess = enqry.value(forKey: "ImpsMessage") as! String
-                self.message1.text = mess
-                
-                
-                let benName = enqry.value(forKey: "BeneName") as! String
-                self.benName1.text = benName
-                
-                
-                
-                self.datetime1.isHidden = false
-                self.benName1.isHidden = false
-                self.message1.isHidden = false
-                self.transtatus1.isHidden = false
-                self.trantype1.isHidden = false
-                
-
-                
-               self.activity.isHidden = true
-                
-                self.datetime.isHidden = false
-                self.beneficiaryName.isHidden = false
-                self.message.isHidden = false
-                self.TransactionStatus.isHidden = false
-                self.Transactiontype.isHidden = false
-                
-                self.parsingTheJsonData(JSondata: json!)
+                self.parsingTheJsonData(JSondata: self.json!)
             }   catch {
                 print(error)
             }
@@ -168,10 +134,98 @@ class TransactionStatusViewController: UIViewController {
             
         }
         task.resume()
+            
+        }
+        else{
+            
+            let alert = UIAlertController(title:"No Internet Connection" , message:"Make sure your device is connected to the internet." , preferredStyle: .alert)
+            
+            var action = UIAlertAction(title: "OK", style: .default, handler: nil)
+            
+            alert.addAction(action)
+            
+            self.present(alert, animated: true, completion: nil)
+            
+            
+            
+            
+        }
+        
+        
+
         
 
     }
     func parsingTheJsonData(JSondata:NSDictionary){
+        
+        if((JSondata.value(forKey: "success") as! Int) == 1){
+            
+            
+            DispatchQueue.main.async(execute: {
+
+            let enqry = self.json?.value(forKey: "enquiry") as! NSDictionary
+            
+            let tranDate = enqry.value(forKey: "TrandateTime") as! String
+            self.datetime1.text = tranDate
+            
+            
+            
+            let tranType = enqry.value(forKey: "TranType") as! String
+            self.trantype1.text = tranType
+            
+            let tranStatus = enqry.value(forKey: "Status") as! String
+            self.transtatus1.text = tranStatus
+            
+            
+            let mess = enqry.value(forKey: "ImpsMessage") as! String
+            self.message1.text = mess
+            
+            
+            let benName = enqry.value(forKey: "BeneName") as! String
+            self.benName1.text = benName
+            
+
+            
+            self.datetime1.isHidden = false
+            self.benName1.isHidden = false
+            self.message1.isHidden = false
+            self.transtatus1.isHidden = false
+            self.trantype1.isHidden = false
+            
+            
+            
+            self.activity.isHidden = true
+            
+            self.datetime.isHidden = false
+            self.beneficiaryName.isHidden = false
+            self.message.isHidden = false
+            self.TransactionStatus.isHidden = false
+            self.Transactiontype.isHidden = false
+            })
+            
+        }
+        else if ((JSondata.value(forKey: "success") as! Int) == 0){
+            self.activity.stopAnimating()
+            
+            var msg = self.json?.value(forKey: "message") as! String!
+            
+            let alert = UIAlertController(title: "", message: "\(msg!)", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "close", style: .default, handler: nil))
+            
+            OperationQueue.main.addOperation {
+                
+                self.present(alert, animated:true, completion:nil)
+                
+            }
+            
+            
+            
+        }
+        
+        
+
+        
     }
     
 

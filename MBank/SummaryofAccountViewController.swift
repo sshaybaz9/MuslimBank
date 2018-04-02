@@ -10,14 +10,12 @@ import UIKit
 
 class SummaryofAccountViewController: UIViewController {
 
-    var sumDetail = AccountDetail()
+    var sumDetail = Login()
     
     @IBOutlet weak var IFScodeLBL: UILabel!
     @IBOutlet weak var accountIDLbl: UILabel!
     @IBOutlet weak var descriptionLbl: UILabel!
     @IBOutlet weak var accountTypeLbl: UILabel!
-    @IBOutlet weak var accountLbl: UILabel!
-    @IBOutlet weak var availBalanceLbl: UILabel!
     
     @IBOutlet weak var branchLbl: UILabel!
     @IBOutlet weak var nameLbl: UILabel!
@@ -31,13 +29,11 @@ class SummaryofAccountViewController: UIViewController {
         
         
         self.nameLbl.text = customerName
-        self.accountLbl.text = sumDetail.accountnumber
-        self.accountIDLbl.text = sumDetail.accountId
-        self.descriptionLbl.text = sumDetail.description
-        self.IFScodeLBL.text = sumDetail.ifsc
-        self.branchLbl.text = sumDetail.branch
-        self.accountTypeLbl.text = sumDetail.accountType
-        self.availBalanceLbl.text = sumDetail.balance
+        self.accountIDLbl.text = sumDetail.accID
+        self.descriptionLbl.text = sumDetail.Description
+        self.IFScodeLBL.text = sumDetail.ifscCode
+        self.branchLbl.text = sumDetail.branchName
+        self.accountTypeLbl.text = sumDetail.accType
     }
 
     override func didReceiveMemoryWarning() {
@@ -46,32 +42,12 @@ class SummaryofAccountViewController: UIViewController {
     }
     
 
+  
+    
     @IBAction func BackPressed(_ sender: AnyObject) {
         
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "AccountSummary") as! AccountSummaryandIMPSMiniStatementViewController
-
         
       self.dismiss(animated: true, completion: nil)
     }
-    @IBAction func ShowMiniStatement(_ sender: AnyObject) {
-        
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "MiniStatment") as! MiniStatementViewController
-        
-        self.present(vc, animated: true, completion: nil)
-        
-        
-        
-        
-    }
-    @IBAction func FundTransfer(_ sender: AnyObject) {
-        
-        
-        
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "PayUsing") as! PayUsingAccountViewController
-        
-        
-        self.present(vc, animated: true, completion: nil)
-    }
-    
-
+   
 }

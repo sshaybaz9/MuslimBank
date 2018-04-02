@@ -32,6 +32,10 @@ class GenerateMMIDViewController: UIViewController {
     }
     @IBAction func GenerateMMID(_ sender: AnyObject) {
         
+        
+        
+if Connectivity.isConnectedToInternet
+        {
         let accountNumber = UserDefaults.standard.string(forKey: "AccountNO")
         let customerName = UserDefaults.standard.string(forKey: "CustomerName")
         let clientID = UserDefaults.standard.string(forKey: "ClientID")
@@ -41,8 +45,11 @@ class GenerateMMIDViewController: UIViewController {
         
         
         
-        let url = URL(string: "http://115.117.44.229:8443/Mbank_api/generatemmid.php")!
+    
         
+        let url = URL(string: Constant.POST.GENERATEMMID.MMIDGEN)!
+        
+     
         var request = URLRequest(url: url)
         
         request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
@@ -90,6 +97,22 @@ class GenerateMMIDViewController: UIViewController {
             
         }
         task.resume()
+        }
+        
+        
+        else
+        {
+            
+            
+            let alert = UIAlertController(title:"No Internet Connection" , message:"Make sure your device is connected to the internet." , preferredStyle: .alert)
+            
+            var action = UIAlertAction(title: "OK", style: .default, handler: nil)
+            
+            alert.addAction(action)
+            
+            self.present(alert, animated: true, completion: nil)
+            
+        }
         
     }
 

@@ -1,0 +1,186 @@
+/* 
+  Localizable.strings
+  MBank
+
+  Created by Mac on 21/03/18.
+  Copyright © 2018 Mac. All rights reserved.
+*/
+"Forgot Login Pin?" = "लॉगइन पिन भूल गए?";
+"Login" = "लॉग इन करें";
+"Bank will send verififcation code via SMS on this mobile number." = "बैंक इस मोबाइल नंबर पर एसएमएस के जरिए सत्यापन कोड भेज देगा।";
+
+"New  to app? Generate secure pin for Authentication" = "ऐप में नया? प्रमाणीकरण के लिए सुरक्षित पिन उत्पन्न करें";
+
+"               Welcome to Muslim Bank Mobile App" = "           मुस्लिम बैंक मोबाइल ऐप में आपका स्वागत है";
+
+"Make sure your internet connection is stable." = "सुनिश्चित करें कि आपका इंटरनेट कनेक्शन स्थिर है";
+
+"Do not share verification code received via SMS with unknown person." = "अज्ञात व्यक्ति के साथ एसएमएस के माध्यम से प्राप्त सत्यापन कोड साझा न करें।";
+
+"Registered mobile number with bank" = "बैंक के साथ पंजीकृत मोबाइल नंबर";
+"Get verification code" = "सत्यापन कोड प्राप्त करें";
+
+"Already having pin? Login" = "पहले से ही पिन हो रहा है? लॉग इन करें";
+
+"Verification code" = "पुष्टि संख्या";
+
+"Proceed" = "बढ़ना";
+"Note : Do not share verification code with unknown person" = "नोट: अज्ञात व्यक्ति के साथ सत्यापन कोड साझा न करें";
+
+
+"Resend verification code" = "सत्यापन कोड पुनः भेजें";
+
+"Account number" = "खाता संख्या";
+"Setup login PIN" = "लॉगिन लॉगिन सेट करें";
+
+"Enter login PIN"  = "लॉगिन पिन दर्ज करें";
+
+"Confirm login PIN" = "लॉगइन पिन की पुष्टि करें";
+
+"Save" = "बचाना";
+
+"WELCOME" = "स्वागत हे";
+
+"Home"  = "होम";
+"Profile" = "प्रोफाइल";
+
+"My Account" = "मेरा खाता";
+
+"Change login pin" = "प्रवेश पिन बदलें";
+
+"Rate us" = "हमें रेटिंग दें";
+
+"Contact us"  = "हमसे संपर्क करें";
+
+"Language change" = "भाषा परिवर्तन";
+
+"Logout" = "लोग आउट";
+"Accounts" = "हिसाब किताब";
+
+"Transactions" = "लेन-देन";
+
+
+"Loans" = "ऋण";
+"Bill payment and Reminder" = "बिल भुगतान और अनुस्मारक";
+"UPI"  = "एकीकृत भुगतान इंटरफ़ेस";
+"Locate ATMs" = "एटीएम की स्थिति जानें";
+
+"Offer" = "प्रस्ताव";
+"Services" = "सेवाएं";
+"Cards"  = "पत्ते";
+
+"Rate us" = "हमें रेटिंग दें";
+
+"Please give rating based on your experience with this app.Your rating will be useful in order to study and improve user experience." = "कृपया इस एप के साथ अपने अनुभव के आधार पर रेटिंग दें। उपयोगकर्ता के अध्ययन का अध्ययन करने और उसे बेहतर बनाने के लिए आपकी रेटिंग उपयोगी होगी।";
+"Submit" = "जमा करें";
+
+"You can reset your pin from here" = "आप यहां से अपना पिन रीसेट कर सकते हैं";
+"Please setup login pin" = "लॉगिन पिन को सेटअप करें";
+
+"Save" = "बचाना";
+"LOGIN"  = "लॉग इन करें";
+"Mini Statement" = "मिनी स्टेटमेंट";
+"Location" = "स्थान";
+"Contact information" = "संपर्क जानकारी";
+"Head Office Address" = "प्रमुख कार्यालय पता";
+"647, Bhawani Peth, 4th Floor, Golden Jubilee Technical Institute Building, Pune -411042." = "647, भवानी पेठ, चौथी मंजिल, स्वर्ण जयंती तकनीकी संस्थान भवन, पुणे -411042";
+"Email address" = "ईमेल पता";
+
+"bankmuslim@gmail.com" = "bankmuslim@gmail.com";
+"Contact number" = "संपर्क संख्या";
+
+"91-20-26435007" = "91-20-26435007";
+"Profile information" = "प्रोफ़ाइल जानकारी";
+"Personal information" = "व्यक्तिगत जानकारी";
+"Name" = "नाम";
+"Mobile" = "मोबाइल";
+"Email" = "ईमेल";
+"Address" = "पता";
+"State" = "राज्य";
+"City" = "शहर";
+"Create MMID" = "MMID बनाएं";
+
+"Generate MMID" = "MMID उत्पन्न करें";
+"Disable MMID" = "MMID अक्षम करें";
+"Available Balance :" = "उपलब्ध शेष राशि :";
+"Balance" = "संतुलन";
+"Details" = "विवरण";
+"Recent transaction" = "हालिया लेनदेन";
+"Transaction History" = "लेनदेन का इतिहास";
+"Transaction refrence number:" = "ट्रांजेक्शन रिफरेंस नंबर:";
+
+"Status:" = "स्थिति:";
+
+"Transaction type:" = "सौदे का प्रकार:";
+
+"Refer Friends" = "दोस्तों को बताएँ";
+
+"Contact number" = "संपर्क संख्या";
+"Enter email" = "ईमेल दर्ज करें";
+"Branch" = "डाली";
+"Account Type" = "खाते का प्रकार";
+"Description:" = "विवरण:";
+"Account ID:" = "खाता पहचान:";
+"IFS Code:" = "आईएफएससी कोड:";
+"Currency:" = "मुद्रा:";
+"Fund Transfer" = "फंड ट्रांसफर";
+"Summary" = "Summary";
+"Show IMPS Mini Statment" = "आईएमपीएस मिनी स्टेटमेंट दिखाएं";
+"Date and Time" = "दिनांक और समय";
+"Amount" = "रकम";
+"Transaction" = "लेन-देन";
+"View Deposit" = "जमाओं को देखें";
+"Select Deposit type" = "जमा प्रकार चुनें";
+
+"OPEN FD" = "ओपन एफडी";
+"OPEN RD" = "आरडी खोलें";
+
+"DEPOSITS" = "जमा";
+"View Deposits" = "जमाओं को देखें";
+
+"Enter details for Fixed deposit" = "फिक्स्ड डिपॉज़िट के लिए विवरण दर्ज करें";
+"Enter details for Recurring deposit" = "आवर्ती जमा राशि का विवरण दर्ज करें";
+"Select scheme" = "योजना चुनें";
+"Select Scheme" = "योजना का चयन करें";
+"Add Beneficiary" = "Add Beneficiary";
+"Note: Beneficiary will be activated immediately" = "नोट: लाभार्थी तुरंत सक्रिय हो जाएगा";
+"Beneficiary Category" = "लाभार्थी श्रेणी";
+"Select Beneficiary" = "लाभार्थी का चयन करें";
+"Beneficiary Name" = "लाभार्थी का नाम";
+"IFS Code of Beneficiary's bank" = "लाभार्थी के बैंक का आईएफएस कोड";
+"Beneficiary account number" = "लाभार्थी खाता नंबर";
+"Transfer limit" = "स्थानांतरण सीमा";
+"Register" = "रजिस्टर";
+"Cancel" = "रद्द करना";
+
+"Pay using Account" = "खाते का उपयोग कर भुगतान करें";
+"P2A using IFS Code" = "आईएफएस कोड का उपयोग करके पी 2 ए";
+"Balance inquiry" = "बकाया राशी की जांच";
+"Generate MMID" = "MMID उत्पन्न करें";
+"Retrieve MMID" = "MMID पुनर्प्राप्त करें";
+"Cancel MMID" = "MMID रद्द करें";
+"Transaction inquiry" = "लेनदेन की जांच";
+"Mini statement" = "मिनी स्टेटमेंट";
+"Add beneficiary" = "लाभार्थी जोड़ें";
+
+
+"Person to Account - IMPS"  = "व्यक्ति को खाता - आईएमपीएस";
+"Debit From Account" = "अकाउंट से डेबिट";
+"Select Account" = "खाता चुनें";
+"Debit Account Number" = "डेबिट अकाउंट नंबर";
+"Amount to be transferred" = "स्थानांतरण की राशि";
+"IFS Code" = "आईएफएससी कोड";
+"Purpose" = "उद्देश्य";
+
+"Please note, as per RBI instruction credit will be effected based solely on the beneficiary  account number information." = "कृपया ध्यान दें, आरबीआई अनुदेश क्रेडिट के अनुसार केवल लाभार्थी खाता संख्या की जानकारी पर आधारित होगा।";
+
+
+
+"Required field is Empty" = "आवश्यक फ़ील्ड रिक्त है";
+"Please enter the Mobile Number" = "मोबाइल नंबर दर्ज करें";
+"Please enter the Password" = "कृपया पासवर्ड दर्ज करें";
+" Select Transaction Item" = "लेनदेन आइटम का चयन करें";
+"Show Account Balance" = "खाता शेष राशि दिखाएं";
+"Balance Enquiry" = "शेषराशी पूछताछ";
+"Profile Update" = "प्रोफाइल अद्यतन";
+

@@ -10,6 +10,9 @@ import UIKit
 
 class BalanceEnqryViewController: UIViewController {
 
+    var json : NSDictionary?
+    
+    
     @IBOutlet weak var Balancelbl: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +33,11 @@ class BalanceEnqryViewController: UIViewController {
 
     @IBAction func showBalance(_ sender: AnyObject) {
         
+        if Connectivity.isConnectedToInternet
+        
+        {
+        
+        
         let accountNumber = UserDefaults.standard.string(forKey: "AccountNO")
         let customerName = UserDefaults.standard.string(forKey: "CustomerName")
         let clientID = UserDefaults.standard.string(forKey: "ClientID")
@@ -37,9 +45,8 @@ class BalanceEnqryViewController: UIViewController {
         
         var responseString : String!
         
+        let url = URL(string: Constant.POST.BALANCEINQUIRY.INQUIRY)!
         
-        
-        let url = URL(string: "http://115.117.44.229:8443/Mbank_api/balanceinquiry.php")!
         
         var request = URLRequest(url: url)
         
@@ -72,17 +79,26 @@ class BalanceEnqryViewController: UIViewController {
             print("responseString = \(responseString)")
             
             
-            var json: NSDictionary?
+            
             do {
-                json = try JSONSerialization.jsonObject(with: data) as? NSDictionary
+                self.json = try JSONSerialization.jsonObject(with: data) as? NSDictionary
                 
-            var Bal = json?.object(forKey: "balanceinfo") as? NSDictionary
-                
-                
-            self.Balancelbl.text = Bal?.value(forKey: "Message") as! String!
+            var Bal = self.json?.object(forKey: "balanceinfo") as? NSDictionary
                 
                 
-                self.parsingTheJsonData(JSondata: json!)
+                DispatchQueue.main.async(execute: {
+                    
+                    self.Balancelbl.text = Bal?.value(forKey: "Message") as! String!
+ 
+                    return
+                    
+                })
+                
+                
+                
+                
+                
+                self.parsingTheJsonData(JSondata: self.json!)
             }   catch {
                 print(error)
             }
@@ -91,6 +107,22 @@ class BalanceEnqryViewController: UIViewController {
         }
         task.resume()
 
+        }
+        
+        
+        else
+        {
+            
+            
+            let alert = UIAlertController(title:"No Internet Connection" , message:"Make sure your device is connected to the internet." , preferredStyle: .alert)
+            
+            var action = UIAlertAction(title: "OK", style: .default, handler: nil)
+            
+            alert.addAction(action)
+            
+            self.present(alert, animated: true, completion: nil)
+            
+        }
         
     //801713648464
     }
@@ -98,6 +130,32 @@ class BalanceEnqryViewController: UIViewController {
     
     func parsingTheJsonData(JSondata:NSDictionary){
         
+        if((JSondata.value(forKey: "success") as! Int) == 1){
+            
+            
+            
+            
+                  }
+        else if ((JSondata.value(forKey: "success") as! Int) == 0){
+            
+            var msg = self.json?.value(forKey: "message") as! String!
+            
+            let alert = UIAlertController(title: "", message: "\(msg!)", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "close", style: .default, handler: nil))
+            
+            OperationQueue.main.addOperation {
+                
+                self.present(alert, animated:true, completion:nil)
+                
+            }
+            
+            
+            
+        }
+        
+        
+
         
         
     }

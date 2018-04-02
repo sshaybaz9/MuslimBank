@@ -8,6 +8,10 @@ target 'MBank' do
 
   pod ‘GoogleMaps’
   pod ‘GooglePlaces’
+pod 'ImageSlideshow', ‘1.0’
+pod ‘ImageSlideshow/Kingfisher'
+    pod 'Alamofire', '~> 4'
+pod 'IQKeyboardManagerSwift'
 
  
   # Pods for MBank

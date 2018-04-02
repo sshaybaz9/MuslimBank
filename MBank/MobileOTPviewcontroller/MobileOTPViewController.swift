@@ -16,6 +16,7 @@ protocol PassMobileNumber {
 
 
 class MobileOTPViewController: UIViewController,PassVerfication,UITextFieldDelegate {
+    var indicator = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
 
    // Delegate Declartion For Passing Mobile Number to AccessSetUpViewController
     var delegate : PassMobileNumber? = nil
@@ -27,6 +28,15 @@ class MobileOTPViewController: UIViewController,PassVerfication,UITextFieldDeleg
     override func viewDidLoad() {
         super.viewDidLoad()
         self.Numtxt.delegate = self
+        
+        
+        indicator.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
+        indicator.center = view.center
+        view.addSubview(indicator)
+        indicator.bringSubview(toFront: view)
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        
+
         
     }
     
@@ -44,7 +54,38 @@ class MobileOTPViewController: UIViewController,PassVerfication,UITextFieldDeleg
     }
 
     @IBAction func ProceedBtn(_ sender: AnyObject) {
-        var request = URLRequest(url: URL(string: "http://115.117.44.229:8443/Mbank_api/verifyactivationcode.php")!)
+        
+        
+        self.indicator.startAnimating()
+        
+        if Connectivity.isConnectedToInternet
+        {
+        
+        
+        if ((Numtxt.text?.isEmpty)!)
+        {
+            
+            let alert = UIAlertController(title: "Required Field Empty", message: "Please Enter the Code", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
+            
+            
+            self.present(alert, animated: true, completion: nil)
+            
+            
+        }
+        
+        
+        
+        
+      
+        
+      var request = URLRequest(url: URL(string: Constant.POST.VERIFYACTIVATIONCODE.VERIFY)!)
+        
+        
+        
+        
+        
         request.httpMethod = "POST"
         var normalSecuritycode = Numtxt.text!  + mobileNumber
         let postString = "activation_code=\(Numtxt.text!)&mobile_number=\(mobileNumber!)&seck=\(normalSecuritycode)&deviceId=\(deviceId!)"
@@ -59,12 +100,31 @@ class MobileOTPViewController: UIViewController,PassVerfication,UITextFieldDeleg
             do {
                 json = try JSONSerialization.jsonObject(with: data) as? NSDictionary
                 self.parsingTheJsonData(JSondata: json!)//Function call to parse the Json response..
+                
+                
+                self.indicator.stopAnimating()
             } catch {
                 print(error)
             }
         }
         
         task.resume()
+            
+        }
+        
+        else{
+            
+            self.indicator.stopAnimating()
+            let alert = UIAlertController(title:"No Internet Connection" , message:"Make sure your device is connected to the internet." , preferredStyle: .alert)
+            
+            var action = UIAlertAction(title: "OK", style: .default, handler: nil)
+            
+            alert.addAction(action)
+            
+            self.present(alert, animated: true, completion: nil)
+
+            
+        }
         
     }
     func parsingTheJsonData(JSondata:NSDictionary){
@@ -92,6 +152,9 @@ class MobileOTPViewController: UIViewController,PassVerfication,UITextFieldDeleg
 
             }
         }else if((JSondata.value(forKey: "success") as! Int) == 0){
+            
+            
+            self.indicator.stopAnimating()
             verificationStatus =  JSondata.value(forKey: "success") as! Int
             successMessage = "Invalid mobile number"
             verficationAlert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: nil))
@@ -118,6 +181,13 @@ class MobileOTPViewController: UIViewController,PassVerfication,UITextFieldDeleg
     
     @IBAction func ResendVerificationCode(_ sender: AnyObject) {
         
+        self.indicator.startAnimating()
+     
+        if Connectivity.isConnectedToInternet
+        
+        {
+        
+        
         let deviceID = UIDevice.current.identifierForVendor?.uuidString
 
         
@@ -126,7 +196,11 @@ class MobileOTPViewController: UIViewController,PassVerfication,UITextFieldDeleg
         
         
         
-        var request = URLRequest(url: URL(string: "http://115.117.44.229:8443/Mbank_api/verifyupdatemobileactivation.php")!)
+  
+        
+        
+    var request = URLRequest(url: URL(string: Constant.POST.VERIFYMOBILEUPDATEACTIVATIONCODE.VMUA)!)
+        
         request.httpMethod = "POST"
         
         print(deviceID)
@@ -145,13 +219,32 @@ class MobileOTPViewController: UIViewController,PassVerfication,UITextFieldDeleg
                 json = try JSONSerialization.jsonObject(with: data) as? NSDictionary
                 self.parsingTheJsonData1(JSondata1: json!)
             
+                self.indicator.stopAnimating()
             
             } catch {
                 print(error)
             }
         }
         task.resume()
+        }
         
+        
+        else
+        {
+            
+            self.indicator.stopAnimating()
+            
+            let alert = UIAlertController(title:"No Internet Connection" , message:"Make sure your device is connected to the internet." , preferredStyle: .alert)
+            
+            var action = UIAlertAction(title: "OK", style: .default, handler: nil)
+            
+            alert.addAction(action)
+            
+            self.present(alert, animated: true, completion: nil)
+
+            
+            
+        }
         
     }
     

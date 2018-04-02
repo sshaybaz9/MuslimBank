@@ -9,10 +9,7 @@
 import UIKit
 
 class AccountSummayIMPSMiniTableViewCell: UITableViewCell {
-    @IBOutlet weak var date1: UILabel!
-    @IBOutlet weak var transaction1: UILabel!
-
-    @IBOutlet weak var amount1: UILabel!
+  
     @IBOutlet weak var transaction2: UILabel!
     @IBOutlet weak var amount2: UILabel!
     @IBOutlet weak var date2: UILabel!

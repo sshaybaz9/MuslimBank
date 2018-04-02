@@ -10,6 +10,12 @@ import UIKit
 
 class TransactionHistory2TableViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
 
+    var indicator = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
+    
+    
+
+    
+    
     @IBOutlet weak var tableview: UITableView!
     var tranHistory = [TransactionHistory1]()
 
@@ -17,10 +23,24 @@ class TransactionHistory2TableViewController: UIViewController,UITableViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        indicator.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
+        indicator.center = view.center
+        view.addSubview(indicator)
+        indicator.bringSubview(toFront: view)
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+
+        
          transactionHistory()
 
     }
 
+    
+    override  func viewDidAppear(_ animated: Bool) {
+        self.tableview.reloadData()
+        
+    }
+    
     @IBAction func BackPressed(_ sender: AnyObject) {
         
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "services") as! ServicesMenuViewController
@@ -35,13 +55,16 @@ class TransactionHistory2TableViewController: UIViewController,UITableViewDelega
     
     func transactionHistory()
     {
+        self.indicator.startAnimating()
+        
+        
+if Connectivity.isConnectedToInternet
+{
         let clientID = UserDefaults.standard.string(forKey: "ClientID")
         
         var responseString : String!
         
-        
-        
-        let url = URL(string: "http://115.117.44.229:8443/Mbank_api/gettranshistory.php")!
+        let url = URL(string: Constant.POST.TRANSACTIONHISTORYLIST.transactionHistory)!
         
         var request = URLRequest(url: url)
         
@@ -71,7 +94,7 @@ class TransactionHistory2TableViewController: UIViewController,UITableViewDelega
             
             responseString = String(data: data, encoding: .utf8)
             print("responseString = \(responseString)")
-            
+            self.indicator.stopAnimating()
             
             var json: NSDictionary?
             do {
@@ -97,7 +120,6 @@ class TransactionHistory2TableViewController: UIViewController,UITableViewDelega
                     tranhisobj.date = i.value(forKey: "LocalTxnDtTime") as? String
                     self.tranHistory.append(tranhisobj)
 
-                    self.tableview.reloadData()
                 }
 
                 
@@ -106,6 +128,14 @@ class TransactionHistory2TableViewController: UIViewController,UITableViewDelega
                 
 
                 self.parsingTheJsonData(JSondata: json!)
+                
+                DispatchQueue.main.async(execute: {
+                    
+                    self.tableview.reloadData()
+                    
+                    return
+                    
+                })
             }
             catch {
                 print(error)
@@ -114,6 +144,20 @@ class TransactionHistory2TableViewController: UIViewController,UITableViewDelega
             
         }
         task.resume()
+        }
+        else
+        {
+            
+            
+            let alert = UIAlertController(title:"No Internet Connection" , message:"Make sure your device is connected to the internet." , preferredStyle: .alert)
+            
+            var action = UIAlertAction(title: "OK", style: .default, handler: nil)
+            
+            alert.addAction(action)
+            
+            self.present(alert, animated: true, completion: nil)
+            
+        }
         
     }
     

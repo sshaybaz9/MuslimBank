@@ -33,6 +33,11 @@ class DisableMMIDViewController: UIViewController {
 
     @IBAction func DisableMMID(_ sender: AnyObject) {
         
+        
+if Connectivity.isConnectedToInternet
+{
+        
+        
         let accountNumber = UserDefaults.standard.string(forKey: "AccountNO")
         let customerName = UserDefaults.standard.string(forKey: "CustomerName")
         let clientID = UserDefaults.standard.string(forKey: "ClientID")
@@ -40,9 +45,7 @@ class DisableMMIDViewController: UIViewController {
         
         var responseString : String!
         
-        
-        
-        let url = URL(string: "http://115.117.44.229:8443/Mbank_api/disablemmid.php")!
+        let url = URL(string: Constant.POST.DISABLEMMID.MMIDDIS)!
         
         var request = URLRequest(url: url)
         
@@ -90,7 +93,23 @@ class DisableMMIDViewController: UIViewController {
         }
         task.resume()
         
+        }
         
+        
+        
+        else
+        {
+            
+            
+            let alert = UIAlertController(title:"No Internet Connection" , message:"Make sure your device is connected to the internet." , preferredStyle: .alert)
+            
+            var action = UIAlertAction(title: "OK", style: .default, handler: nil)
+            
+            alert.addAction(action)
+            
+            self.present(alert, animated: true, completion: nil)
+            
+        }
     }
     
     

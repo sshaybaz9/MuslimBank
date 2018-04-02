@@ -7,23 +7,54 @@
 //
 
 import UIKit
+import ImageSlideshow
+import Kingfisher
 
 class TransactionViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout{
 
-//    var imageArray = [UIImage(named: "payusingmmid.png"),UIImage(named: "accounts_mbank.png"),UIImage(named: "generatemmid.png"),UIImage(named: "mmid_retrieve.png"),UIImage(named: "disablemmid.png"),UIImage(named: "transinquiry.png"),UIImage(named: "mini_state.png"),UIImage(named:"shoppingcart.png")]
-//    
-//    var nameArray = ["Pay using MMID(IMPS)","P2A using IFS Code(IMPS)","Bill payment and Reminder","Generate MMID","Retrieve MMID","Cancel MMID","Transaction inquiry","Mini statement","Add beneficiary"]
-//    
+    var json : NSDictionary?
     
     var beninfo = [BeneficiaryName]()
     
     var temp2 = [Login]()
     
-    var imageArray = [UIImage(named: "payusingmmid.png"),UIImage(named: "accounts_mbank.png"),UIImage(named: "balanceinquiry.png"),UIImage(named: "generatemmid.png"),UIImage(named: "mmid_retrieve.png"),UIImage(named: "disablemmid.png"),UIImage(named: "transinquiry.png"),UIImage(named: "mini_state.png"),UIImage(named: "addbeneficary.png")]
+//    var imageArray = [UIImage(named: "payusingmmid.png"),UIImage(named: "accounts_mbank.png"),UIImage(named: "balanceinquiry.png"),UIImage(named: "generatemmid.png"),UIImage(named: "mmid_retrieve.png"),UIImage(named: "disablemmid.png"),UIImage(named: "transinquiry.png"),UIImage(named: "mini_state.png"),UIImage(named: "addbeneficary.png")]
     
-    var nameArray = ["Pay using MMID(IMPS)","P2A using IFS Code(IMPS)","Balance inquiry","Generate MMID","Retrieve MMID","Cancel MMID","Transaction inquiry","Mini statement","Add beneficiary"]
+//    var nameArray = [NSLocalizedString("Pay using MMID",comment:""),
+//                     NSLocalizedString("P2A using IFS Code",comment:""),
+//                     NSLocalizedString("Balance inquiry",comment:""),
+//                     NSLocalizedString("Generate MMID",comment:""),
+//                     NSLocalizedString("Retrieve MMID",comment:""),
+//                     NSLocalizedString("Cancel MMID",comment:""),
+//                     NSLocalizedString("Transaction inquiry",comment:""),
+//                     NSLocalizedString("Mini statement",comment:""),
+//                     NSLocalizedString("Add beneficiary",comment:"")]
+//    
+//    
+    
+    
+     var imageArray = [UIImage(named: "accounts_mbank.png"),UIImage(named: "balanceinquiry.png"),UIImage(named: "transactionhistory.png"),UIImage(named: "generatemmid.png"),UIImage(named: "mmid_retrieve.png"),UIImage(named: "disablemmid.png"),UIImage(named: "transinquiry.png"),UIImage(named: "mini_state.png"),UIImage(named: "addbeneficary.png")]
+    
+    var nameArray = [NSLocalizedString("Pay using Account",comment:""),
+                     NSLocalizedString("Balance inquiry",comment:""),
+                     NSLocalizedString("Transaction History",comment:""),
+                     NSLocalizedString("Generate MMID",comment:""),
+                     NSLocalizedString("Retrieve MMID",comment:""),
+                     NSLocalizedString("Cancel MMID",comment:""),
+                     NSLocalizedString("Transaction inquiry",comment:""),
+                     NSLocalizedString("Mini statement",comment:""),
+                     NSLocalizedString("Add beneficiary",comment:"")]
+    
+
     
     var MMID : String!
+    
+    @IBOutlet weak var imageSlideShow: ImageSlideshow!
+    
+    let kingfisherSource = [KingfisherSource(urlString: Constant.Domain+"appimages/other/"+"1.png")!,KingfisherSource(urlString: Constant.Domain+"appimages/other/"+"2.png")!,KingfisherSource(urlString: Constant.Domain+"appimages/other/"+"3.png")!,KingfisherSource(urlString: Constant.Domain+"appimages/other/"+"4.png")!,]
+    
+
+    
     
     @IBAction func BackPressed(_ sender: AnyObject) {
         
@@ -34,12 +65,42 @@ class TransactionViewController: UIViewController,UICollectionViewDataSource,UIC
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-    
         
+        
+    
+        //  call to Image Slider View
+        imageSlideShow.backgroundColor = UIColor.white
+        imageSlideShow.slideshowInterval = 5.0
+        imageSlideShow.pageControlPosition = PageControlPosition.underScrollView
+        imageSlideShow.pageControl.currentPageIndicatorTintColor = UIColor.lightGray
+        imageSlideShow.pageControl.pageIndicatorTintColor = UIColor.black
+        imageSlideShow.contentScaleMode = UIViewContentMode.scaleAspectFill
+        
+        // optional way to show activity indicator during image load (skipping the line will show no activity indicator)
+        
+        imageSlideShow.currentPageChanged = { page in
+            print("current page:", page)
+        }
+        
+        // can be used with other sample sources as `afNetworkingSource`, `alamofireSource` or `sdWebImageSource` or `kingfisherSource`
+        imageSlideShow.setImageInputs(kingfisherSource)
+        
+        let recognizer = UITapGestureRecognizer(target: self, action: #selector(didTap))
+        imageSlideShow.addGestureRecognizer(recognizer)
         
         
         // Do any additional setup after loading the view.
     }
+    
+    // Function of Slider Image
+    
+    @objc func didTap() {
+        let fullScreenController = imageSlideShow.presentFullScreenController(from: self)
+        // set the activity indicator for full screen controller (skipping the line will show no activity indicator)
+        //                        fullScreenController.imageSlideShow.activityIndicator = DefaultActivityIndicator(style: .white, color: nil)
+    }
+    
+
 
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -71,19 +132,31 @@ class TransactionViewController: UIViewController,UICollectionViewDataSource,UIC
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         
-        if(indexPath.row == 1)
-        {
+        if (indexPath.row == 0){
+            
+            
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "PayUsing") as! PayUsingAccountViewController
             
             vc.temp3 = self.temp2
             
             self.present(vc, animated: true, completion: nil)
+            
+            
+        }
+        
+        
+        if(indexPath.row == 1)
+        {
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "Balance") as! BalanceEnqryViewController
+            self.present(vc, animated: true, completion: nil)
+            
+
         }
         
         if(indexPath.row == 2)
         {
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "TransactionHistory") as! TransactionHistory2TableViewController
             
-            let vc = self.storyboard?.instantiateViewController(withIdentifier: "Balance") as! BalanceEnqryViewController
             self.present(vc, animated: true, completion: nil)
 
             
@@ -114,13 +187,9 @@ let vc = self.storyboard?.instantiateViewController(withIdentifier: "Beneficiary
                 self.present(vc, animated: true, completion: nil)
                 
             }))
-            alert.addAction(UIAlertAction(title: "close", style: .default, handler: { (Finished) in
-                let vc = self.storyboard?.instantiateViewController(withIdentifier: "setUp")
-                as! AccSetupLoginViewController
-                self.present(vc, animated: true
-                    , completion: nil)
-            }))
+             alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
             self.present(alert,animated: true, completion: nil)
+            
         }
         if(indexPath.row == 3)
         {
@@ -134,6 +203,12 @@ let vc = self.storyboard?.instantiateViewController(withIdentifier: "Beneficiary
         
         if(indexPath.row == 4)
         {
+            
+if Connectivity.isConnectedToInternet
+{
+            
+            
+            
             let accountNumber = UserDefaults.standard.string(forKey: "AccountNO")
             let mobileNumber = UserDefaults.standard.string(forKey: "MobileText")
             
@@ -141,7 +216,11 @@ let vc = self.storyboard?.instantiateViewController(withIdentifier: "Beneficiary
             
             
             
-    let url = URL(string: "http://115.117.44.229:8443/Mbank_api/retrievemmid.php")!
+    
+            
+            let url = URL(string: Constant.POST.RETRIEVEMMID.retrievemmid)!
+            
+
             
             var request = URLRequest(url: url)
             
@@ -174,17 +253,15 @@ let vc = self.storyboard?.instantiateViewController(withIdentifier: "Beneficiary
                 print("responseString = \(responseString)")
                 
                 
-                var json: NSDictionary?
                 do {
-                    json = try JSONSerialization.jsonObject(with: data) as? NSDictionary
+                   
+                    self.json = try JSONSerialization.jsonObject(with: data) as? NSDictionary
                     
                     
-                    self.MMID = json?.value(forKey: "mmid") as! String!
  
                     
-                    print(self.MMID)
                     
-                    self.parsingTheJsonData(JSondata: json!)
+                    self.parsingTheJsonData(JSondata: self.json!)
                 }   catch {
                     print(error)
                 }
@@ -192,6 +269,21 @@ let vc = self.storyboard?.instantiateViewController(withIdentifier: "Beneficiary
                 
             }
             task.resume()
+                
+            }
+            else
+            {
+                
+                
+                let alert = UIAlertController(title:"No Internet Connection" , message:"Make sure your device is connected to the internet." , preferredStyle: .alert)
+                
+                var action = UIAlertAction(title: "OK", style: .default, handler: nil)
+                
+                alert.addAction(action)
+                
+                self.present(alert, animated: true, completion: nil)
+                
+            }
 
         }
         
@@ -213,6 +305,10 @@ let vc = self.storyboard?.instantiateViewController(withIdentifier: "Beneficiary
         
         if((JSondata.value(forKey: "success") as! Int) == 1){
             
+            
+            self.MMID = self.json?.value(forKey: "mmid") as! String!
+
+            
             let alert = UIAlertController(title: "Your account MMID for IMPS transaction id", message: "\(self.MMID!)", preferredStyle: .alert)
             
         alert.addAction(UIAlertAction(title: "close", style: .default, handler: nil))
@@ -223,7 +319,25 @@ let vc = self.storyboard?.instantiateViewController(withIdentifier: "Beneficiary
           
             }
         }
+        else if ((JSondata.value(forKey: "success") as! Int) == 0){
+            
+            var msg = self.json?.value(forKey: "message") as! String!
+            
+            let alert = UIAlertController(title: "", message: "\(msg!)", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "close", style: .default, handler: nil))
+            
+            OperationQueue.main.addOperation {
+                
+                self.present(alert, animated:true, completion:nil)
+                
+            }
+            
+            
+            
+        }
         
+
         
 
         
