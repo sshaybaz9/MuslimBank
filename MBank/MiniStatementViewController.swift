@@ -7,29 +7,29 @@
 //
 
 import UIKit
-
+import Foundation
 class MiniStatementViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
-    
     var json : NSDictionary?
-    
     
     var indicator = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
 
     @IBOutlet weak var tableview: UITableView!
     
     var arr = [String]()
+    var arr1 = [MiniStatement]()
+
     
     @IBAction func BackPressed(_ sender: AnyObject) {
         
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "Transaction") as! TransactionViewController
+   //     let vc = self.storyboard?.instantiateViewController(withIdentifier: "Transaction") as! TransactionViewController
         
             self.dismiss(animated: true, completion: nil)
         
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        if Connectivity.isConnectedToInternet{
+        if Connectivity.isConnectedToInternet(){
         
         MiniStatementPressed()
        
@@ -40,7 +40,7 @@ class MiniStatementViewController: UIViewController,UITableViewDelegate,UITableV
             
             let alert = UIAlertController(title:"No Internet Connection" , message:"Make sure your device is connected to the internet." , preferredStyle: .alert)
             
-            var action = UIAlertAction(title: "OK", style: .default, handler: nil)
+            let action = UIAlertAction(title: "OK", style: .default, handler: nil)
             
             alert.addAction(action)
             
@@ -74,7 +74,7 @@ class MiniStatementViewController: UIViewController,UITableViewDelegate,UITableV
 
   func MiniStatementPressed()
   {
-    if Connectivity.isConnectedToInternet {
+    if Connectivity.isConnectedToInternet() {
     
     let accountNumber = UserDefaults.standard.string(forKey: "AccountNO")
     let customerName = UserDefaults.standard.string(forKey: "CustomerName")
@@ -94,28 +94,39 @@ class MiniStatementViewController: UIViewController,UITableViewDelegate,UITableV
     request.addValue("application/json", forHTTPHeaderField: "Content-Type")
     
     
-    var seck = mobileNumber! + accountNumber!
+    let seck = mobileNumber! + accountNumber!
     
     let postString = "remitter_mobile=\(mobileNumber!)&remitter_account=\(accountNumber!)&remitter_name=\(customerName!)&remitter_clientid=\(clientID!)&seck=\(seck)"
     
      self.indicator.startAnimating()
+     UIApplication.shared.beginIgnoringInteractionEvents()
 
     print(postString)
     
     request.httpBody = postString.data(using: .utf8)
     let task = URLSession.shared.dataTask(with: request) { data, response, error in
         guard let data = data, error == nil else {                                                 // check for fundamental networking error
-            print("error=\(error)")
+            print("error=\(String(describing: error))")
             return
         }
         
         if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
             print("statusCode should be 200, but is \(httpStatus.statusCode)")
-            print("response = \(response)")
+            print("response = \(String(describing: response))")
         }
         
-        self.indicator.stopAnimating()
 
+        
+        DispatchQueue.main.async(execute: {
+            
+            self.indicator.stopAnimating()
+            UIApplication.shared.endIgnoringInteractionEvents()
+            
+            return
+            
+        })
+        
+        
         responseString = String(data: data, encoding: .utf8)
         print("responseString = \(responseString)")
         
@@ -127,10 +138,8 @@ class MiniStatementViewController: UIViewController,UITableViewDelegate,UITableV
             
             
             
-
+            print(self.json)
             
-            
-            print(self.arr)
             
             self.parsingTheJsonData(JSondata: self.json!)
 
@@ -158,7 +167,7 @@ class MiniStatementViewController: UIViewController,UITableViewDelegate,UITableV
         
         let alert = UIAlertController(title:"No Internet Connection" , message:"Make sure your device is connected to the internet." , preferredStyle: .alert)
         
-        var action = UIAlertAction(title: "OK", style: .default, handler: nil)
+        let action = UIAlertAction(title: "OK", style: .default, handler: nil)
         
         alert.addAction(action)
         
@@ -168,17 +177,86 @@ class MiniStatementViewController: UIViewController,UITableViewDelegate,UITableV
 
     }
     
+    func matches(for regex: String, in text: String) -> [String] {
+        do {
+            let regex = try NSRegularExpression(pattern: regex)
+            let results = regex.matches(in: text,
+                                        range: NSRange(text.startIndex..., in: text))
+            let finalResult = results.map {
+                String(text[Range($0.range, in: text)!])
+            }
+            return finalResult
+        } catch let error {
+            print("invalid regex: \(error.localizedDescription)")
+            return []
+        }
+    }
+    
     
     func parsingTheJsonData(JSondata:NSDictionary){
         if((JSondata.value(forKey: "success") as! Int) == 1){
             
+            
+            
             self.arr = (self.json?.value(forKey: "statements") as! NSArray) as! [String]
             
+            self.arr.remove(at: 0)
+            self.arr.remove(at: 0)
+            self.arr.removeLast()
+
+            self.arr = self.arr.filter({ $0 != ""})
+
+            for item in self.arr{
+             
+            var obj = MiniStatement()
+               
+            var Str1 : String!
+            
+            
+            let regex = try! NSRegularExpression(pattern: "([a-z])(\\))", options: NSRegularExpression.Options.caseInsensitive)
+        
+            let range = NSMakeRange(0, (item.characters.count))
+            
+            Str1 = regex.stringByReplacingMatches(in: item, options: [], range: range, withTemplate: "")
+                
+            var parts1   =     Str1.components(separatedBy: "INR")
+                
+            let mySubstring = parts1[0].prefix(11)
+              
+            obj.date = String(mySubstring)
+
+            obj.stmt = parts1[0].replacingOccurrences(of: mySubstring, with: "", options: .literal, range: nil)
+            
+             
+            if(parts1[1].contains("CR"))
+            {
+                
+                let  parts2 = parts1[1].components(separatedBy: "CR")
+                
+                obj.amount = parts2[0]
+                
+                obj.CRDR = "(Cr)"
+
+            }else if(parts1[1].contains("DR")){
+                
+                var  parts2 = parts1[1].components(separatedBy: "DR")
+                
+                obj.amount = parts2[0]
+                obj.CRDR = "(Dr)"
+                
+                }
+             self.arr1.append(obj)
+           }
             
         }else if ((JSondata.value(forKey: "success") as! Int) == 0){
             
-            self.indicator.stopAnimating()
-            var msg = self.json?.value(forKey: "message") as! String!
+      DispatchQueue.main.async(execute: { 
+        self.indicator.stopAnimating()
+        UIApplication.shared.endIgnoringInteractionEvents()
+
+      })
+            
+            let msg = self.json?.value(forKey: "message") as! String!
             
             let alert = UIAlertController(title: "", message: "\(msg!)", preferredStyle: .alert)
             
@@ -201,14 +279,28 @@ class MiniStatementViewController: UIViewController,UITableViewDelegate,UITableV
     }
      func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        print(arr)
      return arr.count
     }
     
      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell =  tableview.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        
+        let cell = tableview.dequeueReusableCell(withIdentifier: "cell") as! MiniStatementCellTableViewCell
+        
 
-        cell.textLabel?.text = arr[indexPath.row]
+ 
+        cell.date.text = self.arr1[indexPath.row].date
+        cell.stmt.text = self.arr1[indexPath.row].stmt
+        cell.amount.text = self.arr1[indexPath.row].amount
+        cell.CRDR.text = self.arr1[indexPath.row].CRDR
+        if(cell.CRDR.text == "(Cr)"){
+            
+            cell.CRDR.textColor = UIColor.green
+        }
+        else{
+            
+            cell.CRDR.textColor = UIColor.red
+
+        }
         cell.textLabel?.font = UIFont(name:"Avenir", size:14)
 
        return cell
@@ -216,4 +308,20 @@ class MiniStatementViewController: UIViewController,UITableViewDelegate,UITableV
     }
     
     
+    
+    
 }
+
+
+class MiniStatement
+{
+    
+    var date : String!
+    var stmt : String!
+    var amount : String!
+    var CRDR : String!
+    
+}
+
+
+

@@ -18,19 +18,39 @@ class FDRDViewController: UIViewController {
     
     @IBAction func openFD(_ sender: AnyObject) {
         
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "openFD") as! OpenFixedDepositViewController
+//        let vc = self.storyboard?.instantiateViewController(withIdentifier: "openFD") as! OpenFixedDepositViewController
+//        
+//        self.present(vc, animated: true, completion: nil)
+//        
+        let alert = UIAlertController(title: "", message: "This Process is underdevelopment", preferredStyle: .alert)
         
-        self.present(vc, animated: true, completion: nil)
+        alert.addAction(UIAlertAction(title: "close", style: .default, handler: nil))
         
+        OperationQueue.main.addOperation {
+            
+            self.present(alert, animated:true, completion:nil)
+            
+        }
         
     }
 
     @IBAction func openRD(_ sender: AnyObject) {
+//        
+//        let vc = self.storyboard?.instantiateViewController(withIdentifier: "openRD") as! OpenRecurringDepositViewController
+//        
+//        self.present(vc, animated: true, completion: nil)
+//        
         
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "openRD") as! OpenRecurringDepositViewController
         
-        self.present(vc, animated: true, completion: nil)
+        let alert = UIAlertController(title: "", message: "This Process is underdevelopment", preferredStyle: .alert)
         
+        alert.addAction(UIAlertAction(title: "close", style: .default, handler: nil))
+        
+        OperationQueue.main.addOperation {
+            
+            self.present(alert, animated:true, completion:nil)
+            
+        }
         
         
     }

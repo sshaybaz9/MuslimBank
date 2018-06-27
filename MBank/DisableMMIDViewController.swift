@@ -26,7 +26,7 @@ class DisableMMIDViewController: UIViewController {
     @IBAction func BackPressed(_ sender: AnyObject) {
         
         
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "Transaction") as! TransactionViewController
+    //    let vc = self.storyboard?.instantiateViewController(withIdentifier: "Transaction") as! TransactionViewController
         
            self.dismiss(animated: true, completion: nil)
     }
@@ -34,7 +34,7 @@ class DisableMMIDViewController: UIViewController {
     @IBAction func DisableMMID(_ sender: AnyObject) {
         
         
-if Connectivity.isConnectedToInternet
+if Connectivity.isConnectedToInternet()
 {
         
         
@@ -56,7 +56,7 @@ if Connectivity.isConnectedToInternet
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         
         
-        var seck = mobileNumber! + accountNumber!
+        let seck = mobileNumber! + accountNumber!
         
         let postString = "remitter_mobile=\(mobileNumber!)&remitter_account=\(accountNumber!)&remitter_name=\(customerName!)&remitter_clientid=\(clientID!)&seck=\(seck)"
         
@@ -65,13 +65,13 @@ if Connectivity.isConnectedToInternet
         request.httpBody = postString.data(using: .utf8)
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data, error == nil else {                                                 // check for fundamental networking error
-                print("error=\(error)")
+                print("error=\(String(describing: error))")
                 return
             }
             
             if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
                 print("statusCode should be 200, but is \(httpStatus.statusCode)")
-                print("response = \(response)")
+                print("response = \(String(describing: response))")
             }
             
             responseString = String(data: data, encoding: .utf8)
@@ -103,7 +103,7 @@ if Connectivity.isConnectedToInternet
             
             let alert = UIAlertController(title:"No Internet Connection" , message:"Make sure your device is connected to the internet." , preferredStyle: .alert)
             
-            var action = UIAlertAction(title: "OK", style: .default, handler: nil)
+            let action = UIAlertAction(title: "OK", style: .default, handler: nil)
             
             alert.addAction(action)
             

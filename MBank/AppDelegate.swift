@@ -24,11 +24,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GMSServices.provideAPIKey("AIzaSyBoRpSIMBaiLZD2MSKTc8TsCyv0kV4DBdY")
         GMSPlacesClient.provideAPIKey("AIzaSyBoRpSIMBaiLZD2MSKTc8TsCyv0kV4DBdY")
         
-        UITabBarItem.appearance().setTitleTextAttributes([NSFontAttributeName: UIFont(name:"Didot",size: 12)!], for: .normal)
+        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.font: UIFont(name:"Didot",size: 12)!], for: .normal)
        
         
         LanguageManger.shared.defaultLanguage = .en
+        
         IQKeyboardManager.sharedManager().enable = true
+        
+    //    IQKeyboardManager.sharedManager().keyboardDistanceFromTextField = 100.0
+        
 
 
         return true

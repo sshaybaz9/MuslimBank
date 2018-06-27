@@ -89,46 +89,12 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MBank/LocateOnMapViewController.swift"
-            timestampString = "542135271.016142"
+            filePath = "MBank/L102Language.swift"
+            timestampString = "544960099.800475"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "226"
-            endingLineNumber = "226"
-            landmarkName = "getLocation(mLat:mLong:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MBank/MobileOTPviewcontroller/MobileOTPViewController.swift"
-            timestampString = "542786253.217371"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
-            landmarkName = "ProceedBtn(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MBank/ReferFriendsViewController.swift"
-            timestampString = "542096431.355742"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
-            landmarkName = "Submit(_:)"
-            landmarkType = "7">
+            startingLineNumber = "12"
+            endingLineNumber = "12">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -137,13 +103,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MBank/RatingAppViewController.swift"
-            timestampString = "542786253.217371"
+            filePath = "MBank/L102Language.swift"
+            timestampString = "544960120.211924"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "95"
-            endingLineNumber = "95"
-            landmarkName = "Submit(_:)"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "setAppleLAnguageTo(lang:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -154,12 +120,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MBank/AcessSetupLoginView/AddNewBeneficiaryViewController.swift"
-            timestampString = "543913219.406559"
+            timestampString = "548662933.747669"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "517"
-            endingLineNumber = "517"
-            landmarkName = "parsingTheJsonData1(JSondata1:)"
+            startingLineNumber = "216"
+            endingLineNumber = "216"
+            landmarkName = "Register(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -169,13 +135,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MBank/AccountSummaryandIMPSMiniStatementViewController.swift"
-            timestampString = "543740958.727298"
+            filePath = "MBank/AcessSetupLoginView/AddNewBeneficiaryViewController.swift"
+            timestampString = "548662933.814366"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "246"
-            endingLineNumber = "246"
-            landmarkName = "parsingTheJsonData(JSondata:)"
+            startingLineNumber = "245"
+            endingLineNumber = "245"
+            landmarkName = "Register(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -185,13 +151,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MBank/AccountSummaryandIMPSMiniStatementViewController.swift"
-            timestampString = "543740961.915555"
+            filePath = "MBank/AcessSetupLoginView/AddNewBeneficiaryViewController.swift"
+            timestampString = "548662933.815444"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "220"
-            endingLineNumber = "220"
-            landmarkName = "parsingTheJsonData(JSondata:)"
+            startingLineNumber = "258"
+            endingLineNumber = "258"
+            landmarkName = "senOTP()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -201,13 +167,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MBank/Summary1AccountBalanceViewController.swift"
-            timestampString = "543993438.200096"
+            filePath = "MBank/AcessSetupLoginView/AddNewBeneficiaryViewController.swift"
+            timestampString = "548662933.816678"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "189"
-            endingLineNumber = "189"
-            landmarkName = "parsingTheJsonData(JSondata:)"
+            startingLineNumber = "264"
+            endingLineNumber = "264"
+            landmarkName = "senOTP()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MBank/AcessSetupLoginView/AddNewBeneficiaryViewController.swift"
+            timestampString = "548662933.817969"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "262"
+            endingLineNumber = "262"
+            landmarkName = "senOTP()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -5,7 +5,11 @@
     //  Created by Mac on 01/02/18.
     //  Copyright © 2018 Mac. All rights reserved.
     //
-
+    
+    
+// Under Development proccess
+    
+    
     import UIKit
 
     class OpenFixedDepositViewController: UIViewController,UITextFieldDelegate,UITableViewDataSource,UITableViewDelegate {
@@ -72,7 +76,7 @@
         {
             
             
-            if Connectivity.isConnectedToInternet{
+            if Connectivity.isConnectedToInternet(){
             var responseString : String!
             
             
@@ -97,13 +101,13 @@
             request.httpBody = postString.data(using: .utf8)
             let task = URLSession.shared.dataTask(with: request) { data, response, error in
                 guard let data = data, error == nil else {                                                 // check for fundamental networking error
-                    print("error=\(error)")
+                    print("error=\(String(describing: error))")
                     return
                 }
                 
                 if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
                     print("statusCode should be 200, but is \(httpStatus.statusCode)")
-                    print("response = \(response)")
+                    print("response = \(String(describing: response))")
                 }
                 
                 responseString = String(data: data, encoding: .utf8)
@@ -157,7 +161,7 @@
                 
                 let alert = UIAlertController(title:"No Internet Connection" , message:"Make sure your device is connected to the internet." , preferredStyle: .alert)
                 
-                var action = UIAlertAction(title: "OK", style: .default, handler: nil)
+                let action = UIAlertAction(title: "OK", style: .default, handler: nil)
                 
                 alert.addAction(action)
                 
@@ -182,7 +186,7 @@
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
             
             
-            var temp = fixedArray[indexPath.row] as! FixedDeposit
+            let temp = fixedArray[indexPath.row] 
             cell.textLabel?.text = temp.schemeName
 
             cell.textLabel?.font = UIFont(name:"Avenir", size:10)
@@ -194,7 +198,7 @@
         func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
             let cell = tableView.cellForRow(at: indexPath)
             
-            var temp = fixedArray[indexPath.row] as! FixedDeposit
+            let temp = fixedArray[indexPath.row] 
 
             selectScheme.setTitle(cell?.textLabel?.text, for: .normal)
             self.schemeID = temp.depositScheme
@@ -205,10 +209,10 @@
             
             
             
-if Connectivity.isConnectedToInternet
+if Connectivity.isConnectedToInternet()
             {
             
-            let accountNumber = UserDefaults.standard.string(forKey: "AccountNO")
+            //let accountNumber = UserDefaults.standard.string(forKey: "AccountNO")
             let clientID = UserDefaults.standard.string(forKey: "ClientID")
 
             var responseString : String!
@@ -224,7 +228,7 @@ if Connectivity.isConnectedToInternet
             request.addValue("application/json", forHTTPHeaderField: "Content-Type")
             
             
-            var seck = self.schemeID + clientID! + self.depositamounttxt.text!
+            let seck = self.schemeID + clientID! + self.depositamounttxt.text!
             
             let postString = "deposit_scheme_id=\(self.schemeID!)&customer_id=\(clientID!)&deposit_amount=\(self.depositamounttxt.text!)&deposit_period=\(self.depositperiodtxt.text!)&tranfer_account_no=\(self.transferaccounttxt.text!)&seckey=\(seck)"
             
@@ -233,13 +237,13 @@ if Connectivity.isConnectedToInternet
             request.httpBody = postString.data(using: .utf8)
             let task = URLSession.shared.dataTask(with: request) { data, response, error in
                 guard let data = data, error == nil else {                                                 // check for fundamental networking error
-                    print("error=\(error)")
+                    print("error=\(String(describing: error))")
                     return
                 }
                 
                 if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
                     print("statusCode should be 200, but is \(httpStatus.statusCode)")
-                    print("response = \(response)")
+                    print("response = \(String(describing: response))")
                 }
                 
                 responseString = String(data: data, encoding: .utf8)
@@ -270,7 +274,7 @@ if Connectivity.isConnectedToInternet
                 
                 let alert = UIAlertController(title:"No Internet Connection" , message:"Make sure your device is connected to the internet." , preferredStyle: .alert)
                 
-                var action = UIAlertAction(title: "OK", style: .default, handler: nil)
+                let action = UIAlertAction(title: "OK", style: .default, handler: nil)
                 
                 alert.addAction(action)
                 

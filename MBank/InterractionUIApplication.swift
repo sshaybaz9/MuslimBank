@@ -53,7 +53,7 @@ class InterractionUIApplication: UIApplication {
     }
     
     // If the timer reaches the limit as defined in timeoutInSeconds, post this notification.
-    func idleTimerExceeded() {
+    @objc func idleTimerExceeded() {
         print("Time Out")
         
         NotificationCenter.default.post(name:Notification.Name.TimeOutUserInteraction, object: nil)

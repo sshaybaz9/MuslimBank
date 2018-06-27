@@ -24,7 +24,10 @@ class TransactionHistoryTableViewCell: UITableViewCell {
     
     @IBOutlet weak var Trantype1: UILabel!
     
+    @IBOutlet weak var StatusButton: UIButton!
     
+    @IBOutlet weak var benaccount: UILabel!
+    @IBOutlet weak var tranAmount: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

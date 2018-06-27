@@ -57,8 +57,9 @@ class MobileOTPViewController: UIViewController,PassVerfication,UITextFieldDeleg
         
         
         self.indicator.startAnimating()
-        
-        if Connectivity.isConnectedToInternet
+        UIApplication.shared.beginIgnoringInteractionEvents()
+
+        if Connectivity.isConnectedToInternet()
         {
         
         
@@ -87,7 +88,7 @@ class MobileOTPViewController: UIViewController,PassVerfication,UITextFieldDeleg
         
         
         request.httpMethod = "POST"
-        var normalSecuritycode = Numtxt.text!  + mobileNumber
+        let normalSecuritycode = Numtxt.text!  + mobileNumber
         let postString = "activation_code=\(Numtxt.text!)&mobile_number=\(mobileNumber!)&seck=\(normalSecuritycode)&deviceId=\(deviceId!)"
         print(postString)
         request.httpBody = postString.data(using: .utf8)
@@ -102,7 +103,16 @@ class MobileOTPViewController: UIViewController,PassVerfication,UITextFieldDeleg
                 self.parsingTheJsonData(JSondata: json!)//Function call to parse the Json response..
                 
                 
-                self.indicator.stopAnimating()
+                
+                DispatchQueue.main.async(execute: {
+                    
+                    UIApplication.shared.endIgnoringInteractionEvents()
+
+                    self.indicator.stopAnimating()
+                    
+                    return
+                    
+                })
             } catch {
                 print(error)
             }
@@ -113,11 +123,12 @@ class MobileOTPViewController: UIViewController,PassVerfication,UITextFieldDeleg
         }
         
         else{
-            
+            UIApplication.shared.endIgnoringInteractionEvents()
+
             self.indicator.stopAnimating()
             let alert = UIAlertController(title:"No Internet Connection" , message:"Make sure your device is connected to the internet." , preferredStyle: .alert)
             
-            var action = UIAlertAction(title: "OK", style: .default, handler: nil)
+            let action = UIAlertAction(title: "OK", style: .default, handler: nil)
             
             alert.addAction(action)
             
@@ -154,13 +165,23 @@ class MobileOTPViewController: UIViewController,PassVerfication,UITextFieldDeleg
         }else if((JSondata.value(forKey: "success") as! Int) == 0){
             
             
-            self.indicator.stopAnimating()
+            DispatchQueue.main.async(execute: {
+                
+                UIApplication.shared.endIgnoringInteractionEvents()
+
+                
+                self.indicator.stopAnimating()
+                
+                return
+                
+            })
+            
             verificationStatus =  JSondata.value(forKey: "success") as! Int
             successMessage = "Invalid mobile number"
             verficationAlert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: nil))
         }
         verficationAlert.title = successMessage
-        verficationAlert.message = JSondata.value(forKey: "message") as! String
+        verficationAlert.message = JSondata.value(forKey: "message") as? String
         OperationQueue.main.addOperation {
             self.present(verficationAlert, animated:true, completion:nil)
         }
@@ -182,8 +203,11 @@ class MobileOTPViewController: UIViewController,PassVerfication,UITextFieldDeleg
     @IBAction func ResendVerificationCode(_ sender: AnyObject) {
         
         self.indicator.startAnimating()
+        
+        UIApplication.shared.beginIgnoringInteractionEvents()
+
      
-        if Connectivity.isConnectedToInternet
+        if Connectivity.isConnectedToInternet()
         
         {
         
@@ -203,7 +227,6 @@ class MobileOTPViewController: UIViewController,PassVerfication,UITextFieldDeleg
         
         request.httpMethod = "POST"
         
-        print(deviceID)
         
         let postString = "mobile_number=\(mobileNo!)&android_id=\(deviceID!)"
         
@@ -219,8 +242,17 @@ class MobileOTPViewController: UIViewController,PassVerfication,UITextFieldDeleg
                 json = try JSONSerialization.jsonObject(with: data) as? NSDictionary
                 self.parsingTheJsonData1(JSondata1: json!)
             
-                self.indicator.stopAnimating()
-            
+                
+                DispatchQueue.main.async(execute: {
+                    
+                    UIApplication.shared.endIgnoringInteractionEvents()
+
+                    self.indicator.stopAnimating()
+                    
+                    return
+                    
+                })
+                
             } catch {
                 print(error)
             }
@@ -232,11 +264,18 @@ class MobileOTPViewController: UIViewController,PassVerfication,UITextFieldDeleg
         else
         {
             
-            self.indicator.stopAnimating()
+            
+            DispatchQueue.main.async(execute: {
+                
+                self.indicator.stopAnimating()
+                
+                return
+                
+            })
             
             let alert = UIAlertController(title:"No Internet Connection" , message:"Make sure your device is connected to the internet." , preferredStyle: .alert)
             
-            var action = UIAlertAction(title: "OK", style: .default, handler: nil)
+            let action = UIAlertAction(title: "OK", style: .default, handler: nil)
             
             alert.addAction(action)
             

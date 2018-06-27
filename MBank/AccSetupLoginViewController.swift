@@ -78,8 +78,10 @@ class AccSetupLoginViewController: UIViewController,PassMobileNumber,UITextField
         
         
         self.indicator.startAnimating()
+        UIApplication.shared.beginIgnoringInteractionEvents()
+
         
-        if Connectivity.isConnectedToInternet
+        if Connectivity.isConnectedToInternet()
         
         
         {
@@ -132,8 +134,15 @@ class AccSetupLoginViewController: UIViewController,PassMobileNumber,UITextField
             responseString = String(data: data, encoding: .utf8)
             print("responseString = \(responseString)")
             
-self.indicator.stopAnimating()
-            
+            DispatchQueue.main.async(execute: {
+                
+                UIApplication.shared.endIgnoringInteractionEvents()
+
+                self.indicator.stopAnimating()
+                
+                return
+                
+            })
             var json: NSDictionary?
             do {
                 json = try JSONSerialization.jsonObject(with: data) as? NSDictionary
@@ -151,7 +160,7 @@ self.indicator.stopAnimating()
             
             let alert = UIAlertController(title:"No Internet Connection" , message:"Make sure your device is connected to the internet." , preferredStyle: .alert)
             
-            var action = UIAlertAction(title: "OK", style: .default, handler: nil)
+            let action = UIAlertAction(title: "OK", style: .default, handler: nil)
             
             alert.addAction(action)
             
@@ -184,8 +193,16 @@ self.indicator.stopAnimating()
         }else if((JSondata.value(forKey: "success") as! Int) == 0){
             
             
-            self.indicator.stopAnimating()
-            
+            DispatchQueue.main.async(execute: {
+                
+                
+                UIApplication.shared.endIgnoringInteractionEvents()
+
+                self.indicator.stopAnimating()
+                
+                return
+                
+            })
             
             verificationStatus =  JSondata.value(forKey: "success") as! Int
             successMessage = "Invalid Account number"

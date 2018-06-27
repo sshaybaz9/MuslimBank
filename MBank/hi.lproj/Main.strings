@@ -44,8 +44,8 @@
 /* Class = "UIButton"; normalTitle = "Change login pin"; ObjectID = "4Ze-V9-n5A"; */
 "4Ze-V9-n5A.normalTitle" = "Change login pin";
 
-/* Class = "UILabel"; text = "               Welcome to Muslim Bank Mobile App"; ObjectID = "53q-6a-GYL"; */
-"53q-6a-GYL.text" = "               Welcome to Muslim Bank Mobile App";
+/* Class = "UILabel"; text = "Welcome to Muslim Bank Mobile App"; ObjectID = "53q-6a-GYL"; */
+"53q-6a-GYL.text" = "Welcome to Muslim Bank Mobile App";
 
 /* Class = "UILabel"; text = "Date and Time"; ObjectID = "5Eb-h9-udT"; */
 "5Eb-h9-udT.text" = "Date and Time";
@@ -237,7 +237,7 @@
 "NfY-LF-SlC.text" = "Transaction reference number";
 
 /* Class = "UILabel"; text = "Availbale Balance :"; ObjectID = "OPL-cR-qus"; */
-"OPL-cR-qus.text" = "Availbale Balance :";
+"OPL-cR-qus.text" = "Availbale Balance";
 
 /* Class = "UILabel"; text = "IFS Code1"; ObjectID = "OYS-Iy-cCy"; */
 "OYS-Iy-cCy.text" = "IFS Code1";
@@ -267,7 +267,7 @@
 "S27-cN-oiT.normalTitle" = "Login";
 
 /* Class = "UILabel"; text = "Make sure your interest connection is stable."; ObjectID = "SCd-SP-vuM"; */
-"SCd-SP-vuM.text" = "Make sure your interest connection is stable.";
+"SCd-SP-vuM.text" = "Make sure your internet connection is stable.";
 
 /* Class = "UILabel"; text = "Name"; ObjectID = "SN2-h4-uqL"; */
 "SN2-h4-uqL.text" = "Name";
@@ -288,7 +288,7 @@
 "V27-73-a0z.title" = "Enter details for Fixed Deposit";
 
 /* Class = "UIButton"; normalTitle = "Get verificatin code"; ObjectID = "VL7-cF-8tL"; */
-"VL7-cF-8tL.normalTitle" = "Get verificatin code";
+"VL7-cF-8tL.normalTitle" = "Get verification code";
 
 /* Class = "UILabel"; text = "Transaction Type"; ObjectID = "VNd-uk-bDk"; */
 "VNd-uk-bDk.text" = "Transaction Type";
@@ -477,7 +477,7 @@
 "kK5-BI-ebH.text" = "City";
 
 /* Class = "UILabel"; text = "Transaction enqry"; ObjectID = "kla-xV-K9U"; */
-"kla-xV-K9U.text" = "Transaction enqry";
+"kla-xV-K9U.text" = "Change Login Pin";
 
 /* Class = "UILabel"; text = "Do not share verification code received via SMS with unknown person."; ObjectID = "krY-4J-DRJ"; */
 "krY-4J-DRJ.text" = "Do not share verification code received via SMS with unknown person.";

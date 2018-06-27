@@ -34,6 +34,9 @@ class ReferFriendsViewController: UIViewController,MFMessageComposeViewControlle
     }
     @IBAction func Submit(_ sender: AnyObject) {
         
+        let activityVC = UIActivityViewController.init(activityItems: ["www.google.com"], applicationActivities: nil)
+        activityVC.popoverPresentationController?.sourceView = self.view
+        self.present(activityVC, animated: true, completion: nil)
         
         if (MFMessageComposeViewController.canSendText()) {
             
@@ -74,7 +77,7 @@ class ReferFriendsViewController: UIViewController,MFMessageComposeViewControlle
                 
                 for ContctNumVar: CNLabeledValue in contact.phoneNumbers
                 {
-                    let MobNumVar  = (ContctNumVar.value as! CNPhoneNumber).value(forKey: "digits") as? String
+                    let MobNumVar  = (ContctNumVar.value ).value(forKey: "digits") as? String
                     
                     
                     self.phoneNumber.text = MobNumVar!
@@ -86,47 +89,9 @@ class ReferFriendsViewController: UIViewController,MFMessageComposeViewControlle
     func contactPickerDidCancel(_ picker: CNContactPickerViewController) {
         print("Cancel Contact Picker")
     }
-    
-    
-    
-    func launchEmail(sender: AnyObject) {
-         if MFMailComposeViewController.canSendMail() {
-            let  emailTitle = "Feedback"
-            let messageBody = "Feature request or bug report?"
-            let toRecipents = ["friend@stackoverflow.com"]
-            let mc: MFMailComposeViewController = MFMailComposeViewController()
-            mc.mailComposeDelegate = self
-            mc.setSubject(emailTitle)
-            mc.setMessageBody(messageBody, isHTML: false)
-            mc.setToRecipients(toRecipents)
-            
-            self.present(mc, animated: true, completion: nil)
-        } else {
-            // show failure alert
-        }
-    }
-    
-    func mailComposeController(controller:MFMailComposeViewController, didFinishWithResult result:MFMailComposeResult, error:Error) {
-        switch result {
-        case .cancelled:
-            print("Mail cancelled")
-        case .saved:
-            print("Mail saved")
-        case .sent:
-            print("Mail sent")
-        case .failed:
-            print("Mail sent failure: \(error.localizedDescription)")
-        default:
-            break
-        }
-        self.dismiss(animated: true, completion: nil)
-    }
-        
-        
-    
+ 
 }
 
 
-// mail  Link
 
-//https://stackoverflow.com/questions/25981422/how-to-open-mail-app-from-swift
+

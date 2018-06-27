@@ -10,56 +10,38 @@ import UIKit
 
 class RatingAppViewController: UIViewController {
 
-    
     var indicator = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
 
     
-    
     @IBOutlet weak var RatingControl: RatingControl!
-    
-    
+  
     var ratingMessage : String!
     
     var rat : Int!
-
-    
+  
     let kuserDefualts = UserDefaults.standard
     
     @IBAction func Back(_ sender: AnyObject) {
         
-        
         self.dismiss(animated: true, completion: nil)
-        
         
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
-        
+      
         indicator.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
         indicator.center = view.center
         view.addSubview(indicator)
         indicator.bringSubview(toFront: view)
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         
-        
-
-        
-        
+       
         let call = RatingControl
         
         
     let userRating = UserDefaults.standard.string(forKey: "Rating")
 
-        
-        print(userRating)
-        
-        
-    
-        
-       call?.updateButtonSelectionStates(rating: Int(userRating!)!)
-        
+      call?.updateButtonSelectionStates(rating: Int(userRating!)!)
         
         // Do any additional setup after loading the view.
     }
@@ -69,49 +51,38 @@ class RatingAppViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
     @IBAction func Submit(_ sender: AnyObject) {
     
     self.indicator.startAnimating()
-        if Connectivity.isConnectedToInternet{
-        
-        
-        
+        UIApplication.shared.beginIgnoringInteractionEvents()
+
+        if Connectivity.isConnectedToInternet(){
         let temp = RatingControl
         
        self.rat = temp?.rating
-    
-        
-    
-        
-        
+      
 let clientID = UserDefaults.standard.string(forKey: "ClientID")
         let mobileNumber = UserDefaults.standard.string(forKey: "MobileText")
         
         var responseString : String!
-        
-        
-        
+       
         let url = URL(string: Constant.POST.UPDATERATING.updaterating)!
 
         
         var request = URLRequest(url: url)
         
-        request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
-        
+       request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+    
+            
         request.httpMethod = "POST"
         
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         
         
         
+            
         
-        let tempMobile = "8149122032"
-        
-        let tempCleint = "4398972"
-        
-        
-        let seck = tempMobile + tempCleint
+        let seck = mobileNumber! + clientID!
         
         let postString = "mobile_no=\(mobileNumber!)&client_id=\(clientID!)&rating=\(rat!)&seck=\(seck)"
         
@@ -120,25 +91,30 @@ let clientID = UserDefaults.standard.string(forKey: "ClientID")
         request.httpBody = postString.data(using: .utf8)
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data, error == nil else {                                                 // check for fundamental networking error
-                print("error=\(error)")
+                print("error=\(String(describing: error))")
                 return
             }
             
             if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
                 print("statusCode should be 200, but is \(httpStatus.statusCode)")
-                print("response = \(response)")
+                print("response = \(String(describing: response))")
             }
             
             responseString = String(data: data, encoding: .utf8)
             print("responseString = \(responseString)")
-            self.indicator.stopAnimating()
-            
+            DispatchQueue.main.async(execute: {
+                UIApplication.shared.endIgnoringInteractionEvents()
+
+                self.indicator.stopAnimating()
+                
+                return
+                
+            })
             var json: NSDictionary?
             do {
                 json = try JSONSerialization.jsonObject(with: data) as? NSDictionary
                 
                 
-                print(json)
                 
                 self.ratingMessage = json?.value(forKey: "message") as! String!
                 
@@ -155,8 +131,16 @@ let clientID = UserDefaults.standard.string(forKey: "ClientID")
         }else
         
         {
-            self.indicator.stopAnimating()
-            
+            DispatchQueue.main.async(execute: {
+                
+
+                UIApplication.shared.endIgnoringInteractionEvents()
+ 
+                self.indicator.stopAnimating()
+                
+                return
+                
+            })
             
             let alert = UIAlertController(title:"No Internet Connection" , message:"Make sure your device is connected to the internet." , preferredStyle: .alert)
             
@@ -174,7 +158,8 @@ let clientID = UserDefaults.standard.string(forKey: "ClientID")
         
         if((JSondata.value(forKey: "success") as! Int) == 1){
             
-            
+            UIApplication.shared.endIgnoringInteractionEvents()
+
             
             self.kuserDefualts.set(self.rat, forKey: "Rating")
             
@@ -193,6 +178,8 @@ let clientID = UserDefaults.standard.string(forKey: "ClientID")
         
         else{
             self.indicator.stopAnimating()
+            UIApplication.shared.endIgnoringInteractionEvents()
+
             
             
             let alert = UIAlertController(title: "Error" , message: "Could not update rating!", preferredStyle: .alert)

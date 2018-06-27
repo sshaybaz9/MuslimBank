@@ -21,6 +21,8 @@ class BeneficiaryListViewController: UIViewController,UITableViewDelegate,UITabl
     var BenIFSC : String!
     var BenTransfer : String!
     
+    var msg : String?
+    
 var userdefault = UserDefaults.standard
     
     var BenArray = [BeneficiaryName]()
@@ -30,7 +32,7 @@ var userdefault = UserDefaults.standard
     @IBAction func BackPressed(_ sender: AnyObject) {
         
         
-        let vc  = self.storyboard?.instantiateViewController(withIdentifier: "Transaction") as! TransactionViewController
+       // let vc  = self.storyboard?.instantiateViewController(withIdentifier: "Transaction") as! TransactionViewController
         
         self.dismiss(animated: true, completion: nil)
     }
@@ -52,7 +54,7 @@ var userdefault = UserDefaults.standard
     func ViewBeneficiaryList()
     {
         
-if Connectivity.isConnectedToInternet
+if Connectivity.isConnectedToInternet()
 {
     
         
@@ -80,7 +82,7 @@ if Connectivity.isConnectedToInternet
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         
         
-        var seck = clientID! + accountNumber!
+        let seck = clientID! + accountNumber!
         
         let postString = "client_id=\(clientID!)&acc_no=\(accountNumber!)&seck=\(seck)"
         
@@ -89,34 +91,38 @@ if Connectivity.isConnectedToInternet
         request.httpBody = postString.data(using: .utf8)
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data, error == nil else {                                                 // check for fundamental networking error
-                print("error=\(error)")
+                print("error=\(String(describing: error))")
                 return
             }
             
             if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
                 print("statusCode should be 200, but is \(httpStatus.statusCode)")
-                print("response = \(response)")
+                print("response = \(String(describing: response))")
             }
             
             responseString = String(data: data, encoding: .utf8)
             print("responseString = \(responseString)")
            
-            self.tableview.reloadData()
 
             
             var json: NSDictionary?
             do {
                 json = try JSONSerialization.jsonObject(with: data) as? NSDictionary
                 
-                print(json)
                 
-                let payelist = json?.object(forKey: "payee_list") as! NSArray
+                self.msg = json?.value(forKey: "message") as? String
+                
+                
+                let payelist = json?.object(forKey: "payee_list") as? NSArray
              
                 self.BenArray = [BeneficiaryName]()
+                
+                if (payelist != nil)
+                {
 
-               for item in payelist
+               for item in payelist!
                {
-                var benObj = BeneficiaryName()
+                let benObj = BeneficiaryName()
                 let obj = item as! NSDictionary
                 
 //                benObj.benID = obj.value(forKey: "BEN_ID") as! Int
@@ -175,10 +181,10 @@ if Connectivity.isConnectedToInternet
                 
                 
                 self.tableview.reloadData()
-                
+                    }
                 
                 }
-                
+                                
                 
                 self.parsingTheJsonData(JSondata: json!)
             }
@@ -196,7 +202,7 @@ else
     
     let alert = UIAlertController(title:"No Internet Connection" , message:"Make sure your device is connected to the internet." , preferredStyle: .alert)
     
-    var action = UIAlertAction(title: "OK", style: .default, handler: nil)
+    let action = UIAlertAction(title: "OK", style: .default, handler: nil)
     
     alert.addAction(action)
     
@@ -207,6 +213,21 @@ else
     
     func parsingTheJsonData(JSondata:NSDictionary)
     {
+        
+        
+        if((JSondata.value(forKey: "success") as! Int) == 0){
+            
+            let alert = UIAlertController(title: "", message: "\(self.msg!)", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "Close", style: .default, handler: nil))
+            
+            OperationQueue.main.addOperation {
+                
+                self.present(alert, animated:true, completion:nil)
+                
+            }
+        }
+        
         
     }
     
@@ -235,13 +256,13 @@ else
         return cell
     }
     
-    func isDelete(sender : UIButton)
+    @objc func isDelete(sender : UIButton)
         
         
         
     {
         
-if Connectivity.isConnectedToInternet
+if Connectivity.isConnectedToInternet()
         
         {
      let alert = UIAlertController(title: "Do you want to delete", message: "", preferredStyle: .alert)
@@ -269,13 +290,13 @@ if Connectivity.isConnectedToInternet
             request.httpBody = postString.data(using: .utf8)
             let task = URLSession.shared.dataTask(with: request) { data, response, error in
                 guard let data = data, error == nil else {                                                 // check for fundamental networking error
-                    print("error=\(error)")
+                    print("error=\(String(describing: error))")
                     return
                 }
                 
                 if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
                     print("statusCode should be 200, but is \(httpStatus.statusCode)")
-                    print("response = \(response)")
+                    print("response = \(String(describing: response))")
                 }
                 
                 responseString = String(data: data, encoding: .utf8)
@@ -317,7 +338,7 @@ if Connectivity.isConnectedToInternet
             
             let alert = UIAlertController(title:"No Internet Connection" , message:"Make sure your device is connected to the internet." , preferredStyle: .alert)
             
-            var action = UIAlertAction(title: "OK", style: .default, handler: nil)
+            let action = UIAlertAction(title: "OK", style: .default, handler: nil)
             
             alert.addAction(action)
             
@@ -340,7 +361,7 @@ if Connectivity.isConnectedToInternet
     }
     
     
-    func isEdit(sender: UIButton)
+    @objc func isEdit(sender: UIButton)
     {
         let button = sender
         let cell = button.superview?.superview as? BenNameTableViewCell

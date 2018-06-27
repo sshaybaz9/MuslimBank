@@ -1,5 +1,5 @@
 PODS:
-  - Alamofire (4.5.1)
+  - Alamofire (4.7.2)
   - GoogleMaps (2.5.0):
     - GoogleMaps/Maps (= 2.5.0)
   - GoogleMaps/Base (2.5.0)
@@ -7,34 +7,44 @@ PODS:
     - GoogleMaps/Base
   - GooglePlaces (2.5.0):
     - GoogleMaps/Base (= 2.5.0)
-  - ImageSlideshow (1.0.0):
-    - ImageSlideshow/Core (= 1.0.0)
-  - ImageSlideshow/Core (1.0.0)
-  - ImageSlideshow/Kingfisher (1.0.0):
+  - ImageSlideshow (1.5.0):
+    - ImageSlideshow/Core (= 1.5.0)
+  - ImageSlideshow/Core (1.5.0)
+  - ImageSlideshow/Kingfisher (1.5.0):
     - ImageSlideshow/Core
-    - Kingfisher (~> 3.0)
-  - IQKeyboardManagerSwift (5.0.6)
-  - Kingfisher (3.13.1)
+    - Kingfisher (> 3.0)
+  - IQKeyboardManagerSwift (5.0.8)
+  - Kingfisher (4.7.0)
   - RNCryptor (5.0.2)
 
 DEPENDENCIES:
-  - Alamofire (~> 4)
+  - Alamofire
   - GoogleMaps
   - GooglePlaces
-  - ImageSlideshow (= 1.0)
+  - ImageSlideshow (= 1.5)
   - ImageSlideshow/Kingfisher
-  - IQKeyboardManagerSwift
+  - IQKeyboardManagerSwift (~> 5.0.0)
   - RNCryptor (~> 5.0)
 
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Alamofire
+    - GoogleMaps
+    - GooglePlaces
+    - ImageSlideshow
+    - IQKeyboardManagerSwift
+    - Kingfisher
+    - RNCryptor
+
 SPEC CHECKSUMS:
-  Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
+  Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
   GoogleMaps: c087b8e5dfe87ca6ebf59adb9b4894a4146bec4f
   GooglePlaces: dd70d9d71ea1c7944846afe67de3712c99b30a77
-  ImageSlideshow: 2787e10e202b79ecf5348a205c539fcc5bb8e62b
-  IQKeyboardManagerSwift: 02bfbb0dff71c66d0ab77d80d25dfce0c3717735
-  Kingfisher: ed9707a409cc47fddafbcd12a43a9757e3600af5
+  ImageSlideshow: 1e136d06c7521111aac34956ffd525e8866b5fa8
+  IQKeyboardManagerSwift: 2e7dc7f98c111458c1ea2b373f893e8cf95e2b97
+  Kingfisher: da6b005aa96d37698e3e4f1ccfe96a5b9bbf27d6
   RNCryptor: 59b9f92e9fa8a1af74c32dc6b1af5e30ff5e1b64
 
-PODFILE CHECKSUM: 704341d8504f1e0d6f11ae20251dee3c7552f70c
+PODFILE CHECKSUM: 9a88c79e5e191c43e93bde263ae1764f7185d319
 
-COCOAPODS: 1.3.1
+COCOAPODS: 1.5.0

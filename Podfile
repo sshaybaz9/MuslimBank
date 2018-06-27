@@ -5,13 +5,19 @@ target 'MBank' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
  pod 'RNCryptor', '~> 5.0' 
-
   pod ‘GoogleMaps’
   pod ‘GooglePlaces’
-pod 'ImageSlideshow', ‘1.0’
-pod ‘ImageSlideshow/Kingfisher'
-    pod 'Alamofire', '~> 4'
-pod 'IQKeyboardManagerSwift'
+
+ pod 'Alamofire'
+
+pod 'ImageSlideshow', ‘1.5’
+pod ‘ImageSlideshow/Kingfisher' 
+  
+
+
+pod 'IQKeyboardManagerSwift', '~> 5.0.0'
+
+
 
  
   # Pods for MBank

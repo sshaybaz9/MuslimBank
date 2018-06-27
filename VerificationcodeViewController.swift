@@ -54,6 +54,9 @@ class VerificationcodeViewController: UIViewController,UITextFieldDelegate {
     @IBAction func getVerCode(_ sender: AnyObject) {
         
         self.indicator.startAnimating()
+        
+        UIApplication.shared.beginIgnoringInteractionEvents()
+
     
         
        if ((Mobtxt.text?.isEmpty)!)
@@ -74,7 +77,7 @@ class VerificationcodeViewController: UIViewController,UITextFieldDelegate {
         
         self.kUserDefault.setValue(Mobtxt.text, forKey: "ResendMobile")
    
-        if  Connectivity.isConnectedToInternet{
+        if  Connectivity.isConnectedToInternet(){
 
         
    var request = URLRequest(url: URL(string: Constant.POST.VERIFYMOBILEUPDATEACTIVATIONCODE.VMUA)!)
@@ -84,10 +87,11 @@ class VerificationcodeViewController: UIViewController,UITextFieldDelegate {
         
     request.httpMethod = "POST"
         
-        print(deviceID)
         
     let postString = "mobile_number=\(Mobtxt.text!)&android_id=\(deviceID!)"
+            
      request.httpBody = postString.data(using: .utf8)
+            
      let task = URLSession.shared.dataTask(with: request) { data, response, error in
       guard let data = data, error == nil else {                                                 // check for fundamental networking error
                 print("error=\(String(describing: error))")
@@ -109,9 +113,11 @@ class VerificationcodeViewController: UIViewController,UITextFieldDelegate {
         else{
             
             self.indicator.stopAnimating()
+            UIApplication.shared.endIgnoringInteractionEvents()
+
             let alert = UIAlertController(title:"No Internet Connection" , message:"Make sure your device is connected to the internet." , preferredStyle: .alert)
             
-            var action = UIAlertAction(title: "OK", style: .default, handler: nil)
+            let action = UIAlertAction(title: "OK", style: .default, handler: nil)
             
             alert.addAction(action)
             
@@ -151,14 +157,18 @@ class VerificationcodeViewController: UIViewController,UITextFieldDelegate {
         }else if((JSondata.value(forKey: "success") as! Int) == 0){
             
             
-            self.indicator.stopAnimating()
             verificationStatus =  JSondata.value(forKey: "success") as! Int
              successMessage = "Invalid mobile number"
             verficationAlert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: nil))
         }
         verficationAlert.title = successMessage
-        verficationAlert.message = JSondata.value(forKey: "message") as! String
+        verficationAlert.message = JSondata.value(forKey: "message") as? String
         OperationQueue.main.addOperation {
+            
+            self.indicator.stopAnimating()
+            UIApplication.shared.endIgnoringInteractionEvents()
+
+
             self.present(verficationAlert, animated:true, completion:nil)
         }
     }

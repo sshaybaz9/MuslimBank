@@ -12,7 +12,8 @@ class TransactionStatusViewController: UIViewController {
 
     var json : NSDictionary?
     
-    
+    var commomAlertMessaage : String?
+
     
     @IBOutlet weak var activity: UIActivityIndicatorView!
     @IBOutlet weak var datetime: UILabel!
@@ -60,7 +61,7 @@ class TransactionStatusViewController: UIViewController {
     @IBAction func BackPressed(_ sender: AnyObject) {
         
         
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "Transaction") as! TransactionViewController
+     //   let vc = self.storyboard?.instantiateViewController(withIdentifier: "Transaction") as! TransactionViewController
      
         
         
@@ -70,16 +71,45 @@ class TransactionStatusViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    func commonAlertFunc()
+    {
+        
+        
+        let alert = UIAlertController(title: "", message: "\(self.commomAlertMessaage!)", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        
+        OperationQueue.main.addOperation {
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
     
+    
+
 
     @IBAction func transactionStatus(_ sender: AnyObject) {
         
-        
-        if Connectivity.isConnectedToInternet{
+        if(self.Transactiontxt.text == nil || (self.Transactiontxt.text?.isEmpty)!){
+            
+            self.commomAlertMessaage = "Please enter the amount"
+            
+            commonAlertFunc()
+            
+        }
+        else{
+            
+            transEnqury()
+        }
+
+    }
+    
+func transEnqury()
+{
+    if Connectivity.isConnectedToInternet(){
         
         self.activity.isHidden = false
         activity.startAnimating()
-
+        UIApplication.shared.beginIgnoringInteractionEvents()
         
         let accountNumber = UserDefaults.standard.string(forKey: "AccountNO")
         let clientID = UserDefaults.standard.string(forKey: "ClientID")
@@ -98,7 +128,7 @@ class TransactionStatusViewController: UIViewController {
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         
         
-        var seck = mobileNumber! + accountNumber!
+        let seck = mobileNumber! + accountNumber!
         
         let postString = "remitter_mobile=\(mobileNumber!)&remitter_account=\(accountNumber!)&trans_ref_no=\(Transactiontxt.text!)&remitter_clientid=\(clientID!)&seck=\(seck)"
         
@@ -107,13 +137,13 @@ class TransactionStatusViewController: UIViewController {
         request.httpBody = postString.data(using: .utf8)
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data, error == nil else {                                                 // check for fundamental networking error
-                print("error=\(error)")
+                print("error=\(String(describing: error))")
                 return
             }
             
             if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
                 print("statusCode should be 200, but is \(httpStatus.statusCode)")
-                print("response = \(response)")
+                print("response = \(String(describing: response))")
             }
             
             responseString = String(data: data, encoding: .utf8)
@@ -121,10 +151,10 @@ class TransactionStatusViewController: UIViewController {
             
             
             do {
-               self.json = try JSONSerialization.jsonObject(with: data) as? NSDictionary
+                self.json = try JSONSerialization.jsonObject(with: data) as? NSDictionary
                 
                 print(self.json)
-               
+                
                 
                 self.parsingTheJsonData(JSondata: self.json!)
             }   catch {
@@ -134,27 +164,26 @@ class TransactionStatusViewController: UIViewController {
             
         }
         task.resume()
-            
-        }
-        else{
-            
-            let alert = UIAlertController(title:"No Internet Connection" , message:"Make sure your device is connected to the internet." , preferredStyle: .alert)
-            
-            var action = UIAlertAction(title: "OK", style: .default, handler: nil)
-            
-            alert.addAction(action)
-            
-            self.present(alert, animated: true, completion: nil)
-            
-            
-            
-            
-        }
+        
+    }
+    else{
+        
+        let alert = UIAlertController(title:"No Internet Connection" , message:"Make sure your device is connected to the internet." , preferredStyle: .alert)
+        
+        let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+        
+        alert.addAction(action)
+        
+        self.present(alert, animated: true, completion: nil)
         
         
-
         
-
+        
+    }
+    
+    
+    
+    
     }
     func parsingTheJsonData(JSondata:NSDictionary){
         
@@ -205,9 +234,17 @@ class TransactionStatusViewController: UIViewController {
             
         }
         else if ((JSondata.value(forKey: "success") as! Int) == 0){
-            self.activity.stopAnimating()
-            
-            var msg = self.json?.value(forKey: "message") as! String!
+            DispatchQueue.main.async(execute: {
+                UIApplication.shared.endIgnoringInteractionEvents()
+                
+                self.activity.isHidden  = true
+                
+                self.activity.stopAnimating()
+                
+                return
+                
+            })
+            let msg = self.json?.value(forKey: "message") as! String!
             
             let alert = UIAlertController(title: "", message: "\(msg!)", preferredStyle: .alert)
             

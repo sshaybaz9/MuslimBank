@@ -17,11 +17,11 @@
 
 
 
-"               Welcome to Muslim Bank Mobile App" = "مسلم بینک موبائل اپلی کیشن میں خوش                           آمدید";
+"Welcome to Muslim Bank Mobile App" = "مسلم بینک موبائل اپلی کیشن میں خوشآمدید";
 
 
 
-"Make sure your interest connection is stable." = "یقینی بنائیں کہ آپ کے سودے کنکشن مستحکم ہے";
+"Make sure your internet connection is stable." = "یہ یقینی بنائیں کہ آپ کا انٹرنیٹ کنکشن مستحکم ہے.";
 
 
 
@@ -330,4 +330,26 @@
 "Show Account Balance" = "اکاؤنٹ بیلنس دکھائیں";
 "Balance Enquiry" = "بیلنس انکوائری";
 "Profile Update" = "پروفائل اپ ڈیٹ";
+
+"Services and Facilities" = "خدمات اور سہولیات";
+"Choose one of the following languages to use this application." = "اس درخواست کو استعمال کرنے کے لئے مندرجہ ذیل زبانوں میں سے ایک کو منتخب کریں.";
+"English" = "انگریزی";
+"Hindi" = "ہندی";
+"Marathi" = "مراٹهی";
+"Urdu" = "اردو";
+"Apply" = "درخواست دیں";
+"Locate our branches" = "ہماری شاخیں تلاش کریں";
+"Account :" = "اکاؤنٹ:";
+"AVAILABLE BALANCE" = "دستیاب بیلنس";
+"   A/c Number :" = "A / C نمبر:";
+"Please note, as per RBI instruction credit will be effected based solely on the beneficiary  account number information." = "برائے مہربانی نوٹ کریں، آرجیبی ہدایات کریڈٹ کے مطابق کریڈٹ اکاؤنٹنگ اکاؤنٹس کی معلومات پر صرف بنیاد پر اثر انداز ہو جائے گا.";
+
+"Current login pin" = "موجودہ لاگ ان پن";
+"Change Login Pin" = "لاگ ان پن تبدیل کریں";
+"New login pin" = "نیا لاگ ان پن";
+"Confirm New login pin" = "نیا لاگ ان پن کی تصدیق کریں";
+"Transaction enqry" = "ٹرانزیکشن انکری";
+"Transaction reference number" = "ٹرانزیکشن حوالہ نمبر";
+"Check transaction status" = "ٹرانزیکشن کی حیثیت چیک کریں";
+
 

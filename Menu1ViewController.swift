@@ -10,8 +10,10 @@ import UIKit
 
 class Menu1ViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,UIImagePickerControllerDelegate{
     
+    @IBOutlet weak var SliderView: UIView!
    var  imageFromData : UIImage!
     
+    @IBOutlet weak var changeloginpin: UIButton!
     
     @IBOutlet weak var welcomeLbl: UILabel!
     @IBOutlet weak var view1Img: UIImageView!
@@ -25,42 +27,43 @@ class Menu1ViewController: UIViewController,UICollectionViewDelegate,UICollectio
     
     @IBOutlet weak var lblCustomerName: UILabel!
        var menuShowing = false
-   
+    
+    var userDefaultLang : String!
+    
+    var nameArray = [String]()
 
     
     var imageArray = [UIImage(named: "accounts_mbank.png"),UIImage(named: "transfer.png"),UIImage(named: "tax_payment.png"),UIImage(named: "bill_paym.png"),UIImage(named: "upi.png"),UIImage(named: "locate_atm.png"),UIImage(named: "shoppingcart.png"),UIImage(named: "services.png"),UIImage(named: "cards.png")]
     
-    var nameArray = [NSLocalizedString("Accounts", comment:""),
-                     NSLocalizedString("Transactions", comment:""),
-                     NSLocalizedString("Loans", comment:""),
-                     NSLocalizedString("Bill payment and Reminder", comment:""),
-                     NSLocalizedString("UPI", comment:""),
-                     NSLocalizedString("Locate ATMs", comment:""),
-                     NSLocalizedString("Offer", comment:""),
-                     NSLocalizedString("Services", comment:""),
-                     NSLocalizedString("Cards", comment:"")]
     
+    
+//    var nameArray = [NSLocalizedString("Accounts", comment:""),
+//                     NSLocalizedString("Transactions", comment:""),
+//                     NSLocalizedString("Loans", comment:""),
+//                     NSLocalizedString("Bill payment and Reminder", comment:""),
+//                     NSLocalizedString("UPI", comment:""),
+//                     NSLocalizedString("Locate ATMs", comment:""),
+//                     NSLocalizedString("Offer", comment:""),
+//                     NSLocalizedString("Services", comment:""),
+//                     NSLocalizedString("Cards", comment:"")]
+//    
 
     let kUserDefault = UserDefaults.standard
 
     @IBOutlet weak var profileButton: UIButton!
     @IBAction func ContactUsPressed(_ sender: AnyObject) {
         
-        
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "contactus") as! ContactusViewController
         
         self.present(vc, animated: true, completion: nil)
     }
     
+    
+    
     @IBAction func HomePressed(_ sender: AnyObject) {
-        
-        
-        
         if(menuShowing)
         {
-            
-            
-            
+        
             view1Img.image = img
             
             LeadingConstraint.constant = -245
@@ -68,10 +71,7 @@ class Menu1ViewController: UIViewController,UICollectionViewDelegate,UICollectio
             
         }
         else{
-            
-            
-            
-            
+   
             view1Img.image = img
             
             LeadingConstraint.constant = 0
@@ -79,16 +79,24 @@ class Menu1ViewController: UIViewController,UICollectionViewDelegate,UICollectio
         
         menuShowing = !menuShowing
     
-    
-
     }
     
     
-         override func viewDidLoad() {
+        override func viewDidLoad() {
         super.viewDidLoad()
             
-        lblCustomerName.text = UserDefaults.standard.string(forKey: "CustomerName")
             
+            
+            
+        self.userDefaultLang = UserDefaults.standard.string(forKey: "lang")
+    
+        changeloginpin.contentHorizontalAlignment = LanguageManger.shared.isRightToLeft ? .right : .left
+            
+ 
+        lblCustomerName.text = UserDefaults.standard.string(forKey: "CustomerName")
+
+            self.SliderView.layer.borderWidth = 1
+            self.SliderView.layer.borderColor = UIColor(red:222/255, green:225/255, blue:227/255, alpha: 1).cgColor
             
 //            self.view.layoutIfNeeded()
 //
@@ -126,33 +134,23 @@ class Menu1ViewController: UIViewController,UICollectionViewDelegate,UICollectio
         
     }
     
+    
     override func viewWillAppear(_ animated: Bool) {
         
-        
-        let imageData = UserDefaults.standard.value(forKey: "key") as? Data
-        
-        if (imageData != nil){
-        
-         self.imageFromData = UIImage(data: imageData!)
-            
-            self.profielLatestimg.image = imageFromData
-        }
-        
-        else{
-            
-            profielLatestimg.image = img
+         self.nameArray =  ["Accounts".localized(lang : self.userDefaultLang),
+                          "Transactions".localized(lang : self.userDefaultLang),
+                          "Loans".localized(lang : self.userDefaultLang),
+                          "Bill payment and Reminder".localized(lang : self.userDefaultLang),
+                          "UPI".localized(lang : self.userDefaultLang),
+                          "Locate ATMs".localized(lang : self.userDefaultLang),
+                          "Offer".localized(lang : self.userDefaultLang),
+                          "Services".localized(lang : self.userDefaultLang),
+                          "Cards".localized(lang : self.userDefaultLang)]
 
-            
-            
-        }
-      
-        
-        
-        
         
     }
-    
    
+    
     override  func  viewDidLayoutSubviews() {
         
                     self.view.layoutIfNeeded()
@@ -166,7 +164,7 @@ class Menu1ViewController: UIViewController,UICollectionViewDelegate,UICollectio
     
    
 
-    func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
+    @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
     {
         
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "Profile") as! ProfileUpdateViewController
@@ -187,7 +185,8 @@ class Menu1ViewController: UIViewController,UICollectionViewDelegate,UICollectio
 //        cell.layer.borderWidth = 3
 //        
         cell.imgImage.image = imageArray[indexPath.row]
-        cell.lblName.text! = nameArray[indexPath.row]
+        cell.lblName.text! = nameArray[indexPath.row].localiz()
+        
           return cell
     }
     
@@ -208,7 +207,61 @@ class Menu1ViewController: UIViewController,UICollectionViewDelegate,UICollectio
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        if(indexPath.row == 2){
+            let alert = UIAlertController(title: "", message: "This feature is under development", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "close", style: .default, handler: nil))
+            
+            OperationQueue.main.addOperation {
+                
+                self.present(alert, animated:true, completion:nil)
+                
+            }
+        }
+        if(indexPath.row == 3){
+            let alert = UIAlertController(title: "", message: "This feature is under development", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "close", style: .default, handler: nil))
+            
+            OperationQueue.main.addOperation {
+                
+                self.present(alert, animated:true, completion:nil)
+                
+            }
+        }
+        if(indexPath.row == 4){
+            let alert = UIAlertController(title: "", message: "This feature is under development", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "close", style: .default, handler: nil))
+            
+            OperationQueue.main.addOperation {
+                
+                self.present(alert, animated:true, completion:nil)
+                
+            }
+        }
+        if(indexPath.row == 8){
+            let alert = UIAlertController(title: "", message: "This feature is under development", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "close", style: .default, handler: nil))
+            
+            OperationQueue.main.addOperation {
+                
+                self.present(alert, animated:true, completion:nil)
+                
+            }
+        }
+        if(indexPath.row == 9){
+            let alert = UIAlertController(title: "", message: "This feature is under development", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "close", style: .default, handler: nil))
+            
+            OperationQueue.main.addOperation {
+                
+                self.present(alert, animated:true, completion:nil)
+                
+            }
+        }
         
         if(indexPath.row == 0)
         {
@@ -221,7 +274,7 @@ class Menu1ViewController: UIViewController,UICollectionViewDelegate,UICollectio
         }
         if (indexPath.row == 1){
             
-            let Transaction = self.storyboard?.instantiateViewController(withIdentifier: "Transaction") as! TransactionViewController
+        let Transaction = self.storyboard?.instantiateViewController(withIdentifier: "Transaction") as! TransactionViewController
             
         
             Transaction.temp2 = self.temp1
@@ -237,7 +290,7 @@ class Menu1ViewController: UIViewController,UICollectionViewDelegate,UICollectio
         {
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "Map") as! LocateOnMapViewController
             
-            var flagSent = "atm"
+            let flagSent = "atm"
             
             vc.flag = flagSent
             self.navigationController?.pushViewController(vc, animated: true)
@@ -267,21 +320,14 @@ class Menu1ViewController: UIViewController,UICollectionViewDelegate,UICollectio
    
     @IBAction func MenuShow(_ sender: AnyObject) {
         
-        let imageData = UserDefaults.standard.value(forKey: "key") as? Data
 
         
         if(menuShowing)
         {
-            
-            
-            
-            if (imageData != nil)
-            {
-                self.welcomeLbl.isHidden = false
+            self.welcomeLbl.isHidden = false
 
-                self.imageFromData = UIImage(data: imageData!)
-                
-                self.view1Img.image = imageFromData
+            
+                            self.view1Img.image = img
 
                 
                 self.view1Img.layer.cornerRadius = self.view1Img.frame.size.width / 2
@@ -291,42 +337,20 @@ class Menu1ViewController: UIViewController,UICollectionViewDelegate,UICollectio
                 LeadingConstraint.constant = -245
 
                 
-            }
             
-            else
-            {
-            self.welcomeLbl.isHidden = false
             
-            view1Img.image = img
-
-            self.view1Img.layer.cornerRadius = self.view1Img.frame.size.width / 2
-            self.view1Img.clipsToBounds = true
-
-            
-            LeadingConstraint.constant = -245
-           }
         
         }
         else {
+
+            self.welcomeLbl.isHidden = true
+
             
-            if (imageData != nil)
-            {
-            
-                self.welcomeLbl.isHidden = true
-                
-                self.view1Img.image = imageFromData
+                            self.view1Img.image = img
                 
                 LeadingConstraint.constant = 0
-            }
-            
-            else{
-            
-            self.welcomeLbl.isHidden = true
-            
-            view1Img.image = img
-
-            LeadingConstraint.constant = 0
-            }
+          
+           
         }
         
         menuShowing = !menuShowing
@@ -348,7 +372,7 @@ class Menu1ViewController: UIViewController,UICollectionViewDelegate,UICollectio
         
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "TabBar") as! AccountsTabBarController
         
-        let vc1 = self.storyboard?.instantiateViewController(withIdentifier: "Sum1Account") as! Summary1AccountBalanceViewController
+    //    let vc1 = self.storyboard?.instantiateViewController(withIdentifier: "Sum1Account") as! Summary1AccountBalanceViewController
         
 
         
@@ -394,6 +418,10 @@ class Menu1ViewController: UIViewController,UICollectionViewDelegate,UICollectio
         
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "Language") as! LanguageSelectorViewController
         
+        
+        
+        vc.img = self.img
+        vc.temp1 = self.temp1
         self.present(vc, animated: true, completion: nil)
         
         
@@ -414,6 +442,22 @@ class Menu1ViewController: UIViewController,UICollectionViewDelegate,UICollectio
         
         
     }
-    
+//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        
+//        self.welcomeLbl.isHidden = false
+//
+//        self.SliderView.isHidden = true
+//    }
+//    
    
 }
+
+extension String {
+    func localized(lang:String) ->String {
+        
+        let path = Bundle.main.path(forResource: lang, ofType: "lproj")
+        let bundle = Bundle(path: path!)
+        
+        return NSLocalizedString(self, tableName: nil, bundle: bundle!, value: "", comment: "")
+    }}
+

@@ -34,16 +34,11 @@ class TransactionViewController: UIViewController,UICollectionViewDataSource,UIC
     
     
      var imageArray = [UIImage(named: "accounts_mbank.png"),UIImage(named: "balanceinquiry.png"),UIImage(named: "transactionhistory.png"),UIImage(named: "generatemmid.png"),UIImage(named: "mmid_retrieve.png"),UIImage(named: "disablemmid.png"),UIImage(named: "transinquiry.png"),UIImage(named: "mini_state.png"),UIImage(named: "addbeneficary.png")]
+
     
-    var nameArray = [NSLocalizedString("Pay using Account",comment:""),
-                     NSLocalizedString("Balance inquiry",comment:""),
-                     NSLocalizedString("Transaction History",comment:""),
-                     NSLocalizedString("Generate MMID",comment:""),
-                     NSLocalizedString("Retrieve MMID",comment:""),
-                     NSLocalizedString("Cancel MMID",comment:""),
-                     NSLocalizedString("Transaction inquiry",comment:""),
-                     NSLocalizedString("Mini statement",comment:""),
-                     NSLocalizedString("Add beneficiary",comment:"")]
+    var userDefaultLang : String!
+    
+    var nameArray = [String]()
     
 
     
@@ -58,15 +53,19 @@ class TransactionViewController: UIViewController,UICollectionViewDataSource,UIC
     
     @IBAction func BackPressed(_ sender: AnyObject) {
         
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "Menu") as! Menu1ViewController
+     //   let vc = self.storyboard?.instantiateViewController(withIdentifier: "Menu") as! Menu1ViewController
         
         self.dismiss(animated: true, completion: nil)
         
     }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        //get current language value from userDefaults
+        self.userDefaultLang = UserDefaults.standard.string(forKey: "lang")
+
     
         //  call to Image Slider View
         imageSlideShow.backgroundColor = UIColor.white
@@ -74,7 +73,7 @@ class TransactionViewController: UIViewController,UICollectionViewDataSource,UIC
         imageSlideShow.pageControlPosition = PageControlPosition.underScrollView
         imageSlideShow.pageControl.currentPageIndicatorTintColor = UIColor.lightGray
         imageSlideShow.pageControl.pageIndicatorTintColor = UIColor.black
-        imageSlideShow.contentScaleMode = UIViewContentMode.scaleAspectFill
+      //  imageSlideShow.contentScaleMode = UIViewContentMode.scaleAspectFill
         
         // optional way to show activity indicator during image load (skipping the line will show no activity indicator)
         
@@ -91,6 +90,23 @@ class TransactionViewController: UIViewController,UICollectionViewDataSource,UIC
         
         // Do any additional setup after loading the view.
     }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        
+        self.nameArray = ["Pay using Account".localized(lang : self.userDefaultLang),
+                          "Balance inquiry".localized(lang : self.userDefaultLang),
+                          "Transaction History".localized(lang : self.userDefaultLang),
+                          "Generate MMID".localized(lang : self.userDefaultLang),
+                          "Retrieve MMID".localized(lang : self.userDefaultLang),
+                          "Cancel MMID".localized(lang : self.userDefaultLang),
+                          "Transaction inquiry".localized(lang : self.userDefaultLang),
+                          "Mini statement".localized(lang : self.userDefaultLang),
+                          "Add beneficiary".localized(lang : self.userDefaultLang)]
+        
+    }
+
     
     // Function of Slider Image
     
@@ -204,7 +220,7 @@ let vc = self.storyboard?.instantiateViewController(withIdentifier: "Beneficiary
         if(indexPath.row == 4)
         {
             
-if Connectivity.isConnectedToInternet
+if Connectivity.isConnectedToInternet()
 {
             
             
@@ -231,7 +247,7 @@ if Connectivity.isConnectedToInternet
             request.addValue("application/json", forHTTPHeaderField: "Content-Type")
             
             
-            var seck =  accountNumber! + mobileNumber!
+            let seck =  accountNumber! + mobileNumber!
             
             let postString = "account_no=\(accountNumber!)&mobile_no=\(mobileNumber!)&seck=\(seck)"
             
@@ -240,13 +256,13 @@ if Connectivity.isConnectedToInternet
             request.httpBody = postString.data(using: .utf8)
             let task = URLSession.shared.dataTask(with: request) { data, response, error in
                 guard let data = data, error == nil else {                                                 // check for fundamental networking error
-                    print("error=\(error)")
+                    print("error=\(String(describing: error))")
                     return
                 }
                 
                 if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
                     print("statusCode should be 200, but is \(httpStatus.statusCode)")
-                    print("response = \(response)")
+                    print("response = \(String(describing: response))")
                 }
                 
                 responseString = String(data: data, encoding: .utf8)
@@ -277,7 +293,7 @@ if Connectivity.isConnectedToInternet
                 
                 let alert = UIAlertController(title:"No Internet Connection" , message:"Make sure your device is connected to the internet." , preferredStyle: .alert)
                 
-                var action = UIAlertAction(title: "OK", style: .default, handler: nil)
+                let action = UIAlertAction(title: "OK", style: .default, handler: nil)
                 
                 alert.addAction(action)
                 
@@ -321,7 +337,7 @@ if Connectivity.isConnectedToInternet
         }
         else if ((JSondata.value(forKey: "success") as! Int) == 0){
             
-            var msg = self.json?.value(forKey: "message") as! String!
+            let msg = self.json?.value(forKey: "message") as! String!
             
             let alert = UIAlertController(title: "", message: "\(msg!)", preferredStyle: .alert)
             

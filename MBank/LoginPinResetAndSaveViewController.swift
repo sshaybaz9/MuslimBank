@@ -61,8 +61,10 @@ class LoginPinResetAndSaveViewController: UIViewController,UITextFieldDelegate {
         
         
         self.indicator.startAnimating()
-        
-        if Connectivity.isConnectedToInternet{
+        UIApplication.shared.beginIgnoringInteractionEvents()
+
+        if Connectivity.isConnectedToInternet()
+        {
         
         
         if LoginPintxt.text != nil
@@ -74,9 +76,9 @@ class LoginPinResetAndSaveViewController: UIViewController,UITextFieldDelegate {
         
         var responseString : String!
         
-        var Encrypted = ciphertext.base64EncodedString()
+        let Encrypted = ciphertext.base64EncodedString()
         
-        var   seckey = mobileno! + Encrypted
+        let   seckey = mobileno! + Encrypted
         
            print(seckey)
         
@@ -101,13 +103,13 @@ class LoginPinResetAndSaveViewController: UIViewController,UITextFieldDelegate {
         request.httpBody = postString.data(using: .utf8)
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data, error == nil else {                                                 // check for fundamental networking error
-                print("error=\(error)")
+                print("error=\(String(describing: error))")
                 return
             }
             
             if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
                 print("statusCode should be 200, but is \(httpStatus.statusCode)")
-                print("response = \(response)")
+                print("response = \(String(describing: response))")
             }
             
             responseString = String(data: data, encoding: .utf8)
@@ -118,7 +120,6 @@ class LoginPinResetAndSaveViewController: UIViewController,UITextFieldDelegate {
             do {
                 json = try JSONSerialization.jsonObject(with: data) as? NSDictionary
                 
-                       print(json)
                 self.parsingTheJsonData(JSondata: json!)
             }   catch {
                 print(error)
@@ -130,9 +131,17 @@ class LoginPinResetAndSaveViewController: UIViewController,UITextFieldDelegate {
         
         }
         else{
-            self.indicator.stopAnimating()
-            
-            
+            DispatchQueue.main.async(execute: {
+                UIApplication.shared.endIgnoringInteractionEvents()
+                
+                
+                self.indicator.stopAnimating()
+                
+                return
+                
+            })
+
+
                         let alert = UIAlertController(title: "Alert", message: "Enter the field", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
             self.present(alert, animated: true, completion: nil)
@@ -144,10 +153,18 @@ class LoginPinResetAndSaveViewController: UIViewController,UITextFieldDelegate {
         
         
         else {
-            self.indicator.stopAnimating()
+            DispatchQueue.main.async(execute: {
+                UIApplication.shared.endIgnoringInteractionEvents()
+                
+                
+                self.indicator.stopAnimating()
+                
+                return
+                
+            })
             let alert = UIAlertController(title:"No Internet Connection" , message:"Make sure your device is connected to the internet." , preferredStyle: .alert)
             
-            var action = UIAlertAction(title: "OK", style: .default, handler: nil)
+            let action = UIAlertAction(title: "OK", style: .default, handler: nil)
             
             alert.addAction(action)
             
@@ -178,11 +195,19 @@ class LoginPinResetAndSaveViewController: UIViewController,UITextFieldDelegate {
         else if((JSondata.value(forKey: "success") as! Int) == 0){
             
             
-            
-            self.indicator.stopAnimating()
+            DispatchQueue.main.async(execute: {
+                UIApplication.shared.endIgnoringInteractionEvents()
+                
+                
+                self.indicator.stopAnimating()
+                
+                return
+                
+            })
+
             let alert = UIAlertController()
             
-            alert.message = JSondata.value(forKey: "message") as! String
+            alert.message = JSondata.value(forKey: "message") as? String
             
             alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
             self.present(alert, animated: true, completion: nil)

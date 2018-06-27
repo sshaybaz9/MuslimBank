@@ -5,15 +5,15 @@
     //  Created by Mac on 23/02/18.
     //
     //
-
+//9890654050
     import Foundation
 
 
     struct Constant {
         
-        static let DomainTest = "https://mbankmobileapp.com:8443/Mbank_api_test/"
+        static let Domain = "https://mbankmobileapp.com:8443/Mbank_api_test/"
         
-        static let Domain = "https://mbankmobileapp.com:8443/Mbank_api/"
+        static let DomainTest = "https://mbankmobileapp.com:8443/Mbank_api/"
         
         struct POST {
         struct VERIFICATION {
@@ -28,6 +28,9 @@
             struct DASHBOARDLOGIN {
         static let  LOGIN = Domain + "dashboardlogin.php";
         }
+            struct GUESTLOGINDASHBOARD{
+                static let GUESTLOGIN = "guestlogintodashboard.php"
+            }
         struct PTOPTRANSFER {
         static let TRANSFER = Domain + "transact.php";
         }

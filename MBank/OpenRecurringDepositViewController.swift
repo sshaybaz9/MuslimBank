@@ -58,7 +58,7 @@
         {
             
             
-if Connectivity.isConnectedToInternet
+if Connectivity.isConnectedToInternet()
             
             
 {
@@ -75,7 +75,7 @@ if Connectivity.isConnectedToInternet
             
             request.addValue("application/json", forHTTPHeaderField: "Content-Type")
             
-            var seck = "rd"
+            let seck = "rd"
             
             let postString = "schemesFor=\(seck)"
             
@@ -84,13 +84,13 @@ if Connectivity.isConnectedToInternet
             request.httpBody = postString.data(using: .utf8)
             let task = URLSession.shared.dataTask(with: request) { data, response, error in
                 guard let data = data, error == nil else {                                                 // check for fundamental networking error
-                    print("error=\(error)")
+                    print("error=\(String(describing: error))")
                     return
                 }
                 
                 if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
                     print("statusCode should be 200, but is \(httpStatus.statusCode)")
-                    print("response = \(response)")
+                    print("response = \(String(describing: response))")
                 }
                 
                 responseString = String(data: data, encoding: .utf8)
@@ -107,7 +107,7 @@ if Connectivity.isConnectedToInternet
                     for item in res
                     {
                         
-                        var recur = RecurringDeposit()
+                        let recur = RecurringDeposit()
                         
                         let obj = item as! NSDictionary
                         
@@ -123,7 +123,6 @@ if Connectivity.isConnectedToInternet
                         
                         
                     }
-                    print(json)
                     
                     self.parsingTheJsonData(JSondata: json!)
                     
@@ -144,7 +143,7 @@ if Connectivity.isConnectedToInternet
                 
                 let alert = UIAlertController(title:"No Internet Connection" , message:"Make sure your device is connected to the internet." , preferredStyle: .alert)
                 
-                var action = UIAlertAction(title: "OK", style: .default, handler: nil)
+                let action = UIAlertAction(title: "OK", style: .default, handler: nil)
                 
                 alert.addAction(action)
                 
@@ -169,7 +168,7 @@ if Connectivity.isConnectedToInternet
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
             
             
-            var temp = recurringArray[indexPath.row] as! RecurringDeposit
+            var temp = recurringArray[indexPath.row] 
             cell.textLabel?.text = temp.schemeName
             cell.textLabel?.font = UIFont(name:"Avenir", size:10)
 
@@ -179,7 +178,7 @@ if Connectivity.isConnectedToInternet
         func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
             let cell = tableView.cellForRow(at: indexPath)
             
-            var temp = recurringArray[indexPath.row] as! RecurringDeposit
+            let temp = recurringArray[indexPath.row] 
 
             selectScheme.setTitle(cell?.textLabel?.text, for: .normal)
             self.schemeID = temp.depositSchemeID
@@ -193,7 +192,8 @@ if Connectivity.isConnectedToInternet
         @IBAction func OpenRecurring(_ sender: AnyObject) {
             
             
-            if Connectivity.isConnectedToInternet{
+            if Connectivity.isConnectedToInternet(){
+                
             let accountNumber = UserDefaults.standard.string(forKey: "AccountNO")
             let clientID = UserDefaults.standard.string(forKey: "ClientID")
             
@@ -222,13 +222,13 @@ if Connectivity.isConnectedToInternet
             request.httpBody = postString.data(using: .utf8)
             let task = URLSession.shared.dataTask(with: request) { data, response, error in
                 guard let data = data, error == nil else {                                                 // check for fundamental networking error
-                    print("error=\(error)")
+                    print("error=\(String(describing: error))")
                     return
                 }
                 
                 if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
                     print("statusCode should be 200, but is \(httpStatus.statusCode)")
-                    print("response = \(response)")
+                    print("response = \(String(describing: response))")
                 }
                 
                 responseString = String(data: data, encoding: .utf8)
@@ -238,9 +238,6 @@ if Connectivity.isConnectedToInternet
                 var json: NSDictionary?
                 do {
                     json = try JSONSerialization.jsonObject(with: data) as? NSDictionary
-                    
-                    
-                    print(json)
                     
                     self.parsingTheJsonData1(JSondata1: json!)
                 }   catch {
@@ -259,7 +256,7 @@ if Connectivity.isConnectedToInternet
                 
                 let alert = UIAlertController(title:"No Internet Connection" , message:"Make sure your device is connected to the internet." , preferredStyle: .alert)
                 
-                var action = UIAlertAction(title: "OK", style: .default, handler: nil)
+                let action = UIAlertAction(title: "OK", style: .default, handler: nil)
                 
                 alert.addAction(action)
                 

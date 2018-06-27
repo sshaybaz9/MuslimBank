@@ -10,6 +10,7 @@
 
     class AccountSummaryandIMPSMiniStatementViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
         
+        @IBOutlet weak var impsIndicator: UIActivityIndicatorView!
         
         
         
@@ -39,6 +40,7 @@
         override func viewDidLoad() {
             super.viewDidLoad()
 
+            self.impsIndicator.isHidden = true
             
             
    tableview1.tableFooterView = UIView(frame: .zero)
@@ -79,7 +81,7 @@
         @IBAction func BackPressed(_ sender: AnyObject) {
             
             
-            let vc =  self.storyboard?.instantiateViewController(withIdentifier: "Menu") as! Menu1ViewController
+     //       let vc =  self.storyboard?.instantiateViewController(withIdentifier: "Menu") as! Menu1ViewController
             
             self.dismiss(animated: true, completion: nil)
         }
@@ -92,7 +94,7 @@
                 
                 
                 
-                if Connectivity.isConnectedToInternet{
+                if Connectivity.isConnectedToInternet(){
                     
                     
                     self.tableview.reloadData()
@@ -114,7 +116,12 @@
             
             var responseString : String!
             
-                
+             self.impsIndicator.isHidden = false
+             self.impsIndicator.startAnimating()
+                    
+             UIApplication.shared.beginIgnoringInteractionEvents()
+
+                    
             let url = URL(string: Constant.POST.GETSTATEMENT.STATEMENT)!
                 
             var request = URLRequest(url: url)
@@ -126,7 +133,7 @@
             request.addValue("application/json", forHTTPHeaderField: "Content-Type")
             
             
-            var seck = mobileNumber! + accountNumber!
+            let seck = mobileNumber! + accountNumber!
             
             let postString = "remitter_mobile=\(mobileNumber!)&remitter_account=\(accountNumber!)&remitter_clientid=\(clientID!)&seck=\(seck)"
             
@@ -135,13 +142,13 @@
             request.httpBody = postString.data(using: .utf8)
             let task = URLSession.shared.dataTask(with: request) { data, response, error in
                 guard let data = data, error == nil else {                                                 // check for fundamental networking error
-                    print("error=\(error)")
+                    print("error=\(String(describing: error))")
                     return
                 }
                 
                 if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
                     print("statusCode should be 200, but is \(httpStatus.statusCode)")
-                    print("response = \(response)")
+                    print("response = \(String(describing: response))")
                 }
                 
                 responseString = String(data: data, encoding: .utf8)
@@ -155,7 +162,9 @@
                                  DispatchQueue.main.async(execute: {
                         
                         self.tableview.reloadData()
-                        
+                        self.impsIndicator.isHidden = true
+                    UIApplication.shared.endIgnoringInteractionEvents()
+
                         return
                         
                     })
@@ -181,7 +190,7 @@
                     
                     let alert = UIAlertController(title:"No Internet Connection" , message:"Make sure your device is connected to the internet." , preferredStyle: .alert)
                     
-                    var action = UIAlertAction(title: "OK", style: .default, handler: nil)
+                    let action = UIAlertAction(title: "OK", style: .default, handler: nil)
                     
                     alert.addAction(action)
                     
@@ -219,12 +228,13 @@
             
             if((JSondata.value(forKey: "success") as! Int) == 1){
                 
+                DispatchQueue.main.async(execute: {
+
                 
                 
+                let statment = self.json?.value(forKey: "statement") as! NSDictionary
                 
-                var statment = json?.value(forKey: "statement") as! NSDictionary
-                
-                var records = statment.value(forKey: "Record") as! NSArray
+                let records = statment.value(forKey: "Record") as! NSArray
                 
                 for item in records
                 {
@@ -242,11 +252,14 @@
                     
                     
                 }
-
+                  self.tableview.reloadData()
+                    
+                })
+                
             }else if((JSondata.value(forKey: "success") as! Int) == 0){
             
             
-                var msg = self.json?.value(forKey: "message") as! String!
+                let msg = self.json?.value(forKey: "message") as! String!
 
                 let alert = UIAlertController(title: "", message: "\(msg!)", preferredStyle: .alert)
                 
@@ -268,7 +281,7 @@
         {
             
             
-if Connectivity.isConnectedToInternet
+if Connectivity.isConnectedToInternet()
             {
             let clientID = UserDefaults.standard.string(forKey: "ClientID")
 
@@ -294,7 +307,7 @@ if Connectivity.isConnectedToInternet
             request.addValue("application/json", forHTTPHeaderField: "Content-Type")
             
             
-            var seck =  "MBANK2017"
+            let seck =  "MBANK2017"
             
             let postString = "client_id=\(clientID!)&seck=\(seck)"
             
@@ -305,13 +318,13 @@ if Connectivity.isConnectedToInternet
             request.httpBody = postString.data(using: .utf8)
             let task = URLSession.shared.dataTask(with: request) { data, response, error in
                 guard let data = data, error == nil else {                                                 // check for fundamental networking error
-                    print("error=\(error)")
+                    print("error=\(String(describing: error))")
                     return
                 }
                 
                 if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
                     print("statusCode should be 200, but is \(httpStatus.statusCode)")
-                    print("response = \(response)")
+                    print("response = \(String(describing: response))")
                 }
                 responseString = String(data: data, encoding: .utf8)
                 print("responseString = \(responseString)")
@@ -324,9 +337,9 @@ if Connectivity.isConnectedToInternet
                     
                     
                     
-            var accounts = json?.value(forKey: "accounts") as! NSDictionary
+            let accounts = json?.value(forKey: "accounts") as! NSDictionary
             
-                    var clientAccnt = accounts.value(forKey: "clientAccounts") as! NSArray
+                    let clientAccnt = accounts.value(forKey: "clientAccounts") as! NSArray
                     
                     for item in clientAccnt
                     {
@@ -370,7 +383,7 @@ if Connectivity.isConnectedToInternet
                 
                 let alert = UIAlertController(title:"No Internet Connection" , message:"Make sure your device is connected to the internet." , preferredStyle: .alert)
                 
-                var action = UIAlertAction(title: "OK", style: .default, handler: nil)
+                let action = UIAlertAction(title: "OK", style: .default, handler: nil)
                 
                 alert.addAction(action)
                 
@@ -441,7 +454,7 @@ if Connectivity.isConnectedToInternet
             
         }
         
-        func isEdit(sender: UIButton)
+        @objc func isEdit(sender: UIButton)
         {
             
             let button = sender

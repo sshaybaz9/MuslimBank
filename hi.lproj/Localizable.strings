@@ -11,7 +11,7 @@
 
 "New  to app? Generate secure pin for Authentication" = "ऐप में नया? प्रमाणीकरण के लिए सुरक्षित पिन उत्पन्न करें";
 
-"               Welcome to Muslim Bank Mobile App" = "           मुस्लिम बैंक मोबाइल ऐप में आपका स्वागत है";
+"Welcome to Muslim Bank Mobile App" = "मुस्लिम बैंक मोबाइल ऐप में आपका स्वागत है";
 
 "Make sure your internet connection is stable." = "सुनिश्चित करें कि आपका इंटरनेट कनेक्शन स्थिर है";
 
@@ -183,4 +183,28 @@
 "Show Account Balance" = "खाता शेष राशि दिखाएं";
 "Balance Enquiry" = "शेषराशी पूछताछ";
 "Profile Update" = "प्रोफाइल अद्यतन";
+"Services and Facilities" = "सेवाएं और सुविधाएं";
+"Choose one of the following languages to use this application." = "इस एप्लिकेशन का उपयोग करने के लिए निम्न में से एक भाषा चुनें।";
+"English" = "अंग्रेज़ी";
+"Hindi" = "हिंदी";
+"Marathi" = "मराठी";
+"Urdu" = "उर्दू";
+"Apply" = "लागू करें";
+
+"Locate our branches" = "हमारी शाखाओं का पता लगाएं";
+
+"Account :" = "लेखा :";
+"AVAILABLE BALANCE" = "उपलब्ध शेष राशि";
+"   A/c Number :" = "ए / सी संख्या:";
+
+"Please note, as per RBI instruction credit will be effected based solely on the beneficiary  account number information." = "कृपया ध्यान दें, आरबीआई अनुदेश क्रेडिट के अनुसार केवल लाभार्थी खाता संख्या की जानकारी पर आधारित होगा।";
+
+"Current login pin" = "वर्तमान लॉगिन पिन";
+"Change Login Pin" = "लॉगिन पिन बदलें";
+"New login pin" = "नया लॉगिन पिन";
+"Confirm New login pin" = "नया लॉगिन पिन की पुष्टि करें";
+"Transaction enqry" = "लेनदेन enqry";
+"Transaction reference number" = "लेनदेन संदर्भ संख्या";
+"Check transaction status" = "लेनदेन की स्थिति की जांच करें";
+
 

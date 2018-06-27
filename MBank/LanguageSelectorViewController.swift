@@ -9,6 +9,13 @@
 import UIKit
 
 class LanguageSelectorViewController: UIViewController {
+    
+    
+    var img : UIImage!
+    var temp1 = [Login]()
+
+    
+    
     @IBOutlet weak var marathi: RadioButton!
 
     @IBOutlet weak var urdu: RadioButton!
@@ -16,6 +23,7 @@ class LanguageSelectorViewController: UIViewController {
     @IBOutlet weak var english: RadioButton!
     
     var selectedLanguage : Languages!
+
 
     
     
@@ -39,36 +47,33 @@ class LanguageSelectorViewController: UIViewController {
     }
     
     @IBAction func EnglishPressed(_ sender: RadioButton) {
-        
         updateRadioButton(sender)
-
         print("English Pressed")
         self.selectedLanguage = .en
-        
+        UserDefaults.standard.set("en", forKey: "lang")
+
     }
     
     @IBAction func HindiPressed(_ sender: RadioButton) {
-        
         updateRadioButton(sender)
-
         print("Hindi Pressed")
         self.selectedLanguage = .hi
-
+        UserDefaults.standard.set("hi", forKey: "lang")
 
     }
     
     @IBAction func MarathiPressed(_ sender: RadioButton) {
         updateRadioButton(sender)
         self.selectedLanguage = .mr
-
         print("Marathi Pressed")
+        UserDefaults.standard.set("mr", forKey: "lang")
 
     }
     
     @IBAction func UrduPressed(_ sender: RadioButton) {
         updateRadioButton(sender)
         self.selectedLanguage = .ur
-
+        UserDefaults.standard.set("ur", forKey: "lang")
         print("Urdu Pressed")
 
     }
@@ -94,20 +99,11 @@ class LanguageSelectorViewController: UIViewController {
         
         self.dismiss(animated: true, completion: nil)
     }
- 
-    
-    
-    
-   
-    
-    
-    
-    
     
     
     @IBAction func applyLanguage(_ sender: AnyObject) {
         
-        let alert = UIAlertController(title: "Do You Want to Change Languages", message: "You have to restart the application for this process", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Do You Want to Change Language", message: "", preferredStyle: .alert)
         
 
         let okaction = UIAlertAction(title: "Proceed", style: .default, handler: self.changeLanguage)
@@ -127,34 +123,21 @@ class LanguageSelectorViewController: UIViewController {
       //  changeLanguage()
     }
     
+    
+    
     func changeLanguage(alert: UIAlertAction)
     {
         
         LanguageManger.shared.setLanguage(language: selectedLanguage)
         
-              
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "Menu") as! Menu1ViewController
         
-    //    exit(EXIT_SUCCESS)
+        vc.img = self.img
+        vc.temp1 = self.temp1
+        self.present(vc, animated: true, completion: nil)
         
-        let delegate = UIApplication.shared.delegate as! AppDelegate
-        
-        
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        delegate.window?.rootViewController = storyboard.instantiateInitialViewController()
-        
-        
-        
-        //        let vc = self.storyboard?.instantiateViewController(withIdentifier: "Login") as! LoginMobileViewController
-        //
-        //        self.present(vc, animated: true, completion: nil)
-        //        
-        //    
-        
+  
     }
+    
+   }
 
-}
-// I have use this link 
-//https://github.com/Abedalkareem/LanguageManger-iOS
-
-
-//https://www.factorialcomplexity.com/blog/2015/01/28/how-to-change-localization-internally-in-your-ios-application.html

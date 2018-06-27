@@ -48,7 +48,7 @@
             
             super.viewDidLoad()
 
-            if Connectivity.isConnectedToInternet{
+            if Connectivity.isConnectedToInternet(){
             
             print(flag)
             locationManager = CLLocationManager()
@@ -83,7 +83,7 @@
                 
                 let alert = UIAlertController(title:"No Internet Connection" , message:"Make sure your device is connected to the internet." , preferredStyle: .alert)
                 
-                var action = UIAlertAction(title: "OK", style: .default, handler: nil)
+                let action = UIAlertAction(title: "OK", style: .default, handler: nil)
                 
                 alert.addAction(action)
                 
@@ -101,18 +101,24 @@
                 
                 let position = CLLocationCoordinate2D(latitude: lat, longitude: long)
                 let marker = GMSMarker(position: position)
+   //             marker.icon = GMSMarker.markerImage(with: .black)
+              
+                if (self.flag == "atm"){
+                marker.icon = UIImage(named : "Webp.net-resizeimage (1).png")
+                }
+                else{
+                    
+                    marker.icon = UIImage(named : "bankMarker.png")
+
+                    
+                }
                 marker.title = locName
                 marker.snippet = locName
                 marker.map = self.mapView
+                
             }
            
         }
-
-        
-
-        
-        
-        
         override func didReceiveMemoryWarning() {
             super.didReceiveMemoryWarning()
             // Dispose of any resources that can be recreated.
@@ -120,9 +126,6 @@
         
 
     }
-
-
-
     extension LocateOnMapViewController: CLLocationManagerDelegate {
         
         // Handle incoming location events.
@@ -170,20 +173,12 @@
         
         func getLocation(mLat:String,mLong:String)
         {
-            
-            
-            
-            if Connectivity.isConnectedToInternet
+            if Connectivity.isConnectedToInternet()
             {
-            
             
             var responseString : String!
             
-            
-            
             let url = URL(string: Constant.POST.GETNEARBYATMS.atms)!
-            
-   
             
             var request = URLRequest(url: url)
             
@@ -207,31 +202,33 @@
             print(postString)
             
             self.indicator.startAnimating()
-
             
             request.httpBody = postString.data(using: .utf8)
             let task = URLSession.shared.dataTask(with: request) { data, response, error in
                 guard let data = data, error == nil else {                                                 // check for fundamental networking error
-                    print("error=\(error)")
+                    print("error=\(String(describing: error))")
                     return
                 }
                 
                 if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
                     print("statusCode should be 200, but is \(httpStatus.statusCode)")
-                    print("response = \(response)")
+                    print("response = \(String(describing: response))")
                 }
                 
                 responseString = String(data: data, encoding: .utf8)
                 print("responseString = \(responseString)")
-                self.indicator.stopAnimating()
-
                 
+                DispatchQueue.main.async(execute: {
+                    self.indicator.stopAnimating()
+
+                })
                 var json: NSDictionary?
                 do {
                     json = try JSONSerialization.jsonObject(with: data) as? NSDictionary
                     
                     
                     let res = json?.value(forKey: "results") as? NSArray
+                    
                     
                     for item in res!
                     {
@@ -241,60 +238,36 @@
 
                         locObj.atmName = obj.value(forKey: "name") as! String!
                         
-                        
                     let geom = obj.value(forKey: "geometry") as? NSDictionary
                         
-                        
-                        
-                        
                     let loc = geom?.value(forKey: "location") as? NSDictionary
-                        
                         
                         var intlat : Double!
                         intlat =    loc?.value(forKey: "lat") as! Double!
                         locObj.mLatitude = String(describing: intlat!)
                         
-                        
                         print(locObj.mLatitude)
                         
                         var intLng : Double?
-                        intLng = loc?.value(forKey: "lng") as! Double
+                        intLng = loc?.value(forKey: "lng") as? Double
 
                         locObj.mLongitude = String(describing: intLng!)
                         
-                        
-                        print(locObj.mLongitude)
+                         print(locObj.mLongitude)
                         
                         self.locationArray.append(locObj)
-                        
-                        
-                        
                     
                     }
                     
-                   
-                for latlng in self.locationArray
-                {
-                    
-                    
-                    self.Latt = Double(latlng.mLatitude)
-                    
-                    print(self.Latt)
-                    self.Long = Double(latlng.mLongitude)
-                    
-                    var locName1 = latlng.atmName
-                    
-                    OperationQueue.main.addOperation {
+                    print(self.locationArray.count)
+                   // var idArray = [String]()
+                    for employee in self.locationArray {
                         
+                        self.showPartyMarkers(lat: Double(employee.mLatitude)!, long: Double(employee.mLongitude)!,locName:employee.atmName!)
                         
-                        self.showPartyMarkers(lat: self.Latt!, long: self.Long!,locName:locName1!)
-
-                    }
-                    
                     }
                     
                   
-                    
                     self.parsingTheJsonData(JSondata: json!)
                 }   catch {
                     print(error)
@@ -311,14 +284,12 @@
             {
                 let alert = UIAlertController(title:"No Internet Connection" , message:"Make sure your device is connected to the internet." , preferredStyle: .alert)
                 
-                var action = UIAlertAction(title: "OK", style: .default, handler: nil)
+                let action = UIAlertAction(title: "OK", style: .default, handler: nil)
                 
                 alert.addAction(action)
                 
                 self.present(alert, animated: true, completion: nil)
 
-                
-                
             }
             
         }
@@ -350,25 +321,4 @@
 
 
 
-    //extension Collection where Iterator.Element: LocationPojo {
-    //    
-    //    func getLats() -> Array<String> {
-    //        var index = startIndex
-    //        let iterator: AnyIterator<String> = AnyIterator {
-    //            defer { index = self.index(index, offsetBy: 1) }
-    //            return index != self.endIndex ? self[index].mLatitude : nil
-    //        }
-    //        return Array(iterator)
-    //    }
-    //    
-    //    func getLong() -> Array<String> {
-    //        var index = startIndex
-    //        let iterator: AnyIterator<String> = AnyIterator {
-    //            defer { index = self.index(index, offsetBy: 1) }
-    //            return index != self.endIndex ? self[index].mLongitude : nil
-    //        }
-    //        return Array(iterator)
-    //    }
-    //
-    //    
-    //}
+   

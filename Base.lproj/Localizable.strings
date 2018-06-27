@@ -13,7 +13,7 @@
 
         "New  to app? Generate secure pin for Authentication" = "New  to app? Generate secure pin for Authentication";
 
-        "               Welcome to Muslim Bank Mobile App" = "               Welcome to Muslim Bank Mobile App";
+        "Welcome to Muslim Bank Mobile App" = "Welcome to Muslim Bank Mobile App";
 
         "Make sure your internet connection is stable." = "Make sure your internet connection is stable.";
 
@@ -191,3 +191,27 @@
 "Show Account Balance" = "Show Account Balance";
 "Balance Enquiry" = "Balance Enquiry";
 "Profile Update" = "Profile Update";
+"Services and Facilities" = "Services and Facilities";
+
+
+"Choose one of the following languages to use this application." = "Choose one of the following languages to use this application.";
+"English" = "English";
+"Hindi" = "Hindi";
+"Marathi" = "Marathi";
+"Urdu" = "Urdu";
+"Apply" = "Apply";
+"Locate our branches" = "Locate our branches";
+"Account :" = "Account :";
+"AVAILABLE BALANCE" = "AVAILABLE BALANCE";
+"   A/c Number :" = "   A/c Number :";
+"Please note, as per RBI instruction credit will be effected based solely on the beneficiary  account number information." = "Please note, as per RBI instruction credit will be effected based solely on the beneficiary  account number information.";
+
+"Current login pin" = "Current login pin";
+"Change Login Pin" = "Change Login Pin";
+"New login pin" = "New login pin";
+"Confirm New login pin" = "Confirm New login pin";
+
+"Transaction enqry" = "Transaction enqry";
+
+"Transaction reference number" = "Transaction reference number";
+"Check transaction status" = "Check transaction status";
